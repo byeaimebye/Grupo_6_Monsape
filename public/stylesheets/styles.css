@@ -1,1 +1,8 @@
-@import url("header.css")
+@import url("header.css");
+@import url("login.css");
+
+:root{
+    --color-grisOscuro: #5C5A5A;
+    --color-rojoVino: #56070C;
+    --color-grisBotones: #C4C4C4;
+}

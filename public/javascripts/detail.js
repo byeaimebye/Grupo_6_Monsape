@@ -13,3 +13,4 @@ modalAdd.onclick = (event) => {
         closeModal();
     }
 }
+
