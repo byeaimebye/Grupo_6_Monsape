@@ -4,7 +4,7 @@ var path = require('path')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.sendFile(path.join(__dirname, '.././views/index.html'));  
 });
 
 router.get('/footer', function(req, res, next){
@@ -26,10 +26,6 @@ router.get('/productDetail', function(req, res, next){
 router.get('/productCart', function(req, res, next){
   res.sendFile(path.join(__dirname,'.././views/productCart.html'))
 })
-router.get('/index', function(req, res, next){
-  res.sendFile(path.join(__dirname,'.././views/index.html'))
-})
-
 
 
 module.exports = router;
