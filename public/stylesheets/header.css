@@ -46,7 +46,8 @@ header .anclas button {
     display: none;
     cursor: pointer;
 }
-
+/* fin de header */
+/* --------------------------------------------------------------- */
 /* nav mobile tiene el buscador y el products */
 
 nav {
@@ -80,7 +81,7 @@ nav  form button{
     background-color: var(--color-grisBotones);
 }
 
-nav.product-nav {
+nav.product-nav{
     margin-top: none;
 }
 
@@ -97,15 +98,15 @@ nav .product-nav {
     border-top: none;
     height: 25px;
 }
-
-nav .product-nav h3 {
-    font-size: 10px;
+nav.product-nav h3{
+    font-size: 9px;
 }
 
 nav.desktop-nav {
     display: none;
 }
-
+/* end nav */
+/* ------------------------------------------------------------ */
 /* Ventana modal */
 
 .modal {
@@ -119,58 +120,67 @@ nav.desktop-nav {
     padding: 20px;
     justify-content: center;
     align-items: center;
-    z-index: 100;
-}
+    z-index: 1000;
+    }
+    .modal-burger button{
+        background: transparent;
+    }
+    .modal-conteiner{
+        /* background: white; */
+        max-width: 90%;
+        min-width: 400px;
+        min-height: 400px;
+        max-height: 90%;
+        padding: 20px;
+        border-radius: 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+   /*  .modal-conteiner .logo-interno{
+        display: flex;
+        justify-content: center;
+    }
+    .modal-conteiner .logo-interno img{
+        width: 100px;
+        height: 100px;
+    } */
+    .modal-conteiner a{
+        font-family: 'Rosarivo', serif;
+        text-decoration: none;
+        color: white;
+        margin-bottom: 35px;
+        font-weight: lighter;
+    }
+    .close-modal{
+        background: rgba(0, 0,0, 0.5);
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 1.3rem;
+        border-radius: 50%;
+        position: absolute;
+        right: 183px;
+        top: 389px;
+        cursor: pointer;
+      
+    }
+    .modal2{
+        display: none;
+    }
 
-.modal-burger button {
-    background: transparent;
-}
+    /* ends modal */
 
-.modal-conteiner {
-    /* background: white; */
-    max-width: 90%;
-    min-width: 400px;
-    min-height: 400px;
-    max-height: 90%;
-    padding: 20px;
-    border-radius: 15px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
+    /* ------------------------------------- */
 
-.modal-conteiner a {
-    font-family: 'Rosarivo', serif;
-    text-decoration: none;
-    color: white;
-    margin-bottom: 35px;
-    font-weight: lighter;
-}
 
-.close-modal {
-    background: rgba(0, 0, 0, 0.5);
-    width: 36px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 1.3rem;
-    border-radius: 50%;
-    position: absolute;
-    right: 183px;
-    top: 389px;
-    cursor: pointer;
-}
+/*                                MediasQuerys                */
 
-/* ends modal */
 
-/* ------------------------ */
-
-/* MediasQuerys */
-
-/* query desktop */
-
+/*  query tablet   */
 @media(min-width: 768px) {
     header {
         grid-template-columns: 1fr 3fr 1fr;
@@ -188,13 +198,16 @@ nav.desktop-nav {
         grid-template-columns: 80% 20%;
         border-top: none;
     }
-    nav .product-nav h3 {
-        font-size: 20px;
+    nav .product-nav h3{
+        font-size: 16px;
     }
 }
 
-@media (min-width: 1000px) {
-    header .modal-burger {
+
+/* query desktop  */
+
+@media (min-width: 1000px){
+    header .modal-burger{
         display: none;
     }
     header {
@@ -247,5 +260,82 @@ nav.desktop-nav {
     nav.desktop-nav a {
         text-decoration: none;
         color: white;
+    }
+    .modal2{
+        display: none;
+        background: rgba(0, 0,0, 0.9);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+
+    }
+    .modal-container2{
+        display: block;
+        background: white;
+        max-width: 90%;
+        min-width: 400px;
+        min-height: 600px;
+        max-height: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .modal-container2 .close-modal2 {
+        background: rgba(45, 0,0, 0.9);
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 1.3rem;
+        border-radius: 50%;
+        position: absolute;
+        right: -15px;
+        top: -9px;
+        cursor: pointer;
+    }
+  
+    .modal-container2 h1{
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }
+    .modal-container2 label{
+        font-weight: 900;
+        margin-top: 25px;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .modal-container2 input{
+        background-color: #E7DFDF ;
+        height: 2.3rem;
+        width: 340px;
+        border-radius: 55px;
+    }
+    .modal2 .modal-container2 button{
+        display: flex;
+        margin-top: 60px;
+        background-color: #56070C;
+        color: white;
+        width: 255px;
+        padding: 10px;
+        border-radius: 55px;
+        justify-content: center;
+    }
+    .modal-container2 p{
+        margin-top: 50px;
+        font-weight: bolder;
+
+
     }
 }

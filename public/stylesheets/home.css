@@ -1,0 +1,134 @@
+header.home{
+    background-image: none;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0,0, 0.1);
+}
+header.home img{
+    height: 27%;
+    width: 27%;
+}
+header.home h1{
+
+    font-weight: lighter;
+    font-size: 22px;
+    color: white;
+    font-family: 'Rosarivo', serif;
+}
+header.home .burger img{
+    width: 80%;
+    height: 80%;
+}
+header.home .carrito-home img{
+    width: 33px;
+    height: 33px;
+    background-color:rgba(0, 0,0, 0.5);
+    padding: 5px;
+    border-radius: 55px;
+}
+body.home{
+   /*  margin-top: 20px; */
+    background-image: url("../img/fondodesktop.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: max-content;
+    background-attachment: fixed;
+}
+main.home{
+    height: 1300px;
+} 
+
+main.home .texto-home{
+    /* margin-top: 25px; */
+    text-align: center;
+    font-size: 8px;
+    color: white;
+    /* background-image: url("../img/vinohome.png"); */
+    background-color: rgba(0, 0,0, 0.3);
+    background-size: cover;
+    height: 250px;
+    color: white;
+}
+main.home .texto-home h1{
+    margin-top: 20px;
+}
+main.home .texto-home img{
+    margin-top: 45px;
+    width: 30%;
+    height: 30%;
+    margin-bottom: 25px;
+}
+
+    main.home .supuesto-slider img{
+        
+        margin-top: 20px;
+        width: 100%;
+    }
+    main.home .linkeables{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        
+    }
+    main.home .linkeables img{
+        /* height: 100%; */
+        width: 100%;
+    }
+    main.home .linkeables #box1{
+        position: relative; 
+        
+    }
+    main.home .linkeables #box1 h2{
+        position: absolute;
+        bottom: 40%;
+        color: white;
+        font-family: 'Rosarivo', serif;
+        font-weight: lighter;
+        text-align: center;
+    }
+    main.home .linkeables #box2{
+        position: relative;
+    }
+    main.home .linkeables #box2 h2{
+        position: absolute;
+        bottom: 40%;
+        color: white;
+        font-family: 'Rosarivo', serif;
+        font-weight: lighter;
+        text-align: center;
+
+    }
+
+    main.home .vacaciones{
+        background-image: url(../img/vacamon3.jpg);
+        background-position: center center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 15%;
+         background-attachment: fixed; 
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main.home .vacaciones h3{
+        background-color: rgba(151, 156, 146, 0.3) ;
+        padding: 10px;
+        border-radius: 55px;
+        font-family: 'Rosarivo', serif;
+        font-weight: lighter;
+        margin-bottom: 10px;
+    }
+    main.home .vacaciones button{
+        padding: 8px;
+    background-color: #C4C4C4;
+    border-radius: 55px;
+    font-weight: bolder;
+    cursor: pointer;
+    }

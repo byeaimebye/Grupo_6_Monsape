@@ -26,12 +26,11 @@ router.get('/productDetail', function(req, res, next){
 router.get('/productCart', function(req, res, next){
   res.sendFile(path.join(__dirname,'.././views/productCart.html'))
 })
-
-router.get('/ingreso', function(req, res, next){
-  res.sendFile(path.join(__dirname,'.././views/ingreso.html'));
+router.get('/index', function(req, res, next){
+  res.sendFile(path.join(__dirname,'.././views/index.html'))
 })
-router.get('/viewAdmin', function(req, res, next){
-  res.sendFile(path.join(__dirname,'.././views/viewAdmin.html'))
+router.get('/home', function(req, res, next){
+  res.sendFile(path.join(__dirname,'.././views/home.html'))
 })
 
 
