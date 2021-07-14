@@ -74,7 +74,6 @@ background-color: var(--color-grisBotones);
 
 }
 nav.product-nav{
-    
     margin-top: none;
 }
 nav .product-nav{
@@ -90,8 +89,8 @@ nav .product-nav{
     border-top: none;
     height: 25px;
 }
-nav .product-nav h3{
-    font-size: 10px;
+nav.product-nav h3{
+    font-size: 9px;
 }
 nav.desktop-nav {
     display: none;
@@ -110,7 +109,7 @@ nav.desktop-nav {
     padding: 20px;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     }
     .modal-burger button{
         background: transparent;
@@ -189,7 +188,7 @@ nav.desktop-nav {
         border-top: none;
     }
     nav .product-nav h3{
-        font-size: 20px;
+        font-size: 16px;
     }
     
 }

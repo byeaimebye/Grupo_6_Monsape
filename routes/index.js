@@ -29,7 +29,9 @@ router.get('/productCart', function(req, res, next){
 router.get('/index', function(req, res, next){
   res.sendFile(path.join(__dirname,'.././views/index.html'))
 })
-
+router.get('/home', function(req, res, next){
+  res.sendFile(path.join(__dirname,'.././views/home.html'))
+})
 
 
 module.exports = router;
