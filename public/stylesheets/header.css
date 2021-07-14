@@ -1,11 +1,10 @@
-
-  :root{
+:root {
     --color-grisOscuro: #5C5A5A;
     --color-rojoVino: #56070C;
     --color-grisBotones: #C4C4C4;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -16,7 +15,7 @@
 
 /* Header mobile */
 
-header{
+header {
     background-image: url("/img/header-desktop.png");
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -26,57 +25,66 @@ header{
     align-items: center;
     gap: 25px;
 }
-header .logo img{
+
+header .logo img {
     height: 50px;
     padding: 2.5px;
 }
-header .logo h1{
-    font-weight:lighter ;
+
+header .logo h1 {
+    font-weight: lighter;
     font-family: 'Rosarivo', serif;
-color: white;
+    color: white;
 }
-header .buscador{
-    display:none;
+
+header .buscador {
+    display: none;
 }
-header .anclas button{
+
+header .anclas button {
     display: none;
 }
 
 /* nav mobile tiene el buscador y el products */
-nav{
+
+nav {
     height: 25px;
     width: 100%;
     display: grid;
     background-color: var(--color-grisBotones);
     grid-template-columns: 50% 50%;
 }
- nav.header-nav{
+
+nav.header-nav {
     height: 10px;
 }
 
-nav form{
+nav form {
     display: grid;
     grid-template-columns: 80% 20%;
 }
-nav  form img{
-  border: none;
+
+nav form img {
+    border: none;
     width: 20px;
     height: 90%;
     background-color: var(--color-grisBotones);
 }
-nav  form input{
+
+nav form input {
     background-color: var(--color-grisBotones);
 }
-nav  form button{
-    border: none;
-background-color: var(--color-grisBotones);
 
+nav form button {
+    border: none;
+    background-color: var(--color-grisBotones);
 }
-nav.product-nav{
-    
+
+nav.product-nav {
     margin-top: none;
 }
-nav .product-nav{
+
+nav .product-nav {
     display: flex;
     grid-template-columns: 80% 20%;
     background-color: var(--color-grisOscuro);
@@ -89,16 +97,20 @@ nav .product-nav{
     border-top: none;
     height: 25px;
 }
-nav .product-nav h3{
+
+nav .product-nav h3 {
     font-size: 10px;
 }
+
 nav.desktop-nav {
     display: none;
 }
+
 /* Ventana modal */
-.modal{
+
+.modal {
     display: none;
-    background: rgba(0, 0,0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -108,123 +120,123 @@ nav.desktop-nav {
     justify-content: center;
     align-items: center;
     z-index: 100;
-    }
-    .modal-burger button{
-        background: transparent;
-    }
-    .modal-conteiner{
-        /* background: white; */
-        max-width: 90%;
-        min-width: 400px;
-        min-height: 400px;
-        max-height: 90%;
-        padding: 20px;
-        border-radius: 15px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        
-    
-    }
-    .modal-conteiner a{
-        font-family: 'Rosarivo', serif;
-        text-decoration: none;
-        color: white;
-        margin-bottom: 35px;
-        font-weight: lighter;
-    }
-    .close-modal{
-        background: rgba(0, 0,0, 0.5);
-        width: 36px;
-        height: 36px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 1.3rem;
-        border-radius: 50%;
-        position: absolute;
-        right: 183px;
-        top: 389px;
-        cursor: pointer;
-      
-    }
-    /* ends modal */
-    /* ------------------------ */
+}
+
+.modal-burger button {
+    background: transparent;
+}
+
+.modal-conteiner {
+    /* background: white; */
+    max-width: 90%;
+    min-width: 400px;
+    min-height: 400px;
+    max-height: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-conteiner a {
+    font-family: 'Rosarivo', serif;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 35px;
+    font-weight: lighter;
+}
+
+.close-modal {
+    background: rgba(0, 0, 0, 0.5);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 183px;
+    top: 389px;
+    cursor: pointer;
+}
+
+/* ends modal */
+
+/* ------------------------ */
+
 /* MediasQuerys */
+
 /* query desktop */
+
 @media(min-width: 768px) {
-    header{
+    header {
         grid-template-columns: 1fr 3fr 1fr;
     }
-    header .logo img{
-        height: 55px ;
+    header .logo img {
+        height: 55px;
         padding: 0;
     }
     nav {
         height: 55px;
         border-top: 1px solid var(--color-grisBotones);
     }
-    nav .product-nav{
+    nav .product-nav {
         display: grid;
         grid-template-columns: 80% 20%;
         border-top: none;
     }
-    
-    nav .product-nav h3{
+    nav .product-nav h3 {
         font-size: 20px;
     }
-    
 }
 
-@media (min-width: 1000px){
-    header .modal-burger{
+@media (min-width: 1000px) {
+    header .modal-burger {
         display: none;
     }
-    header{
+    header {
         background-image: url("/img/header-desktop.png");
         height: 120px;
         grid-template-columns: 1fr 3fr 1fr;
     }
-    header .burger{
+    header .burger {
         display: none;
     }
-    header .anclas{
+    header .anclas {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 5px;
-        
     }
-    header .anclas button{
+    header .anclas button {
         display: flex;
         background-color: transparent;
         color: white;
         font-size: 20px;
-        
     }
-
-    header .buscador{
+    header .buscador {
         margin-left: 10px;
         display: grid;
         grid-template-columns: 80% 20%;
     }
-    header .buscador input{
-        height:30px;
+    header .buscador input {
+        height: 30px;
         border-bottom: 1px solid white;
         background-color: transparent;
     }
-    header .buscador img{
+    header .buscador img {
         position: absolute;
-        left:155px;
-       top: 45px;
+        left: 155px;
+        top: 45px;
         height: 15px;
         width: 15px;
     }
-
-    nav{
+    nav {
         display: none;
-       }
-    nav.desktop-nav{
+    }
+    nav.desktop-nav {
         display: flex;
         justify-content: space-around;
         height: auto;
@@ -232,7 +244,7 @@ nav.desktop-nav {
         background-color: #727272;
         font-weight: bolder;
     }
-    nav.desktop-nav a{
+    nav.desktop-nav a {
         text-decoration: none;
         color: white;
     }

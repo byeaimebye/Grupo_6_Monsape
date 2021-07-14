@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7968cc1663.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rosarivo&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/styles.css">
+    <title>Carrito de compras</title>
+</head>
+
+<body>
+    <!-- <header>
+        <div class="elements-header">
+            <button type="button" name="burguer" id="burguer"><img src="./img/Vector.svg" alt="burguer-vector"></button>
+
+            <div class="logo">
+                <img class="logo-img" src="./img/logomon.svg" alt="logo">
+                <p>MONSAPE</p>
+            </div>
+
+            <div class="cart-search">
+                <img class="search" src="./img/search.png" alt="">
+                <img class="cart" src="./img/carrito-de-compras (1) 1.svg" alt="">
+            </div>
+        </div>
+        <input type="button" name="inicio" id="inicio" value="INICIO">
+    </header> -->
+
+    <!-- Header start here -->
+    <header>
+        <!-- VENTANA MODAL MOBILE -->
+        <div class="modal-burger">
+            <button onclick="openModal()">
+                <div class="burger">
+                    <img src="./img/Vector.svg" alt="">
+            </button>
+        </div>
+        </div>
+        <div class="modal" id="modalAdd">
+            <div class="modal-conteiner">
+                <div class="close-modal" onclick="closeModal()">X</div>
+                <a href="#">INICIO</a>
+                <a href="#">PRODUCTOS</a>
+                <a href="#">COMO COMPRAR</a>
+                <a href="#">QUIENES SOMOS</a>
+                <a href="#">POLITICA DE DEVOLUCION</a>
+                <a href="#">CONTACTO</a>
+                <!-- <button onclick="closeModal()">Cancelar</button> -->
+            </div>
+        </div>
+        <script src="./javascripts/detail.js"></script>
+        <!-- FIN VENTANA MODAL MOBILE -->
+        <!-- Lupa para desktop -->
+        <div class="buscador">
+            <input type="text" placeholder="Buscador" class="buscador">
+            <img src="./img/lupa.svg" alt="">
+        </div>
+        <!-- ------------------------- -->
+        <!-- titulo y logo -->
+        <div class="logo">
+            <h1>MONSAPE</h1>
+            <img src="./img/logomon.svg" alt="">
+        </div>
+        <!-- ------------------- -->
+        <!-- anclas de desktop -->
+        <div class="anclas">
+            <button>Ingresar</button>
+            <button>Registrarse</button>
+            <img src="./img/carrito-de-compras (1) 1.svg" alt="">
+            <!--  -------------- -->
+        </div>
+    </header>
+    <!-- nav de mobile -->
+    <nav class="header-nav">
+        <div class="search-mobile">
+            <form action="/">
+                <input type="search" placeholder="Buscador" class="search"><button><img src="./img/lupa.svg"
+                        alt=""></button>
+            </form>
+        </div>
+        <div class="product-nav">
+            <h3>PRODUCTOS</h3><i class="fas fa-chevron-down"></i>
+        </div>
+    </nav>
+    <nav class="desktop-nav">
+        <a href="#">INICIO</a>
+        <a href="#">PRODUCTOS</a>
+        <a href="#">COMO COMPRAR</a>
+        <a href="#">QUIENES SOMOS</a>
+        <a href="#">POLITICA DE DEVOLUCION</a>
+        <a href="#">CONTACTO</a>
+    </nav>
+
+
+    <!-- Columnas -->
+    <div class="column">
+        <p>PRODUCTO</p>
+        <p>SUBTOTAL</p>
+    </div>
+    <!-- Articulos -->
+    <article>
+        <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
+        <div class="detail">
+            <p id="nombre">Nombre del vino</p>
+            <p id="precio">$2.500</p>
+            <div class="cant">
+                <input type="button" name="menos" id="buttons" class="menos" value="-">
+                <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
+                <input type="button" name="mas" id="buttons" class="mas" value="+">
+            </div>
+
+        </div>
+        <div class="subtotal">
+            <p>$2.500</p>
+            <img class="tachito" src="./img/tachito.png" alt="carrito">
+        </div>
+    </article>
+
+    <article>
+        <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
+        <div class="detail">
+            <p id="nombre">Nombre del vino</p>
+            <p id="precio">$2.500</p>
+            <div class="cant">
+                <input type="button" name="menos" id="buttons" class="menos" value="-">
+                <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
+                <input type="button" name="mas" id="buttons" class="mas" value="+">
+            </div>
+
+        </div>
+        <div class="subtotal">
+            <p>$2.500</p>
+            <img class="tachito" src="./img/tachito.png" alt="carrito">
+        </div>
+    </article>
+    <!-- Subtotal (sin envío) -->
+    <div class="sub-sin-envio">
+        <p>Subtotal (sin envío):</p>
+    </div>
+    <!-- Métodos de envío -->
+    <div class="met-envio">
+        <p><img src="./img/camioncito.png" alt="camioncito"> Métodos de envío</p>
+        <div class="calcular">
+            <input type="text" name="codigo-postal" id="codigo-postal" value="Tu código postal">
+            <input type="button" name="calcular" id="calcular" value="CALCULAR">
+        </div>
+    </div>
+    <div class="total">
+        <h4>Total:</h4>
+        <h4>$5.000</h4>
+    </div>
+    <div class="fin">
+        <input type="button" name="mas" id="mas" value="Ver más productos">
+        <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/stylesheets/carrito.css">
+    <title>Carrito</title>
+</head>
+<body>
+    <h2>Carrito de compras</h2>
+    <div class="column">
+        <p>PRODUCTO</p>
+    </div>
+    <article>
+        <div class="wine-x"><img src="../public/images/vino-x.png" alt=""></div>
+        <div class="detail">
+            <p id="nombre">Nombre del vino</p>
+            <p id="precio">$2.500</p>
+            <div class="cant">
+                <input type="button" name="menos" id="buttons" class="menos" value="-">
+                <input type="text" name="cantidad" id="buttons" class="cantidad" value="0">
+                <input type="button" name="mas" id="buttons" class="mas" value="+">
+            </div>
+        </div>
+    </article>
+    <div class="subtotal">
+        <p>SUBTOTAL</p>
+        <p>$2.500</p>
+        <img src="../public/images/tachito.png" alt="tachito">
+    </div>
+
+    <article>
+        <div class="wine-x"><img src="../public/images/vino-x.png" alt=""></div>
+        <div class="detail">
+            <p id="nombre">Nombre del vino</p>
+            <p id="precio">$2.500</p>
+            <div class="cant">
+                <input type="button" name="menos" id="buttons" class="menos" value="-">
+                <input type="text" name="cantidad" id="buttons" class="cantidad" value="0">
+                <input type="button" name="mas" id="buttons" class="mas" value="+">
+            </div>
+        </div>
+    </article>
+    <div class="subtotal">
+        <p>SUBTOTAL</p>
+        <p>$2.500</p>
+        <img src="../public/images/tachito.png" alt="tachito">
+    </div>
+
+    <div class="met-envio">
+        <p><img src="../public/images/camioncito.png" alt="camioncito"> Métodos de envío</p>
+        <div class="calcular">
+            <input type="text" name="codigo-postal" id="codigo-postal" value="Tu código postal">
+            <input type="button" name="calcular" id="calcular" value="CALCULAR">
+        </div>
+    </div>
+    <div class="total">
+        <h2>TOTAL:</h2>
+        <h2>$5.000</h2>
+    </div>
+    <div class="fin">
+        <input type="button" name="mas" id="mas" value="Ver más productos">
+        <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
+    </div>
+</body>
+</html> -->

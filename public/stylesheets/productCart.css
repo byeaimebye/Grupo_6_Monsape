@@ -1,0 +1,179 @@
+/* body */
+* {
+    font-weight: 800;
+}
+
+body {
+    background-color: gainsboro;
+}
+
+body .column {
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    color: black;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+body article {
+    border-bottom: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+body article .wine-x img{
+    background-color: rgb(204, 203, 203);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 3px 8px;
+    width: 50px;
+}
+
+body article .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+
+}
+
+body article .detail p {
+    font-size: 14px;
+}
+
+body article .cant {
+    background-color: rgb(194, 194, 194);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 3px;
+    height: 22px;
+    width: 70px;
+}
+body article .cant #buttons {
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    padding : 1px 3px;
+    height: 16px;
+    width: 18px;
+}
+
+body article .cant .cantidad {
+    border: none;
+    height: 16px;
+    text-align: center;
+    width: 30%;
+}
+
+body article .subtotal {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: space-between;
+    height: 20px;
+    margin-right: 5px;
+    width: 120px;
+}
+
+body article .tachito {
+    flex-wrap: wrap;
+    height: 15px;
+    width: 15px;
+}
+
+body .sub-sin-envio {
+    border-bottom: solid 1px black;
+    padding-bottom: 10px;
+}
+
+body .sub-sin-envio p {
+    margin-left: 10px;
+}
+
+/* Seccion metodos de envío */
+
+body .met-envio {
+    border-bottom: solid 1px black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body .met-envio img {
+    width: 20px;
+}
+
+body .met-envio p {
+    font-size: 12px;
+    text-align: left;
+    margin: 5px auto 10px 10px;
+}
+
+body .calcular {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    width: 90%;
+    height: 35px;
+}
+
+body .met-envio .calcular #codigo-postal {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    height: 25px;
+    text-align: center;
+    width: 120px;
+}
+
+body .met-envio .calcular #calcular{
+    background-color: rgb(194, 194, 194);
+    border: none;
+    border-radius: 20px;
+    color: black;
+    font-size: 12px;
+    height: 25px;
+    text-align: center;
+    width: 80px;
+}
+
+body .total {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 15px ;
+    width: 85%;
+}
+
+body .fin {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    width: 95%;
+}
+
+body .fin #mas {
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+}
+
+body .fin #compra {
+    background-color: #56070C;
+    border-radius: 30px;
+    color: white;
+    font-size: 12px;
+    height: 25px;
+    width: 135px;
+}
