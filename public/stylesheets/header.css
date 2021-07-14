@@ -56,7 +56,9 @@ nav {
 }
 
 nav.header-nav {
+    max-width: 450px;
     height: 10px;
+    margin: 0 auto;
 }
 
 nav form {
