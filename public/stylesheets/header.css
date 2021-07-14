@@ -1,8 +1,8 @@
-
   :root{
     --color-grisOscuro: #5C5A5A;
     --color-rojoVino: #56070C;
     --color-grisBotones: #C4C4C4;
+    --color-fondoFutter: #383737;
 }
 
 *{
@@ -33,13 +33,14 @@ header .logo img{
 header .logo h1{
     font-weight:lighter ;
     font-family: 'Rosarivo', serif;
-color: white;
+    color: white;
 }
 header .buscador{
     display:none;
 }
 header .anclas button{
     display: none;
+    cursor: pointer;
 }
 
 /* nav mobile tiene el buscador y el products */
@@ -59,7 +60,7 @@ nav form{
     grid-template-columns: 80% 20%;
 }
 nav  form img{
-  border: none;
+    border: none;
     width: 20px;
     height: 90%;
     background-color: var(--color-grisBotones);
@@ -69,8 +70,7 @@ nav  form input{
 }
 nav  form button{
     border: none;
-background-color: var(--color-grisBotones);
-
+    background-color: var(--color-grisBotones);
 }
 nav.product-nav{
     
