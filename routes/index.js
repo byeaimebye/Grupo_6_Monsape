@@ -30,5 +30,9 @@ router.get('/productCart', function(req, res, next){
 router.get('/ingreso', function(req, res, next){
   res.sendFile(path.join(__dirname,'.././views/ingreso.html'));
 })
+router.get('/viewAdmin', function(req, res, next){
+  res.sendFile(path.join(__dirname,'.././views/viewAdmin.html'))
+})
+
 
 module.exports = router;
