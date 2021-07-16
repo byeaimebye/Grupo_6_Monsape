@@ -1,10 +1,4 @@
-:root {
-    --color-grisOscuro: #5C5A5A;
-    --color-rojoVino: #56070C;
-    --color-grisBotones: #C4C4C4;
-}
-
-* {
+*{
     padding: 0;
     margin: 0;
     text-decoration: none;

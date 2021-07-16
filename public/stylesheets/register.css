@@ -19,8 +19,9 @@ hr{
     margin-bottom: 3rem;
     width: 100%;
 }
-body{
+main.main-register{
     background-color: var(--color-grisBotones);
+    padding: 50px 2px;
 }
 /*formulario*/
 .form{
@@ -31,7 +32,7 @@ body{
 .form-container{
     background-color: white;
     border-radius: 10px;
-    margin: 90px auto;
+    margin: 0 auto;
     height: fit-content;
     height: -moz-fit-content;
     width: 90%;
@@ -79,23 +80,26 @@ label {
     align-items: center;
 }
 
-.btn{
-    border: 1px solid var(--color-rojoVino);
+.btn-submit {   
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+    background-color: var(--color-rojoVino);
     border-radius: 1rem;
     cursor: pointer;
     height: 2rem;
     text-transform: uppercase;
     width: 8rem;
-}
-.btn-submit{
-    color: black;
-    font-weight: bolder;
-}
-.btn-submit:hover {
     color: white;
-    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-    background-color: var(--color-rojoVino);
+    font-weight: bolder;   
 }
+
+.btn-submit:hover{
+    color: var(--color-rojoVino);
+    border: 0.5px solid var(--color-rojoVino);
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.6s all;
+}
+
 
 /*check*/
 .check{

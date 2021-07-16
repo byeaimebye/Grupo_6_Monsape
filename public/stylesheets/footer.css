@@ -1,11 +1,6 @@
-html{
-    position: relative;
-}
 footer{    
     background-color: var(--color-fondoFutter);    
-    /* position: absolute; */
-    /* bottom: 0; */
-    width: 100%;
+    width: 100vw;
     height: 70px;
     color: #ACA9A9;
     font-weight: bolder;
@@ -24,7 +19,7 @@ footer .footer-description{
 }
 footer .social-media-icons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 footer .social-media-icons img{
     width: 18px;
@@ -65,7 +60,7 @@ footer .social-media-icons img{
 @media screen and (min-width: 1000px){
     footer{        
         grid-template-columns: 6fr 1fr;
-        height: 80px;   
+        height: 90px;   
     }
     footer .footer-description{        
         font-size: 18px;
