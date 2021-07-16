@@ -9,6 +9,7 @@
 @import url("carouselTienda2.css");
 @import url("login.css");
 @import url("home.css");
+@import url("ingreso.css");
 
 :root{
     --color-grisOscuro: #5C5A5A;

@@ -3,16 +3,16 @@
     font-weight: 800;
 }
 
-body {
+.main-productCart {
     background-color: gainsboro;
 }
 
-body section {
+.main-productCart .section-productCart {
     max-width: 450px;
     margin: 0 auto;
 }
 
-body section .column {
+.main-productCart .section-productCart .column {
     border-top: solid 1px black;
     border-bottom: solid 1px black;
     color: black;
@@ -24,7 +24,7 @@ body section .column {
     padding: 10px 0;
 }
 
-body section article {
+.main-productCart .section-productCart article {
     border-bottom: solid 1px black;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ body section article {
     margin-bottom: 10px;
 }
 
-body article .wine-x img{
+.main-productCart .section-productCart article .wine-x img{
     background-color: rgb(204, 203, 203);
     border-radius: 10px;
     margin-top: 10px;
@@ -40,7 +40,7 @@ body article .wine-x img{
     width: 50px;
 }
 
-body article .detail {
+.main-productCart .section-productCart article .detail {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,11 +51,11 @@ body article .detail {
 
 }
 
-body article .detail p {
+.main-productCart .section-productCart article .detail p {
     font-size: 14px;
 }
 
-body article .cant {
+.main-productCart .section-productCart article .cant {
     background-color: rgb(194, 194, 194);
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,7 @@ body article .cant {
     height: 22px;
     width: 70px;
 }
-body article .cant #buttons {
+.main-productCart .section-productCart article .cant #buttons {
     border: none;
     text-align: center;
     font-size: 12px;
@@ -73,14 +73,14 @@ body article .cant #buttons {
     width: 18px;
 }
 
-body article .cant .cantidad {
+.main-productCart .section-productCart article .cant .cantidad {
     border: none;
     height: 16px;
     text-align: center;
     width: 30%;
 }
 
-body article .subtotal {
+.main-productCart .section-productCart article .subtotal {
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -90,40 +90,40 @@ body article .subtotal {
     width: 120px;
 }
 
-body article .tachito {
+.main-productCart .section-productCart article .tachito {
     flex-wrap: wrap;
     height: 15px;
     width: 15px;
 }
 
-body .sub-sin-envio {
+.main-productCart .section-productCart .sub-sin-envio {
     border-bottom: solid 1px black;
     padding-bottom: 10px;
 }
 
-body .sub-sin-envio p {
+.main-productCart .section-productCart .sub-sin-envio p {
     margin-left: 10px;
 }
 
 /* Seccion metodos de envío */
 
-body .met-envio {
+.main-productCart .section-productCart .met-envio {
     border-bottom: solid 1px black;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-body .met-envio img {
+.main-productCart .section-productCart .met-envio img {
     width: 20px;
 }
 
-body .met-envio p {
+.main-productCart .section-productCart .met-envio p {
     font-size: 12px;
     text-align: left;
     margin: 5px auto 10px 10px;
 }
 
-body .calcular {
+.main-productCart .section-productCart .calcular {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -132,7 +132,7 @@ body .calcular {
     height: 35px;
 }
 
-body .met-envio .calcular #codigo-postal {
+.main-productCart .section-productCart .met-envio .calcular #codigo-postal {
     background-color: white;
     border: none;
     border-radius: 10px;
@@ -142,7 +142,7 @@ body .met-envio .calcular #codigo-postal {
     width: 120px;
 }
 
-body .met-envio .calcular #calcular{
+.main-productCart .section-productCart .met-envio .calcular #calcular{
     background-color: rgb(194, 194, 194);
     border: none;
     border-radius: 20px;
@@ -153,14 +153,14 @@ body .met-envio .calcular #calcular{
     width: 80px;
 }
 
-body .total {
+.main-productCart .section-productCart .total {
     display: flex;
     justify-content: space-between;
     margin: 20px 15px ;
     width: 85%;
 }
 
-body .fin {
+.main-productCart .section-productCart .fin {
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
@@ -168,13 +168,13 @@ body .fin {
     width: 95%;
 }
 
-body .fin #mas {
+.main-productCart .section-productCart .fin #mas {
     background-color: gainsboro;
     border: none;
     font-size: 14px;
 }
 
-body .fin #compra {
+.main-productCart .section-productCart .fin #compra {
     background-color: #56070C;
     border-radius: 30px;
     color: white;

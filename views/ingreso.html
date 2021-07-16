@@ -12,24 +12,26 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
         <!-- Styles -->
-    <link rel="stylesheet" href="/stylesheets/ingreso.css">
+    <link rel="stylesheet" href="../stylesheets/styles.css">
     <title>Ingreso</title>
 </head>
 
-<body>
-    <div class="difu">
-        <div class="monsape">
-            <p>MONSAPE</p>
-            <div class="logo-svg"><img src=".././img/logomon.svg" alt="logo-svg"></div>
-            <p class="welcome">TODOS SON BIENVENIDOS A NUESTRA MESA</p>
+<body class="body-ingreso">
+    <main class="main-ingreso">
+        <div class="difu">
+            <div class="monsape">
+                <p>MONSAPE</p>
+                <div class="logo-svg"><img src="../img/logomon.svg" alt="logo-svg"></div>
+                <p class="welcome">TODOS SON BIENVENIDOS A NUESTRA MESA</p>
+            </div>
+            <div class="year">
+                <p class="adn">AÑO DE NACIMIENTO:</p>
+                <input type="text" name="año" id="año" value="YYYY">
+            </div>
+            <div class="ingresar"><input type="submit" name="ingresar" id="ing" value="INGRESAR"></div>
+    
         </div>
-        <div class="year">
-            <p class="adn">AÑO DE NACIMIENTO:</p>
-            <input type="text" name="año" id="año" value="YYYY">
-        </div>
-        <div class="ingresar"><input type="submit" name="ingresar" id="ing" value="INGRESAR"></div>
-
-    </div>
+    </main>
 </body>
 
 </html>

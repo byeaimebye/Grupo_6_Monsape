@@ -1,10 +1,10 @@
-:root{
+:root {
     --color-grisOscuro: #5C5A5A;
     --color-rojoVino: #56070C;
     --color-grisBotones: #C4C4C4;
 }
- 
-*{
+
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -12,10 +12,10 @@
     border: none;
     font-family: 'Raleway', sans-serif;
 }
- 
+
 /* Header mobile */
- 
-header{
+
+header {
     background-image: url("/img/header-desktop.png");
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -25,57 +25,70 @@ header{
     align-items: center;
     gap: 25px;
 }
-header .logo img{
+
+header .logo img {
     height: 50px;
     padding: 2.5px;
 }
-header .logo h1{
-    font-weight:lighter ;
+
+header .logo h1 {
+    font-weight: lighter;
     font-family: 'Rosarivo', serif;
-color: white;
+    color: white;
 }
-header .buscador{
-    display:none;
-}
-header .anclas button{
+
+header .buscador {
     display: none;
 }
+
+header .anclas button {
+    display: none;
+}
+
 /* fin de header */
+
 /* --------------------------------------------------------------- */
+
 /* nav mobile tiene el buscador y el products */
-nav{
+
+nav {
     height: 25px;
     width: 100%;
     display: grid;
     background-color: var(--color-grisBotones);
     grid-template-columns: 50% 50%;
 }
- nav.header-nav{
+
+nav.header-nav {
     height: 10px;
 }
- 
-nav form{
+
+nav form {
     display: grid;
     grid-template-columns: 80% 20%;
 }
-nav  form img{
-  border: none;
+
+nav form img {
+    border: none;
     width: 20px;
     height: 90%;
     background-color: var(--color-grisBotones);
 }
-nav  form input{
+
+nav form input {
     background-color: var(--color-grisBotones);
 }
-nav  form button{
+
+nav form button {
     border: none;
-background-color: var(--color-grisBotones);
- 
+    background-color: var(--color-grisBotones);
 }
-nav.product-nav{
+
+nav.product-nav {
     margin-top: none;
 }
-nav .product-nav{
+
+nav .product-nav {
     display: flex;
     grid-template-columns: 80% 20%;
     background-color: var(--color-grisOscuro);
@@ -88,18 +101,24 @@ nav .product-nav{
     border-top: none;
     height: 25px;
 }
-nav.product-nav h3{
+
+nav.product-nav h3 {
     font-size: 9px;
 }
+
 nav.desktop-nav {
     display: none;
 }
+
 /* end nav */
+
 /* ------------------------------------------------------------ */
+
 /* Ventana modal */
-.modal{
+
+.modal {
     display: none;
-    background: rgba(0, 0,0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -109,23 +128,26 @@ nav.desktop-nav {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    }
-    .modal-burger button{
-        background: transparent;
-    }
-    .modal-conteiner{
-        /* background: white; */
-        max-width: 90%;
-        min-width: 400px;
-        min-height: 400px;
-        max-height: 90%;
-        padding: 20px;
-        border-radius: 15px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-   /*  .modal-conteiner .logo-interno{
+}
+
+.modal-burger button {
+    background: transparent;
+}
+
+.modal-conteiner {
+    /* background: white; */
+    max-width: 90%;
+    min-width: 400px;
+    min-height: 400px;
+    max-height: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  .modal-conteiner .logo-interno{
         display: flex;
         justify-content: center;
     }
@@ -133,114 +155,111 @@ nav.desktop-nav {
         width: 100px;
         height: 100px;
     } */
-    .modal-conteiner a{
-        font-family: 'Cinzel', serif;
-        text-decoration: none;
-        color: white;
-        margin-bottom: 35px;
-        font-weight: lighter;
-    }
-    .close-modal{
-        background: rgba(0, 0,0, 0.5);
-        width: 36px;
-        height: 36px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 1.3rem;
-        border-radius: 50%;
-        position: absolute;
-        right: 183px;
-        top: 389px;
-        cursor: pointer;
- 
-    }
-    .modal2{
-        display: none;
-    }
- 
-    /* ends modal */
- 
-    /* ------------------------------------- */
- 
- 
+
+.modal-conteiner a {
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 35px;
+    font-weight: lighter;
+}
+
+.close-modal {
+    background: rgba(0, 0, 0, 0.5);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 183px;
+    top: 389px;
+    cursor: pointer;
+}
+
+.modal2 {
+    display: none;
+}
+
+/* ends modal */
+
+/* ------------------------------------- */
+
 /*                                MediasQuerys                */
- 
- 
+
 /*  query tablet   */
+
 @media(min-width: 768px) {
-    header{
+    header {
         grid-template-columns: 1fr 3fr 1fr;
     }
-    header .logo img{
-        height: 55px ;
+    header .logo img {
+        height: 55px;
         padding: 0;
     }
     nav {
         height: 55px;
         border-top: 1px solid var(--color-grisBotones);
     }
-    nav .product-nav{
+    nav .product-nav {
         display: grid;
         grid-template-columns: 80% 20%;
         border-top: none;
     }
-    nav .product-nav h3{
+    nav .product-nav h3 {
         font-size: 16px;
     }
- 
 }
- 
- 
+
 /* query desktop  */
- 
-@media (min-width: 1000px){
-    header .modal-burger{
+
+@media (min-width: 1000px) {
+    header .modal-burger {
         display: none;
     }
-    header{
+    header {
         background-image: url("/img/header-desktop.png");
         height: 120px;
         grid-template-columns: 1fr 3fr 1fr;
     }
-    header .burger{
+    header .burger {
         display: none;
     }
-    header .anclas{
+    header .anclas {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 5px;
     }
-    header .anclas button{
+    header .anclas button {
         display: flex;
         background-color: transparent;
         color: white;
         font-size: 20px;
     }
- 
-    header .buscador{
+    header .buscador {
         margin-left: 10px;
         display: grid;
         grid-template-columns: 80% 20%;
     }
-    header .buscador input{
-        height:30px;
+    header .buscador input {
+        height: 30px;
         border-bottom: 1px solid white;
         background-color: transparent;
     }
-    header .buscador img{
+    header .buscador img {
         position: absolute;
-        left:155px;
-       top: 45px;
+        left: 155px;
+        top: 45px;
         height: 15px;
         width: 15px;
     }
- 
-    nav{
+    nav {
         display: none;
-       }
-    nav.desktop-nav{
+    }
+    nav.desktop-nav {
         display: flex;
         justify-content: space-around;
         height: auto;
@@ -248,13 +267,13 @@ nav.desktop-nav {
         background-color: #727272;
         font-weight: bolder;
     }
-    nav.desktop-nav a{
+    nav.desktop-nav a {
         text-decoration: none;
         color: white;
     }
-    .modal2{
+    .modal2 {
         display: none;
-        background: rgba(0, 0,0, 0.9);
+        background: rgba(0, 0, 0, 0.9);
         width: 100vw;
         height: 100vh;
         top: 0;
@@ -264,9 +283,8 @@ nav.desktop-nav {
         justify-content: center;
         align-items: center;
         z-index: 100;
- 
     }
-    .modal-container2{
+    .modal-container2 {
         display: block;
         background: white;
         max-width: 90%;
@@ -282,7 +300,7 @@ nav.desktop-nav {
         text-align: center;
     }
     .modal-container2 .close-modal2 {
-        background: rgba(45, 0,0, 0.9);
+        background: rgba(45, 0, 0, 0.9);
         width: 36px;
         height: 36px;
         display: flex;
@@ -296,24 +314,23 @@ nav.desktop-nav {
         top: -9px;
         cursor: pointer;
     }
- 
-    .modal-container2 h1{
+    .modal-container2 h1 {
         margin-top: 30px;
         margin-bottom: 35px;
     }
-    .modal-container2 label{
+    .modal-container2 label {
         font-weight: 900;
         margin-top: 25px;
         font-size: 25px;
         margin-bottom: 10px;
     }
-    .modal-container2 input{
-        background-color: #E7DFDF ;
+    .modal-container2 input {
+        background-color: #E7DFDF;
         height: 2.3rem;
         width: 340px;
         border-radius: 55px;
     }
-    .modal2 .modal-container2 button{
+    .modal2 .modal-container2 button {
         display: flex;
         margin-top: 60px;
         background-color: #56070C;
@@ -323,10 +340,8 @@ nav.desktop-nav {
         border-radius: 55px;
         justify-content: center;
     }
-    .modal-container2 p{
+    .modal-container2 p {
         margin-top: 50px;
         font-weight: bolder;
- 
- 
     }
 }

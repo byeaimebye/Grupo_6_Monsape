@@ -1,30 +1,36 @@
-body {
+/* .body-ingreso {
+    background-color: green;
+} */
+
+.main-ingreso {
+    border: solid 2px red;
     background-color: black;
     background-image: url(../img/Background.png);
     background-size: cover;
     display: flex;
+    height: 100%;
     justify-content: center;
     margin: 0 auto;
 }
 
-.difu {
+.main-ingreso .difu {
     background-color: gainsboro;
     flex-wrap: wrap;
     flex-grow: -1;
     position: relative;
     width: 80%;
-    height: 640px;
+    height: 100%;
     background: rgba(255, 255, 255, 0.3);
 }
 
-.monsape {
+.main-ingreso .difu .monsape {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.monsape p {
+.main-ingreso .difu .monsape p {
     color: white;
     font-size: 36px;
     text-align: center;
@@ -33,13 +39,13 @@ body {
     justify-content: center;
 }
 
-.monsape .logo-svg img {
+.main-ingreso .difu .monsape .logo-svg img {
     margin: 0 auto;
     text-align: center;
     width: 100px;
 }
 
-.difu .year {
+.main-ingreso .difu .year {
     border-top: solid 1px black;
     border-bottom: solid 1px black;
     margin: 56px 15px;
@@ -48,14 +54,14 @@ body {
     text-align: center;
 }
 
-.difu .ingresar {
+.main-ingreso .difu .ingresar {
     border: none;
     margin: 106px 15px;
     padding-bottom: 15px;
     text-align: center;
 }
 
-.difu #año {
+.main-ingreso .difu #año {
     background: rgba(86, 7, 12, 0.5);
     border-radius: 15px;
     border: none;
@@ -68,7 +74,7 @@ body {
     width: 100px;
 }
 
-.difu #ing {
+.main-ingreso .difu #ing {
     background: rgba(86, 7, 12, 0.8);
     border-radius: 30px;
     border: none;
@@ -82,20 +88,20 @@ body {
     width: 100px;
 }
 
-.difu .welcome {
+.main-ingreso .difu .welcome {
     color: black;
     font-size: 18px;
     margin-top: 45px;
 }
 
-.difu .year .adn {
+.main-ingreso .difu .year .adn {
     padding-bottom: 10px;
 }
 
 /* Media queries */
 
 @media (min-width: 768px) {
-    body {
+    .main-ingreso .difu {
         max-width: 768px;
         margin: 0 2%;
     }

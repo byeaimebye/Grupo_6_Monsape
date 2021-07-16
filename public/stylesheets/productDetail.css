@@ -1,25 +1,25 @@
-body main {
+.main-productDetail {
     margin-top: 55px;
     text-align: center;
 }
 
-body main img {
+.main-productDetail img {
     margin: 0 auto;
     top: 2px;
     width: 200px;
 }
 
-body main .detalle {
+.main-productDetail .detalle {
     margin: 0 50px;
 }
 
-body main .detalle h4 {
+.main-productDetail .detalle h4 {
     margin: 20px auto;
     max-width: 390px;
     text-align: center;
 }
 
-body main .detalle ul {
+.main-productDetail .detalle ul {
     margin: 20px auto 10px auto;
     max-width: 390px;
     text-align: center;
@@ -27,7 +27,7 @@ body main .detalle ul {
 
 /* Botones de seleccion de cantidad de unidades. */
 
-body main .cant {
+.main-productDetail .cant {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,7 @@ body main .cant {
     width: 100px;
 }
 
-body main .cant #buttons {
+.main-productDetail .cant #buttons {
     background-color: white;
     border: none;
     border-radius: 10px;
@@ -48,7 +48,7 @@ body main .cant #buttons {
     width: 24px;
 }
 
-body main .cant .cantidad {
+.main-productDetail .cant .cantidad {
     border: none;
     border-radius: 10px;
     height: 22px;
@@ -56,7 +56,7 @@ body main .cant .cantidad {
     width: 26px;
 }
 
-body main .precio {
+.main-productDetail .precio {
     color: var(--color-rojoVino);
     font-size: 24px;
     font-weight: 900;
@@ -66,14 +66,14 @@ body main .precio {
 
 /* Botones agregar al carrito, costo de envío y confirmar. */
 
-body main .botones {
+.main-productDetail .botones {
     align-items: center;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-body main .botones #agregar {
+.main-productDetail .botones #agregar {
     background-color: gray;
     border-radius: 15px;
     font-size: 16px;
@@ -82,7 +82,7 @@ body main .botones #agregar {
     width: 150px;
 }
 
-body main .botones #costo-envio {
+.main-productDetail .botones #costo-envio {
     background-color: gray;
     border-radius: 15px;
     display: none;
@@ -92,7 +92,7 @@ body main .botones #costo-envio {
     width: 150px;
 }
 
-body main .botones #confirmar {
+.main-productDetail .botones #confirmar {
     background-color: rgb(68, 18, 18);
     border-radius: 15px;
     color: white;
@@ -102,48 +102,48 @@ body main .botones #confirmar {
 }
 
 @media (min-width: 768px) {
-    body main {
+    .main-productDetail {
         text-align: left;
         display: flex;
         position: relative;
     }
 
-    body main .detalle h4,
-    body main .detalle ul {
+    .main-productDetail .detalle h4,
+    .main-productDetail .detalle ul {
         max-width: 520px;
     }
 
-    body main .detalle h4,
-    body main .botones,
-    body main .cant,
-    body main .detalle ul,
-    body main .precio {
+    .main-productDetail .detalle h4,
+    .main-productDetail .botones,
+    .main-productDetail .cant,
+    .main-productDetail .detalle ul,
+    .main-productDetail .precio {
         position: absolute;
     }
 
-    body main .detalle ul {
+    .main-productDetail .detalle ul {
         border-top: solid 1px black;
         padding: 10px 5px 5px 0;
         left: 49%;
         top: 170px;
     }
 
-    body main .detalle h4 {
+    .main-productDetail .detalle h4 {
         font-size: 22px;
         left: 48.1%;
     }
 
-    body main .precio {
+    .main-productDetail .precio {
         top: 100px;
         left: 52%;
     }
 
-    body main .cant {
+    .main-productDetail .cant {
         top: 103px;
         left: 82%;
     }
     /* Botones agregar al carrito, costo de envío y confirmar. */
-    body main .botones {/* 
+    .main-productDetail .botones {/* 
         border: solid 2px red; */
         display: flex;
         flex-direction: row;
@@ -154,46 +154,46 @@ body main .botones #confirmar {
         width: 500px;
     }
 
-    body main .botones #costo-envio,
-    body main .botones #agregar,
-    body main .botones #confirmar {
+    .main-productDetail .botones #costo-envio,
+    .main-productDetail .botones #agregar,
+    .main-productDetail .botones #confirmar {
         border-radius: 25px;
         font-size: 22px;
         height: 40px;
         width: 210px;
     }
 
-    body main .botones #costo-envio {
+    .main-productDetail .botones #costo-envio {
         display: block;
     }
 
-    body main .botones #confirmar {
+    .main-productDetail .botones #confirmar {
         bottom: 0;
         position: absolute;
         left: 140px;
     
     }
 
-    body main img {
+    .main-productDetail img {
         margin: 10px 0 295px 5%;
         width: 300px;
     }
 }
 
 @media (min-width : 1200px) {
-    body main .botones #confirmar {
+    .main-productDetail .botones #confirmar {
         position: static;
         margin-top: 0;
     }
 
-    body main .botones {
+    .main-productDetail .botones {
         left: 14%;
         width: 800px;
         padding: 0;
     }
 
-    body main .botones #agregar,
-    body main .botones #costo-envio {
+    .main-productDetail .botones #agregar,
+    .main-productDetail .botones #costo-envio {
         margin-top: 10px;
     }
 }

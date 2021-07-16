@@ -16,22 +16,6 @@
 </head>
 
 <body>
-    <!-- <header>
-        <div class="elements-header">
-            <button type="button" name="burguer" id="burguer"><img src="./img/Vector.svg" alt="burguer-vector"></button>
-
-            <div class="logo">
-                <img class="logo-img" src="./img/logomon.svg" alt="logo">
-                <p>MONSAPE</p>
-            </div>
-
-            <div class="cart-search">
-                <img class="search" src="./img/search.png" alt="">
-                <img class="cart" src="./img/carrito-de-compras (1) 1.svg" alt="">
-            </div>
-        </div>
-        <input type="button" name="inicio" id="inicio" value="INICIO">
-    </header> -->
 
     <!-- Header start here -->
     <header>
@@ -98,72 +82,74 @@
         <a href="#">CONTACTO</a>
     </nav>
 
-    <section>
-        <!-- Columnas -->
-    <div class="column">
-        <p>PRODUCTO</p>
-        <p>SUBTOTAL</p>
-    </div>
-        <!-- Articulos -->
-    <article>
-        <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
-        <div class="detail">
-            <p id="nombre">Nombre del vino</p>
-            <p id="precio">$2.500</p>
-            <div class="cant">
-                <input type="button" name="menos" id="buttons" class="menos" value="-">
-                <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
-                <input type="button" name="mas" id="buttons" class="mas" value="+">
+    <main class="main-productCart">
+        <section class="section-productCart">
+            <!-- Columnas -->
+        <div class="column">
+            <p>PRODUCTO</p>
+            <p>SUBTOTAL</p>
+        </div>
+            <!-- Articulos -->
+        <article>
+            <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
+            <div class="detail">
+                <p id="nombre">Nombre del vino</p>
+                <p id="precio">$2.500</p>
+                <div class="cant">
+                    <input type="button" name="menos" id="buttons" class="menos" value="-">
+                    <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
+                    <input type="button" name="mas" id="buttons" class="mas" value="+">
+                </div>
+    
             </div>
-
-        </div>
-        <div class="subtotal">
-            <p>$2.500</p>
-            <img class="tachito" src="./img/tachito.png" alt="carrito">
-        </div>
-    </article>
-
-    <article>
-        <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
-        <div class="detail">
-            <p id="nombre">Nombre del vino</p>
-            <p id="precio">$2.500</p>
-            <div class="cant">
-                <input type="button" name="menos" id="buttons" class="menos" value="-">
-                <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
-                <input type="button" name="mas" id="buttons" class="mas" value="+">
+            <div class="subtotal">
+                <p>$2.500</p>
+                <img class="tachito" src="./img/tachito.png" alt="carrito">
             </div>
-
-        </div>
-        <div class="subtotal">
-            <p>$2.500</p>
-            <img class="tachito" src="./img/tachito.png" alt="carrito">
-        </div>
-    </article>
-    <!-- Subtotal (sin envío) -->
-    <div class="sub-sin-envio">
-        <p>Subtotal (sin envío):</p>
-    </div>
-    <!-- Métodos de envío -->
-    <form action="" method="GET">
-        <div class="met-envio">
-            <p><img src="./img/camioncito.png" alt="camioncito"> Métodos de envío</p>
-            <div class="calcular">
-                <input type="text" name="codigo-postal" id="codigo-postal" value="Tu código postal">
-                <input type="button" name="calcular" id="calcular" value="CALCULAR">
+        </article>
+    
+        <article>
+            <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
+            <div class="detail">
+                <p id="nombre">Nombre del vino</p>
+                <p id="precio">$2.500</p>
+                <div class="cant">
+                    <input type="button" name="menos" id="buttons" class="menos" value="-">
+                    <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
+                    <input type="button" name="mas" id="buttons" class="mas" value="+">
+                </div>
+    
             </div>
+            <div class="subtotal">
+                <p>$2.500</p>
+                <img class="tachito" src="./img/tachito.png" alt="carrito">
+            </div>
+        </article>
+        <!-- Subtotal (sin envío) -->
+        <div class="sub-sin-envio">
+            <p>Subtotal (sin envío):</p>
         </div>
-    </form>
-
-    <div class="total">
-        <h4>Total:</h4>
-        <h4>$5.000</h4>
-    </div>
-    <div class="fin">
-        <input type="button" name="mas" id="mas" value="Ver más productos">
-        <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
-    </div>
-    </section>
+        <!-- Métodos de envío -->
+        <form action="" method="GET">
+            <div class="met-envio">
+                <p><img src="./img/camioncito.png" alt="camioncito"> Métodos de envío</p>
+                <div class="calcular">
+                    <input type="text" name="codigo-postal" id="codigo-postal" value="Tu código postal">
+                    <input type="button" name="calcular" id="calcular" value="CALCULAR">
+                </div>
+            </div>
+        </form>
+    
+        <div class="total">
+            <h4>Total:</h4>
+            <h4>$5.000</h4>
+        </div>
+        <div class="fin">
+            <input type="button" name="mas" id="mas" value="Ver más productos">
+            <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
+        </div>
+        </section>
+    </main>
     <footer>
         <div class="footer-description">
             <p>© 2021. Bodegas Monsape - Mendoza, Argentina.</p>
