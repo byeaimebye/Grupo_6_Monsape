@@ -12,8 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
-
+    <script src="/javascripts/carousel.js" defer></script>
     <link rel="stylesheet" href="./stylesheets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body class="home">
     <header class="home">
@@ -49,10 +52,56 @@
     <main class="home">
         <div class="texto-home">
             <img src="./img/logomon.svg" alt="">
-            <h1>Soñamos el tiempo y lo encontramos. Tenemos historia y tradición, pero sobre todo, futuro.</h1>
+            <h1>Soñamos el tiempo y lo encontramos.</h1>
+            <h1>Tenemos historia y tradición, pero sobre todo, futuro.</h1> 
         </div>
-        <div class="supuesto-slider">
-          <img src="./img/ComiteWines-Foto-_MISEREREOK-IMG_5115 5.png" alt=""> 
+       
+       
+       
+        <!-- CAROUSEL -->
+        <section class = "carousel-container">
+
+            <div class="nuestros-vinos">
+                <h4>NUESTROS VINOS</h1>
+            </div>
+            
+            <div class="slides fade">
+                <img src="./img/carousel1.png" alt="">
+            </div>
+
+            <div class="slides fade">
+                <img src="./img/carousel2.png" alt="">
+            </div>
+
+            <div class="slides fade">
+                <img src="./img/carousel3.png" alt="">
+            </div>
+
+            <div class="slides fade">
+                <img src="./img/carousel4.png" alt="">
+            </div>
+         <!--  previous and next -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </section>
+        <!-- dots -->
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <!-- CAROUSEL ENDS -->
+        <div class="linkeables-tablet">
+            <div>
+            <img src="./img/Frame 10.png" alt="">
+        </div>
+        <div>
+            <img src="./img/Frame 7.png" alt="">
+        </div>
+        <div>
+            <img src="./img/Frame 9.png" alt="">
+        </div>
         </div>
         <div class="linkeables">
         <div id="box1">
