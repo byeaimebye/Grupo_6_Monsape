@@ -1,11 +1,11 @@
-body {
-    background-color: black;
-    background-image: url(../img/Background.png);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
+/* body { */
+/*     background-color: black; */
+/*     background-image: url(../img/Background.png); */
+/*     background-size: cover; */
+/*     display: flex; */
+/*     justify-content: center; */
+/*     margin: 0 auto; */
+/* } */
 
 .difu {
     background-color: gainsboro;

@@ -1,6 +1,6 @@
 @import url("header.css");
-@import url("productCart.css");
-@import url("productDetail.css");
+/* @import url("productCart.css"); */
+/* @import url("productDetail.css"); */
 @import url("register.css");
 @import url("viewAdmin.css");
 @import url("footer.css");
@@ -8,9 +8,11 @@
 @import url("carouselTienda1.css");
 @import url("carouselTienda2.css");
 @import url("login.css");
-@import url("home.css");
+ @import url("home.css"); 
+ @import url("ingreso.css"); 
 
 :root{
+    
     --color-grisOscuro: #5C5A5A;
     --color-rojoVino: #56070C;
     --color-grisBotones: #C4C4C4;
