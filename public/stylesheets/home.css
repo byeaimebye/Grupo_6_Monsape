@@ -39,7 +39,7 @@ body.home{
     background-attachment: fixed;
 }
 main.home{
-    height: 1300px;
+    height: 100%;
 } 
 
 main.home .texto-home{
@@ -102,42 +102,49 @@ main.home .texto-home img{
         z-index: -1;
         
     }
-    main.home .linkeables #box1 h2{
+    main.home .linkeables #box1 button a{
         position: absolute;
         bottom: 40%;
         color: white;
         font-family: 'Rosarivo', serif;
         font-weight: lighter;
         text-align: center;
+        text-decoration: none;
+        font-size: 20px;
     }
     main.home .linkeables #box2{
         position: relative;
         z-index: -1;
     }
-    main.home .linkeables #box2 h2{
+    main.home .linkeables #box2 button a{
         position: absolute;
         bottom: 40%;
         color: white;
         font-family: 'Rosarivo', serif;
         font-weight: lighter;
         text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        left: 10%;
 
     }
 
-    main.home .vacaciones{
-        background-image: url("../img/pexels-taryn-elliott-7607996.jpg");
-        background-position: center center; 
+    main.home .vacaciones{   
+        background-image: url(../img/pexels-taryn-elliott-7607996.jpg);
+        background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 15%;
-         background-attachment: fixed; 
-        margin-top: 20px;
+        height: 24rem;
+        background-attachment: fixed;
+        margin-top: 22px;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        /* margin-bottom: 101px; */
     }
+    
 
     main.home .vacaciones h3{
         background-color: rgba(151, 156, 146, 0.3) ;
@@ -159,7 +166,7 @@ main.home .texto-home img{
   /* Carousel container */
 
 .carousel-container {
-    max-width: 100%;
+    max-width: 1000px;
     position: relative;
     margin: 20px auto;
     z-index: -1;
@@ -181,14 +188,14 @@ main.home .texto-home img{
 
 /* Botones de anterior y siguiente */
 
-.prev, .next {
+.carousel-container .prev, .carousel-container .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: var(--dark-blue);
+    color: var(--color-rojoVino);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -204,7 +211,7 @@ main.home .texto-home img{
 
 /* En hover, agrega un fondo con transparencia */
 
-.prev:hover, .next:hover {
+.carousel-container .prev:hover, .carousel-container .next:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -243,7 +250,21 @@ main.home .texto-home img{
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
 }
+
+/* Se rompen linkeables QUERY HELP*/
+@media(min-width: 389px){
+    main.home .linkeables #box2 button a{
+        left: 12%;
+        font-size: 32px ;
+    }
+    main.home .linkeables #box1 button a{
+        left: 5%;
+font-size: 32px ;
+
+}}
     /*  query tablet   */
+
+
 @media(min-width: 768px){
    header.home {
        height: 105px;
@@ -301,7 +322,7 @@ main.home .linkeables{
 }
 main.home .vacaciones{
     margin-top: 0px;
-    height: 50%;
+    height: 41rem;
 }
 
 }
@@ -309,6 +330,7 @@ main.home .vacaciones{
     /* query desktop  */
 
 @media (min-width: 1000px){
+
 
 header.home .modal-burger{
     display: grid;
@@ -331,5 +353,13 @@ header.home .carrito-home img{
  main.home .texto-home{
      height: 650px;
    
+}
+main.home .texto-home h1{
+    font-size: 25px;
+    width: 70%;
+    margin-top: 26px;
+}
+main.home .nuestros-vinos h4{
+    font-size: 25px;
 }
 }
