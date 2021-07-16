@@ -1,0 +1,543 @@
+ul{
+    list-style: none;
+}
+.body-tienda{
+    background-color: white;
+    font-weight: bolder;
+}
+.frase p{
+    font-size: 14px;
+}
+.main-tienda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+/*frase*/
+.frase{
+    margin-top: 10px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.frase h4{
+    font-weight: bolder;
+}
+
+.frase hr{
+    width: 80%;
+    align-self: center;
+    background: var(--color-rojoVino); 
+    margin-bottom: 20px;   
+}
+
+/*filtro de productos*/
+.filtro-de-productos{
+    margin: 0 10px 10px 20px;
+
+}
+.filtro-de-productos select{
+    font-weight: bolder;
+    background-color: var(--color-grisBotones);
+}
+
+/*categorias principales*/
+.categorias-principales{
+    display: none;
+}
+/*-----------------------MAIN---------------------*/
+section.products{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*producto y su descripcion (article)*/
+.products .product-container{
+    background-color: var(--color-grisBotones);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 6px;
+    max-width: 320px;
+    margin-bottom: 25px;
+}
+/*imagen del producto*/
+.products .product-container .imagen-producto{
+    width: 98%;
+    height: 70%;
+    border-radius: 4px;
+    margin-bottom: 7px;
+}
+/*etiqueta de descuento*/
+.products .product-container .descuento-porcentaje{
+    background-color: var(--color-rojoVino);
+    border-radius: 0 4px;
+    color: white;
+    font-size: 0.8rem;
+    height: 34px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/*imagen de una caja*/
+.products .product-container .caja-de-vino{
+    position: absolute;
+    top: 48%;
+    right: 7%;
+}
+.caja-de-vino .caja{
+    width: 40px;
+    height: 40px;
+}
+.caja-de-vino .cantidad-vinos{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/*descripcion producto*/
+.products .product-container .descripcion-producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products .product-container .descripcion-producto .precio-por-caja{
+    font-size: 13px;
+    color: var(--color-rojoVino);
+    margin-bottom: 6px;
+}
+.products .product-container .descripcion-producto .nombre-producto{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/*descuento y precio*/
+.products .product-container .descuento-y-precio{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+.products .product-container .descuento-y-precio .descuento{
+    margin-right: 12px;
+    text-decoration: line-through;
+}
+.products .product-container .descuento-y-precio .precio{
+    color: var(--color-rojoVino);
+    font-size: 18px;
+}
+
+/*botón agregar a carrito*/
+
+.products .product-container .agregar-producto-al-carrito{
+    background-color: var(--color-rojoVino);
+    border-radius: 0.5rem; 
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);   
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 2.2rem;
+    text-transform: uppercase;
+    width: 6.5rem; 
+    margin-bottom: 8px;
+}
+/*lo que ofece monsape MOBILE*/
+.monsape-ofrece{
+    display: none;
+}
+
+/*SLIDER MOBILE*/
+.slides1 .envio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.slides1 .envio p{
+    margin-bottom: 10px;
+}
+
+.slides1 .tarjetas-credito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.slides1 .tarjetas-credito .tarjetas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.slides1 .satisfaccion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.slides1 .satisfaccion p{
+    margin-bottom: 10px;
+}
+
+.tarjetas img,
+.envio img,
+.satisfaccion img{
+    width: 40px;
+    height: 40px;
+}
+
+
+/*------------------------------- MEDIA QUERIES -------------------------------*/
+
+/*578px*/
+@media(min-width: 578px){
+    .frase h4{
+        font-size: 20px;
+    }
+    .frase p{
+        font-size: 16px;
+    }
+    .main-tienda{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   
+    /*filtro de productos*/
+    .filtro-de-productos{
+        margin: 0 10px 15px 60px;    
+    }
+        
+    /*categorias principales*/
+    .categorias-principales{
+        display: none;
+    }
+    /*-----------------------MAIN---------------------*/
+    section.products{
+        width: 92%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    /*producto y su descripcion (article)*/
+    .products .product-container{
+        max-width: 350px;        
+        width: 44%;
+    }
+   
+    .products .product-container .descripcion-producto .precio-por-caja{
+        font-size: 14px;
+    }
+   
+    /*botón agregar a carrito*/
+    
+    .products .product-container .agregar-producto-al-carrito{
+        height: 2.3rem;
+        width: 6.6rem;    
+    }
+    /*lo que ofece monsape MOBILE*/
+    .monsape-ofrece{
+        display: none;
+    }
+    
+    /*SLIDER MOBILE*/
+    .slides1 .envio p,
+    .slides1 .tarjetas-credito p,
+    .slides1 .satisfaccion p{
+        font-size: 20px;
+    }
+    .slides1 .envio .camion img,
+    .slides1 .tarjetas-credito .tarjetas img,
+    .slides1 .satisfaccion .copa-con-vino img{
+        width: 60px;
+        height: 50px;
+    }
+    
+    .slides1 .tarjetas-credito{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 70px;
+        justify-content: space-between;
+    }
+    
+    .slides1 .tarjetas-credito .tarjetas{
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;        
+    }
+}
+
+/*.............TABLET 768px...............*/
+
+@media(min-width: 768px){
+    .frase h4{
+        font-size: 24px;
+    }
+    .frase p{
+        font-size: 20px;
+    }
+    .main-tienda{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   
+    /*filtro de productos*/
+    .filtro-de-productos{
+        margin: 0 10px 15px 80px;
+        height: 40px; 
+        font-size: 20px;   
+    }
+    .filtro-de-productos select{
+        height: 25px;
+    }
+        
+    /*categorias principales*/
+    .categorias-principales{
+        display: none;
+    }
+    /*-----------------------MAIN---------------------*/
+    section.products{
+        width: 98%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    /*producto y su descripcion (article)*/
+    .products .product-container{       
+        width: 32%;
+    }
+    /*lo que ofece monsape MOBILE*/
+    .monsape-ofrece{
+        display: none;
+    }
+    
+    /*SLIDER MOBILE*/
+    .slides1 .envio p,
+    .slides1 .tarjetas-credito p,
+    .slides1 .satisfaccion p{
+        font-size: 25px;
+    }
+    .slides1 .envio .camion img,
+    .slides1 .tarjetas-credito .tarjetas img,
+    .slides1 .satisfaccion .copa-con-vino img{
+        width: 70px;
+        height: 60px;
+    }
+    span.dot1{
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/*.............DESKTOP 1024px...............*/
+
+@media(min-width: 1024px){
+    .frase{
+        height: 150px;
+        margin-top: 30px;
+    }
+    .frase h4{
+        font-size: 26px;
+    }
+    .frase p{
+        font-size: 22px;
+    }
+    .main-tienda{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+   
+    /*filtro de productos*/
+    .filtro-de-productos{
+        margin: 0 10px 15px 100px;
+        height: 40px; 
+        font-size: 22px;   
+    }
+    .filtro-de-productos select{
+        height: 28px;
+    }
+        
+    /*categorias principales*/
+    .categorias-principales{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+        position: relative;
+        top: -720px;
+    }
+    .categorias-principales h5{
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+    .categorias-principales li{
+        margin-bottom: 7px;
+    }
+
+    /*-----------------------MAIN---------------------*/
+    section.products{
+        width: 98%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    /*producto y su descripcion (article)*/
+    .products .product-container{
+        max-width: 350px;        
+        width: 32%;
+    }
+    
+    /*SLIDER MOBILE*/
+    .carousel-container1,
+    .dots1{
+        display: none;
+    }
+
+    /*lo que ofece monsape MOBILE*/
+    .monsape-ofrece{
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        gap: 25px;
+        margin: 30px 25px;
+    }
+    
+    .envio,
+    .tarjetas-credito,
+    .satisfaccion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .envio p,
+    .tarjetas-credito p,
+    .satisfaccion p{
+        font-size: 18px;
+    }
+    .envio .camion img,
+    .tarjetas-credito .tarjetas img,
+    .satisfaccion .copa-con-vino img{
+        width: 60px;
+        height: 50px;
+        margin-top: 5px;
+    }    
+    .tarjetas-credito .tarjetas{
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;        
+    }
+}
+
+/*.............DESKTOP 1200px en adelante...............*/
+
+@media(min-width: 1200px){
+    
+    .frase h4{
+        font-size: 30px;
+    }
+    .frase p{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .main-tienda{
+        display: grid;
+        grid-template-columns: 0.8fr 4fr;
+    }
+   
+    /*filtro de productos*/
+    .filtro-de-productos{
+        margin: 0 10px 15px 10%;
+        height: 50px; 
+        font-size: 24px;   
+    }
+    .filtro-de-productos select{
+        height: 30px;
+    }
+        
+    /*categorias principales*/
+    .categorias-principales{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+        position: relative;
+        top: -800px;
+    }
+    .categorias-principales h5{
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    .categorias-principales li{
+        margin-bottom: 10px;
+    }
+
+    /*-----------------------MAIN---------------------*/
+    section.products{
+        width: 98%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    /*producto y su descripcion (article)*/
+    .products .product-container{
+        max-width: 350px;        
+        width: 32%;
+    }
+    
+    /*SLIDER MOBILE*/
+    .carousel-container1,
+    .dots1{
+        display: none;
+    }
+
+    /*lo que ofece monsape MOBILE*/
+    .monsape-ofrece{
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        gap: 25px;
+        margin: 30px 25px;
+    }
+    
+    .envio,
+    .tarjetas-credito,
+    .satisfaccion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .envio p,
+    .tarjetas-credito p,
+    .satisfaccion p{
+        font-size: 18px;
+    }
+    .envio .camion img,
+    .tarjetas-credito .tarjetas img,
+    .satisfaccion .copa-con-vino img{
+        width: 60px;
+        height: 50px;
+        margin-top: 5px;
+    }    
+    .tarjetas-credito .tarjetas{
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;        
+    }
+}
