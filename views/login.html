@@ -1,12 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Mobile</title>
+    <script src="https://kit.fontawesome.com/7968cc1663.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rosarivo&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/styles.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <header>
+        <!-- VENTANA MODAL MOBILE -->
+        <div class="modal-burger">
+            <button onclick="openModal()">
+                <div class="burger">
+                    <img src="./img/Vector.svg" alt="">
+            </button>
+        </div>
+        </div>
+        <div class="modal" id="modalAdd">
+            <div class="modal-conteiner">
+                <div class="close-modal" onclick="closeModal()">X</div>
+                <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
+                <a href="#">INICIO</a>
+                <a href="#">PRODUCTOS</a>
+                <a href="#">COMO COMPRAR</a>
+                <a href="#">QUIENES SOMOS</a>
+                <a href="#">INICIAR SESION</a>
+                <a href="#">REGISTRATE</a>
+                <!-- <button onclick="closeModal()">Cancelar</button> -->
+            </div>
+        </div>
+        <script src="./javascripts/detail.js"></script>
+        <!-- FIN VENTANA MODAL MOBILE -->
+        <!-- Lupa para desktop -->
+        <div class="buscador">
+            <input type="text" placeholder="Buscador" class="buscador">
+            <img src="./img/lupa.svg" alt="">
+        </div>
+        <!-- ------------------------- -->
+        <!-- titulo y logo -->
+        <div class="logo">
+            <h1>MONSAPE</h1>
+            <img src="./img/logomon.svg" alt="">
+        </div>
+        <!-- ------------------- -->
+        <!-- anclas de desktop -->
+        <div class="anclas">
+            <!--  -----------------MODAL DESKTOP------------- -->
+            <button onclick="openModal2()">Ingresar</button>
+            <div class="modal2" id="modalAdd2">
+                <div class="modal-container2">
+                    <div class="close-modal2" onclick="closeModal2()">X</div>
+                    <h1>INICIAR SESION</h1>
+        <label for="email">Ingrese su correo electronico:</label>
+        <input type="email" name="tel" id="email">
+        <label for="password">Ingrese su contraseña:</label>
+            <input type="password" name="password" id="password">
+        <p>¿Aún no tienes cuenta? <a href="#">REGISTRATE</a> </p>
+            <button>INICIAR SESION</button>   
+                </div>
+            </div>
+            <script src="./javascripts/detail2.js"></script>
+            <!-------------- MODAL DESKTOP ENDS------------>
+            <button>Registrarse</button>
+            <img src="./img/carrito-de-compras (1) 1.svg" alt="">
+        </div>
+    </header>
+    <!-- nav de mobile -->
+    <nav class="header-nav">
+        <div class="search-mobile">
+            <form action="/">
+                <input type="search" placeholder="Buscador" class="search">
+                <button><img src="./img/lupa.svg"alt=""></button>
+            </form>
+        </div>
+        <div class="product-nav">
+            <h3>PRODUCTOS</h3><i class="fas fa-chevron-down"></i>
+        </div>
+    </nav>
+    <nav class="desktop-nav">
+        <a href="#">INICIO</a>
+        <a href="#">PRODUCTOS</a>
+        <a href="#">COMO COMPRAR</a>
+        <a href="#">QUIENES SOMOS</a>
+        <a href="#">POLITICA DE DEVOLUCION</a>
+        <a href="#">CONTACTO</a>
+    </nav>
+
+
+    <main class="main-login-mobile">
+        
+        <h1>INICIAR SESION</h1>
+        <label for="email">Ingrese su correo electronico:</label>
+        <input type="email" name="tel" id="email">
+        <label for="password">Ingrese su contraseña:</label>
+            <input type="password" name="password" id="password">
+    
+        <p>¿Aún no tienes cuenta? <a href="#">REGISTRATE</a> </p>
+            <button>INICIAR SESION</button> 
+        
+    </main>
+
+
 </body>
 </html>

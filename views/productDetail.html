@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
+    <!-- Javascript -->
+    <script src="./javascripts/detail.js" defer></script>
+    <script src="./javascripts/detail2.js" defer></script>
+
     <link rel="stylesheet" href="./stylesheets/styles.css">
 </head>
 
@@ -29,16 +33,16 @@
         <div class="modal" id="modalAdd">
             <div class="modal-conteiner">
                 <div class="close-modal" onclick="closeModal()">X</div>
+                <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
                 <a href="#">INICIO</a>
                 <a href="#">PRODUCTOS</a>
                 <a href="#">COMO COMPRAR</a>
                 <a href="#">QUIENES SOMOS</a>
-                <a href="#">POLITICA DE DEVOLUCION</a>
-                <a href="#">CONTACTO</a>
+                <a href="#">INICIAR SESION</a>
+                <a href="#">REGISTRATE</a>
                 <!-- <button onclick="closeModal()">Cancelar</button> -->
             </div>
         </div>
-        <script src="./javascripts/detail.js"></script>
         <!-- FIN VENTANA MODAL MOBILE -->
         <!-- Lupa para desktop -->
         <div class="buscador">
@@ -54,7 +58,21 @@
         <!-- ------------------- -->
         <!-- anclas de desktop -->
         <div class="anclas">
-            <button>Ingresar</button>
+            <!--  -----------------MODAL DESKTOP------------- -->
+            <button onclick="openModal2()">Ingresar</button>
+            <div class="modal2" id="modalAdd2">
+                <div class="modal-container2">
+                    <div class="close-modal2" onclick="closeModal2()">X</div>
+                    <h1>INICIAR SESION</h1>
+        <label for="email">Ingrese su correo electronico:</label>
+        <input type="email" name="tel" id="email">
+        <label for="password">Ingrese su contraseña:</label>
+            <input type="password" name="password" id="password">
+        <p>¿Aún no tienes cuenta? <a href="#">REGISTRATE</a> </p>
+            <button>INICIAR SESION</button>   
+                </div>
+            </div>
+            <!--        ------------------ MODAL DESKTOP ENDS------------>
             <button>Registrarse</button>
             <img src="./img/carrito-de-compras (1) 1.svg" alt="">
             <!--  -------------- -->
@@ -64,8 +82,8 @@
     <nav class="header-nav">
         <div class="search-mobile">
             <form action="/">
-                <input type="search" placeholder="Buscador" class="search"><button><img src="./img/lupa.svg"
-                        alt=""></button>
+                <input type="search" placeholder="Buscador" class="search">
+                <button><img src="./img/lupa.svg"alt=""></button>
             </form>
         </div>
         <div class="product-nav">

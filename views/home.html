@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <script src="https://kit.fontawesome.com/7968cc1663.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rosarivo&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
+    <script src="/javascripts/carousel.js" defer></script>
+    <link rel="stylesheet" href="./stylesheets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<script src="./javascripts/detail.js" defer></script>
+</head>
+<body class="home">
+    <header class="home">
+    <div class="modal-burger">
+        <button onclick="openModal()">
+            <div class="burger">
+                <img src="./img/Vector.svg" alt="">
+        </button>
+    </div>
+    </div>
+    <div class="modal" id="modalAdd">
+        <div class="modal-conteiner">
+            <div class="close-modal" onclick="closeModal()">X</div>
+            <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
+            <a href="#">INICIO</a>
+            <a href="#">PRODUCTOS</a>
+            <a href="#">COMO COMPRAR</a>
+            <a href="#">QUIENES SOMOS</a>
+            <a href="#">INICIAR SESION</a>
+            <a href="#">REGISTRATE</a>
+            <!-- <button onclick="closeModal()">Cancelar</button> -->
+        </div>
+    </div>
+    <!-- FIN VENTANA MODAL MOBILE -->
+    <div class="logo-home">
+        <h1>MONSAPE</h1>
+    </div>
+    <div class="carrito-home">
+        <img src="./img/carrito-de-compras (1) 1.svg" alt="">
+    </div>
+</header>
+    <main class="home">
+        <div class="texto-home">
+            <img src="./img/logomon.svg" alt="">
+            <h1>Soñamos el tiempo y lo encontramos.</h1>
+            <h1>Tenemos historia y tradición, pero sobre todo, futuro.</h1> 
+        </div>
+       
+       
+       
+        <!-- CAROUSEL -->
+        <section class = "carousel-container">
+
+            <div class="nuestros-vinos">
+                <h4>NUESTROS VINOS</h1>
+            </div>
+            
+            <div class="slides fade">
+                <img src="./img/carousel1.png" alt="">
+            </div>
+
+            <div class="slides fade">
+                <img src="./img/carousel2.png" alt="">
+            </div>
+
+            <div class="slides fade">
+                <img src="./img/carousel3.png" alt="">
+            </div>
+
+            <div class="slides fade">
+                <img src="./img/carousel4.png" alt="">
+            </div>
+         <!--  previous and next -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </section>
+        <!-- dots -->
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <!-- CAROUSEL ENDS -->
+        <div class="linkeables-tablet">
+            <div>
+            <img src="./img/Frame 10.png" alt="">
+        </div>
+        <div>
+            <img src="./img/Frame 7.png" alt="">
+        </div>
+        <div>
+            <img src="./img/Frame 9.png" alt="">
+        </div>
+        </div>
+        <div class="linkeables">
+        <div id="box1">
+           <img src="./img/MOBILE1.svg" alt="">
+           <h2>SOBRE NOSOTROS</h2>
+        </div>
+        <div id="box2">
+           <img src="./img/MOBILE2.svg" alt="">
+           <h2>TIENDA OFICIAL</h2>
+        </div>
+        </div>
+        <div class="vacaciones">
+          <h3>VACIONES EN MONSAPE</h3>
+          <button>Mas información</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

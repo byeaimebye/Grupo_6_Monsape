@@ -1,0 +1,335 @@
+header.home{
+    background-image: none;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0,0, 0.5);
+    padding: 10px;
+}
+header.home img{
+    height: 27%;
+    width: 27%;
+}
+header.home h1{
+
+    font-weight: lighter;
+    font-size: 22px;
+    color: white;
+    font-family: 'Rosarivo', serif;
+}
+header.home .burger img{
+    width: 80%;
+    height: 80%;
+}
+header.home .carrito-home img{
+    width: 39px;
+    height: 31px;
+    background-color: rgba(0, 0,0, 0.5);
+    padding: 5px;
+    border-radius: 55px;
+}
+body.home{
+   /*  margin-top: 20px; */
+    background-image: url("../img/fondodesktop.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: max-content;
+    background-attachment: fixed;
+}
+main.home{
+    height: 1300px;
+} 
+
+main.home .texto-home{
+    margin-top: 0px; 
+    text-align: center;
+    font-size: 8px;
+    color: white;
+    background-image: url("/img/allblack.jpg");
+    background-color: rgba(0, 0,0, 0.3);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 350px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    color: white;
+}
+main.home .texto-home h1{
+    font-family: 'Cinzel', serif;
+    font-weight: lighter;
+    margin-top: 0px;
+}
+main.home .texto-home img{
+    margin-top: 118px;
+    width: 30%;
+    height: 30%;
+    margin-bottom: 20px;
+}
+ main.home .nuestros-vinos h4{
+    font-family: 'Cinzel', serif;
+     text-align: center;
+     color: white;
+     margin-top: 10px;
+     font-weight: lighter;
+     background-color: rgba(0, 0,0, 0.5);
+     margin-bottom: 0px;
+ }
+    
+    
+    
+
+    main.home .linkeables-tablet{
+        display: none;
+    }
+    main.home .linkeables{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        
+        
+    }
+    main.home .linkeables img{
+        /* height: 100%; */
+        width: 100%;
+        
+    }
+    main.home .linkeables #box1{
+        position: relative; 
+        z-index: -1;
+        
+    }
+    main.home .linkeables #box1 h2{
+        position: absolute;
+        bottom: 40%;
+        color: white;
+        font-family: 'Rosarivo', serif;
+        font-weight: lighter;
+        text-align: center;
+    }
+    main.home .linkeables #box2{
+        position: relative;
+        z-index: -1;
+    }
+    main.home .linkeables #box2 h2{
+        position: absolute;
+        bottom: 40%;
+        color: white;
+        font-family: 'Rosarivo', serif;
+        font-weight: lighter;
+        text-align: center;
+
+    }
+
+    main.home .vacaciones{
+        background-image: url("../img/pexels-taryn-elliott-7607996.jpg");
+        background-position: center center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 15%;
+         background-attachment: fixed; 
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main.home .vacaciones h3{
+        background-color: rgba(151, 156, 146, 0.3) ;
+        padding: 10px;
+        border-radius: 55px;
+        font-family: 'Rosarivo', serif;
+        font-weight: lighter;
+        margin-bottom: 10px;
+    }
+    main.home .vacaciones button{
+        padding: 8px;
+    background-color: #C4C4C4;
+    border-radius: 55px;
+    font-weight: bolder;
+    cursor: pointer;
+    }
+
+  /*   CAROUSEL */
+  /* Carousel container */
+
+.carousel-container {
+    max-width: 100%;
+    position: relative;
+    margin: 20px auto;
+    z-index: -1;
+}
+
+/* Esconde las imágenes por defecto */
+
+.slides {
+    display: none;
+} 
+
+.slides img {
+    width: 100%;
+}
+
+.dots {
+    text-align: center;
+}
+
+/* Botones de anterior y siguiente */
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Posición del boton siguiente, a la derecha */
+
+.next {
+    right: 0;
+}
+
+/* En hover, agrega un fondo con transparencia */
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Puntos indicadores */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot-active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fade animation */
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+    /*  query tablet   */
+@media(min-width: 768px){
+   header.home {
+       height: 105px;
+   }
+   header.home h1{
+       font-size: 35px;
+   }
+   header.home .burger img{
+    width: 100%;
+    height: 100%;
+}
+ header.home .carrito-home img{ 
+    width: 54px;
+    height: 42px;
+    background-color: rgba(0, 0,0, 0.5);
+    padding: 10px;
+    border-radius: 91px;
+} 
+main.home .texto-home{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    height: 415px;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    align-items: center;
+    
+}
+main.home .texto-home h1{
+    font-size: 19px;
+    width: 70%;
+}
+
+main.home .texto-home img{
+    height: 20%;
+    margin-top: 25%;
+}
+main.home .supuesto-slider img{
+    height: 270px;
+
+}
+main.home .linkeables-tablet{
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+main.home .linkeables-tablet img{
+    width: 100%;
+}
+
+main.home .linkeables{
+    display:none
+}
+main.home .vacaciones{
+    margin-top: 0px;
+    height: 50%;
+}
+
+}
+
+    /* query desktop  */
+
+@media (min-width: 1000px){
+
+header.home .modal-burger{
+    display: grid;
+
+}
+header.home .burger{
+    display: flex;
+    width: max-content;
+    height: max-content;
+}
+header.home .carrito-home img{
+    width: 25%;
+    height: 45px;
+    padding: 8px;
+}
+.modal-burger button{
+    margin-left: 60px;
+}
+
+ main.home .texto-home{
+     height: 650px;
+   
+}
+}
