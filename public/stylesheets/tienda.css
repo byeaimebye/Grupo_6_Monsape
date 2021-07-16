@@ -94,15 +94,15 @@ section.products{
     right: 7%;
 }
 .caja-de-vino .caja{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 .caja-de-vino .cantidad-vinos{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 23.5px;
+    right: 29px;
 }
 
 /*descripcion producto*/
@@ -143,7 +143,7 @@ section.products{
 
 .products .product-container .agregar-producto-al-carrito{
     background-color: var(--color-rojoVino);
-    border-radius: 0.5rem; 
+    border-radius: 1.5rem; 
     box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);   
     color: white;
     cursor: pointer;
@@ -152,6 +152,13 @@ section.products{
     text-transform: uppercase;
     width: 6.5rem; 
     margin-bottom: 8px;
+}
+.products .product-container .agregar-producto-al-carrito:hover{
+    transition: 1s all;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-rojoVino);
+    border: 0.5px solid var(--color-rojoVino);
+    font-weight: bolder;
 }
 /*lo que ofece monsape MOBILE*/
 .monsape-ofrece{
@@ -474,70 +481,15 @@ section.products{
         
     /*categorias principales*/
     .categorias-principales{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 10px;
-        position: relative;
-        top: -800px;
+        top: -40%;
     }
-    .categorias-principales h5{
-        font-size: 24px;
-        margin-bottom: 8px;
-    }
-    .categorias-principales li{
-        margin-bottom: 10px;
-    }
-
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
     }
     /*producto y su descripcion (article)*/
     .products .product-container{
         max-width: 350px;        
-        width: 32%;
+        width: 24%;
     }
-    
-    /*SLIDER MOBILE*/
-    .carousel-container1,
-    .dots1{
-        display: none;
-    }
-
-    /*lo que ofece monsape MOBILE*/
-    .monsape-ofrece{
-        display: grid;
-        grid-template-columns: repeat(3, 33%);
-        gap: 25px;
-        margin: 30px 25px;
-    }
-    
-    .envio,
-    .tarjetas-credito,
-    .satisfaccion{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .envio p,
-    .tarjetas-credito p,
-    .satisfaccion p{
-        font-size: 18px;
-    }
-    .envio .camion img,
-    .tarjetas-credito .tarjetas img,
-    .satisfaccion .copa-con-vino img{
-        width: 60px;
-        height: 50px;
-        margin-top: 5px;
-    }    
-    .tarjetas-credito .tarjetas{
-        grid-template-columns: 0.5fr 0.5fr 0.5fr;        
-    }
-}
+}   
