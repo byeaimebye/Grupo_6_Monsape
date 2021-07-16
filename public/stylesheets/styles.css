@@ -5,3 +5,10 @@
 @import url("tienda.css");
 @import url("carouselTienda1.css");
 @import url("carouselTienda2.css");
+
+:root{
+    --color-grisOscuro: #5C5A5A;
+    --color-rojoVino: #56070C;
+    --color-grisBotones: #C4C4C4;
+    --color-fondoFutter: #383737;
+}
