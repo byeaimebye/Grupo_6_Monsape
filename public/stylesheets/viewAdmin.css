@@ -1,0 +1,38 @@
+/*Descripción del producto*/
+.textarea-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+/*estilos del textarea*/
+.textarea-container textarea{
+    background-color: #e4d8db;
+    border: 1px solid;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+/*imagenes del producto*/
+.agregar-imagenes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.agregar-imagenes span{
+    text-align: center;
+    margin-bottom: 5px;    
+}
+
+/*Media queries*/
+/*Tablet*/
+
+@media screen and (min-width: 475px){
+    .textarea-container textarea{        
+        width: 80%;
+    }
+}

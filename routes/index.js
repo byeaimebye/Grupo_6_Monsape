@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '.././views/index.html'));  
 });
 
-router.get('/footer', function(req, res, next){
-  res.sendFile(path.join(__dirname,'.././views/footer.html'))
+router.get('/tienda', function(req, res, next){
+  res.sendFile(path.join(__dirname,'.././views/tienda.html'))
 })
 
 router.get('/login', function(req, res, next){
