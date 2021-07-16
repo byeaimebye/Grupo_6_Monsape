@@ -1,10 +1,15 @@
+.body-productDetail {
+    background-color: var(--color-fondo-main);
+}
+
 .main-productDetail {
+    background-color: var(--color-fondo-main);
     margin-top: 55px;
+    padding-bottom: 30px;
     text-align: center;
 }
 
-.main-productDetail img {
-    margin: 0 auto;
+#img-carrito2 {
     top: 2px;
     width: 200px;
 }
@@ -74,7 +79,7 @@
 }
 
 .main-productDetail .botones #agregar {
-    background-color: gray;
+    background-color: var(--color-grisOscuro);
     border-radius: 15px;
     font-size: 16px;
     height: 25px;
@@ -83,7 +88,7 @@
 }
 
 .main-productDetail .botones #costo-envio {
-    background-color: gray;
+    background-color: var(--color-grisOscuro);
     border-radius: 15px;
     display: none;
     font-size: 16px;
@@ -93,7 +98,7 @@
 }
 
 .main-productDetail .botones #confirmar {
-    background-color: rgb(68, 18, 18);
+    background-color: var(--color-rojoVino);
     border-radius: 15px;
     color: white;
     font-size: 16px;
