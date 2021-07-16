@@ -1,0 +1,199 @@
+body main {
+    margin-top: 55px;
+    text-align: center;
+}
+
+body main img {
+    margin: 0 auto;
+    top: 2px;
+    width: 200px;
+}
+
+body main .detalle {
+    margin: 0 50px;
+}
+
+body main .detalle h4 {
+    margin: 20px auto;
+    max-width: 390px;
+    text-align: center;
+}
+
+body main .detalle ul {
+    margin: 20px auto 10px auto;
+    max-width: 390px;
+    text-align: center;
+}
+
+/* Botones de seleccion de cantidad de unidades. */
+
+body main .cant {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 30px auto;
+    padding: 10px;
+    height: 28px;
+    width: 100px;
+}
+
+body main .cant #buttons {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    padding: 1px 3px;
+    height: 22px;
+    width: 24px;
+}
+
+body main .cant .cantidad {
+    border: none;
+    border-radius: 10px;
+    height: 22px;
+    text-align: center;
+    width: 26px;
+}
+
+body main .precio {
+    color: var(--color-rojoVino);
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Botones agregar al carrito, costo de envío y confirmar. */
+
+body main .botones {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+body main .botones #agregar {
+    background-color: gray;
+    border-radius: 15px;
+    font-size: 16px;
+    height: 25px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+body main .botones #costo-envio {
+    background-color: gray;
+    border-radius: 15px;
+    display: none;
+    font-size: 16px;
+    height: 25px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+body main .botones #confirmar {
+    background-color: rgb(68, 18, 18);
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    height: 25px;
+    width: 100px;
+}
+
+@media (min-width: 768px) {
+    body main {
+        text-align: left;
+        display: flex;
+        position: relative;
+    }
+
+    body main .detalle h4,
+    body main .detalle ul {
+        max-width: 520px;
+    }
+
+    body main .detalle h4,
+    body main .botones,
+    body main .cant,
+    body main .detalle ul,
+    body main .precio {
+        position: absolute;
+    }
+
+    body main .detalle ul {
+        border-top: solid 1px black;
+        padding: 10px 5px 5px 0;
+        left: 49%;
+        top: 170px;
+    }
+
+    body main .detalle h4 {
+        font-size: 22px;
+        left: 48.1%;
+    }
+
+    body main .precio {
+        top: 100px;
+        left: 52%;
+    }
+
+    body main .cant {
+        top: 103px;
+        left: 82%;
+    }
+    /* Botones agregar al carrito, costo de envío y confirmar. */
+    body main .botones {/* 
+        border: solid 2px red; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 60px;
+        top: 400px;
+        left: 17%;
+        width: 500px;
+    }
+
+    body main .botones #costo-envio,
+    body main .botones #agregar,
+    body main .botones #confirmar {
+        border-radius: 25px;
+        font-size: 22px;
+        height: 40px;
+        width: 210px;
+    }
+
+    body main .botones #costo-envio {
+        display: block;
+    }
+
+    body main .botones #confirmar {
+        bottom: 0;
+        position: absolute;
+        left: 140px;
+    
+    }
+
+    body main img {
+        margin: 10px 0 295px 5%;
+        width: 300px;
+    }
+}
+
+@media (min-width : 1200px) {
+    body main .botones #confirmar {
+        position: static;
+        margin-top: 0;
+    }
+
+    body main .botones {
+        left: 14%;
+        width: 800px;
+        padding: 0;
+    }
+
+    body main .botones #agregar,
+    body main .botones #costo-envio {
+        margin-top: 10px;
+    }
+}
