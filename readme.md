@@ -1,9 +1,9 @@
-![BODEGAS MONSAPE (3)](https://user-images.githubusercontent.com/84512369/123531796-f5823600-d6dd-11eb-8ac9-cee0a3c126d1.png)
+![BODEGAS MONSAPE (3)](https://user-images.githubusercontent.com/84512369/126018773-242cda44-d917-4ef6-a7b0-5c8a25403b42.png)
 
 
 ## Equipo de desarrollo:
 
-- Aimé Agustina Pelozo: Aspirante a Robotica Industrial, motivada por el diseño y el progreso personal. Algún dia aprenderé a programar.
+- Aimé Agustina Pelozo: Aspirante a Web Developer Full Stack, motivada hace dos años por Lorenzo. El diseño y el progreso personal son mis herramientas de soporte. Algún dia aprenderé a programar.
 
 - Guillermo Sanabria: Desarrollador Full Stack con Node JS y estudiante de primer año de la carrera de Programación y Análisis de Sistemas. Actualmente vivo en la ciudad de Posadas, Misiones. Me siento muy motivado por el curso, tanto es así que cada día estoy más convencido en desarrollarme profesionalmente en el mundo de la programación. 
 
