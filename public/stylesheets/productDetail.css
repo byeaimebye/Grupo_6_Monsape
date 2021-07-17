@@ -5,7 +5,6 @@
 .main-productDetail {
     background-color: var(--color-fondo-main);
     margin-top: 55px;
-    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -25,7 +24,7 @@
 }
 
 .main-productDetail .detalle ul {
-    margin: 20px auto 10px auto;
+    margin: 5px auto 10px auto;
     max-width: 390px;
     text-align: center;
 }
@@ -140,16 +139,15 @@
 
     .main-productDetail .precio {
         top: 100px;
-        left: 52%;
+        left: 60%;
     }
 
     .main-productDetail .cant {
         top: 103px;
-        left: 82%;
+        left: 78%;
     }
     /* Botones agregar al carrito, costo de envío y confirmar. */
-    .main-productDetail .botones {/* 
-        border: solid 2px red; */
+    .main-productDetail .botones {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -186,14 +184,27 @@
 }
 
 @media (min-width : 1200px) {
+    #img-carrito2 {
+        width: 400px;
+    }
+
+    .main-productDetail .precio {
+        left: 62%;
+    }
+
+    .main-productDetail .cant {
+        left: 72%;
+    }
+
     .main-productDetail .botones #confirmar {
         position: static;
         margin-top: 0;
     }
 
     .main-productDetail .botones {
-        left: 14%;
-        width: 800px;
+        left: 40%;
+        margin-top: -60px;
+        width: 700px;
         padding: 0;
     }
 
