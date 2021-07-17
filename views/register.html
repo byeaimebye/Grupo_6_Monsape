@@ -21,16 +21,14 @@
     <header>
         <!-- VENTANA MODAL MOBILE -->
         <div class="modal-burger">
-            <button onclick="openModal()">
-                <div class="burger">
-                    <img src="./img/Vector.svg" alt="">
-            </button>
+        <button onclick="openModal()"><div class="burger">
+        <img src="./img/Vector.svg" alt=""></button>
         </div>
         </div>
         <div class="modal" id="modalAdd">
             <div class="modal-conteiner">
                 <div class="close-modal" onclick="closeModal()">X</div>
-                <a href="#">INICIO</a>
+                <a href="http://localhost:3040/tienda">TIENDA</a>
                 <a href="#">PRODUCTOS</a>
                 <a href="#">COMO COMPRAR</a>
                 <a href="#">QUIENES SOMOS</a>
@@ -40,7 +38,7 @@
             </div>
         </div>
         <script src="./javascripts/detail.js"></script>
-
+        
         <!-- FIN VENTANA MODAL MOBILE -->
         <!-- Lupa para desktop -->
         <div class="buscador">
@@ -50,17 +48,32 @@
         <!-- ------------------------- -->
         <!-- titulo y logo -->
         <div class="logo">
-            <h1>MONSAPE</h1>
-            <img src="./img/logomon.svg" alt="">
+        <h1>MONSAPE</h1>
+        <img src="./img/logomon.svg" alt="">
         </div>
         <!-- ------------------- -->
         <!-- anclas de desktop -->
         <div class="anclas">
-            <button>Ingresar</button>
-            <button>Registrarse</button>
-            <img src="./img/carrito-de-compras (1) 1.svg" alt="">
-            <!--  -------------- -->
-        </div>
+            <!--  -----------------MODAL DESKTOP------------- -->
+            <button onclick="openModal2()">Ingresar</button>
+            <div class="modal2" id="modalAdd2">
+                <div class="modal-container2">
+                    <div class="close-modal2" onclick="closeModal2()">X</div>
+                    <h1>INICIAR SESION</h1>
+        <label for="email">Ingrese su correo electronico:</label>
+        <input type="email" name="tel" id="email">
+        <label for="password">Ingrese su contraseña:</label>
+            <input type="password" name="password" id="password">
+        <p>¿Aún no tienes cuenta? <a href="http://localhost:3040/register">REGISTRATE</a> </p>
+            <button>INICIAR SESION</button>   
+                </div>
+            </div>
+            <script src="./javascripts/detail2.js"></script>
+            <!-------------- MODAL DESKTOP ENDS------------>
+            <!-- <button><a href="http://localhost:3040/register">Registrarse</a></button>-->
+            <a href="http://localhost:3040/productCart"><img src="./img/carrito-de-compras (1) 1.svg" alt=""></a>
+           <!--  -------------- -->
+        </div>        
     </header>
     <!-- nav de mobile -->
     <nav class="header-nav">
