@@ -111,7 +111,12 @@
         display: flex;
         position: relative;
     }
-
+/*     #img-carrito2 { */
+/*         height: 380px; */
+/*         top: 2px; */
+/*         width: 401px; */
+/*     } */
+/*  */
     .main-productDetail .detalle h4,
     .main-productDetail .detalle ul {
         max-width: 520px;
@@ -178,7 +183,7 @@
     }
 
     .main-productDetail img {
-        margin: 10px 0 295px 5%;
+        margin: 10px 0 322px 5%;
         width: 300px;
     }
 }
