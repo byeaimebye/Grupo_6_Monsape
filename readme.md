@@ -1,5 +1,8 @@
 ![BODEGAS MONSAPE (3)](https://user-images.githubusercontent.com/84512369/126018773-242cda44-d917-4ef6-a7b0-5c8a25403b42.png)
 
+## Tablero de Trello:
+
+https://trello.com/b/0ecj7bf5/grupo6
 
 ## Equipo de desarrollo:
 
