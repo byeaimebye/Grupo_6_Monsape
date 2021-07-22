@@ -28,6 +28,7 @@ header.home .carrito-home img{
     background-color: rgba(0, 0,0, 0.5);
     padding: 5px;
     border-radius: 55px;
+    margin-right: 12px;
 }
 body.home{
    /*  margin-top: 20px; */
@@ -162,94 +163,6 @@ main.home .texto-home img{
     cursor: pointer;
     }
 
-  /*   CAROUSEL */
-  /* Carousel container */
-
-.carousel-container {
-    max-width: 1000px;
-    position: relative;
-    margin: 20px auto;
-    z-index: -1;
-}
-
-/* Esconde las imágenes por defecto */
-
-.slides {
-    display: none;
-} 
-
-.slides img {
-    width: 100%;
-}
-
-.dots {
-    text-align: center;
-}
-
-/* Botones de anterior y siguiente */
-
-.carousel-container .prev, .carousel-container .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: var(--color-rojoVino);
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* Posición del boton siguiente, a la derecha */
-
-.next {
-    right: 0;
-}
-
-/* En hover, agrega un fondo con transparencia */
-
-.carousel-container .prev:hover, .carousel-container .next:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Puntos indicadores */
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.dot-active, .dot:hover {
-    background-color: #717171;
-}
-
-/* Fade animation */
-
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-
-@-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-}
 
 /* Se rompen linkeables QUERY HELP*/
 @media(min-width: 389px){
