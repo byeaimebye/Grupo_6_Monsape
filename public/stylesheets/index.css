@@ -1,9 +1,4 @@
-/* .body-ingreso {
-    background-color: green;
-} */
-
 .main-ingreso {
-    border: solid 2px red;
     background-color: black;
     background-image: url(../img/Background.png);
     background-size: cover;
@@ -30,13 +25,20 @@
     justify-content: center;
 }
 
-.main-ingreso .difu .monsape p {
+.main-ingreso .difu .monsape .monsape-title {
     color: white;
     font-size: 36px;
     text-align: center;
     margin-top: 85px;
     margin-bottom: 10px;
     justify-content: center;
+}
+
+.main-ingreso .difu .welcome {
+    color: black;
+    font-size: 18px;
+    margin-top: 45px;
+    text-align: center;
 }
 
 .main-ingreso .difu .monsape .logo-svg img {
@@ -63,7 +65,7 @@
 
 .main-ingreso .difu #año {
     background: rgba(86, 7, 12, 0.5);
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
     font-size: larger;
     font-weight: inherit;
@@ -88,13 +90,8 @@
     width: 100px;
 }
 
-.main-ingreso .difu .welcome {
-    color: black;
-    font-size: 18px;
-    margin-top: 45px;
-}
-
 .main-ingreso .difu .year .adn {
+    font-size: 16px;
     padding-bottom: 10px;
 }
 
