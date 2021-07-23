@@ -64,12 +64,12 @@
                 <div class="modal-container2">
                     <div class="close-modal2" onclick="closeModal2()">X</div>
                     <h1>INICIAR SESION</h1>
-        <label for="email">Ingrese su correo electronico:</label>
-        <input type="email" name="tel" id="email">
-        <label for="password">Ingrese su contraseña:</label>
-            <input type="password" name="password" id="password">
-        <p>¿Aún no tienes cuenta? <a href="/register">REGISTRATE</a> </p>
-            <button>INICIAR SESION</button>   
+                    <label for="email">Ingrese su correo electronico:</label>
+                    <input type="email" name="tel" id="email">
+                    <label for="password">Ingrese su contraseña:</label>
+                    <input type="password" name="password" id="password">
+                    <p>¿Aún no tienes cuenta? <a href="/register">REGISTRATE</a> </p>
+                    <button>INICIAR SESION</button>
                 </div>
             </div>
             <!--        ------------------ MODAL DESKTOP ENDS------------>
@@ -83,7 +83,7 @@
         <div class="search-mobile">
             <form action="/">
                 <input type="search" placeholder="Buscador" class="search">
-                <button><img src="./img/lupa.svg"alt=""></button>
+                <button><img src="./img/lupa.svg" alt=""></button>
             </form>
         </div>
         <div class="product-nav">
@@ -99,36 +99,49 @@
         <a href="#">CONTACTO</a>
     </nav>
     <main class="main-productDetail">
-        <img id="img-carrito2" src="/img/carrito2.jpg" alt="Vino">
-        <div class="detalle">
-            <h4>Ernesto Catena - Almanegra Tinto (misterio) - Blend</h4>
-            <ul>
-                <li>Graduación alcohólica: 13,7%.</li>
-                <li>Presenta un color cereza casi púrpura, de capa media alta.</li>
-                <li>Maduración en barricas de 100% Roble Francés y 40% Roble Nuevo.</li>
-                <li>Presencia de aromas a frutilla, cerezas y membrillos, con notas de vainilla, madera tostada y
-                    especias.</li>
-            </ul>
-        </div>
-        <!-- Botones para regular la cantidad de unidades de producto a adquirir -->
-        <div class="cant">
-            <input type="button" name="menos" id="buttons" class="menos" value="-">
-            <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
-            <input type="button" name="mas" id="buttons" class="mas" value="+">
+
+        <div class="galeria">
+
         </div>
 
-        <div class="precio-botones">
-            <p class="precio">$2.700</p>
 
-            <div class="botones">
-                <input type="button" name="agregar" id="agregar" value="Agregar al carrito">
-                <input type="button" name="costo-envio" id="costo-envio" value="Costo de envío">
-                <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
+        <div class="img-cuerpo-detail">
+            <img id="img-carrito2" src="/img/carrito2.jpg" alt="Vino">
+            <div class="cuerpo-detail">
+                <h4 id="nth">Ernesto Catena - Almanegra Tinto (misterio) - Blend</h4>
+                <div class="detalle" id="nth">
+                    <ul>
+                        <li>Graduación alcohólica: 13,7%.</li>
+                        <li>Presenta un color cereza casi púrpura, de capa media alta.</li>
+                        <li>Maduración en barricas de 100% Roble Francés y 40% Roble Nuevo.</li>
+                        <li>Presencia de aromas a frutilla, cerezas y membrillos, con notas de vainilla, madera tostada
+                            y
+                            especias.</li>
+                    </ul>
+                </div>
+                <!-- Botones para regular la cantidad de unidades de producto a adquirir -->
+                <div class="cant-precio-detail" id="nth">
+                    <p class="precio">$2.700</p>
+                    <div class="cant">
+                        <input type="button" name="menos" id="buttons" class="menos" value="-">
+                        <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
+                        <input type="button" name="mas" id="buttons" class="mas" value="+">
+                    </div>
+
+                </div>
+
+                <div class="botones" id="nth">
+                    <div class="cart-cost">
+                        <input type="button" name="agregar" id="agregar" value="Agregar al carrito">
+                        <input type="button" name="costo-envio" id="costo-envio" value="Costo de envío">
+                    </div>
+                    <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
+                </div>
             </div>
         </div>
-        
+        <input type="submit" name="confirmar" id="confirmar-2" value="Confirmar">
     </main>
-    
+
     <footer>
         <div class="footer-description">
             <p>© 2021. Bodegas Monsape - Mendoza, Argentina.</p>

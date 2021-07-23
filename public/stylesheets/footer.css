@@ -1,4 +1,5 @@
-footer{    
+footer{    /* 
+    border: solid 2px red; */
     background-color: var(--color-fondoFutter);    
     width: 100%;
     height: 70px;
@@ -7,7 +8,7 @@ footer{
     display: grid;
     grid-template-columns: 2fr 1.5fr;
     gap: 5px;
-    align-items: center;   
+    align-items: center;
 }
 footer .footer-description{
     display: flex;
@@ -45,7 +46,7 @@ footer .social-media-icons img{
 
 @media screen and (min-width: 768px){
     footer{        
-        grid-template-columns: 4fr 1fr;   
+        grid-template-columns: 4fr 1fr;
     }
     footer .footer-description{        
         font-size: 16px;
