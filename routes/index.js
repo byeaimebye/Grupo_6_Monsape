@@ -38,6 +38,9 @@ router.get('/viewAdmin', function(req, res, next){
 router.get('/ingreso', function(req, res, next){
   res.sendFile(path.join(__dirname,'.././views/ingreso.html'))
 })
+router.get('/aboutUs', function(req, res, next){
+  res.sendFile(path.join(__dirname,'.././views/aboutUs.html'))
+})
 
 
 module.exports = router;
