@@ -5,10 +5,11 @@
 .main-productDetail {
     background-color: var(--color-fondo-main);
     margin-top: 55px;
+    position: relative;
     text-align: center;
 }
 
-#img-carrito2 {
+.main-productDetail .img-cuerpo-detail #img-carrito2 {
     top: 2px;
     width: 200px;
 }
@@ -17,7 +18,8 @@
     margin: 0 50px;
 }
 
-.main-productDetail .detalle h4 {
+.main-productDetail .img-cuerpo-detail .cuerpo-detail h4 {
+    font-size: larger;
     margin: 20px auto;
     max-width: 390px;
     text-align: center;
@@ -30,14 +32,21 @@
 }
 
 /* Botones de seleccion de cantidad de unidades. */
+.main-productDetail .cant-precio-detail {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 90px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
 
 .main-productDetail .cant {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto 30px auto;
     padding: 10px;
-    height: 28px;
+    height: 32px;
     width: 100px;
 }
 
@@ -64,7 +73,6 @@
     color: var(--color-rojoVino);
     font-size: 24px;
     font-weight: 900;
-    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -74,11 +82,12 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .main-productDetail .botones #agregar {
-    background-color: var(--color-grisOscuro);
+    background-color: silver;
     border-radius: 15px;
     font-size: 16px;
     height: 25px;
@@ -87,36 +96,184 @@
 }
 
 .main-productDetail .botones #costo-envio {
-    background-color: var(--color-grisOscuro);
+    background-color: silver;
     border-radius: 15px;
     display: none;
     font-size: 16px;
-    height: 25px;
-    margin-bottom: 10px;
+    height: 25px;/* 
+    margin-bottom: 10px; */
     width: 150px;
 }
 
-.main-productDetail .botones #confirmar {
+.main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #confirmar {
     background-color: var(--color-rojoVino);
     border-radius: 15px;
     color: white;
     font-size: 16px;
     height: 25px;
-    width: 100px;
+    margin-bottom: 5px;
+    width: 150px;
+}
+
+.main-productDetail #confirmar-2 {
+    background-color: var(--color-rojoVino);
+    border-radius: 15px;
+    color: white;
+    display : none;
+    font-size: 16px;/* 
+    margin-top: 5px; */
+    height: 25px;
+    width: 150px;
 }
 
 @media (min-width: 768px) {
     .main-productDetail {
-        text-align: left;
+        align-items: center;
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px auto 55px;
+        max-width: 1000px;
         position: relative;
     }
+
+    .main-productDetail .img-cuerpo-detail{
+        display: flex;
+        justify-content: space-between;
+        height: 374px;
+    }
+
+    .main-productDetail .img-cuerpo-detail #img-carrito2 {
+        margin-bottom: 100px;
+        height: 370px;
+        width: 370px;
+    }
+
+    .main-productDetail .cuerpo-detail{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+        height: 370px;
+        width: 60%;
+    }
+
+    .main-productDetail .cuerpo-detail .detalle {
+        max-width: none;
+        width: 90%;
+    }
+    
+    .main-productDetail .detalle h4,
+    .main-productDetail .detalle ul {
+        max-width: none;
+    }
+
+    .main-productDetail .cuerpo-detail #nth:nth-child(1) {
+        font-size: x-large;
+        order: 1;
+    }
+
+    .main-productDetail .cuerpo-detail #nth:nth-child(2) {
+        border-top: solid 1px black;
+        font-size: large;
+        order: 3;
+    }
+
+    .main-productDetail .cuerpo-detail #nth:nth-child(3) {
+        order: 2;
+    }
+
+    .main-productDetail .cuerpo-detail #nth:nth-child(4) {
+        order: 4;
+    }
+
+    .main-productDetail .cant-precio-detail {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;/* 
+        width: 300px; */
+        width: 60%;
+    }
+
+    .main-productDetail {
+        display: flex;
+    }
+
+    .main-productDetail .botones {
+        height: 45px;
+        margin: 0 auto;
+        width: 400px;
+    }
+
+    .main-productDetail .botones .cart-cost {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .main-productDetail .botones #costo-envio {
+        display: block;
+    }
+
+    .main-productDetail .botones #confirmar {/* 
+        bottom: 50px;
+        position: absolute;
+        margin: 0 auto;
+        width: 600px; */
+        display: none;
+    }
+
+    .main-productDetail #confirmar-2 {
+        display: block;
+        margin: 10px auto 0;
+        position: relative;
+        width: 350px;
+    }
+
+}
+
+@media (min-width : 1200px) {
+    .main-productDetail {
+        justify-content: space-between;/* 
+        margin: 55px auto 0 auto; */
+        max-width: 1100px;/* 
+        position: relative; */
+    }
+
+    .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #agregar,
+    .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #costo-envio{
+        height: 35px;
+    }
+
+    .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones{
+        height: 60px;
+    }
+
+    .main-productDetail #confirmar-2 {
+        height: 35px;
+        width: 500px;
+    }
+}
+
+
+
 /*     #img-carrito2 { */
 /*         height: 380px; */
 /*         top: 2px; */
 /*         width: 401px; */
 /*     } */
 /*  */
+
+
+
+
+
+/* .main-productDetail {
+        text-align: left;
+        display: flex;
+        position: relative;
+    }
     .main-productDetail .detalle h4,
     .main-productDetail .detalle ul {
         max-width: 520px;
@@ -151,7 +308,7 @@
         top: 103px;
         left: 78%;
     }
-    /* Botones agregar al carrito, costo de envío y confirmar. */
+    Botones agregar al carrito, costo de envío y confirmar.
     .main-productDetail .botones {
         display: flex;
         flex-direction: row;
@@ -185,36 +342,4 @@
     .main-productDetail img {
         margin: 10px 0 322px 5%;
         width: 300px;
-    }
-}
-
-@media (min-width : 1200px) {
-    #img-carrito2 {
-        width: 400px;
-    }
-
-    .main-productDetail .precio {
-        left: 62%;
-    }
-
-    .main-productDetail .cant {
-        left: 72%;
-    }
-
-    .main-productDetail .botones #confirmar {
-        position: static;
-        margin-top: 0;
-    }
-
-    .main-productDetail .botones {
-        left: 40%;
-        margin-top: -60px;
-        width: 700px;
-        padding: 0;
-    }
-
-    .main-productDetail .botones #agregar,
-    .main-productDetail .botones #costo-envio {
-        margin-top: 10px;
-    }
-}
+    } */
