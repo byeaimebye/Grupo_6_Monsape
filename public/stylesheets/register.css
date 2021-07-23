@@ -101,7 +101,7 @@ label {
 }
 
 
-/*check*/
+/*check de terminos y condiciones*/
 .check{
     display: flex;
     align-items: center;
@@ -114,8 +114,36 @@ label {
 }
 .check input[type = "checkbox"]{
     position: relative;
-    bottom: 1px;
+    /*bottom: 1px; */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 23px;
+    border: 2px solid #d9d9d9;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.3s;
 }
+.check input[type = "checkbox"]::before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 17px;
+    height: 17px;
+    background: #cccccc;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+.check input[type = "checkbox"]:checked:before{
+    transform: translateX(120%);
+    background: #3399ff;
+}
+.check input[type = "checkbox"]:checked{
+    border-color: #3399ff;
+}
+
+
 .register .check{ /*especificidad*/
     width: 100%;
 }
@@ -131,6 +159,10 @@ label {
     .form-container{
         width: 75%;        
     }
+    /*checkbox terminos y condiciones*/
+    .check input[type = "checkbox"]:checked:before{
+        transform: translateX(27px);
+    }    
 }
 
 @media screen and (min-width: 768px){
