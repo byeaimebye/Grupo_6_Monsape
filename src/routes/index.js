@@ -4,10 +4,12 @@ var path = require('path');
 const productDetailRouter = require("./productDetailRouter");
 const productCartRouter = require("./productCartRouter");
 const indexRouter = require("./indexRouter");
+const contactRouter = require("./contactRouter");
 
 /* Rutas EJS */
 router.get("/productDetail", productDetailRouter);
 router.get("/productCart", productCartRouter);
+router.get("/contact", contactRouter);
 router.get("/", indexRouter);
 
 /* GET home page. */
