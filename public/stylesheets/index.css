@@ -3,7 +3,7 @@
     background-image: url(../img/Background.png);
     background-size: cover;
     display: flex;
-    height: 100%;
+    height: 100vh;
     justify-content: center;
     margin: 0 auto;
 }

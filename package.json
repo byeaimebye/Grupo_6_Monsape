@@ -1,9 +1,9 @@
 {
-  "name": "Grupo_6_Monsape",
+  "name": "grupo6monsape",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./src/bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
