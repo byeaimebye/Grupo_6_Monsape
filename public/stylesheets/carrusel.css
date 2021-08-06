@@ -24,7 +24,7 @@ h1.titulo-carru{
   
   .carrusel-items {
     display: flex;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     overflow-y: hidden;
     padding: 30px 0px;
   }

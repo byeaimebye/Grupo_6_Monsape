@@ -1,65 +1,158 @@
-main.main-login-mobile{
-    margin-top: 14.5px ;
-    background: var(--color-grisBotones);
-    height: 35rem;
+/*generales*/
+form{
+    font-weight: bolder;
+}
+a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+h2{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+hr{
+    background-color: black;
+    height: 2px;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+main.main-register{
+    background-color: var(--color-grisBotones);
+    padding: 50px 2px;
+}
+/*formulario*/
+.form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    /* margin: 0 auto; */
+}
+.form-container{
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    height: fit-content;
+    height: -moz-fit-content;
+    width: 90%;
+    padding: 1rem;
+}
+
+/*Formulario input*/
+.input-container, 
+.button-container{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem;
     width: 100%;
 }
-.main-login-mobile .log-in{
-    box-shadow: dimgray;
-    padding: 40px;
-    border-radius: 55px;
-background: white;
-/* height: 28rem; */
-display: flex; 
-flex-direction: column;
-align-items: center;
-text-align: center;
- margin: 0 auto; 
-max-width: 555px;
-margin-top: 20px;
-width:355px
-}
-.main-login-mobile h1{
-    margin-top: 15px;
-    font-weight: bolder;
-    margin-bottom: 25px;
-    font-size: 30px;
-}
-.main-login-mobile label{
-  
-    font-size: 22px;
-    margin-bottom: 22px;
-    font-weight: 900;
-}
-.main-login-mobile input{    
-    height: 3rem;
-    width: 22rem;
-    background-color: var(--color-grisBotones);
-    border-radius: 55px;
-    margin-bottom: 22px;
+
+span.error-message{
+    color: red;
+    display: none;
+    font-size: 0.8rem;
+    margin: 0px auto;
 }
 
-.main-login-mobile p{
-    font-weight: 800;
-    margin-bottom: 35px;
+input.input-style{
+    background: #e4d8db;
+    border: none;
+    border-radius: 20px;
+    height: 2rem;
+    padding: 0.5rem;
+    font-weight: bolder;    
 }
-.main-login-mobile .log-in button{
-    height: 3rem;
-    width: 50%;
-    border-radius: 55px;
+.input-style:focus{
+    box-shadow: 0 0 6px white;    
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: black;    
+}
+
+/*Botones*/
+.button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-submit {   
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+    background-color: var(--color-rojoVino);
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 2rem;
+    text-transform: uppercase;
+    width: 8rem;
     color: white;
-    background: var(--color-rojoVino);
+    font-weight: bolder;   
+}
+
+.btn-submit:hover{
+    color: var(--color-rojoVino);
+    border: 0.5px solid var(--color-rojoVino);
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.6s all;
 }
 
 
-    @media (min-width: 768px) {
-        .main-ingreso .difu {
-            max-width: 768px;
-            margin: 0 2%;
-        }
+/*check*/
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 88%;
+}
+.check label{
+    margin-right: 10px;
+}
+.check input[type = "checkbox"]{
+    position: relative;
+    bottom: 2px;
+}
+.register .check{ /*especificidad*/
+    width: 100%;
+}
+
+span{
+    align-items: center;
+    text-align: center;
+}
+/*Media queries*/
+/*Tablet*/
+
+@media screen and (min-width: 475px){
+    .input-container,
+    .button-container{
+        width: 80%;
     }
+    .form-container{
+        width: 75%;        
+    }
+}
+
+@media screen and (min-width: 768px){
+    .input-container,
+    .button-container{
+        width: 80%;
+    }
+    .form-container{
+        width: 50%;        
+    }
+}
+/*Desktop*/
+@media screen and (min-width: 1000px){
+    .input-container,
+    .button-container{
+        width: 80%;
+    }
+    .form-container{
+        width: 50%;        
+    }
+}

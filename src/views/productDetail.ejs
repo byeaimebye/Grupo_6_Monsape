@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("partials/head.ejs") %>
+
+    <body class="body-productDetail">
+
+        <!-- Header start here -->
+        <%- include("partials/header.ejs") %>
+
+            <!-- Main -->
+            <main class="main-productDetail">
+
+                <div class="galeria">
+
+                </div>
+
+
+                <div class="img-cuerpo-detail">
+                    <img id="img-carrito2" src="/img/carrito2.jpg" alt="Vino">
+                    <div class="cuerpo-detail">
+                        <h4 id="nth">Ernesto Catena - Almanegra Tinto (misterio) - Blend</h4>
+                        <div class="detalle" id="nth">
+                            <ul>
+                                <li>Graduación alcohólica: 13,7%.</li>
+                                <li>Presenta un color cereza casi púrpura, de capa media alta.</li>
+                                <li>Maduración en barricas de 100% Roble Francés y 40% Roble Nuevo.</li>
+                                <li>Presencia de aromas a frutilla, cerezas y membrillos, con notas de vainilla, madera
+                                    tostada
+                                    y
+                                    especias.</li>
+                            </ul>
+                        </div>
+                        <!-- Botones para regular la cantidad de unidades de producto a adquirir -->
+                        <div class="cant-precio-detail" id="nth">
+                            <p class="precio">$2.700</p>
+                            <div class="cant">
+                                <input type="button" name="menos" id="buttons" class="menos" value="-">
+                                <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
+                                <input type="button" name="mas" id="buttons" class="mas" value="+">
+                            </div>
+
+                        </div>
+
+                        <div class="botones" id="nth">
+                            <div class="cart-cost">
+                                <input type="button" name="agregar" id="agregar" value="Agregar al carrito">
+                                <input type="button" name="costo-envio" id="costo-envio" value="Costo de envío">
+                            </div>
+                            <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" name="confirmar" id="confirmar-2" value="Confirmar">
+            </main>
+
+            <%- include("./partials/footer") %>
+    </body>
+
+</html>

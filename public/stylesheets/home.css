@@ -6,6 +6,7 @@ header.home{
     width: 100%;
     background-color: rgba(0, 0,0, 0.5);
     padding: 10px;
+    z-index: 9999;
 }
 header.home img{
     height: 27%;
@@ -32,44 +33,124 @@ header.home .carrito-home img{
 }
 body.home{
    /*  margin-top: 20px; */
-    background-image: url("../img/fondodesktop.png");
+   /*  background-image: url("../img/fondodesktop.png"); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: black;
     height: max-content;
     background-attachment: fixed;
+}
+main.home .cabecera{
+    top: 3rem;
+    position: relative;
+}
+main.home  .logo-home1{
+    position: sticky;
+    z-index: 10;
+    align-items: center;
+    text-align: center;
+    color: white;
+    top: 37%;
+    height: 0px;
+}
+
+main.home .logo-home1 img{
+    width: 128px;
+    height: 108px;
 }
 main.home{
     height: 100%;
 } 
 
-main.home .texto-home{
-    margin-top: 0px; 
-    text-align: center;
-    font-size: 8px;
-    color: white;
-    background-image: url("/img/allblack.jpg");
-    background-color: rgba(0, 0,0, 0.3);
-    background-size: cover;
-    background-attachment: fixed;
-    height: 350px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    color: white;
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    /* margin: 0 auto 30px; */
 }
-main.home .texto-home h1{
-    font-family: 'Cinzel', serif;
-    font-weight: lighter;
-    margin-top: 0px;
+
+/* Esconde las imágenes por default */
+.slides {
+    display: none;
 }
-main.home .texto-home img{
-    margin-top: 118px;
-    width: 30%;
-    height: 30%;
-    margin-bottom: 20px;
+
+.slides img{
+    width: 100%;
 }
+
+.dots {
+    display: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Botones de anterior y siguiente */
+.carousel-container .prev, .carousel-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+
+}
+
+/* Posición de el boton siguiente a la derecha */
+.carousel-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* En hover, agrega un fondo con transparencia */
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Puntos indicadores */
+.dot {
+   display: none;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot-active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media screen and (min-width: 1024px) {
+  
+}
+/* -------------------------------- */
  main.home .nuestros-vinos h4{
     font-family: 'Cinzel', serif;
      text-align: center;
@@ -174,7 +255,13 @@ main.home .texto-home img{
         left: 5%;
 font-size: 32px ;
 
-}}
+}
+main.home .cabecera{
+    top:8rem;
+    font-size: 22px; 
+
+    }
+}
     /*  query tablet   */
 
 
@@ -237,7 +324,15 @@ main.home .vacaciones{
     margin-top: 0px;
     height: 41rem;
 }
+main.home .cabecera{
+    top: 11rem;
+    font-size: 32px;
 
+    }
+    main.home .logo-home1 img {
+        width: 234px;
+        height: 180px;
+    }
 }
 
     /* query desktop  */
@@ -274,5 +369,12 @@ main.home .texto-home h1{
 }
 main.home .nuestros-vinos h4{
     font-size: 25px;
+}
+main.home .cabecera {
+    top: 25rem;
+    font-size: 35px;
+}
+main.home .logo-home1 img{
+    width: 210px;
 }
 }

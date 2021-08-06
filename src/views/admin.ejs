@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("./partials/head") %>
+<body>
+    <!-- Header start here -->
+    <%- include("./partials/header") %>
+
+
+    <main class="main-register">
+        <!--AGREGAR PRODUCTOS-->
+        <div class="form-container">
+            <h2>Registro del nuevo producto</h2>
+            <hr>
+            <form action="" method="">
+                <div class="form">
+                    <div class="input-container">
+                        <label for="categoria">Categoria:</label>
+                        <input class="input-style" type="text" name="categoria" required>
+                        <span class="error-message">Debe ingresar una categoria válida</span>
+                    </div>
+                    <div class="input-container">
+                        <label for="sub-categoria">Sub Categoria:</label>
+                        <input class="input-style" type="text" name="sub-categoria" ">
+                        <span class="error-message">Debe ingresar una sub categoria válida</span>
+                    </div>
+                    <div class="input-container">
+                        <label for="nombre-producto">Nombre del producto:</label>
+                        <input class="input-style" type="text" name="nombre-categoria" required>
+                        <span class="error-message">Debe ingresar el nombre del producto</span>
+                    </div>
+                    <div class="input-container">
+                        <label for="precio">Precio:</label>
+                        <input class="input-style price" type="number" name="precio" required step="0.01">
+                        <span class="error-message">Debe ingresar una monto válido</span>
+                    </div>
+                    <div class="textarea-container">
+                        <label for="descripcion-producto">Descripción del producto:</label>
+                        <textarea name="descripcion-producto" rows="10"></textarea>
+                        <span class="error-message">Debe ingresar una descripción de producto</span>
+                    </div>
+                    <div class="agregar-imagenes">
+                        <span>Agregar imágenes: </span>
+                        <input type="file" name="imagenes-de-producto" multiple value="agregar-imagenes">
+                    </div>
+                    <div class="button-container">
+                        <span class="error-message">Credenciales inválidas</span>
+                        <button class="btn btn-submit">Finalizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>    
+
+    <!--FOOTER-->
+    <%- include("./partials/footer") %>
+</body>
+</html>
