@@ -12,11 +12,6 @@
 @import url("index.css");
 @import url("carrusel.css");
 @import url("aboutUs.css");
+@import url("contact.css");
+@import url("general.css");
 
-:root{
-    --color-fondo-main: gainsboro;
-    --color-grisOscuro: #5C5A5A;
-    --color-rojoVino: #56070C;
-    --color-grisBotones: #C4C4C4;
-    --color-fondoFutter: #383737;
-}

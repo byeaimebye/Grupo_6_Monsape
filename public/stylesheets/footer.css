@@ -9,6 +9,7 @@ footer{    /*
     grid-template-columns: 2fr 1.5fr;
     gap: 5px;
     align-items: center;
+    
 }
 footer .footer-description{
     display: flex;
