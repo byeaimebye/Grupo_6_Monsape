@@ -1,0 +1,39 @@
+/* politicas de devolución*/
+.politicas-de-devolucion{
+    margin: 20px 12px;
+}
+
+.politicas-de-devolucion h3{
+    font-weight: bolder;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.politicas-de-devolucion strong{
+    color: var(--color-rojoVino);
+    font-size: 18px;
+    font-weight: bolder;   
+}
+
+.politicas-de-devolucion p{
+    margin-bottom: 14px;
+    margin-top: 5px;
+}
+
+/*-----Media Queries--------*/
+
+/*tablet*/
+@media(min-width: 768px){
+    .politicas-de-devolucion{
+        max-width: 750px;
+        margin: 25px auto;
+    }
+}
+
+/*tablet*/
+@media(min-width: 1024px){
+    .politicas-de-devolucion{
+        max-width: 980px;
+        margin: 25px auto;
+    }
+}

@@ -12,6 +12,7 @@
 @import url("index.css");
 @import url("carrusel.css");
 @import url("aboutUs.css");
+@import url("politicaDeDevolucion.css");
 
 :root{
     --color-fondo-main: gainsboro;
