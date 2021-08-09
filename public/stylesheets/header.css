@@ -10,7 +10,8 @@
 /* Header mobile */
 
 header {
-    background-image: url("/img/header-desktop.png");
+    
+  background-color:black;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     justify-content: space-between;
@@ -214,10 +215,15 @@ nav.desktop-nav {
     header .modal-burger {
         display: none;
     }
+header .anclas img.login{
+    width: 20px;
+    height: 20px;
+}
     header {
-        background-image: url("/img/header-desktop.png");
+      background-color: black;
         height: 120px;
         grid-template-columns: 1fr 3fr 1fr;
+        background-position: cover;
     }
     header .burger {
         display: none;
