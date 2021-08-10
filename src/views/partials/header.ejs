@@ -3,7 +3,7 @@
     <div class="modal-burger">
         <button onclick="openModal()">
             <div class="burger">
-                <img src="./img/Vector.svg" alt="">
+                <img src="/img/Vector.svg" alt="">
         </button>
     </div>
     </div>
@@ -24,15 +24,13 @@
     <!-- Lupa para desktop -->
     <div class="buscador">
         <input type="text" placeholder="Buscador" class="buscador">
-        <img src="./img/lupa.svg" alt="">
+        <img src="/img/lupa.svg" alt="">
     </div>
     <!-- ------------------------- -->
     <!-- titulo y logo -->
     <div class="logo">
-        <a href="/home">
-            <h1>MONSAPE</h1>
-        </a>
-        <a href="/home"><img src="./img/logomon.svg" alt=""></a>
+        <a href="/home"><h1>MONSAPE</h1></a>
+        <a href="/home"><img src="/img/logomon.svg" alt=""></a>
     </div>
     <!-- ------------------- -->
     <!-- anclas de desktop -->
@@ -47,7 +45,7 @@
                 <input type="email" name="tel" id="email">
                 <label for="password">Ingrese su contraseña:</label>
                 <input type="password" name="password" id="password">
-                <p>¿Aún no tienes cuenta? <a href="/register">REGISTRATE</a> </p>
+                <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
                 <button>INICIAR SESION</button>
             </div>
         </div>
@@ -134,14 +132,12 @@
     <div class="search-mobile">
         <form action="/">
             <input type="search" placeholder="Buscador" class="search">
-            <button><img src="./img/lupa.svg" alt=""></button>
+            <button><img src="/img/lupa.svg" alt=""></button>
         </form>
     </div>
     <div class="product-nav">
         <input type="checkbox" class="input-productos-check" id="check">
-        <label for="check" class="productos-check">
-            <p>PRODUCTOS</p>
-            <i class="fas fa-chevron-down"></i>
+        <label for="check">
             <div class="check-on">
                 <% for(let i=1; i < 7; i++){ %>
                     <div class="item">
@@ -151,12 +147,30 @@
                     <% } %>
             </div>
         </label>
-        </input>
+        <label for="check" class="productos-check">
+            <p>PRODUCTOS</p>
+            <i class="fas fa-chevron-down"></i>
+        </label>
     </div>
 </nav>
 <nav class="desktop-nav">
-    <a href="#">INICIO</a>
-    <a href="#">PRODUCTOS</a>
+    <a id="inicio" href="#">INICIO</a>
+    <input type="checkbox" class="input-productos-check" id="check">
+        <label for="check">
+            <label for="">
+                <div class="check-on">
+                    <% for(let i=1; i < 7; i++){ %>
+                        <div class="item">
+                            <p>Item <%- i %>
+                            </p>
+                        </div>
+                        <% } %>
+                </div>
+            </label>
+        </label>
+        <label for="check">
+            <p>PRODUCTOS</p>
+        </label>
     <a href="#">COMO COMPRAR</a>
     <a href="#">QUIENES SOMOS</a>
     <a href="#">POLITICA DE DEVOLUCION</a>

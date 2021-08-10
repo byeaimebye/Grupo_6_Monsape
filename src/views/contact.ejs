@@ -2,13 +2,36 @@
 <html lang="en">
 <%- include("partials/head.ejs") %>
 
-    <body>
+    <body class="body-contact">
         <%- include("partials/header.ejs") %>
-            <main>
-
-                
-
-                <!-- <form action=""></form> -->
+            <main class="main-contact">
+                <form action="" method="POST">
+                    <h2>¿Desea contactarnos?</h2>
+                    <h3 class="margin-group">Envíenos un mensaje</h3>
+                    <label class="lbl-area-contact lbl-group" for="">Área de la bodega que desea contactar</label>
+                    <select class="select-area-contact input-group input-group-text" name="areas-contact" id="option-contact">
+                        <option value="Elija una opción">Elija una opción</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Eventos">Eventos</option>
+                        <option value="Recursos Humanos">Recursos Humanos</option>
+                        <option value="Consultas, Sugerencias, Reclamos, Otros">Consultas, Sugerencias, Reclamos, Otros
+                        </option>
+                    </select>
+                    <label for="mensaje-area-contact" class="lbl-group">Mensaje</label>
+                    <textarea class="txtarea-mensaje-contact input-group" name="mensaje-area-contact" id="mensaje-area-contact" cols="30" rows="10"
+                        placeholder="Ingrese aquí su mensaje"></textarea>
+                    <label for="nombre-contact" class="lbl-group">Nombre</label>
+                    <input class="input-group input-group-text" type="text" name="nombre-contact" id="nombre-contact" placeholder="nombre">
+                    <label for="apellido-contact" class="lbl-group">Apellido</label>
+                    <input class="input-group input-group-text" type="text" name="apellido-contact" id="apellido-contact" placeholder="Apellido">
+                    <label for="email" class="lbl-group">Email</label>
+                    <input class="email-contact input-group input-group-text" type="email" placeholder="email" id="email" name="email">
+                    <label for="ciudad-contact" class="lbl-group">Ciudad</label>
+                    <input class="input-group input-group-text" type="text" name="ciudad-contact" id="ciudad-contact" placeholder="ciudad">
+                    <label for="pais-contact" class="lbl-group">País</label>
+                    <input class="input-group input-group-text" type="text" name="pais-contact" id="pais-contact" placeholder="pais">
+                    <button type="submit">Enviar</button>
+                </form>
             </main>
             <%- include("partials/footer.ejs") %>
     </body>

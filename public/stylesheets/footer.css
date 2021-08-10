@@ -6,10 +6,11 @@ footer{    /*
     color: #ACA9A9;
     font-weight: bolder;
     display: grid;
-    grid-template-columns: 2fr 1.5fr;
+    grid-template-columns: 3fr 1fr;
     gap: 5px;
     align-items: center;
-    
+    position: static;
+    bottom: 0;
 }
 footer .footer-description{
     display: flex;
