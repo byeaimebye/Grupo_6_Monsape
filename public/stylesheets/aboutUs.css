@@ -31,17 +31,81 @@ p.bodega{
         text-align: center;
         font-size: 22px;
     }
-    main.about .second{
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-    }
-    main.about .second .us{
-        margin-top: 0;
+ main.about .second{
+     width: 100%;
+     
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+
+ main.about .second .us{
+     font-weight: 999;
+    font-family: 'Rosarivo', serif;
+     font-size: 2rem;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-image: url("/img/vacaciones.png");
+     margin-bottom: 20px;
+     background-attachment: fixed;
     }
 
-    /* main.about .second .infoS{
-    position: absolute;
-    color: white;
-    bottom: 12rem;
+ main.about .history{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     text-align: center;
+ }
+ main.about .history p{
+     line-height: 190%;
+     padding: 20px;
+ }
+ main.about .history-logo{
+     background-image: url("/img/monsapeL.png");
+     padding: 25px;
+     margin: 20px 0 20px 0;
+     background-attachment: fixed;
     
-    } */
+     
+ }
+ main.about .history-logo h1{
+    font-family: 'Rosarivo', serif;
+    color: white;
+ }
+ main.about .history-logo img{
+     width: 100%;
+ }
+ hr {
+    background-color: black;
+    height: 1px;
+    margin-bottom: 3rem;
+    width: 80%;
+}
+section.history-images{
+    display: grid;
+  
+    width: 100%;
+   
+}
+section.history-images img{
+width: 100%;
+height: 100%;
+padding: 20px;
+box-shadow: 20px;
+}
+section.history-images img:hover {
+    transform: scale(1.2);
+    
+  } 
+@media(min-width: 575px){
+    main.about .first-cont h1{
+padding: 40px;
+font-size: 38px;
+    }
+    section.history-images{
+    grid-template-columns: 1fr 1fr 1fr;    
+    height: 100%;
+    }
+}
