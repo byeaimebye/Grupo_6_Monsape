@@ -12,9 +12,9 @@
         "azucarResidual": "2,93 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "5300",
+        "descuento": "10",
+        "image": "dato1.jpg"
     },
     {
         "id": 2,
@@ -29,9 +29,9 @@
         "azucarResidual": "3,15 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "2500",
+        "descuento": "15",
+        "image": "dato2.jpg"
     },
     {
         "id": 3,
@@ -46,9 +46,9 @@
         "azucarResidual": "1,59 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "13000",
+        "descuento": "25",
+        "image": "dato3.jpg"
     },
     {
         "id": 4,
@@ -63,9 +63,9 @@
         "azucarResidual": "2,90 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "900",
+        "descuento": "5",
+        "image": "dato4.jpg"
     },
     {
         "id": 5,
@@ -80,9 +80,9 @@
         "azucarResidual": "2,72 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1200",
+        "descuento": "15",
+        "image": "dato5.jpg"
     },
     {
         "id": 6,
@@ -97,9 +97,9 @@
         "azucarResidual": "2,84 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1050",
+        "descuento": "15",
+        "image": "dato6.jpg"
     },
     {
         "id": 7,
@@ -113,9 +113,9 @@
         "azucarResidual": "2,34 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "555",
+        "descuento": "5",
+        "image": "dato7.jpg"
     },
     {
         "id": 8,
@@ -130,9 +130,9 @@
         "azucarResidual": "2,64 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1800",
+        "descuento": "25",
+        "image": "dato8.jpg"
     },
     {
         "id": 9,
@@ -147,9 +147,9 @@
         "azucarResidual": "1,48 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 11ºC.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1750",
+        "descuento": "30",
+        "image": "dato9.jpg"
     },
     {
         "id": 10,
@@ -164,9 +164,9 @@
         "azucarResidual": "2,59 g/l",
         "temperaturaRecomendada": "Entre 14ºC y 16ºC. Sugerimos decantar el vino una hora antes de beberlo.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "2500",
+        "descuento": "35",
+        "image": "dato10.jpg"
     },
     {
         "id": 11,
@@ -181,9 +181,9 @@
         "azucarResidual": "2,20 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1900",
+        "descuento": "20",
+        "image": "dato11.jpg"
     },
     {
         "id": 12,
@@ -198,9 +198,9 @@
         "azucarResidual": "2,80 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C. Sugerimos decantar el vino al menos una hora antes de beberlo.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1010",
+        "descuento": "25",
+        "image": "dato12.jpg"
     },
     {
         "id": 13,
@@ -215,9 +215,9 @@
         "azucarResidual": "2,81 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "5455",
+        "descuento": "55",
+        "image": "dato13.jpg"
     },
     {
         "id": 13,
@@ -232,9 +232,9 @@
         "azucarResidual": "1,50 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "988",
+        "descuento": "20",
+        "image": "dato13.jpg"
     },
     {
         "id": 14,
@@ -249,9 +249,9 @@
         "azucarResidual": "2,50 g/l",
         "temperaturaRecomendada": "Entre 14°C y 16°C. Sugerimos decantar el vino una hora antes de beberlo.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "770",
+        "descuento": "10",
+        "image": "dato14.jpg"
     },
     {
         "id": 15,
@@ -266,9 +266,9 @@
         "azucarResidual": "2,55 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1020",
+        "descuento": "20",
+        "image": "dato15.jpg"
     },
     {
         "id": 16,
@@ -283,9 +283,9 @@
         "azucarResidual": "2,50 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1010",
+        "descuento": "10",
+        "image": "dato16.jpg"
     },
     {
         "id": 17,
@@ -300,9 +300,9 @@
         "azucarResidual": "2,30 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "500",
+        "descuento": "10",
+        "image": "dato17.jpg"
     },
     {
         "id": 18,
@@ -317,9 +317,9 @@
         "azucarResidual": "66,30 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "3100",
+        "descuento": "25",
+        "image": "dato18.jpg"
     },
     {
         "id": 19,
@@ -334,9 +334,9 @@
         "azucarResidual": "1,70 g/l",
         "temperaturaRecomendada": "Entre 10°C y 14°C.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "850",
+        "descuento": "15",
+        "image": "dato19.jpg"
     },
     {
         "id": 20,
@@ -351,9 +351,9 @@
         "azucarResidual": "1,43 g/l",
         "temperaturaRecomendada": "Entre 8°C y 12°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1022",
+        "descuento": "25",
+        "image": "dato20.jpg"
     },
     {
         "id": 21,
@@ -368,9 +368,9 @@
         "azucarResidual": "3,76 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1500",
+        "descuento": "25",
+        "image": "dato21.jpg"
     },
     {
         "id": 22,
@@ -385,9 +385,9 @@
         "azucarResidual": "7,10 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "1555",
+        "descuento": "15",
+        "image": "dato22.jpg"
     },
     {
         "id": 23,
@@ -402,9 +402,9 @@
         "azucarResidual": "7,10 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "8450",
+        "descuento": "35",
+        "image": "dato23.jpg"
     },
     {
         "id": 24,
@@ -419,9 +419,9 @@
         "azucarResidual": "5,64 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "5500",
+        "descuento": "20",
+        "image": "dato24.jpg"
     },
     {
         "id": 25,
@@ -436,8 +436,8 @@
         "azucarResidual": "8,20 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": "10555",
+        "descuento": "10",
+        "image": "dato25.jpg"
     }
 ]
