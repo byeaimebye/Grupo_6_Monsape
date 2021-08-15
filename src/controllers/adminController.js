@@ -1,6 +1,6 @@
 let controller = {
-    index : (req, res) => {
-        res.render("admin", {title: "vista admin"});
+    admin: (req, res) => {
+        res.render("admin/admin", {title: "vista admin"});
     }
 };
 
