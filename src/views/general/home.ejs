@@ -37,12 +37,12 @@
         <div class="modal-conteiner">
             <div class="close-modal" onclick="closeModal()">X</div>
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
-            <a href="http://localhost:3040/tienda#">TIENDA</a>
+            <a href="/tienda#">TIENDA</a>
             <a href="#">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
-            <a href="#">QUIENES SOMOS</a>
-            <a href="http://localhost:3040/login">INICIAR SESION</a>
-            <a href="http://localhost:3040/register">REGISTRATE</a>
+            <a href="/aboutUs">QUIENES SOMOS</a>
+            <a href="/login">INICIAR SESION</a>
+            <a href="/register">REGISTRATE</a>
             <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>
     </div>
@@ -51,7 +51,7 @@
         <h1>MONSAPE</h1>
     </div>
     <div class="carrito-home">
-       <a href="http://localhost:3040/productCart"><img src="/img/carrito-de-compras (1) 1.svg" alt=""></a>
+       <a href="productCart"><img src="/img/carrito-de-compras (1) 1.svg" alt=""></a>
     </div>
 </header>
     <main class="home">
@@ -98,54 +98,14 @@
         <div class="carrusel">
             
             <div class="carrusel-items">
-              <div class="carrusel-item">
-                <img src="/img/carrito1.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito2.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito3.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito4.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito5.jpg" alt="" />
-                <p> 20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito6.jpg" alt="" />
-                <p> 20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito7.jpg" alt="" />
-                <p> 20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito8.jpg" alt="" />
-                <p> 20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito9.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito10-jpg.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito1.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
-              <div class="carrusel-item">
-                <img src="/img/carrito2.jpg" alt="" />
-                <p>20% Descuento</p>
-              </div>
+              
+              <% vinosDescuento.forEach(vino => { %>
+                <div class="carrusel-item">
+                  <img src="/img/<%= vino.image %> " alt="" />
+                  <p><%- vino.descuento %> % Descuento</p>
+                  <h3><%- vino.nombre %></h1>
+                </div>
+              <% }) %>
             </div>
           </div>
           <!-- CARRUSEL ENDS -->
