@@ -1,7 +1,5 @@
-let controller = {
+module.exports = {
     index : (req, res) => {
-        res.render("admin", {title: "vista admin"});
+        res.render("admin/admin", {title: "vista admin"});
     }
 };
-
-module.exports = controller;
