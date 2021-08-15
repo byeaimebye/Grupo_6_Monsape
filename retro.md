@@ -21,5 +21,16 @@
 
                                           HACER MENOS: Trabajar el sprint por impulso.
 
+                                        <!-- **************************************** -->
+                                        
+                                                           -SPRINT 2-
                                                      ----------------------
-
+                SEGUIR HACIENDO: Reuniones formales, cumplir tareas, tomar decisiones colectivas, reuniones concisas y productivas.
+                                                     ----------------------
+                HACER MAS: Hacer un mini informe diario, estar al dia en playground.
+                                                     ----------------------
+                EMPEZAR A HACER: Informar que estamos trabajando en el proyecto, poner tiempo limite para una actividad, critica de nuestro propio trabajo.
+                                                     ----------------------
+                DEJAR DE HACER: Aplazar reuniones, retrasarnos con finalizacion del sprint.
+                                                     ----------------------
+                HACER MENOS: Planificar reuniones los domingos.

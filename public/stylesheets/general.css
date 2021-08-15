@@ -1,0 +1,20 @@
+:root{
+    --color-fondo-main: gainsboro;
+    --color-grisOscuro: #5C5A5A;
+    --color-rojoVino: #56070C;
+    --color-grisBotones: #C4C4C4;
+    --color-fondoFutter: #383737;
+}
+
+html {
+    width: 100%;
+}
+
+/* *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+} */

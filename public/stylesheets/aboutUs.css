@@ -1,139 +1,111 @@
-main.about .about-1 img{
-width: 100%;
-top: 15px;
-position: relative;
-}
-body{
-    background-color: gainsboro;
-}
-main.about .about-1 {
-    background-color: gainsboro;
-   
-   
-}
-main.about .about-1 h1{
-    top: 141px;
-    position: absolute;
+p.bodega{
     text-align: center;
-    width: 40%;
-    height: 9%;
-    color: white;
-    font-size: 23px;
-    background-color:rgba(229, 229, 229, 0.5)
-}
-main.about .about-text p{
-    margin: 15px 10px 10px 10px;
-    text-align: center;
-}
-section.about-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
+    width: 100%;
+    font-size: 45px;
+    font-family: 'Rosarivo', serif;
+    font-weight: 200;
+    font-size:31px;
     
-}
-
-.a-box {
-    display: inline-block;
-    width: 240px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .img-container {
-      height: 230px;
-      width: 200px;
-      overflow: hidden;
-      border-radius: 0px 0px 20px 20px;
-      display: inline-block;
-  }
-  
-  .img-container img {
-      transform: skew(0deg, -13deg);
-      height: 250px;
-      margin: -35px 0px 0px -70px;
-  }
-  
-  .inner-skew {
-      display: inline-block;
-      border-radius: 20px;
-      overflow: hidden;
-      padding: 0px;
-      transform: skew(0deg, 13deg);
-      font-size: 0px;
-      margin: 30px 0px 0px 0px;
-      background: #c8c2c2;
-      height: 250px;
-      width: 200px;
-  }
-  
-  .text-container {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-    padding: 120px 20px 20px 20px;
-    border-radius: 20px;
-    background: #fff;
-    margin: -120px 0px 0px 0px;
-    line-height: 19px;
-    font-size: 14px;
-  }
-  
-  .text-container h3 {
-    margin: 20px 0px 10px 0px;
-    color: #56070C;
-    font-size: 18px;
-  }
-
-/* Querys */
- @media(min-width: 510px) {
-    main.about .about-1 h1{
-        top: 153px;
-        width: 40%;
-        height: 11%;
-        font-size: 31px;
+    
     }
-    .a-box{
-        width: 75%;
-    }
-}
-@media(min-width: 700px){
-    main.about .about-1 h1{
-        top: 31%;
-        font-size: 2rem;
-        color: white;
-        height: auto;
-        width: 55%;
-    }
-    main.about .about-text p{
-        font-size: 24px;
-    }
-
-    section.about-container{
+    main.about .first-cont{
+        background-image: url('../img/uverta\ 1.png');
+        height: 355px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 34rem;
+        background-attachment: fixed;
+        margin-top: -1px;
+        width: 100%;
         display: flex;
-        flex-direction: inherit;
+        justify-content: center;
+        align-items: center;
         
     }
-    .text-container {
-        font-size: 18px;
-        line-height: 25px;
+    main.about .first-cont h1{
+        background-color: rgba(1, 1, 1, 0.4);
+        border: 1px solid white;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-size: 22px;
     }
-    /* section.about-container .a-box{
-        margin: 10px 10px 10px 10px;
-    } */
-}
-@media(min-width: 1000px){
-    main.about .about-1 img{
-        margin-top: -16px;
-    }
-    main.about section.about-container{
-        align-items: center;
-      /*   margin-right: -115px; */
-    }
-    .text-container {
-        height: 455px;
-        width: 355px;
-    }
-    main.about .about-container #aime{
-        margin-left: 10px;
+ main.about .second{
+     width: 100%;
+     
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+
+ main.about .second .us{
+     font-weight: 999;
+    font-family: 'Rosarivo', serif;
+     font-size: 2rem;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-image: url("/img/vacaciones.png");
+     margin-bottom: 20px;
+     background-attachment: fixed;
     }
 
+ main.about .history{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     text-align: center;
+ }
+ main.about .history p{
+     line-height: 190%;
+     padding: 20px;
+ }
+ main.about .history-logo{
+     background-image: url("/img/monsapeL.png");
+     padding: 25px;
+     margin: 20px 0 20px 0;
+     background-attachment: fixed;
+    
+     
+ }
+ main.about .history-logo h1{
+    font-family: 'Rosarivo', serif;
+    color: white;
+ }
+ main.about .history-logo img{
+     width: 100%;
+ }
+ hr {
+    background-color: black;
+    height: 1px;
+    margin-bottom: 3rem;
+    width: 80%;
+}
+section.history-images{
+    display: grid;
+  
+    width: 100%;
+   
+}
+section.history-images img{
+width: 100%;
+height: 100%;
+padding: 20px;
+box-shadow: 20px;
+}
+section.history-images img:hover {
+    transform: scale(1.2);
+    
+  } 
+@media(min-width: 575px){
+    main.about .first-cont h1{
+padding: 40px;
+font-size: 38px;
+    }
+    section.history-images{
+    grid-template-columns: 1fr 1fr 1fr;    
+    height: 100%;
+    }
 }

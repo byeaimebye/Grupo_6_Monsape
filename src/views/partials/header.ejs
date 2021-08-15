@@ -12,11 +12,11 @@
             <div class="close-modal" onclick="closeModal()">X</div>
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
             <a href="/home">INICIO</a>
-            <a href="#">PRODUCTOS</a>
+            <a href="/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
-            <a href="#">QUIENES SOMOS</a>
-            <a href="#">INICIAR SESION</a>
-            <a href="/views/register.html">REGISTRATE</a>
+            <a href="/aboutUs">QUIENES SOMOS</a>
+            <a href="/login">INICIAR SESION</a>
+            <a href="/register">REGISTRATE</a>
             <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>
     </div>
@@ -50,11 +50,83 @@
             </div>
         </div>
         <!--        ------------------ MODAL DESKTOP ENDS------------>
-        <a href="/users/register"><button>Registrarse</button></a>
-        <a href="/productCart"><img src="/img/carrito-de-compras (1) 1.svg" alt="carrito"></a>
+        <div class="register-cart-header">
+            <a href="/register"><button>Registrarse</button></a>
+            <input class="cart-data" type="checkbox" name="cart-data" id="cart-data">
+            <label class="cart-data-label" for="cart-data"><img src="./img/carrito-de-compras (1) 1.svg" alt="carrito">
+                
+                <label for="">
+                    <div class="cart-data-view">
+                        <label for="cart-data">
+                            <div class="cart-data-label-btn-close">
+                                <p>X</p>
+                            </div>
+                        </label>
+                        <main class="main-productCart">
+                            <section class="section-productCart">
+                                <!-- Columnas -->
+                                <div class="column">
+                                    <p>PRODUCTO</p>
+                                    <p>SUBTOTAL</p>
+                                </div>
+                                <!-- Articulos -->
+                                <% for(let i=0; i < 4; i++){ %>
+                                    <article>
+                                        <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
+                                        <div class="detail">
+                                            <p id="nombre">Nombre del vino</p>
+                                            <p id="precio">$2.500</p>
+                                            <div class="cant">
+                                                <input type="button" name="menos" id="buttons" class="menos" value="-">
+                                                <input type="text" name="cantidad" id="cantidad" class="cantidad"
+                                                    value="0">
+                                                <input type="button" name="mas" id="buttons" class="mas" value="+">
+                                            </div>
+
+                                        </div>
+                                        <div class="subtotal">
+                                            <p>$2.500</p>
+                                            <img class="tachito" src="./img/tachito.png" alt="carrito">
+                                        </div>
+                                    </article>
+                                    <% } %>
+                                        <!-- Subtotal (sin envío) -->
+                                        <div class="sub-sin-envio">
+                                            <p>Subtotal (sin envío):</p>
+                                        </div>
+                                        <!-- Métodos de envío -->
+                                        <form action="" method="GET">
+                                            <div class="met-envio">
+                                                <p><img src="./img/camioncito.png" alt="camioncito"> Métodos de envío
+                                                </p>
+                                                <div class="calcular">
+                                                    <input type="text" name="codigo-postal" id="codigo-postal"
+                                                        value="Tu código postal">
+                                                    <input type="button" name="calcular" id="calcular" value="CALCULAR">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="total">
+                                            <h4>Total:</h4>
+                                            <h4>$5.000</h4>
+                                        </div>
+                                        <div class="fin">
+                                            <input type="button" name="mas" id="mas" value="Ver más productos">
+                                            <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
+                                        </div>
+                            </section>
+                        </main>
+                    </div>
+                </label>
+            </label>
+
+            </input>
+        </div>
         <!--  -------------- -->
     </div>
 </header>
+
 <!-- nav de mobile -->
 <nav class="header-nav">
     <div class="search-mobile">
@@ -64,14 +136,43 @@
         </form>
     </div>
     <div class="product-nav">
-        <h3>PRODUCTOS</h3><i class="fas fa-chevron-down"></i>
+        <input type="checkbox" class="input-productos-check" id="check">
+        <label for="check">
+            <div class="check-on">
+                <% for(let i=1; i < 7; i++){ %>
+                    <div class="item">
+                        <p>Item <%- i %>
+                        </p>
+                    </div>
+                    <% } %>
+            </div>
+        </label>
+        <label for="check" class="productos-check">
+            <p>PRODUCTOS</p>
+            <i class="fas fa-chevron-down"></i>
+        </label>
     </div>
 </nav>
 <nav class="desktop-nav">
-    <a href="#">INICIO</a>
-    <a href="#">PRODUCTOS</a>
+    <a id="inicio" href="#">INICIO</a>
+    <input type="checkbox" class="input-productos-check" id="check">
+        <label for="check">
+            <label for="">
+                <div class="check-on">
+                    <% for(let i=1; i < 7; i++){ %>
+                        <div class="item">
+                            <p>Item <%- i %>
+                            </p>
+                        </div>
+                        <% } %>
+                </div>
+            </label>
+        </label>
+        <label for="check">
+            <p>PRODUCTOS</p>
+        </label>
     <a href="#">COMO COMPRAR</a>
-    <a href="#">QUIENES SOMOS</a>
-    <a href="#">POLITICA DE DEVOLUCION</a>
-    <a href="#">CONTACTO</a>
+    <a href="/aboutUs">QUIENES SOMOS</a>
+    <a href="/politicaDeDevolucion">POLITICA DE DEVOLUCION</a>
+    <a href="/contact">CONTACTO</a>
 </nav>

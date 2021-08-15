@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %> 
+<body>
+  <%- include("../partials/header") %> 
+    <main class="main-register">
+        <div class="form-container">
+            <h2>INICIA SESION</h2>
+            <hr>
+            <form action="" method="">
+                <div class="form">
+                    <div class="input-container">
+                        <label for="email">Dirección de Correo Electrónico:</label>
+                        <input class="input-style" type="email" name="email">
+                        <span class="error-message">Debe ingresar su email</span>
+                    </div>
+                    <div class="input-container">
+                        <label for="password">Contraseña:</label>
+                        <input class="input-style" type="password" name="password">
+                        <span class="error-message">Debe ingresar su contraseña</span>
+                    </div>
+                 
+                    <div class="check">
+                        <label for="terms"> Recordar contraseña</label>
+                        <input type="checkbox" name="terms" id="recordar">
+                        <span class="error-message">Debe aceptar los términos y condiciones</span>
+                    </div>
+                    <div class="button-container">
+                        <span class="error-message">Credenciales inválidas</span>
+                        <button type="submit" class="btn btn-submit">INICIAR SESION</button>
+                    </div>
+                    <span>¿Aún no estas registrado?<br> <a href="./register">Registrate</a></span>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include("../partials/footer") %> 
+</body>
+</html>

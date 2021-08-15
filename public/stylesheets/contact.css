@@ -1,0 +1,68 @@
+.body-contact {
+    background-color: gainsboro;
+}
+
+.main-contact form {
+    background-color: gainsboro;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    max-width: 550px;
+}
+
+.main-contact form h2 {
+    display: none;
+}
+
+.main-contact form h3 {
+    margin: 10px;
+}
+
+.main-contact form .select-area-contact {
+    background-color: white;
+}
+
+.main-contact form .select-area-contact > option {
+    margin: auto 20px;
+}
+
+.main-contact form .lbl-group {
+    font-size: 1rem;
+    margin: 30px auto 10px 10px;
+}
+
+.main-contact form .input-group {
+    border : solid 0.1px black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: auto 10px;
+    padding: 7px;
+}
+
+.main-contact form .lbl-area-contact {
+    font-size: 1rem;
+}
+
+.main-contact form .txtarea-mensaje-contact {
+    resize: none;
+}
+
+.main-contact form > button {
+    background-color: var(--color-rojoVino);
+    border-radius: 3px;
+    color: white;
+    margin: 30px;
+    padding: 7px;
+}
+
+@media(min-width: 768px) {
+
+    .main-contact form h2 {
+        display: block;
+    }
+
+    .main-contact form {
+        max-width: 786px;
+    }
+}
