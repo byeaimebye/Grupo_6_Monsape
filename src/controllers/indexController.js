@@ -2,7 +2,6 @@
 let { vinos } = require('../data/db')
 
 
-
 module.exports = {
     index : (req, res)=>{
         
@@ -18,5 +17,18 @@ home:(req,res) => {
 },
 aboutUs:(req,res) => { 
     res.render("general/aboutUs", {title: "Sobre Nosotros"})
+},
+contact : (req, res)=>{
+    res.render("general/contact", {title:"Contactanos"});
+},
+error: (req, res) =>{
+    res.render("general/error", {title: "404 not found"})
+},
+politicaDeDevolucion: (req, res) =>{
+    res.render("general/politicaDeDevolucion",{title:"Politicas de Devolucion"})
+},
+ tienda : (req, res) => {
+  res.render("product/tienda", {title: "Tienda"});
+    }
 }
-}
+
