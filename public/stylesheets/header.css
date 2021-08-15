@@ -11,7 +11,7 @@
 
 header {
     
-  background-color:black;
+  background-image: url("/img/header-desktop.png");
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     background-color: var(--color-grisOscuro);

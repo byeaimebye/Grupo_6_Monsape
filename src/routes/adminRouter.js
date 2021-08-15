@@ -1,8 +1,8 @@
 const express = require("express");
-const router = express.Router();
+let router = express.Router();
 
-const controller = require("../controllers/adminController");
+let {admin} = require("../controllers/adminController");
 
-router.get("/", controller.index);
+router.get("/", admin);
 
 module.exports = router;
