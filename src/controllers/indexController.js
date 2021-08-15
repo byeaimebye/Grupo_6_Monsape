@@ -28,7 +28,9 @@ politicaDeDevolucion: (req, res) =>{
     res.render("general/politicaDeDevolucion",{title:"Politicas de Devolucion"})
 },
  tienda : (req, res) => {
-  res.render("product/tienda", {title: "Tienda"});
+  res.render("product/tienda", {
+      vinos: vinos,
+      title: "Tienda"});
     }
 }
 
