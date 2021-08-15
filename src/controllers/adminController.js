@@ -3,3 +3,5 @@ let controller = {
         res.render("admin/admin", {title: "vista admin"});
     }
 };
+
+module.exports = controller;
