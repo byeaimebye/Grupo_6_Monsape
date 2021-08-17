@@ -3,7 +3,7 @@
 .carousel-container0 {
     max-width: 1000px;
     position: relative;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
 /* Esconde las imágenes por defecto */
@@ -14,6 +14,7 @@
 
 .slides0 img {
     width: 100%;
+    height: 60vw;
 }
 
 .dots0 {
@@ -83,4 +84,27 @@
     animation-duration: 1.5s;
     -webkit-animation-name: fade0;
     -webkit-animation-duration: 1.5s;
+}
+
+/*Media Queries*/
+
+@media(min-width: 768px){
+    .slides0 img {
+        width: 100%;
+        height: 40vw;
+    }
+}
+
+@media(min-width: 1024px){
+    .slides0 img {
+        width: 100%;
+        height: 34vw;
+    }
+}
+
+@media(min-width: 1200px){
+    .slides0 img {
+        width: 100%;
+        height: 32vw;
+    }
 }

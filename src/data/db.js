@@ -1,5 +1,5 @@
-let fs = require("fs");
+let fs = require('fs');
 
-let db = JSON.parse(fs.readFileSync("vinos.json"), "utf-8");
-
-module.exports = db;
+module.exports={
+    vinos: JSON.parse(fs.readFileSync("./src/data/vinos.json", "utf-8"))
+}

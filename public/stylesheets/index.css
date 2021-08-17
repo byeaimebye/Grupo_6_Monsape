@@ -1,9 +1,10 @@
 .main-ingreso {
-    background-color: black;
+   font-family: 'Rosarivo', serif;
+    background-color:white;
     background-image: url(../img/Background.png);
     background-size: cover;
     display: flex;
-    height: 100vh;
+    
     justify-content: center;
     margin: 0 auto;
 }
@@ -19,6 +20,7 @@
 }
 
 .main-ingreso .difu .monsape {
+    
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -26,6 +28,8 @@
 }
 
 .main-ingreso .difu .monsape .monsape-title {
+    font-weight: 100;
+    font-family: 'Rosarivo', serif;
     color: white;
     font-size: 36px;
     text-align: center;
@@ -35,16 +39,18 @@
 }
 
 .main-ingreso .difu .welcome {
-    color: black;
+    font-weight: 100;
+    font-family: 'Rosarivo', serif;
+    color: white;
     font-size: 18px;
     margin-top: 45px;
     text-align: center;
 }
 
 .main-ingreso .difu .monsape .logo-svg img {
-    margin: 0 auto;
+    margin: 22px auto;
     text-align: center;
-    width: 100px;
+    width: 120px;
 }
 
 .main-ingreso .difu .year {
@@ -65,12 +71,12 @@
 
 .main-ingreso .difu #año {
     background: rgba(86, 7, 12, 0.5);
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
     font-size: larger;
     font-weight: inherit;
     height: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding: 15px;
     text-align: center;
     width: 100px;
@@ -88,9 +94,13 @@
     position: absolute;
     text-align: center;
     width: 100px;
+    color: white;
 }
 
 .main-ingreso .difu .year .adn {
+    font-weight: 100;
+    font-family: 'Rosarivo', serif;
+    color: white;
     font-size: 16px;
     padding-bottom: 10px;
 }

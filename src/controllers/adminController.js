@@ -1,8 +1,8 @@
 let db =  require("../data/db")
 
 let controller = {
-    index : (req, res) => {
-        res.render("admin");
+    admin: (req, res) => {
+        res.render("admin/admin", {title: "vista admin"});
     }
 };
 

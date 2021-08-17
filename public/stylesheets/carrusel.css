@@ -42,6 +42,24 @@ h1.titulo-carru{
     height: 100%;
     object-fit: cover;
   }
+
+  .carrusel-item h3 {
+    position: relative;
+    bottom: 141px;
+    text-align: center;
+    background: rgba(1, 1, 1, 0.5);
+    color: white;
+    padding: 13px;
+    width: 77%;
+    height: 74px;
+    left: 36px;
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+
+  
   
 .carrusel-item:hover {
     transform: scale(1.2);

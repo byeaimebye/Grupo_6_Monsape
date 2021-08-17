@@ -12,9 +12,9 @@
         "azucarResidual": "2,93 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 5300,
+        "descuento": 10,
+        "image": "/VinosJson/dato1.jpg"
     },
     {
         "id": 2,
@@ -29,9 +29,9 @@
         "azucarResidual": "3,15 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 2500,
+        "descuento": 15,
+        "image": "/VinosJson/dato2.jpg"
     },
     {
         "id": 3,
@@ -46,9 +46,9 @@
         "azucarResidual": "1,59 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 13000,
+        "descuento": 25,
+        "image": "/VinosJson/dato3.jpg"
     },
     {
         "id": 4,
@@ -63,13 +63,13 @@
         "azucarResidual": "2,90 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 900,
+        "descuento": 5,
+        "image": "/VinosJson/dato4.jpg"
     },
     {
         "id": 5,
-        "nombre": "Monsape Gala 1 - Malbec - Petit Verdot - Tannat",
+        "nombre": "Monsape Gala 1 - Malbec",
         "descripcion": "Monsape Gala 1 es un vino innovador por fuera y por dentro. De color rojo violáceo intenso y brillante. Sus aromas son sutiles y equilibrados, con notas de frutas rojas y especias frescas. En boca es ágil y expresivo, voluptuoso, con fuerza y agarre que le augura un gran potencial. De paladar franco y moderno, vibrante, jugoso y con buena concentración de fruta. En su final persistente se siente la madera muy bien integrada. Es un Malbec-blend pionero, con mucha vida por delante.",
         "variedad": "Malbec 85%, Tannat 10%, Petit Verdot 5%.",
         "coleccion": "Gala Collection",
@@ -80,13 +80,13 @@
         "azucarResidual": "2,72 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1200,
+        "descuento": 15,
+        "image": "/VinosJson/dato5.jpg"
     },
     {
         "id": 6,
-        "nombre": "Monsape Gala 2 - Cabernet Sauvignon - Cabernet Franc - Merlot",
+        "nombre": "Monsape Gala 2",
         "descripcion": "Monsape Gala 2 es un vino sofisticado y moderno con espíritu clásico. De color rojo bordó profundo y brillante, sus aromas son delicados y armónicos, con notas de frutos del bosque y especias. En boca es voluptuoso y fresco, con buen cuerpo y taninos firmes. De paladar consistente, con carácter elegante y expresivo, y suaves toques vegetales típicos del Cabernet Sauvignon. En su largo y atractivo final se sienten los ahumados de la crianza totalmente integrados. Es un tinto que va a ganar complejidad con la guarda.",
         "variedad": "Cabernet Sauvignon 85%, Cabernet Franc 10%, Merlot 5%.",
         "coleccion": "Gala Collection",
@@ -97,13 +97,13 @@
         "azucarResidual": "2,84 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1050,
+        "descuento": 15,
+        "image": "/VinosJson/dato6.jpg"
     },
     {
         "id": 7,
-        "nombre": "Monsape Gala 3 - Viognier - Chardonnay - Riesling",
+        "nombre": "Monsape Gala 3 - Viognier ",
         "descripcion": "Monsape Gala 3 es pionero entre los blends blancos argentinos. De color amarillo intenso con reflejos dorados, sus aromas son delicados y profundos, con notas de frutas blancas, rosas y especias secas. En boca es untuoso y refrescante, con buen cuerpo y paso mordiente. De paladar franco y muy expresivo, con carácter maduro y múltiples capas de sabores. Su final es profundo y equilibrado. Es un vino con personalidad propia y buen potencial de guarda.",
         "variedad": "Chardonnay, Riesling y Viognier.",
         "coleccion": "Gala Collection",
@@ -113,9 +113,9 @@
         "azucarResidual": "2,34 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 555,
+        "descuento": 5,
+        "image": "/VinosJson/dato7.jpg"
     },
     {
         "id": 8,
@@ -130,13 +130,13 @@
         "azucarResidual": "2,64 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1800,
+        "descuento": 25,
+        "image": "/VinosJson/dato8.jpg"
     },
     {
         "id": 9,
-        "nombre": "Monsape - Riesling - Las Compuertas 2021",
+        "nombre": "Monsape - Riesling ",
         "descripcion": "Monsape Riesling Las Compuertas es pionero entre los varietales argentinos. De color amarillo brillante con reflejos dorados y verdosos. Sus aromas son equilibrados y expresivos; combinan frutas tropicales y flores silvestres. En boca es vivaz y refrescante, con buen cuerpo. De paladar franco y complejo, con tensión y un carácter floral que habla de su tipicidad, pero también de su personalidad.",
         "variedad": "Riesling 100%.",
         "Maridaje": "Es ideal para disfrutar con platos intensos y especiados al estilo Thai, como el pad thai. O bien con cochinillo al horno con vegetales.",
@@ -147,13 +147,13 @@
         "azucarResidual": "1,48 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 11ºC.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1750,
+        "descuento": 30,
+        "image": "/VinosJson/dato9.jpg"
     },
     {
         "id": 10,
-        "nombre": "Monsape - Grand Pinot Noir - La Consulta",
+        "nombre": "Monsape - Grand Pinot Noir",
         "descripcion": "Monsape - Grand Pinot Noir - La Consulta es un auténtico vino de terruño. De color rojo rubí­ brillante y poco profundo, sus aromas son delicados, con notas de frutos rojos y especias. En boca es vivaz y equilibrado, de textura fina, paladar franco y refrescante; con carácter complejo y final profundo en el que se perciben integrados los tostados de la crianza en barricas de roble francés. Es un exponente varietal con personalidad y potencial de guarda.",
         "variedad": "Pinot Noir 100% (Clon 777).",
         "Maridaje": "Es ideal para disfrutar con platos especiales como langostinos grillados, magret de canard a la pimienta, o bien pasta seca ai funghi.",
@@ -164,9 +164,9 @@
         "azucarResidual": "2,59 g/l",
         "temperaturaRecomendada": "Entre 14ºC y 16ºC. Sugerimos decantar el vino una hora antes de beberlo.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 2500,
+        "descuento": 35,
+        "image": "/VinosJson/dato10.jpg"
     },
     {
         "id": 11,
@@ -181,13 +181,13 @@
         "azucarResidual": "2,20 g/l",
         "temperaturaRecomendada": "Entre 15ºC y 18ºC.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1900,
+        "descuento": 20,
+        "image": "/VinosJson/dato11.jpg"
     },
     {
         "id": 12,
-        "nombre": "Monsape - Malbec - Terroir Los Miradores",
+        "nombre": "Monsape - Malbec",
         "descripcion": "Monsape - Malbec - Terroir Los Miradores es un vino que refleja el espíritu de un viñedo nuevo. De color rojo violáceo profundo y brillante. Sus aromas son intensos, con notas de frutos del bosque, especias y hierbas frescas. En boca es voluptuoso y consistente, con taninos vivaces y buen agarre. De paladar franco y expresivo, con carácter y tipicidad, y un final con dejo floral tan persistente como refrescante. Es un tinto moderno, con personalidad y potencial para ganar complejidad con la guarda.",
         "variedad": "Malbec 100%.",
         "Maridaje": "Es ideal para disfrutar con platos especiales como pastas rellenas de cordero en sus propios jugos, paleta de novillo roti con batatas y zanahorias, o risotto de remolachas.",
@@ -198,9 +198,9 @@
         "azucarResidual": "2,80 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C. Sugerimos decantar el vino al menos una hora antes de beberlo.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1010,
+        "descuento": 25,
+        "image": "/VinosJson/dato12.jpg"
     },
     {
         "id": 13,
@@ -215,9 +215,9 @@
         "azucarResidual": "2,81 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 5455,
+        "descuento": 55,
+        "image": "/VinosJson/dato13.jpg"
     },
     {
         "id": 13,
@@ -232,9 +232,9 @@
         "azucarResidual": "1,50 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 988,
+        "descuento": 20,
+        "image": "/VinosJson/dato13.jpg"
     },
     {
         "id": 14,
@@ -249,9 +249,9 @@
         "azucarResidual": "2,50 g/l",
         "temperaturaRecomendada": "Entre 14°C y 16°C. Sugerimos decantar el vino una hora antes de beberlo.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 770,
+        "descuento": 10,
+        "image": "/VinosJson/dato14.jpg"
     },
     {
         "id": 15,
@@ -266,9 +266,9 @@
         "azucarResidual": "2,55 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1020,
+        "descuento": 20,
+        "image": "/VinosJson/dato15.jpg"
     },
     {
         "id": 16,
@@ -283,9 +283,9 @@
         "azucarResidual": "2,50 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1010,
+        "descuento": 10,
+        "image": "/VinosJson/dato16.jpg"
     },
     {
         "id": 17,
@@ -300,13 +300,13 @@
         "azucarResidual": "2,30 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
         "categoria": "Tinto.",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 500,
+        "descuento": 10,
+        "image": "/VinosJson/dato17.jpg"
     },
     {
         "id": 18,
-        "nombre": "Monsape Gewurztramminer - Seleccion de Granos Nobles",
+        "nombre": "Monsape Gewurztramminer",
         "descripcion": "Monsape Gewurztraminer - Selección de Granos Nobles es un blanco dulce de color amarillo brillante con reflejos dorados. Sus aromas son intensos y melosos, con notas de frutas tropicales y cí­tricas maduras, y flores blancas. En boca es untuoso y expresivo, de paladar franco y fresco, con cuerpo bien equilibrado. Final persistente, atractivo y amable con un toque especiado. Es un vino de cosecha tardía original y con mucha personalidad.",
         "variedad": "Gewurztraminer 100%.",
         "Maridaje": "Ideal para disfrutar con postres como el panqueque de manzanas o zapallos en almíbar con queso cuartirolo.",
@@ -317,9 +317,9 @@
         "azucarResidual": "66,30 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 3100,
+        "descuento": 25,
+        "image": "/VinosJson/dato18.jpg"
     },
     {
         "id": 19,
@@ -334,9 +334,9 @@
         "azucarResidual": "1,70 g/l",
         "temperaturaRecomendada": "Entre 10°C y 14°C.",
         "categoria": "Tinto",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 850,
+        "descuento": 15,
+        "image": "/VinosJson/dato19.jpg"
     },
     {
         "id": 20,
@@ -351,9 +351,9 @@
         "azucarResidual": "1,43 g/l",
         "temperaturaRecomendada": "Entre 8°C y 12°C.",
         "categoria": "Blanco",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1022,
+        "descuento": 25,
+        "image": "/VinosJson/dato20.jpg"
     },
     {
         "id": 21,
@@ -368,9 +368,9 @@
         "azucarResidual": "3,76 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1500,
+        "descuento": 25,
+        "image": "/VinosJson/dato21.jpg"
     },
     {
         "id": 22,
@@ -385,9 +385,9 @@
         "azucarResidual": "7,10 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 1555,
+        "descuento": 15,
+        "image": "/VinosJson/dato22.jpg"
     },
     {
         "id": 23,
@@ -402,9 +402,9 @@
         "azucarResidual": "7,10 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 8450,
+        "descuento": 35,
+        "image": "/VinosJson/dato23.jpg"
     },
     {
         "id": 24,
@@ -419,9 +419,9 @@
         "azucarResidual": "5,64 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 5500,
+        "descuento": 20,
+        "image": "/VinosJson/dato26.jpg"
     },
     {
         "id": 25,
@@ -436,8 +436,8 @@
         "azucarResidual": "8,20 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
         "categoria": "Espumoso",
-        "precio": "",
-        "descuento": "",
-        "image": ""
+        "precio": 10555,
+        "descuento": 50,
+        "image": "/VinosJson/dato25.jpg"
     }
 ]

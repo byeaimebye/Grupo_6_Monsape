@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("./partials/head") %>
+<%- include("../partials/head") %>
 <body>
     <!-- Header start here -->
-    <%- include("./partials/header") %>
+    <%- include("../partials/header") %>
 
 
     <main class="main-register">
@@ -18,20 +18,9 @@
                         <input class="input-style" type="text" name="categoria" required>
                         <span class="error-message">Debe ingresar una categoria válida</span>
                     </div>
-                    
-                </div>
-            </form>
-        </div>
-    </main>    
-
-    <!--FOOTER-->
-    <%- include("./partials/footer") %>
-</body>
-</html>
-
-<!-- <div class="input-container">
+                    <div class="input-container">
                         <label for="sub-categoria">Sub Categoria:</label>
-                        <input class="input-style" type="text" name="sub-categoria" ">
+                        <input class="input-style" type="text" name="sub-categoria">
                         <span class="error-message">Debe ingresar una sub categoria válida</span>
                     </div>
                     <div class="input-container">
@@ -56,4 +45,15 @@
                     <div class="button-container">
                         <span class="error-message">Credenciales inválidas</span>
                         <button class="btn btn-submit">Finalizar</button>
-                    </div> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>    
+
+    <!--FOOTER-->
+    <%- include("./partials/footer") %>
+</body>
+</html>
+
+<!--  -->

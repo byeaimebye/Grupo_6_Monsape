@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %>
+<body class="body-tienda">
+    <!-- Header start here -->
+    <%- include("../partials/header") %> 
+    
+    <!-- CAROUSEL -->
+
+    <section class="carousel-container0">
+        
+        <div class="slides0 fade0">
+            <img src="/img/banners/banner1.jpg" alt="">            
+        </div>
+        
+        <div class="slides0 fade0">
+            <img src="/img/banners/banner2.jpg" alt="">
+        </div>
+        
+        <div class="slides0 fade0">
+            <img src="/img/banners/banner3.jpg" alt="">
+        </div>
+        
+        <div class="slides0 fade0">
+            <img src="/img/banners/banner4.jpg" alt="">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev0" onclick="plusSlides0(-1)">&#10094;</a>
+        <a class="next0" onclick="plusSlides0(1)">&#10095;</a>
+        
+    </section>
+
+    <!-- The dots/circles -->
+    <div class="dots0">
+        <span class="dot0" onclick="currentSlide0(1)"></span>
+        <span class="dot0" onclick="currentSlide0(2)"></span>
+        <span class="dot0" onclick="currentSlide0(3)"></span>
+        <span class="dot0" onclick="currentSlide0(4)"></span>
+    </div>
+    <!--frase-->
+    <div class="frase">
+        <h4>VINO PARA QUEDARSE</h4>
+        <P>Bienvenidos a nuestra tienda. Estamos orgullosos de ofrecerle una amplia selección de los mejores vinos argentinos.</P>
+        <!--linea horizontal-->
+        <hr>
+    </div>    
+    <!--Filtro de productos-->
+    <div class="filtro-de-productos">
+        <span>Ordenar por: </span>
+        <select>        
+            <option value="mas-vendidos" selected>Más Vendidos</option>
+            <option value="precio-menor">Precio: Menor a Mayor</option>
+            <option value="precio-mayor">Precio: Mayor a Menor</option>
+            <option value="a-z">A - Z</option>
+            <option value="z-a">Z - A</option>
+            <option value="mas-nuevo">Más Nuevo al más Viejo</option>
+            <option value="mas-viejo">Más Viejo al más Nuevo</option>
+        </select>
+    </div>
+    <!--MAIN-->
+    <main class="main-tienda">
+        <!--categorias de productos-->
+        <div class="categorias-principales">
+            <h5>Categorias principales</h5>
+            <ul>
+                <li>Tintos</li>
+                <li>Blancos</li>
+                <li>Espumantes</li>
+                <li>Gift Card</li>
+                <li>Rosado</li>
+                <li>Box</li>
+                <li>Merchandising oficial</li>
+            </ul>
+        </div>
+        <section class="products">
+            <% vinos.forEach(vino => { %>
+                <article class="product-container">
+                    <img class="imagen-producto" src="./img/<%= vino.image %> " alt="Imagen de vino Monsape">
+                    <div class="descuento-porcentaje">
+                        <p><%= vino.descuento %>  OFF</p>
+                    </div>
+                    <div class="caja-de-vino">
+                        <img class="caja" src="./img/tienda/caja.svg" alt="caja de vino">
+                        <img class="cantidad-vinos" src="./img/tienda/6.svg" alt="cantidad de vinos en una caja">
+                    </div>
+                    <div class="descripcion-producto">
+                        <p class="precio-por-caja">Precio caja x6  botellas</p>
+                        <h4 class="nombre-producto"><%= vino.nombre %> </h4>
+                    </div>
+                    <div class="descuento-y-precio">
+                        <span class="descuento">$<%= Math.round((100*vino.precio)/(100-vino.descuento)) %> </span>
+                        <span class="precio">$<%= vino.precio %> </span>
+                    </div>
+                    <button class="agregar-producto-al-carrito">Agregar</button>
+                </article>
+            <% }) %>            
+        </section>
+    </main>
+
+    <!--lo que ofrece Monsape-->
+    <div class="monsape-ofrece">
+        <div class="envio">
+            <p>ENVIO GRATIS A TODO EL PAIS</p>
+            <div class="camion">
+                <img src="./img/tienda/camion-de-reparto.svg" alt="camión de reparto">                
+            </div>
+        </div>
+        <div class="tarjetas-credito">
+            <p>PAGÁ CON TARJETA DE CREDITO</p>
+            <div class="tarjetas">
+                <img src="./img/tienda/visa.svg" alt="tarjeta de credito Visa">
+                <img src="./img/tienda/maestro.svg" alt="tarjeta de credito Maestro">
+                <img src="./img/tienda/paypal.svg" alt="tarjeta con Paypal">
+            </div>
+        </div>        
+        <div class="satisfaccion">
+            <p>SATISFACCIÓN GARANTIZADA</p>
+            <div class="copa-con-vino">
+                <img src="./img/tienda/copa-con-vino.svg" alt="copa con vino">
+            </div>
+        </div>
+    </div>
+    <!--banner 2 mobile-->
+    <section class="carousel-container1">
+        
+        <div class="slides1 fade1">
+            <div class="envio">
+                <p>ENVIO GRATIS A TODO EL PAIS</p>
+                <div class="camion">
+                    <img src="./img/tienda/camion-de-reparto.svg" alt="camión de reparto">                
+                </div>
+            </div>        
+        </div>
+        
+        <div class="slides1 fade1">
+            <div class="tarjetas-credito">
+                <p>PAGÁ CON TARJETA DE CREDITO</p>
+                <div class="tarjetas">
+                    <img src="./img/tienda/visa.svg" alt="tarjeta de credito Visa">
+                    <img src="./img/tienda/maestro.svg" alt="tarjeta de credito Maestro">
+                    <img src="./img/tienda/paypal.svg" alt="tarjeta con Paypal">
+                </div>
+            </div>
+        </div>
+        
+        <div class="slides1 fade1">
+            <div class="satisfaccion">
+                <p>SATISFACCIÓN GARANTIZADA</p>
+                <div class="copa-con-vino">
+                    <img src="./img/tienda/copa-con-vino.svg" alt="copa con vino">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- The dots/circles -->
+    <div class="dots1">
+        <span class="dot1" onclick="currentSlides1(1)"></span>
+        <span class="dot1" onclick="currentSlides1(2)"></span>
+        <span class="dot1" onclick="currentSlides1(3)"></span>        
+    </div>
+         
+    <!--FOOTER-->
+    <%- include("../partials/footer") %>
+</body>
+</html>
