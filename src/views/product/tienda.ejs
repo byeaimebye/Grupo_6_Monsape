@@ -89,7 +89,7 @@
                         <h4 class="nombre-producto"><%= vino.nombre %> </h4>
                     </div>
                     <div class="descuento-y-precio">
-                        <span class="descuento">$<%= vino.precio %> </span>
+                        <span class="descuento">$<%= Math.round((100*vino.precio)/(100-vino.descuento)) %> </span>
                         <span class="precio">$<%= vino.precio %> </span>
                     </div>
                     <button class="agregar-producto-al-carrito">Agregar</button>
