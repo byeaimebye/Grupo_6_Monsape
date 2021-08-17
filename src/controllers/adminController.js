@@ -1,3 +1,5 @@
+let db =  require("../data/db")
+
 let controller = {
     index : (req, res) => {
         res.render("admin");
