@@ -14,7 +14,7 @@ header.home img{
 }
 header.home h1{
 
-    font-weight: lighter;
+    font-weight: 100;
     font-size: 22px;
     color: white;
     font-family: 'Rosarivo', serif;
@@ -257,10 +257,11 @@ font-size: 32px ;
 
 }
 main.home .cabecera{
-    top:8rem;
-    font-size: 22px; 
-
+    top: 5rem;
+    font-size: 118%;
     }
+
+   
 }
     /*  query tablet   */
 
