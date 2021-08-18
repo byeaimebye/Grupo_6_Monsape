@@ -50,7 +50,7 @@ header .anclas .register-cart-header a>button {
 
 .cart-data-label-btn-close {
     background-color: #56070C;
-    border-radius: 30px;
+    border: solid 2px white;
     color: white;
     display: none;
     height: 40px;
@@ -63,10 +63,20 @@ header .anclas .register-cart-header a>button {
     margin-top: 12px;
 }
 
+.cart-data-modal-view{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 901;
+}
+
 .cart-data-view {
     background-color: white;
-    border-radius: 20px;
-    height: 90%;
+    height: 100%;
     left: 100%;
     overflow: auto;
     opacity: 0;
@@ -84,6 +94,10 @@ header .anclas .register-cart-header a>button {
 }
 
 .cart-data:checked +.cart-data-label > label .cart-data-view .cart-data-label-btn-close {
+    display: block;
+}
+
+.cart-data:checked + .cart-data-modal-view {
     display: block;
 }
 
@@ -299,6 +313,7 @@ header .anclas .modal2 {
 
     .cart-data:checked +.cart-data-label > label .cart-data-view{
         left: 30%;
+        position: fixed;
         opacity: 1;
         width: 70%;
     }
@@ -476,5 +491,13 @@ header .anclas img.login{
         left: 50%;
         opacity: 1;
         width: 50%;
+    }
+}
+
+@media (min-width:1200px){
+
+    .cart-data:checked +.cart-data-label > label .cart-data-view{
+        left: 55%;
+        width: 45%;
     }
 }
