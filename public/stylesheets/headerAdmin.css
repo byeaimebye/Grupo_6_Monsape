@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+header.header-admin{
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.2fr;
+  background-image: url("/img/header-desktop.png");
+}
+header.header-admin .logoAdmin{
+    text-align: center;
+}
+header.header-admin .logoAdmin h1{
+   text-align: center;
+   color: white;
+   font-family: 'Rosarivo', serif;
+   font-weight: 100;
+}
+ header.header-admin .logoAdmin img{
+height: 50px;
+width: 50px;
+ }
+  nav.ruteables ul {
+      color: white;
+      text-decoration: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   margin-top: 30px;
+   list-style: none;
+text-align: center;
+ }
+ nav.ruteables ul li a{
+color: white;
+text-decoration: none;
+font-size: 24px;
+text-align: center;
+ }
+ 
+ header.header-admin .logOut img{
+     height: 40px;
+     width: 40px;
+     margin-top: 25px;
+ }
+ .search-admin {
+     padding: 10px;
+     text-align: center;
+     background-color: grey;
+ }
+ .search-admin input{
+     border-radius: 25px;
+    height: 40px;
+    width: 80%;
+ }
