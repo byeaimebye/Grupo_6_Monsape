@@ -5,4 +5,5 @@ let {admin} = require("../controllers/adminController");
 
 router.get("/", admin);
 
+
 module.exports = router;

@@ -45,7 +45,7 @@
         "acidezTotal": "6 g/l",
         "azucarResidual": "1,59 g/l",
         "temperaturaRecomendada": "Entre 8ºC y 10ºC",
-        "categoria": "Blanco",
+        "categoria": "Espumante",
         "precio": 13000,
         "descuento": 25,
         "image": "/VinosJson/dato3.jpg"
@@ -333,7 +333,7 @@
         "acidezTotal": "7,30 g/l",
         "azucarResidual": "1,70 g/l",
         "temperaturaRecomendada": "Entre 10°C y 14°C.",
-        "categoria": "Tinto",
+        "categoria": "Rosado",
         "precio": 850,
         "descuento": 15,
         "image": "/VinosJson/dato19.jpg"
