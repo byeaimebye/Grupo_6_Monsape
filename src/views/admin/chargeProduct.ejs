@@ -3,5 +3,83 @@
     <%- include("../partials/headAdmin") %>
 <body>
     <%- include("../partials/headerAdmin") %>
+    <main class="main-admin-create">
+        <h1>AGREGAR PRODUCTO</h1>
+     <div class="create-forms">
+         <form class="create" action="" enctype="">
+             <div class="inputs-create">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre">
+             </div>
+             <div class="large">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" name="descripcion" id="descripcion">
+                   </div>
+                   <div class="inputs-create">
+                    <label for="variedad">Variedad:</label>
+                    <select name="variedad" id="">
+                        <option value="malbec">Malbec</option>
+                        <option value="cabernet">Cabernet</option>
+                        <option value="petit">Petit</option>
+                        <option value="chardonay">Chardonay</option>
+                        <option value="malbec">Blend</option>
+                    </select>
+                       </div>
+                       <div class="inputs-create">
+                        <label for="categoria">Categoria:</label>
+                        <select name="categoria" id="">
+                            <option value="blanco">Blanco</option>
+                            <option value="tinto">Tinto</option>
+                            <option value="rosado">Rosado</option>
+                            <option value="espumante">Espumante</option>
+                           
+                        </select>
+                           </div>
+                       <div class="inputs-create">
+                        <label for="coleccion">Coleccion:</label>
+                        <select name="coleccion" id="">
+                            <option value="fines">Fines</option>
+                            <option value="galla">Galla</option>
+                            <option value="terroir">Terroir</option>
+                            <option value="insignia">Insignia</option>
+                            <option value="calebracion">Celebración</option>
+                        </select>
+                           </div>
+                           <div class="large">
+                            <label for="maridaje">Maridaje:</label>
+                            <input type="text" name="maridaje" id="maridaje">
+                               </div>
+                               <div class="inputs-create">
+                                <label for="graduacion">Graduacion Alcoholica:</label>
+                                <input type="number" name="graduacion" id="graduacion">
+                                <p>%</p>
+                                   </div>
+                                   <div class="inputs-create">
+                                    <label for="acidez">Acidez:</label>
+                                    <input type="number" name="acidez" id="acidez">
+                                    <p>g/l</p>
+                                       </div>
+                                       <div class="inputs-create">
+                                        <label for="azucar">Azucar Residual:</label>
+                                        <input type="number" name="azucar" id="azucar">
+                                        <p>g/l</p>
+                                           </div>
+                                           <div class="temperatura-create">
+                                            <label for="nombre">Temperatura recomendada:</label>
+                                            <input type="number" name="temperatura1" id="temperatura1">
+                                            <p>°C</p>
+                                            <input type="number" name="temperatura1" id="temperatura1">
+                                            <p>°C</p>
+                                               </div>
+                                               <div class="inputs-create">
+                                                <label for="precio">Precio:</label>
+                                                <input type="number" name="precio" id="precio">
+                                                   </div>
+                                                   <div class="inputs-create">
+                                                    <label for="nombre">Descuento:</label>
+                                                    <input type="number" name="descuento" id="descuento"><p>%</p>
+                                                       </div>                              
+     </div>
+    </main>
 </body>
 </html>

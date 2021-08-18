@@ -1,0 +1,51 @@
+main.main-admin-create{
+    margin: 0 auto;
+    text-align: center;
+    background-color: grey;
+    width: 90%;
+    height: 100%;
+    border-radius: 55px;
+    margin-top: 20px;
+    padding: 50px;
+}
+main.main-admin-create h1{
+    margin-bottom: 20px;
+}
+#descripcion input{
+    height: 55px;
+    }
+main.main-admin-create  .temperatura-create{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+main.main-admin-create  .temperatura-create input{
+    height: 25px;
+    border-radius: 25px;
+    text-align: center;
+    
+    
+}
+main.main-admin-create  .inputs-create input{
+  height: 25px;
+  border-radius: 25px;
+}
+main.main-admin-create .inputs-create{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+main.main-admin-create  .large input{
+    height: 55px;
+    border-radius: 25px;
+}
+main.main-admin-create  .large{
+    margin-bottom: 10px;
+}
+
+form.create{
+    display: flex;
+    flex-direction: column;
+}
