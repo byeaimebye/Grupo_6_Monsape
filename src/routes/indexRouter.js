@@ -5,7 +5,6 @@ let { home,
     aboutUs,
     contact,
     politicaDeDevolucion,
-    error,
     search,
     categorias,
     tienda /* TIENDA la dejo funcionando aca pero tiene que sumarse a products */
@@ -16,10 +15,9 @@ router.get('/home', home);
 router.get('/aboutUs', aboutUs);
 router.get('/contact', contact);
 router.get('/politicaDeDevolucion', politicaDeDevolucion);
-router.get('/error', error);
 router.get('/tienda', tienda); /* recordar que tienda debe manejarse desde products */
-router.get('/search', search);
-router.get('/:categoria', categorias);
+router.get('/search', search); 
+router.get('/categoria/:categoria', categorias);
 
 
 module.exports = router;

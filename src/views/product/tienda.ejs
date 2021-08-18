@@ -64,11 +64,11 @@
         <div class="categorias-principales">
             <h5>Categorias principales</h5>
             <ul>
-                <li><a href="/Tinto">Tintos</a></li>
-                <li><a href="/Blanco">Blancos</a></li>
-                <li><a href="/Espumoso">Espumantes</a></li>
+                <li><a href="/categoria/Tinto">Tintos</a></li>
+                <li><a href="/categoria/Blanco">Blancos</a></li>
+                <li><a href="/categoria/Espumoso">Espumantes</a></li>
                 <li>Gift Card</li>
-                <li><a href="/Rosado">Rosado</a></li>
+                <li><a href="/categoria/Rosado">Rosado</a></li>
                 <li>Box</li>
                 <li>Merchandising oficial</li>
             </ul>
@@ -76,13 +76,13 @@
         <section class="products">
             <% vinos.forEach(vino => { %>
                 <article class="product-container">
-                    <img class="imagen-producto" src="./img/<%= vino.image %> " alt="Imagen de vino Monsape">
+                    <img class="imagen-producto" src="../img/<%= vino.image %> " alt="Imagen de vino Monsape">
                     <div class="descuento-porcentaje">
                         <p><%= vino.descuento %>  OFF</p>
                     </div>
                     <div class="caja-de-vino">
-                        <img class="caja" src="./img/tienda/caja.svg" alt="caja de vino">
-                        <img class="cantidad-vinos" src="./img/tienda/6.svg" alt="cantidad de vinos en una caja">
+                        <img class="caja" src="../img/tienda/caja.svg" alt="caja de vino">
+                        <img class="cantidad-vinos" src="../img/tienda/6.svg" alt="cantidad de vinos en una caja">
                     </div>
                     <div class="descripcion-producto">
                         <p class="precio-por-caja">Precio caja x6  botellas</p>

@@ -21,9 +21,7 @@ aboutUs:(req,res) => {
 contact : (req, res)=>{
     res.render("general/contact", {title:"Contactanos"});
 },
-error: (req, res) =>{
-    res.render("general/error", {title: "404 not found"})
-},
+
 politicaDeDevolucion: (req, res) =>{
     res.render("general/politicaDeDevolucion",{title:"Politicas de Devolucion"})
 },
@@ -49,10 +47,12 @@ politicaDeDevolucion: (req, res) =>{
 	},
     categorias: (req, res) =>{
       
-        let categoria = vinos.filter( vino => vino.categoria == req.params.categoria)
-        res.render( "product/tienda" , { title: "Monsape", vinos: categoria})
-      
-        
+        let categoria = vinos.filter( vino => vino.categoria === req.params.categoria)
+       if(categoria){
+           res.render( "product/tienda" , { title: "Monsape", vinos: categoria})
+       }else{
+            res.render("error")
+        }
     }
 }
 
