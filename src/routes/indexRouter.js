@@ -7,6 +7,7 @@ let { home,
     politicaDeDevolucion,
     error,
     search,
+    categorias,
     tienda /* TIENDA la dejo funcionando aca pero tiene que sumarse a products */
     } = require("../controllers/indexController");
 
@@ -18,6 +19,7 @@ router.get('/politicaDeDevolucion', politicaDeDevolucion);
 router.get('/error', error);
 router.get('/tienda', tienda); /* recordar que tienda debe manejarse desde products */
 router.get('/search', search);
+router.get('/:categoria', categorias);
 
 
 module.exports = router;

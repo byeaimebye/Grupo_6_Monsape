@@ -32,7 +32,7 @@ politicaDeDevolucion: (req, res) =>{
       vinos: vinos,
       title: "Tienda"});
     },
-    search: (req, res) => {
+  search: (req, res) => {
 		let result = []
 		vinos.forEach(vino => {
 			if(vino.nombre.toLowerCase().includes(req.query.keywords.toLowerCase())){
@@ -46,6 +46,13 @@ politicaDeDevolucion: (req, res) =>{
 			search: req.query.keywords
 		}) 
         
-	}
+	},
+    categorias: (req, res) =>{
+      
+        let categoria = vinos.filter( vino => vino.categoria == req.params.categoria)
+        res.render( "product/tienda" , { title: "Monsape", vinos: categoria})
+      
+        
+    }
 }
 
