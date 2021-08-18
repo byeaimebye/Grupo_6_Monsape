@@ -1,3 +1,5 @@
+const {admin, charge} = require("../data/db");
+
 module.exports  = {
     admin: (req, res) => {
         res.render("admin/admin", {title: "vista admin"});
