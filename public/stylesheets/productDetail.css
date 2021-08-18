@@ -10,6 +10,7 @@
 }
 
 .main-productDetail .img-cuerpo-detail #img-carrito2 {
+    box-shadow: 0px 0px 25px 21px rgb(0, 0, 0, 20%);
     top: 2px;
     width: 200px;
 }
@@ -18,11 +19,33 @@
     margin: 0 50px;
 }
 
-.main-productDetail .img-cuerpo-detail .cuerpo-detail h4 {
-    font-size: larger;
-    margin: 20px auto;
+.h3-detail-colleccion{
+    color: rgba(0,0,0, 0.4);
+    margin: 30px auto 0;
+}
+
+.main-productDetail .img-cuerpo-detail .cuerpo-detail .h2-detail-nombre {
+    font-size: x-large;
+    margin: 0 auto;
     max-width: 390px;
     text-align: center;
+}
+
+.main-productDetail .img-cuerpo-detail .cuerpo-detail .h5-detail-variedad {/* 
+    border-bottom: solid 2px; */
+    color: var(--color-rojoVino);
+    max-width: 390px;
+    margin: 0 auto 20px;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 85%;
+}
+
+.section-description {/* 
+    box-shadow: 0px 0px 25px 21px rgb(0, 0, 0, 20%); */
+    margin: auto 27px 10px;
+    background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent);
+    padding: 20px;
 }
 
 .main-productDetail .detalle ul {
@@ -36,7 +59,7 @@
     align-items: center;
     display: flex;
     flex-direction: column-reverse;
-    height: 90px;
+    height: 70px;
     justify-content: space-between;
     margin-bottom: 30px;
 }
@@ -126,13 +149,68 @@
     width: 150px;
 }
 
+.more-details {
+    display: none;
+}
+
+.more-details-p > p{
+    align-items: center;
+    background-color: var(--color-rojoVino);
+    bottom: 20vh;
+    color: white;
+    display: flex;
+    font-size: 40px;
+    height: 30px;
+    justify-content: center;
+    opacity: 0.5;
+    position: fixed;
+    right: 5vw;
+    width: 30px;
+}
+
+.container-more-details {
+    background-color: rgba(0,0,0,0.5);/* 
+    display: none; */
+    left: 0;
+    height: 0;
+    position: fixed;
+    transition: height 0,
+                top 0;
+    transition-delay: 0.3s;
+    top: 100vh;
+    width: 100vw;
+}
+
+.container-more-details .container-more-details-content {
+    background-color: gainsboro;
+    position: fixed;
+    top: 100%;
+    transition: height 1s,
+                top 1s;
+    transition-delay: 0.1s;
+    height: 0;
+    width: 100%;
+}
+
+.more-details:checked + label .container-more-details {
+    
+    height: 100vh;
+    top: 0;
+}
+
+.more-details:checked + label .container-more-details label .container-more-details-content {
+    
+    height: 60%;
+    top: 40%;
+}
+
 @media (min-width: 768px) {
     .main-productDetail {
         align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin: 55px auto 55px;
+        margin: 0 auto 55px;
         max-width: 1000px;
         position: relative;
     }
@@ -144,9 +222,10 @@
     }
 
     .main-productDetail .img-cuerpo-detail #img-carrito2 {
-        margin-bottom: 100px;
-        height: 370px;
-        width: 370px;
+        /* margin-bottom: 100px; */
+        margin: 30px auto 0 10px;
+        height: 330px;
+        width: 330px;
     }
 
     .main-productDetail .cuerpo-detail{
@@ -170,10 +249,10 @@
 
     .main-productDetail .cuerpo-detail #nth:nth-child(1) {
         font-size: x-large;
-        order: 1;
+        order: 0;
     }
 
-    .main-productDetail .cuerpo-detail #nth:nth-child(2) {
+    /* .main-productDetail .cuerpo-detail #nth:nth-child(2) {
         border-top: solid 1px black;
         font-size: large;
         order: 3;
@@ -185,7 +264,7 @@
 
     .main-productDetail .cuerpo-detail #nth:nth-child(4) {
         order: 4;
-    }
+    } */
 
     .main-productDetail .cant-precio-detail {
         flex-direction: row;
@@ -226,7 +305,7 @@
 
     .main-productDetail #confirmar-2 {
         display: block;
-        margin: 10px auto 0;
+        margin: 200px auto 0;
         position: relative;
         width: 350px;
     }
@@ -252,6 +331,7 @@
 
     .main-productDetail #confirmar-2 {
         height: 35px;
+        margin: 100px auto 0;
         width: 500px;
     }
 }

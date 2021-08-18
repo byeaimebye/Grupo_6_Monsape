@@ -6,15 +6,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/indexRouter');
 var usersRouter = require('./routes/users');
-const productDetailRouter = require("./routes/productDetailRouter");
-const productCartRouter = require("./routes/productCartRouter");
+const products = require("./routes/productRouter");
 const adminRouter = require("./routes/adminRouter");
 
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));// Define la ubicación de la carpeta de las Vistas
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -22,11 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-
-app.use('/', indexRouter);
+/* 
+app.use('/', indexRouter); */
 app.use('/users', usersRouter);
-app.use("/productDetail", productDetailRouter);
-app.use("/productCart", productCartRouter);
+app.use("/products", products);
 app.use("/admin", adminRouter);
 
 

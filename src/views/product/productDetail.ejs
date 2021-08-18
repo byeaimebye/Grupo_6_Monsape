@@ -17,23 +17,15 @@
 
 
                 <div class="img-cuerpo-detail">
-                    <img id="img-carrito2" src="/img/carrito2.jpg" alt="Vino">
+                    <img id="img-carrito2" src="/img/<%= detalle.image %>  " alt="Vino">
                     <div class="cuerpo-detail">
-                        <h4 id="nth">Ernesto Catena - Almanegra Tinto (misterio) - Blend</h4>
-                        <div class="detalle" id="nth">
-                            <ul>
-                                <li>Graduación alcohólica: 13,7%.</li>
-                                <li>Presenta un color cereza casi púrpura, de capa media alta.</li>
-                                <li>Maduración en barricas de 100% Roble Francés y 40% Roble Nuevo.</li>
-                                <li>Presencia de aromas a frutilla, cerezas y membrillos, con notas de vainilla, madera
-                                    tostada
-                                    y
-                                    especias.</li>
-                            </ul>
-                        </div>
+                        <h3 class="h3-detail-colleccion"><%= detalle.coleccion %></h3>
+                        <h2 class="h2-detail-nombre" id="nth"><%= detalle.nombre %> </h2>
+                        <h5 class="h5-detail-variedad"> <%= detalle.variedad %> </h5>
+                        <section class="section-description"><%= detalle.descripcion %></section>
                         <!-- Botones para regular la cantidad de unidades de producto a adquirir -->
                         <div class="cant-precio-detail" id="nth">
-                            <p class="precio">$2.700</p>
+                            <p class="precio">$<%= detalle.precio %></p>
                             <div class="cant">
                                 <input type="button" name="menos" id="buttons" class="menos" value="-">
                                 <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
@@ -52,6 +44,20 @@
                     </div>
                 </div>
                 <input type="submit" name="confirmar" id="confirmar-2" value="Confirmar">
+                <input type="checkbox" name="more-details" id="more-details" value="" class="more-details">
+                <label for="more-details" class="more-details-p">
+                    
+                    <p>+</p>
+                    <label for="more-details">
+                        <div class="container-more-details">
+                            <label for="">
+                                <div class="container-more-details-content">
+                                    <p>Hola</p>
+                                </div>
+                            </label>
+                        </div>
+                    </label>
+                </label>
             </main>
 
             <%- include("../partials/footer") %>
