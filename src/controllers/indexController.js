@@ -31,6 +31,21 @@ politicaDeDevolucion: (req, res) =>{
   res.render("product/tienda", {
       vinos: vinos,
       title: "Tienda"});
-    }
+    },
+    search: (req, res) => {
+		let result = []
+		vinos.forEach(vino => {
+			if(vino.nombre.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}
+		});
+	
+	 	res.render('product/result', {
+			title: "resultados",
+            result, 
+			search: req.query.keywords
+		}) 
+        
+	}
 }
 

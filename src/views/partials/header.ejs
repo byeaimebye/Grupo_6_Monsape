@@ -23,8 +23,10 @@
     <!-- FIN VENTANA MODAL MOBILE -->
     <!-- Lupa para desktop -->
     <div class="buscador">
-        <input type="text" placeholder="Buscador" class="buscador">
-        <img src="/img/lupa.svg" alt="">
+        <form action="/search" method="GET">
+            <input name="keywords" type="text" placeholder="Buscador" class="buscador">
+            <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
     </div>
     <!-- ------------------------- -->
     <!-- titulo y logo -->
