@@ -1,8 +1,16 @@
-let controller = {
+const {vinos} = require("../data/db");
+
+module.exports = {
     admin: (req, res) => {
-        res.render("admin/admin", {title: "vista admin"});
+        res.render("admin/admin", {
+            title: "vista admin"
+        });
     },
+    products: (req, res)=> {
+        res.render("admin/adminProducts", {
+            vinos,
+            title: "vista admin"
+        })
+    }
    
 };
-
-module.exports = controller;                         
