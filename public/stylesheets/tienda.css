@@ -1,10 +1,14 @@
 ul{
     list-style: none;
 }
+body.home{
+    background-color: black;
+}
 .body-tienda{
-    background-image: url(/img/tienda/manchaDeVinoPeque.jpg);
-    background-repeat: repeat;
+    background-image: url(/img/tienda/pexels-posawee-suwannaphati-391213.jpg);
+    background-repeat: no-repeat;
     font-weight: bolder;
+    background-size: cover;
 }
 .frase p{
     font-size: 14px;

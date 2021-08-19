@@ -5,16 +5,13 @@
     --color-grisBotones: #C4C4C4;
     --color-fondoFutter: #383737;
 }
+body#homeBody{
+    background-color: black;
+    background-image: none;
+}
+body{
+    background-image: url(/img/tienda/pexels-posawee-suwannaphati-391213.jpg);
+    background-repeat: no-repeat;
 
-/* html {
-    width: 100%;
-} */
-
-/* *{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    border: none;
-    font-family: 'Raleway', sans-serif;
-} */
+    background-size: cover;
+}

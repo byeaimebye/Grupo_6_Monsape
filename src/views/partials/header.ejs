@@ -11,19 +11,19 @@
         <div class="modal-conteiner">
             <div class="close-modal" onclick="closeModal()">X</div>
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
-            <a href="/home">INICIO</a>
-            <a href="/tienda">PRODUCTOS</a>
+            <a href="/general/home">INICIO</a>
+            <a href="/products/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
-            <a href="/aboutUs">QUIENES SOMOS</a>
-            <a href="/login">INICIAR SESION</a>
-            <a href="/register">REGISTRATE</a>
+            <a href="/general/aboutUs">QUIENES SOMOS</a>
+            <a href="/users/login">INICIAR SESION</a>
+            <a href="/users/register">REGISTRATE</a>
             <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>
     </div>
     <!-- FIN VENTANA MODAL MOBILE -->
     <!-- Lupa para desktop -->
     <div class="buscador">
-        <form action="/search" method="GET">
+        <form action="/products/search" method="GET">
             <input name="keywords" type="text" placeholder="Buscador" class="buscador">
             <button type="submit"><i class="fas fa-search"></i></button>
     </form>
@@ -31,8 +31,8 @@
     <!-- ------------------------- -->
     <!-- titulo y logo -->
     <div class="logo">
-        <a href="/home"><h1>MONSAPE</h1></a>
-        <a href="/home"><img src="/img/logomon.svg" alt=""></a>
+        <a href="/general/home"><h1>MONSAPE</h1></a>
+        <a href="/general/home"><img src="/img/logomon.svg" alt=""></a>
     </div>
     <!-- ------------------- -->
     <!-- anclas de desktop -->
@@ -53,7 +53,7 @@
         </div>
         <!--        ------------------ MODAL DESKTOP ENDS------------>
         <div class="register-cart-header">
-            <a href="/register"><button>Registrarse</button></a>
+            <a href="/users/register"><button>Registrarse</button></a>
             <input class="cart-data" type="checkbox" name="cart-data" id="cart-data">
             <label class="cart-data-label" for="cart-data"><img src="../img/carrito-de-compras (1) 1.svg" alt="carrito">
                 
@@ -134,7 +134,7 @@
 <!-- nav de mobile -->
 <nav class="header-nav">
     <div class="search-mobile">
-        <form action="/">
+        <form action="/products/search">
             <input type="search" placeholder="Buscador" class="search">
             <button><img src="/img/lupa.svg" alt=""></button>
         </form>
@@ -176,7 +176,7 @@
             <p>PRODUCTOS</p>
         </label>
     <a href="#">COMO COMPRAR</a>
-    <a href="/aboutUs">QUIENES SOMOS</a>
-    <a href="/politicaDeDevolucion">POLITICA DE DEVOLUCION</a>
-    <a href="/contact">CONTACTO</a>
+    <a href="/general/aboutUs">QUIENES SOMOS</a>
+    <a href="/general/politicaDeDevolucion">POLITICA DE DEVOLUCION</a>
+    <a href="/general/contact">CONTACTO</a>
 </nav>
