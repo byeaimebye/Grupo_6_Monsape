@@ -111,5 +111,15 @@ module.exports  = {
         writeVinosJSON(vinos);
         res.redirect("/admin/products")
     },
+    productDelete: (req,res)=>{    
+     vinos.forEach(vino => {
+         if(vino.id === +req.params.id){
+             let vinoToDelete = vinos.indexOf(vino);
+             vinos.splice(vinoToDelete,1)
+         }
+     })
 
-};
+     writeVinosJSON(vinos);
+     res.redirect("/admin/products")
+
+}};

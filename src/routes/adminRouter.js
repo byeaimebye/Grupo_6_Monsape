@@ -6,7 +6,8 @@ let {admin,
     charge,
     productCreate,
     edit,
-productEdit } = require("../controllers/adminController");
+    productEdit,
+    productDelete } = require("../controllers/adminController");
 
 
 /* GET - Admin  ----(login)----- */
@@ -24,6 +25,9 @@ router.post('/cargaDeProducto', productCreate);
  /* Editar productos*/
 router.get('/editProduct/:id', edit);
 router.put('/editProduct/:id', productEdit);
+
+/*delete eliminar productos*/
+router.delete('/delete/:id', productDelete)
 
 
 
