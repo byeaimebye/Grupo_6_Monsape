@@ -395,7 +395,7 @@ section.products{
         flex-direction: column;
         align-items: center;
         margin-left: 10px;
-        position: relative;
+        
         top: -720px;
     }
     .categorias-principales h5{

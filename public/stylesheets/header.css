@@ -363,22 +363,26 @@ header .anclas img.login{
         font-size: 20px;
     }
     header .buscador {
-        margin-left: 10px;
-        display: grid;
-        grid-template-columns: 80% 20%;
+     margin: 0 auto;
+        display: flex;
+        
+    }
+    header .buscador button{
+        
+        margin-top: 5px;
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 25px;
+        width: 100%;
+        border: 0.5px solid rgb(158, 144, 144);
     }
     header .buscador input {
+        outline: none;
         height: 30px;
         border-bottom: 1px solid white;
         background-color: transparent;
     }
-    header .buscador img {
-        position: absolute;
-        left: 155px;
-        top: 45px;
-        height: 15px;
-        width: 15px;
-    }
+   
     .header-nav {
         display: none;
     }

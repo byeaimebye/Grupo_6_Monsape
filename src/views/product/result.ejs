@@ -55,7 +55,7 @@
         
             <% result.forEach(vino => { %>
                 <article class="product-container">
-                    <img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape">
+                    <a href="/products/detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>
                     <div class="descuento-porcentaje">
                         <p><%= vino.descuento %>  OFF</p>
                     </div>

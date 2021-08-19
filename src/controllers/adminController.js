@@ -1,4 +1,4 @@
-const {vinos} = require("../data/db");
+const {vinos, writeVinosJSON} = require("../data/db");
 
 module.exports  = {
     admin: (req, res) => {
