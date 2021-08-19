@@ -2,7 +2,8 @@ ul{
     list-style: none;
 }
 .body-tienda{
-    background-color: white;
+    background-image: url(/img/tienda/manchaDeVinoPeque.jpg);
+    background-repeat: repeat;
     font-weight: bolder;
 }
 .frase p{

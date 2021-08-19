@@ -64,11 +64,11 @@
         <div class="categorias-principales">
             <h5>Categorias principales</h5>
             <ul>
-                <li><a href="/categoria/Tinto">Tintos</a></li>
-                <li><a href="/categoria/Blanco">Blancos</a></li>
-                <li><a href="/categoria/Espumoso">Espumantes</a></li>
+                <li><a href="/products/categoria/Tinto">Tintos</a></li>
+                <li><a href="/products/categoria/Blanco">Blancos</a></li>
+                <li><a href="/products/categoria/Espumoso">Espumantes</a></li>
                 <li>Gift Card</li>
-                <li><a href="/categoria/Rosado">Rosado</a></li>
+                <li><a href="/products/categoria/Rosado">Rosado</a></li>
                 <li>Box</li>
                 <li>Merchandising oficial</li>
             </ul>
@@ -76,7 +76,7 @@
         <section class="products">
             <% vinos.forEach(vino => { %>
                 <article class="product-container">
-                    <a href="detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>                    
+                    <a href="/products/detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>                    
                     <div class="descuento-porcentaje">
                         <p><%= vino.descuento %>% OFF</p>
                     </div>
