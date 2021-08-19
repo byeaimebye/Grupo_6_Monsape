@@ -6,7 +6,7 @@
     <main class="main-admin-create">
         <h1>AGREGAR PRODUCTO</h1>
      <div class="create-forms">
-         <form class="create" action="" enctype="">
+         <form class="create" action="/admin/cargaDeProducto" method="POST">
              <div class="inputs-create">
           <label for="nombre">Nombre:</label>
           <input type="text" name="nombre" id="nombre">
@@ -66,7 +66,7 @@
                                            </div>
                                            <div class="temperatura-create">
                                             <label for="nombre">Temperatura recomendada:</label>
-                                            <input type="number" name="temperatura1" id="temperatura1">
+                                            <input type="number" name="temperatura" id="temperatura">
                                             <p>°C</p>
                                             <input type="number" name="temperatura1" id="temperatura1">
                                             <p>°C</p>
@@ -79,7 +79,7 @@
                                                     <label for="nombre">Descuento:</label>
                                                     <input type="number" name="descuento" id="descuento"><p>%</p>
                                                        </div> 
-                                                       <button>CREAR</button>                             
+                                                       <button type="submit">CREAR</button>                             
      </div>
     </main>
 </body>

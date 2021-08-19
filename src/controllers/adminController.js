@@ -14,5 +14,52 @@ module.exports  = {
     },
     charge: (req, res) =>{
         res.render("admin/chargeProduct", {title: "Carga de productos"})
+    },
+    productCreate: (req,res) =>{
+        let lastId = 1;
+        vinos.forEach(vino => {
+			if(vino.id > lastId){
+				lastId = vino.id
+			}
+		});
+		let { nombre, 
+			descripcion, 
+			variedad,
+			categoria,
+            coleccion, 
+			Maridaje,
+            graduacion,
+            acidez,
+            azucar,
+            temperatura,
+            temperatura1,
+            precio,
+            descuento } = req.body;
+		
+		let nuevoProducto = {
+			id: lastId + 1,
+                nombre, 
+                descripcion, 
+                variedad,
+                categoria,
+                coleccion, 
+                Maridaje,
+                graduacion,
+                acidez,
+                azucar,
+                temperatura,
+                temperatura1,
+                precio,
+                descuento,
+                image: "default-img.jpg" 
+		};
+
+       
+
+		vinos.push(nuevoProducto);
+
+		writeVinosJSON(vinos); 
+
+		 res.redirect('/admin/products')  
     }   
 };
