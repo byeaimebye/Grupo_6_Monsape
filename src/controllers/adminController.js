@@ -26,7 +26,8 @@ module.exports  = {
 			descripcion, 
 			variedad,
 			categoria,
-            coleccion, 
+            coleccion,
+            stock, 
 			Maridaje,
             graduacion,
             acidez,
@@ -42,7 +43,8 @@ module.exports  = {
                 descripcion, 
                 variedad,
                 categoria,
-                coleccion, 
+                coleccion,
+                stock, 
                 Maridaje,
                 graduacion,
                 acidez,
@@ -61,5 +63,9 @@ module.exports  = {
 		writeVinosJSON(vinos); 
 
 		 res.redirect('/admin/products')  
-    }   
+    },    
+    
+    productEdit : (req, res) =>{
+        res.send(hola)
+    }
 };
