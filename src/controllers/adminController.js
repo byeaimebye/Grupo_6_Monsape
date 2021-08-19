@@ -26,13 +26,13 @@ module.exports  = {
 			descripcion, 
 			variedad,
 			categoria,
-            coleccion, 
+            coleccion,
+            stock, 
 			Maridaje,
             graduacion,
             acidez,
             azucar,
             temperatura,
-            temperatura1,
             precio,
             descuento } = req.body;
 		
@@ -42,13 +42,13 @@ module.exports  = {
                 descripcion, 
                 variedad,
                 categoria,
-                coleccion, 
+                coleccion,
+                stock, 
                 Maridaje,
                 graduacion,
                 acidez,
                 azucar,
                 temperatura,
-                temperatura1,
                 precio,
                 descuento,
                 image: "default-img.jpg" 
@@ -61,5 +61,55 @@ module.exports  = {
 		writeVinosJSON(vinos); 
 
 		 res.redirect('/admin/products')  
-    }   
+    }, 
+    edit: (req, res) =>{
+     let vino = vinos.find(vino => { return vino.id === +req.params.id}) 
+     res.render('admin/editProduct',{
+         title: "Edición de productos",
+        vino 
+     })
+     
+    },   
+    
+    productEdit : (req, res) =>{
+        let {
+            nombre, 
+			descripcion, 
+			variedad,
+			categoria,
+            coleccion,
+            stock, 
+			Maridaje,
+            graduacion,
+            acidez,
+            azucar,
+            temperatura,
+            precio,
+            descuento 
+        } = req.body;
+
+        vinos.forEach(vino =>{
+            if(vino.id === +req.params.id){
+            vino.id = vino.id,
+            vino.nombre = nombre,
+            vino.descripcion = descripcion,
+            vino.variedad = variedad,
+            vino.categoria = categoria,
+            vino.coleccion = coleccion,
+            vino.stock = stock,
+            vino.Maridaje = Maridaje,
+            vino.graduacion = graduacion,
+            vino.acidez = acidez,
+            vino.azucar = azucar,
+            vino.temperatura = temperatura,
+            vino.precio = precio,
+            vino.descuento = descuento,
+            vino.image = "default-img.jpg"
+            }
+        })
+        
+        writeVinosJSON(vinos);
+        res.redirect("/admin/products")
+    },
+
 };

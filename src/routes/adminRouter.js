@@ -4,22 +4,28 @@ let router = express.Router();
 let {admin,
     products,
     charge,
-productCreate} = require("../controllers/adminController");
+    productCreate,
+    edit,
+productEdit } = require("../controllers/adminController");
 
 
-/* GET - Admin*/
+/* GET - Admin  ----(login)----- */
 router.get("/", admin);
+
+
 /*GET - Admin products */
 router.get("/products", products);
-
-/**GET crear producto */
+/*GET - Formulario de producto */
 router.get('/cargaDeProducto', charge);
+
 /* POST- Crear producto */
 router.post('/cargaDeProducto', productCreate); 
 
- /* */
-router.get('/editProdcuts/:id', edict)
-router.put('/editProduct/:id', )
+ /* Editar productos*/
+router.get('/editProduct/:id', edit);
+router.put('/editProduct/:id', productEdit);
+
+
 
 
 module.exports = router;

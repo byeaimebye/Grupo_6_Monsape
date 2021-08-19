@@ -20,7 +20,7 @@ hr{
     width: 100%;
 }
 main.main-register{
-    background-color: var(--color-grisBotones);
+    background-image: url(/img/tienda/manchaDeVinoPeque.jpg);
     padding: 50px 2px;
 }
 /*formulario*/
@@ -32,6 +32,7 @@ main.main-register{
 .form-container{
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0 40px 60px #cdcfd4;
     margin: 0 auto;
     height: fit-content;
     height: -moz-fit-content;

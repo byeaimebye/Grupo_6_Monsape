@@ -6,14 +6,14 @@
     <main class="main-admin-create">
         <h1>AGREGAR PRODUCTO</h1>
      <div class="create-forms">
-         <form class="create" action="/admin/cargaDeProducto" method="POST">
+         <form class="create" action="/admin/editProduct/<%=vino.id%>?_method=PUT" method="POST">
              <div class="inputs-create">
           <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre">
+          <input value="<%- vino.nombre %> " type="text" name="nombre" id="nombre">
              </div>
              <div class="large">
                 <label for="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" id="descripcion">
+                <input value="<%- vino.descripcion %> " type="text" name="descripcion" id="descripcion">
                    </div>
                    <div class="inputs-create">
                     <label for="variedad">Variedad:</label>
@@ -47,40 +47,40 @@
                            </div>
                            <div class="inputs-create">
                               <label for="stock">Stock:</label>
-                              <input type="number" name="stock" id="stock">
+                              <input value="<%- vino.stock %> " type="number" name="stock" id="stock">
                            </div>
                            <div class="large">
                             <label for="maridaje">Maridaje:</label>
-                            <input type="text" name="maridaje" id="maridaje">
+                            <input value="<%- vino.maridaje %> " type="text" name="maridaje" id="maridaje">
                                </div>
                                <div class="inputs-create">
                                 <label for="graduacion">Graduacion Alcoholica:</label>
-                                <input type="number" name="graduacion" id="graduacion">
+                                <input value="<%- vino.graduacion %> " type="number" name="graduacion" id="graduacion">
                                 <p>%</p>
                                    </div>
                                    <div class="inputs-create">
                                     <label for="acidez">Acidez:</label>
-                                    <input type="number" name="acidez" id="acidez">
+                                    <input value="<%- vino.acidez %> "  type="number" name="acidez" id="acidez">
                                     <p>g/l</p>
                                        </div>
                                        <div class="inputs-create">
                                         <label for="azucar">Azucar Residual:</label>
-                                        <input type="number" name="azucar" id="azucar">
+                                        <input value="<%- vino.azucar %> " type="number" name="azucar" id="azucar">
                                         <p>g/l</p>
                                            </div>
                                            <div class="temperatura-create">
                                             <label for="temperatura">Temperatura recomendada:</label>
-                                            <input type="text" name="temperatura" id="temperatura">
+                                            <input value="<%- vino.temperatura %> "  type="text" name="temperatura" id="temperatura">
                                                </div>
                                                <div class="inputs-create">
                                                 <label for="precio">Precio:</label>
-                                                <input type="number" name="precio" id="precio">
+                                                <input  value="<%- vino.precio %> " type="number" name="precio" id="precio">
                                                    </div>
                                                    <div class="inputs-create">
                                                     <label for="nombre">Descuento:</label>
-                                                    <input type="number" name="descuento" id="descuento"><p>%</p>
+                                                    <input value="<%- vino.descuento %> " type="number" name="descuento" id="descuento"><p>%</p>
                                                        </div> 
-                                                       <button type="submit">CREAR</button>                             
+                                                       <button type="submit">EDITAR</button>                             
      </div>
     </main>
 </body>
