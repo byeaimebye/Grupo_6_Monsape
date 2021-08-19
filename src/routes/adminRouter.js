@@ -9,12 +9,17 @@ productCreate} = require("../controllers/adminController");
 
 /* GET - Admin*/
 router.get("/", admin);
-router.get('/cargaDeProducto', charge);
+/*GET - Admin products */
+router.get("/products", products);
 
+/**GET crear producto */
+router.get('/cargaDeProducto', charge);
 /* POST- Crear producto */
 router.post('/cargaDeProducto', productCreate); 
 
-/*GET - Admin products */
-router.get("/products", products);
+ /* */
+router.get('/editProdcuts/:id', edict)
+router.put('/editProduct/:id', )
+
 
 module.exports = router;
