@@ -10,22 +10,28 @@
 
             <!-- Main -->
             <main class="main-productDetail">
-
                 <div class="galeria">
 
                 </div>
-
-
                 <div class="img-cuerpo-detail">
-                    <img id="img-carrito2" src="/img/<%= detalle.image %>  " alt="Vino">
+                    <img id="img-carrito2" src="/img/<%= detalle.image %>" alt="Vino">
                     <div class="cuerpo-detail">
-                        <h3 class="h3-detail-colleccion"><%= detalle.coleccion %></h3>
-                        <h2 class="h2-detail-nombre" id="nth"><%= detalle.nombre %> </h2>
-                        <h5 class="h5-detail-variedad"> <%= detalle.variedad %> </h5>
-                        <section class="section-description"><%= detalle.descripcion %></section>
+                        <h3 class="h3-detail-colleccion">
+                            <%= detalle.coleccion %>
+                        </h3>
+                        <h2 class="h2-detail-nombre">
+                            <%= detalle.nombre %>
+                        </h2>
+                        <h5 class="h5-detail-variedad">
+                            <%= detalle.variedad %>
+                        </h5>
+                        <section class="section-description">
+                            <%= detalle.descripcion %>
+                        </section>
                         <!-- Botones para regular la cantidad de unidades de producto a adquirir -->
-                        <div class="cant-precio-detail" id="nth">
-                            <p class="precio">$<%= detalle.precio %></p>
+                        <div class="cant-precio-detail">
+                            <p class="precio">$<%= detalle.precio %>
+                            </p>
                             <div class="cant">
                                 <input type="button" name="menos" id="buttons" class="menos" value="-">
                                 <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
@@ -34,7 +40,7 @@
 
                         </div>
 
-                        <div class="botones" id="nth">
+                        <div class="botones">
                             <div class="cart-cost">
                                 <input type="button" name="agregar" id="agregar" value="Agregar al carrito">
                                 <input type="button" name="costo-envio" id="costo-envio" value="Costo de envío">
@@ -46,13 +52,18 @@
                 <input type="submit" name="confirmar" id="confirmar-2" value="Confirmar">
                 <input type="checkbox" name="more-details" id="more-details" value="" class="more-details">
                 <label for="more-details" class="more-details-p">
-                    
+
                     <p>+</p>
                     <label for="more-details">
                         <div class="container-more-details">
                             <label for="">
                                 <div class="container-more-details-content">
-                                    <p>Hola</p>
+                                    <div class="div-1">
+
+                                    </div>
+                                    <div class="div-2">
+
+                                    </div>
                                 </div>
                             </label>
                         </div>

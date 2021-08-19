@@ -42,7 +42,8 @@
 }
 
 .section-description {/* 
-    box-shadow: 0px 0px 25px 21px rgb(0, 0, 0, 20%); */
+    box-shadow: 0px 0px 25px 21px rgb(0, 0, 0, 20%); *//* 
+    border-top: solid 1px rgba(0,0,0, 0.2); */
     margin: auto 27px 10px;
     background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent);
     padding: 20px;
@@ -172,23 +173,23 @@
     background-color: rgba(0,0,0,0.5);/* 
     display: none; */
     left: 0;
-    height: 0;
+    height: 100vh;
     position: fixed;
     transition: height 0,
                 top 0;
     transition-delay: 0.3s;
-    top: 100vh;
+    top: 0;
     width: 100vw;
 }
 
 .container-more-details .container-more-details-content {
     background-color: gainsboro;
     position: fixed;
-    top: 100%;
+    top: 40%;
     transition: height 1s,
                 top 1s;
     transition-delay: 0.1s;
-    height: 0;
+    height: 60%;
     width: 100%;
 }
 
@@ -202,6 +203,19 @@
     
     height: 60%;
     top: 40%;
+}
+
+.container-more-details-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.div-1 {
+    background-color: violet;
+}
+
+.div-2 {
+    background-color: greenyellow;
 }
 
 @media (min-width: 768px) {
@@ -247,24 +261,22 @@
         max-width: none;
     }
 
-    .main-productDetail .cuerpo-detail #nth:nth-child(1) {
-        font-size: x-large;
-        order: 0;
-    }
-
-    /* .main-productDetail .cuerpo-detail #nth:nth-child(2) {
-        border-top: solid 1px black;
+    #nth:nth-child(1) {/* 
+        border-top: solid 1px black; */
+        border: solid 2px violet;
         font-size: large;
-        order: 3;
+        order: 1;
     }
 
-    .main-productDetail .cuerpo-detail #nth:nth-child(3) {
+    #nth:nth-child(2) {
+        border: solid 2px green;
         order: 2;
     }
 
-    .main-productDetail .cuerpo-detail #nth:nth-child(4) {
-        order: 4;
-    } */
+    #nth:nth-child(3) {
+        border: solid 2px red;
+        order: 3;
+    }
 
     .main-productDetail .cant-precio-detail {
         flex-direction: row;
