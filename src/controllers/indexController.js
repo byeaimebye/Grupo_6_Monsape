@@ -14,23 +14,17 @@ module.exports = {
         res.render('general/home', {
             vinosDescuento, title: "Monsape Oficial"})
     
-},
-aboutUs:(req,res) => { 
-    res.render("general/aboutUs", {title: "Sobre Nosotros"})
-},
-contact : (req, res)=>{
-    res.render("general/contact", {title:"Contactanos"});
-},
-
-politicaDeDevolucion: (req, res) =>{
-    res.render("general/politicaDeDevolucion",{title:"Politicas de Devolucion"})
-},
- tienda : (req, res) => {
-  res.render("product/tienda", {
-      vinos: vinos,
-      title: "Tienda"});
     },
-  search: (req, res) => {
+    aboutUs:(req,res) => { 
+        res.render("general/aboutUs", {title: "Sobre Nosotros"})
+    },
+    contact : (req, res)=>{
+        res.render("general/contact", {title:"Contactanos"});
+    },
+    politicaDeDevolucion: (req, res) =>{
+        res.render("general/politicaDeDevolucion",{title:"Politicas de Devolucion"})
+    },
+    search: (req, res) => {
 		let result = []
 		vinos.forEach(vino => {
 			if(vino.nombre.toLowerCase().includes(req.query.keywords.toLowerCase())){

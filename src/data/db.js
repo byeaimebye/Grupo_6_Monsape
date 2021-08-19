@@ -1,6 +1,6 @@
-let fs = require('fs');
-let path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 module.exports={
-    vinos: JSON.parse(fs.readFileSync(path.join(__dirname, "../data/vinos.json"), "utf-8"))
+    vinos: JSON.parse(fs.readFileSync(path.join(__dirname, "/vinos.json"), "utf-8"))
 }

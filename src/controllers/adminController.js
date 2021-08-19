@@ -1,10 +1,18 @@
-let db =  require("../data/db")
+const {vinos} = require("../data/db");
 
-let controller = {
+module.exports  = {
     admin: (req, res) => {
-        res.render("admin/admin", {title: "vista admin"});
+        res.render("admin/admin", {
+            title: "vista admin"
+        });
     },
-   
+    products: (req, res)=> {
+        res.render("admin/adminProducts", {
+            vinos,
+            title: "vista admin"
+        })
+    },
+    charge: (req, res) =>{
+        res.render("admin/chargeProduct", {title: "Carga de productos"})
+    }   
 };
-
-module.exports = controller;                         

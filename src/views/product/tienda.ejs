@@ -76,9 +76,9 @@
         <section class="products">
             <% vinos.forEach(vino => { %>
                 <article class="product-container">
-                    <img class="imagen-producto" src="/img/<%= vino.image %>" alt="Imagen de vino Monsape">
+                    <a href="detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>                    
                     <div class="descuento-porcentaje">
-                        <p><%= vino.descuento %>  OFF</p>
+                        <p><%= vino.descuento %>% OFF</p>
                     </div>
                     <div class="caja-de-vino">
                         <img class="caja" src="/img/tienda/caja.svg" alt="caja de vino">
