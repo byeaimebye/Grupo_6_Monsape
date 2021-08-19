@@ -197,7 +197,7 @@
         "acidezTotal": "5,40 g/l",
         "azucarResidual": "2,80 g/l",
         "temperaturaRecomendada": "Entre 15°C y 18°C. Sugerimos decantar el vino al menos una hora antes de beberlo.",
-        "categoria": "Tinto.",
+        "categoria": "Tinto",
         "precio": 1010,
         "descuento": 25,
         "image": "/VinosJson/dato12.jpg"
@@ -248,7 +248,7 @@
         "acidezTotal": "5,78 g/l",
         "azucarResidual": "2,50 g/l",
         "temperaturaRecomendada": "Entre 14°C y 16°C. Sugerimos decantar el vino una hora antes de beberlo.",
-        "categoria": "Tinto.",
+        "categoria": "Tinto",
         "precio": 770,
         "descuento": 10,
         "image": "/VinosJson/dato14.jpg"
@@ -265,7 +265,7 @@
         "acidezTotal": "5,33 g/l",
         "azucarResidual": "2,55 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
-        "categoria": "Tinto.",
+        "categoria": "Tinto",
         "precio": 1020,
         "descuento": 20,
         "image": "/VinosJson/dato15.jpg"
@@ -299,7 +299,7 @@
         "acidezTotal": "5,25 g/l",
         "azucarResidual": "2,30 g/l",
         "temperaturaRecomendada": "Entre 16°C y 18°C.",
-        "categoria": "Tinto.",
+        "categoria": "Tinto",
         "precio": 500,
         "descuento": 10,
         "image": "/VinosJson/dato17.jpg"
@@ -401,7 +401,7 @@
         "acidezTotal": "6,60 g/l",
         "azucarResidual": "7,10 g/l",
         "temperaturaRecomendada": "Entre 8°C y 10°C.",
-        "categoria": "espumoso",
+        "categoria": "Espumoso",
         "precio": 8450,
         "descuento": 35,
         "image": "/VinosJson/dato23.jpg"

@@ -1,0 +1,168 @@
+/*Main*/
+main.main-admin-products{
+    background-color: var(--color-grisBotones);
+    border-radius: 10px;
+    margin: 10px 2px;
+    font-size: 12px;
+}
+/*Titulo y botón agregar*/
+div.new-product{    
+    background-color: var(--color-grisOscuro);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 4px 2px;
+}
+div.new-product h1{
+    align-self: center;
+}
+/*boton agregar*/
+div.btn-add-product{
+    align-self: flex-end;
+    border: 2px solid var(--color-rojoVino);
+    border-radius: 5px;
+    padding: 10px;
+}
+div.btn-add-product:hover{
+    background-color: var(--color-rojoVino);
+    color: white;
+}
+
+a.btn-add{
+    color: white;
+    font-weight: bolder;
+}
+
+/*Tabla de productos*/
+table.table-products{
+    padding: 2px;
+    width: 99%;
+}
+
+/*Categorias de la tabla*/
+tr.category{
+    background-color: var(--color-rojoVino);
+}
+tr.category th{    
+    border-radius: 2px;
+    color: white;
+    font-weight: bolder;
+    font-size: 13px;
+    padding: 4px;
+}
+/*categorias*/
+tr.category th.descuento,
+tr.products td.descuento,
+tr.category th.stock,
+tr.products td.stock,
+tr.category th.opciones{
+    display: none;
+}
+
+/*productos*/
+tr.products{
+    text-align: center;
+}
+tr.products td{
+    padding: 4px;    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+tr.products:nth-child(odd){
+    background-color: rgb(155, 114, 114)
+}
+
+/*Botones de opción*/
+td.btn-options{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-options img{
+    width: 18px;
+}
+a.btn-edit{
+    background-color: rgb(124, 216, 136);
+    padding: 6px;
+    border: 1px solid green;
+    border-radius: 4px;    
+    margin-bottom: 2px;
+}
+form button.btn-delete{
+    background-color: rgb(179, 68, 68);
+    padding: 6px;
+    border: 1px solid var(--color-rojoVino);
+    border-radius: 4px;
+}
+
+/*********************************************************************************************************/
+
+/*Media Querie*/
+@media(min-width: 400px){
+tr.category th.stock,
+tr.products td.stock,
+tr.category th.opciones{
+    display: table-cell;
+}
+
+/*Botones de opción*/
+td.btn-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn-options img{
+    width: 24px;
+}
+a.btn-edit{
+    margin-right: 2px;
+}
+}
+
+
+
+/*tablet*/
+@media(min-width: 640px){
+    /*Main*/
+main.main-admin-products{
+    border-radius: 10px;
+    margin: 10px 10px;
+    font-size: 16px;
+}
+/*Titulo y botón agregar*/
+div.new-product{
+    background-color: var(--color-grisOscuro);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 4px 4px;
+}
+
+/*Tabla de productos*/
+table.table-products{
+    padding: 10px;
+    width: 99%;
+}
+
+/*Categorias de la tabla*/
+
+tr.category th{
+    font-size: 1.2rem;
+    padding: 4px;
+}
+/*categoria descuento*/
+tr.category th.descuento,
+tr.products td.descuento{
+    display: table-cell;
+}
+}
+
+
+
+
+
