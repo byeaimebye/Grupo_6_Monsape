@@ -33,8 +33,8 @@
                   <td class="precio">$<%- vino.precio%></td>
                   <td class="descuento"><%- vino.descuento%>%</td>
                   <td class="btn-options">
-                      <a class="btn-edit" href="/admin/products/edit/<%- vino.id %>"><img src="/img/editar.svg" alt="editar producto"></a>
-                      <form action="/admin/products/delete/vino.id %>?_method=DELETE" method="POST">
+                      <a class="btn-edit" href="/admin/editProduct/<%- vino.id %>"><img src="/img/editar.svg" alt="editar producto"></a>
+                      <form action="/admin/delete/<%-vino.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn-delete" >
                           <img src="/img/eliminar.svg" alt="eliminar producto">
                         </button>

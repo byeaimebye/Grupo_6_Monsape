@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/headAdmin") %>
+<body>
+    <%- include("../partials/headerAdmin") %>
+    <main class="main-admin-create">
+        <h1>AGREGAR PRODUCTO</h1>
+     <div class="create-forms">
+         <form class="create" action="/admin/editProduct/<%=vino.id%>?_method=PUT" method="POST">
+             <div class="inputs-create">
+          <label for="nombre">Nombre:</label>
+          <input value="<%=vino.nombre %> " type="text" name="nombre" id="nombre">
+             </div>
+             <div class="large">
+                <label for="descripcion">Descripción:</label>
+                <textarea  name="descripcion" id="descripcion" cols="30" rows="5"><%= vino.descripcion %></textarea>
+                   </div>
+                   <div class="inputs-create">
+                    <label for="variedad">Variedad:</label>
+                    <input value="<%= vino.variedad %>" type="text" name="variedad" id="variedad">
+                       </div>
+                       <div class="inputs-create">
+                        <label for="categoria">Categoria:</label>
+                        <select name="categoria" id="">
+                            <option value="Blanco"<%- vino.categoria == "Blanco" ? `selected` :"" %>>Blanco</option>
+                            <option value="Tinto"<%- vino.categoria == "Tinto" ? `selected` :"" %>>Tinto</option>
+                            <option value="Rosado"<%- vino.categoria == "Rosado" ? `selected` :"" %>>Malbec</option>
+                            <option value="Espumante"<%- vino.categoria == "Espumante" ? `selected` :"" %>>Espumante</option>
+                           
+                        </select>
+                           </div>
+                       <div class="inputs-create">
+                        <label for="coleccion">Coleccion:</label>
+                        <select name="coleccion" id="">
+                            <option value="Finest"<%- vino.coleccion == "Finest" ? `selected` :"" %>>Finest</option>
+                            <option value="Galla"<%- vino.coleccion == "Galla" ? `selected` :"" %>>Galla</option>
+                            <option value="Terroir"<%- vino.coleccion == "Terroir" ? `selected` :"" %>>Terroir</option>
+                            <option value="Insignia"<%- vino.coleccion == "Insignia" ? `selected` :"" %>>Insignia</option>
+                            <option value="Celebracion"<%- vino.coleccion == "Celebracion" ? `selected` :"" %>>Coleccion</option>                          
+                        </select>
+                           </div>
+                           <div class="inputs-create">
+                              <label for="stock">Stock:</label>
+                              <input value="<%= vino.stock %> " type="text" name="stock" id="stock">
+                           </div>
+                           <div class="large">
+                            <label for="maridaje">Maridaje:</label>
+                            <textarea  name="Maridaje" id="Maridaje" cols="30" rows="5"><%= vino.Maridaje %></textarea>
+                               </div>
+                               <div class="inputs-create">
+                                <label for="graduacion">Graduacion Alcoholica:</label>
+                                <input value="<%- vino.graduacionAlcoholica %> " type="text" name="graduacion" id="graduacion">
+                                <p>%</p>
+                                   </div>
+                                   <div class="inputs-create">
+                                    <label for="acidezTotal">Acidez:</label>
+                                    <input value="<%- vino.acidezTotal %> "  type="text" name="acidezTotal" id="acidezTotal">
+                                    <p>g/l</p>
+                                       </div>
+                                       <div class="inputs-create">
+                                        <label for="azucarResidual">Azucar Residual:</label>
+                                        <input value="<%- vino.azucarResidual %> " type="text" name="azucarResidual" id="azucarResidual">
+                                        <p>g/l</p>
+                                           </div>
+                                           <div class="temperatura-create">
+                                            <label for="temperaturaRecomendada">Temperatura recomendada:</label>
+                                            <input value="<%- vino.temperaturaRecomendada %> "  type="text" name="temperaturaRecomendada" id="temperaturaRecomendada">
+                                               </div>
+                                               <div class="inputs-create">
+                                                <label for="precio">Precio:</label>
+                                                <input  value="<%- vino.precio %> " type="text" name="precio" id="precio">
+                                                   </div>
+                                                   <div class="inputs-create">
+                                                    <label for="nombre">Descuento:</label>
+                                                    <input value="<%- vino.descuento %> " type="text" name="descuento" id="descuento"><p>%</p>
+                                                       </div> 
+                                                       <button type="submit">EDITAR</button>                             
+     </div>
+    </main>
+</body>
+</html>

@@ -34,3 +34,18 @@
                 DEJAR DE HACER: Aplazar reuniones, retrasarnos con finalizacion del sprint.
                                                      ----------------------
                 HACER MENOS: Planificar reuniones los domingos.
+
+
+                                    <*******************************************************>
+                                                          <----SPRINT 3---->    
+
+
+                                          SEGUIR HACIENDO: Cumplir tiempos, informar movimientos.
+                                                     ----------------------
+                        HACER MAS: Consultar antes de pushear (avisar), reunion intensiva de sprint donde aprendemos mas.
+                                                     ----------------------
+                  EMPEZAR A HACER: Informar antes modificar una vista, crear espacio personal de trello para tareas retrasadas.
+                                                     ----------------------
+                                                 DEJAR DE HACER: No hacer reuniones.
+                                                     ----------------------
+                                             HACER MENOS: Pushear cosas infuncionales.

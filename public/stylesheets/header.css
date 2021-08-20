@@ -317,19 +317,7 @@ header .anclas .modal2 {
         opacity: 1;
         width: 70%;
     }
-    /* 
-    nav {
-        height: 55px;
-        border-top: 1px solid var(--color-grisBotones);
-    }
-    nav .product-nav {
-        display: grid;
-        grid-template-columns: 80% 20%;
-        border-top: none;
-    }
-    nav .product-nav h3 {
-        font-size: 16px;
-    } */
+
 }
 
 /* query desktop  */
