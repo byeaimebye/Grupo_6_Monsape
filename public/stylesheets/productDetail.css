@@ -31,8 +31,7 @@
     text-align: center;
 }
 
-.main-productDetail .img-cuerpo-detail .cuerpo-detail .h5-detail-variedad {/* 
-    border-bottom: solid 2px; */
+.main-productDetail .img-cuerpo-detail .cuerpo-detail .h5-detail-variedad {
     color: var(--color-rojoVino);
     max-width: 390px;
     margin: 0 auto 20px;
@@ -41,18 +40,10 @@
     width: 85%;
 }
 
-.section-description {/* 
-    box-shadow: 0px 0px 25px 21px rgb(0, 0, 0, 20%); *//* 
-    border-top: solid 1px rgba(0,0,0, 0.2); */
+.section-description {
     margin: auto 27px 10px;
     background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent);
     padding: 20px;
-}
-
-.main-productDetail .detalle ul {
-    margin: 5px auto 10px auto;
-    max-width: 390px;
-    text-align: center;
 }
 
 /* Botones de seleccion de cantidad de unidades. */
@@ -124,8 +115,7 @@
     border-radius: 15px;
     display: none;
     font-size: 16px;
-    height: 25px;/* 
-    margin-bottom: 10px; */
+    height: 25px;
     width: 150px;
 }
 
@@ -144,8 +134,7 @@
     border-radius: 15px;
     color: white;
     display : none;
-    font-size: 16px;/* 
-    margin-top: 5px; */
+    font-size: 16px;
     height: 25px;
     width: 150px;
 }
@@ -170,8 +159,7 @@
 }
 
 .container-more-details {
-    background-color: rgba(0,0,0,0.5);/* 
-    display: none; */
+    background-color: rgba(0,0,0,0.5);
     left: 0;
     height: 0;
     position: fixed;
@@ -183,7 +171,8 @@
 }
 
 .container-more-details .container-more-details-content {
-    background-color: gainsboro;
+    background: linear-gradient(338deg, gainsboro 0%, rgba(124,127,124, 1) 0%, gainsboro);
+    padding: 20px;
     position: fixed;
     top: 100%;
     transition: height 1s,
@@ -194,7 +183,6 @@
 }
 
 .more-details:checked + label .container-more-details {
-    
     height: 100vh;
     top: 0;
 }
@@ -207,31 +195,25 @@
 
 .container-more-details-content {
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 100%;
+    overflow: auto;
 }
 
-.section-1 {
+.general-section {
     background-color: transparent;
-}
-
-.section-2 {
-    background-color: transparent;
-    border-left: solid 2px rgba(0,0,0, 0.1);
+    height: 50vh;
 }
 
 .div-distribution {
-    align-items: center;/* 
-    border: solid; */
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 33.33%;
-    margin: 0 1px;
 }
 
 .div-distribution > img {
-    width: 30px;/* 
-    margin-top: 20px; */
+    width: 30px;
 }
 
 .title {
@@ -261,7 +243,6 @@
     }
 
     .main-productDetail .img-cuerpo-detail #img-carrito2 {
-        /* margin-bottom: 100px; */
         margin: 30px auto 0 10px;
         height: 330px;
         width: 330px;
@@ -286,28 +267,10 @@
         max-width: none;
     }
 
-    #nth:nth-child(1) {/* 
-        border-top: solid 1px black; */
-        border: solid 2px violet;
-        font-size: large;
-        order: 1;
-    }
-
-    #nth:nth-child(2) {
-        border: solid 2px green;
-        order: 2;
-    }
-
-    #nth:nth-child(3) {
-        border: solid 2px red;
-        order: 3;
-    }
-
     .main-productDetail .cant-precio-detail {
         flex-direction: row;
         justify-content: space-between;
-        margin: 0 auto;/* 
-        width: 300px; */
+        margin: 0 auto;
         width: 60%;
     }
 
@@ -332,11 +295,7 @@
         display: block;
     }
 
-    .main-productDetail .botones #confirmar {/* 
-        bottom: 50px;
-        position: absolute;
-        margin: 0 auto;
-        width: 600px; */
+    .main-productDetail .botones #confirmar {
         display: none;
     }
 
@@ -347,14 +306,35 @@
         width: 350px;
     }
 
+    .more-details-p > p{
+        z-index: 0;
+    }
+
+    .more-details:checked + label .container-more-details label .container-more-details-content {
+    
+        height: 60%;
+        top: 0;
+    }
+    
+    .container-more-details-content {
+        grid-template-columns: 55% 45%;
+    }
+    
+    .section-2 {
+        border-left: solid 2px rgba(0,0,0, 0.1);
+    }
+
+    .more-details:checked + label .container-more-details label .container-more-details-content {
+    
+        height: 60%;
+        top: 40%;
+    }
 }
 
 @media (min-width : 1200px) {
     .main-productDetail {
-        justify-content: space-between;/* 
-        margin: 55px auto 0 auto; */
-        max-width: 1100px;/* 
-        position: relative; */
+        justify-content: space-between;
+        max-width: 1100px;
     }
 
     .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #agregar,
@@ -372,91 +352,3 @@
         width: 500px;
     }
 }
-
-
-
-/*     #img-carrito2 { */
-/*         height: 380px; */
-/*         top: 2px; */
-/*         width: 401px; */
-/*     } */
-/*  */
-
-
-
-
-
-/* .main-productDetail {
-        text-align: left;
-        display: flex;
-        position: relative;
-    }
-    .main-productDetail .detalle h4,
-    .main-productDetail .detalle ul {
-        max-width: 520px;
-    }
-
-    .main-productDetail .detalle h4,
-    .main-productDetail .botones,
-    .main-productDetail .cant,
-    .main-productDetail .detalle ul,
-    .main-productDetail .precio {
-        position: absolute;
-    }
-
-    .main-productDetail .detalle ul {
-        border-top: solid 1px black;
-        padding: 10px 5px 5px 0;
-        left: 49%;
-        top: 170px;
-    }
-
-    .main-productDetail .detalle h4 {
-        font-size: 22px;
-        left: 48.1%;
-    }
-
-    .main-productDetail .precio {
-        top: 100px;
-        left: 60%;
-    }
-
-    .main-productDetail .cant {
-        top: 103px;
-        left: 78%;
-    }
-    Botones agregar al carrito, costo de envío y confirmar.
-    .main-productDetail .botones {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-bottom: 60px;
-        top: 400px;
-        left: 17%;
-        width: 500px;
-    }
-
-    .main-productDetail .botones #costo-envio,
-    .main-productDetail .botones #agregar,
-    .main-productDetail .botones #confirmar {
-        border-radius: 25px;
-        font-size: 22px;
-        height: 40px;
-        width: 210px;
-    }
-
-    .main-productDetail .botones #costo-envio {
-        display: block;
-    }
-
-    .main-productDetail .botones #confirmar {
-        bottom: 0;
-        position: absolute;
-        left: 140px;
-    
-    }
-
-    .main-productDetail img {
-        margin: 10px 0 322px 5%;
-        width: 300px;
-    } */

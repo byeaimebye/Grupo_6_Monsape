@@ -48,6 +48,12 @@ header .anclas .register-cart-header a>button {
     display: none;
 }
 
+.cart-data-label {
+    border-radius: 25px;
+    padding: 22px 11px 9px 8px;
+    z-index: 905;
+}
+
 .cart-data-label-btn-close {
     background-color: #56070C;
     border: solid 2px white;
@@ -65,12 +71,14 @@ header .anclas .register-cart-header a>button {
 
 .cart-data-modal-view{
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    display: block;
     height: 100vh;
-    left: 0;
+    left: 100%;
+    opacity: 0;
     position: fixed;
     top: 0;
-    width: 100vw;
+    transition: 0.5s;
+    width: 0;
     z-index: 901;
 }
 
@@ -79,22 +87,29 @@ header .anclas .register-cart-header a>button {
     height: 100%;
     left: 100%;
     overflow: auto;
-    opacity: 0;
+    opacity: 1;
     transition: 0.5s;
     position: absolute;
     top: 0;
     width: 0;
-    z-index: 900;
+    z-index: 910;
 }
 
-.cart-data:checked +.cart-data-label > label .cart-data-view{
+.cart-data:checked +.cart-data-label .cart-data-modal-view {
     left: 0;
+    opacity: 1;/* 
+    transition-delay: 0.6s; */
+    width: 100vw;
+}
+
+.cart-data:checked +.cart-data-label .cart-data-modal-view .cart-data-view{
+    left: 35%;
     opacity: 1;
-    width: 100%;
+    width: 65%;
 }
 
 .cart-data:checked +.cart-data-label > label .cart-data-view .cart-data-label-btn-close {
-    display: block;
+    display: none;
 }
 
 .cart-data:checked + .cart-data-modal-view {
