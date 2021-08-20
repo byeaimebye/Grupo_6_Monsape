@@ -439,53 +439,5 @@
         "precio": 10555,
         "descuento": 50,
         "image": "/VinosJson/dato25.jpg"
-    },
-    {
-        "id": 26,
-        "nombre": "Primera Prueba",
-        "descripcion": "Primer prueba Monsape",
-        "variedad": "malbec",
-        "categoria": "blanco",
-        "coleccion": "fines",
-        "graduacion": "10",
-        "acidez": "10",
-        "azucar": "10",
-        "temperatura": "10",
-        "temperatura1": "10",
-        "precio": "101010101",
-        "descuento": "10",
-        "image": "default-img.jpg"
-    },
-    {
-        "id": 27,
-        "nombre": "ddf",
-        "descripcion": "rtgrgtr4",
-        "variedad": "malbec",
-        "categoria": "blanco",
-        "coleccion": "fines",
-        "graduacion": "10",
-        "acidez": "10",
-        "azucar": "44",
-        "temperatura": "12",
-        "temperatura1": "16",
-        "precio": "3000",
-        "descuento": "15",
-        "image": "default-img.jpg"
-    },
-    {
-        "id": 28,
-        "nombre": "uhiuh",
-        "descripcion": "uihiuhi",
-        "variedad": "malbec",
-        "categoria": "blanco",
-        "coleccion": "fines",
-        "stock": "577",
-        "graduacion": "54",
-        "acidez": "444",
-        "azucar": "444",
-        "temperatura": "444",
-        "precio": "4444",
-        "descuento": "44",
-        "image": "default-img.jpg"
     }
 ]
