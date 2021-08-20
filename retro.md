@@ -40,7 +40,7 @@
                                                           <----SPRINT 3---->    
 
 
-                                          SEGUIR HACIENDO: Cumplir tiempos, informar movimientos, 
+                                          SEGUIR HACIENDO: Cumplir tiempos, informar movimientos.
                                                      ----------------------
                         HACER MAS: Consultar antes de pushear (avisar), reunion intensiva de sprint donde aprendemos mas.
                                                      ----------------------

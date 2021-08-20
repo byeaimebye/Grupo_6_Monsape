@@ -1,51 +1,83 @@
-main.main-admin-create{
-    margin: 0 auto;
+body{
+    background-image: url(/img/tienda/pexels-posawee-suwannaphati-391213.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+main.main-admin-create input{
     text-align: center;
-    background-color: grey;
+    width: 100%;
+    border-radius:25px ;
+    
+    font-weight: 999;
+}
+main.main-admin-create .inputs-create option.option{
+font-weight: 999;
+}
+main.main-admin-create  select{
+    font-weight: 999;
+}
+
+main.main-admin-create{
+    padding: 10px;
+    background-color: lavender;
+    font-weight: 999;
     width: 90%;
-    height: 100%;
-    border-radius: 55px;
-    margin-top: 20px;
-    padding: 50px;
+    margin: 0 auto;
 }
 main.main-admin-create h1{
-    margin-bottom: 20px;
-}
-#descripcion input{
-    height: 55px;
-    }
-main.main-admin-create  .temperatura-create{
-    display: flex;
-    margin-bottom: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-}
-main.main-admin-create  .temperatura-create input{
-    height: 25px;
-    border-radius: 25px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 20px;
     text-align: center;
-    
-    
-}
-main.main-admin-create  .inputs-create input{
-  height: 25px;
-  border-radius: 25px;
+    background-color: rgba(179, 68, 68, 0.5);
+    border-radius: 20px;
 }
 main.main-admin-create .inputs-create{
-    display:flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-main.main-admin-create  .large input{
-    height: 55px;
-    border-radius: 25px;
+    display: flex;
+    margin-bottom:10px ;
 }
 main.main-admin-create  .large{
     margin-bottom: 10px;
+    display: flex;
 }
 
-form.create{
+main.main-admin-create button{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 999;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgba(179, 68, 68, 0.5);
+}
+main.main-admin-create .large textarea{
+    width: 100%;
+    font-weight: 999;
+    border-radius: 25px;
+    padding: 10px;
+}
+main.main-admin-create .temperatura-create{
     display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
+}
+main.main-admin-create .temperatura-create input{
+    padding: none;
+    width: auto;
+}
+
+@media(min-width: 1000px) {
+    main.main-admin-create{
+       
+        padding: 25px;
+        font-size: 25px;
+    }
+    main.main-admin-create input{
+        background-color: rgba(179, 68, 68, 0.1);
+        width: 50%;
+        font-size: 15px;
+    }
+    main.main-admin-create .large textarea{
+        
+        font-size: 15px;
+    }
 }
