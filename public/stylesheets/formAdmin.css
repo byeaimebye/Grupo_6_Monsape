@@ -5,6 +5,7 @@ body{
     
 }
 main.main-admin-create input{
+    outline: none;
     text-align: center;
     width: 100%;
     border-radius:25px ;
@@ -51,6 +52,7 @@ main.main-admin-create button{
     background-color: rgba(179, 68, 68, 0.5);
 }
 main.main-admin-create .large textarea{
+    outline: none;
     width: 100%;
     font-weight: 999;
     border-radius: 25px;
@@ -61,6 +63,7 @@ main.main-admin-create .temperatura-create{
     margin-bottom: 10px;
 }
 main.main-admin-create .temperatura-create input{
+    outline: none;
     padding: none;
     width: auto;
 }
@@ -72,11 +75,13 @@ main.main-admin-create .temperatura-create input{
         font-size: 25px;
     }
     main.main-admin-create input{
+        outline: none;
         background-color: rgba(179, 68, 68, 0.1);
         width: 50%;
         font-size: 15px;
     }
     main.main-admin-create .large textarea{
+        outline: none;
         
         font-size: 15px;
     }
