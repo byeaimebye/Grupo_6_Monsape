@@ -6,7 +6,7 @@
     <main class="main-admin-create">
         <h1>AGREGAR PRODUCTO</h1>
      <div class="create-forms">
-         <form class="create" action="/admin/cargaDeProducto" method="POST">
+         <form class="create" action="/admin/cargaDeProducto" method="POST" enctype="multipart/form-data">
              <div class="inputs-create">
           <label for="nombre">Nombre:</label>
           <input type="text" name="nombre" id="nombre">
@@ -74,6 +74,10 @@
                                                     <label for="nombre">Descuento:</label>
                                                     <input type="number" name="descuento" id="descuento"><p>%</p>
                                                        </div> 
+                                                       <div class="inputs-create">
+                                                          <label for="inputFile">Cargar Imagen:</label>
+                                                          <input type="file" name="image" id="inputFile">
+                                                       </div>
                                                        <button type="submit">CREAR</button>                             
      </div>
     </main>
