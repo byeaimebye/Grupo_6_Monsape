@@ -11,7 +11,7 @@ module.exports = {
     },
     registerProcess :(req,res) =>{
         let errors = validationResult(req);
-      
+        
         if(!errors.isEmpty()){
             let lastId = 0;
 
