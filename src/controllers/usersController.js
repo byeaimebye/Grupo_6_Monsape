@@ -11,8 +11,8 @@ module.exports = {
     },
     registerProcess :(req,res) =>{
         let errors = validationResult(req);
-        
-        if(!errors.isEmpty()){
+      
+        if(errors.isEmpty()){
             let lastId = 0;
 
             users.forEach(user =>{
