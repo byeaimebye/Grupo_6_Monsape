@@ -6,7 +6,7 @@
 .main-productCart {
     background-color: gainsboro;
     height: auto;
-    padding-top: 20px;
+    padding: 20px 40px;
 }
 
 .main-productCart .section-productCart {

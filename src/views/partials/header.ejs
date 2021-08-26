@@ -22,17 +22,23 @@
     </div>
     <!-- FIN VENTANA MODAL MOBILE -->
     <!-- Lupa para desktop -->
+    
+    <form action="/products/search" method="GET">
     <div class="buscador">
-        <form action="/products/search" method="GET">
             <input name="keywords" type="text" placeholder="Buscador" class="buscador">
-            <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
+            <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
     </div>
+    </form>
     <!-- ------------------------- -->
     <!-- titulo y logo -->
-    <div class="logo">
-        <a href="/home"><h1>MONSAPE</h1></a>
+    <div class="logo"><!-- 
+        <a href="/home">
+            <h1>MONSAPE</h1>
+        </a> -->
         <a href="/home"><img src="/img/logomon.svg" alt=""></a>
+        <a href="/home">
+            <h1>MONSAPE</h1>
+        </a>
     </div>
     <!-- ------------------- -->
     <!-- anclas de desktop -->
@@ -56,16 +62,16 @@
             <a href="/users/register"><button>Registrarse</button></a>
             <input class="cart-data" type="checkbox" name="cart-data" id="cart-data">
             <label class="cart-data-label" for="cart-data"><img src="/img/carrito-de-compras (1) 1.svg" alt="carrito">
-                
-                
-                    <div class="cart-data-modal-view">
-                        <label for="">
-                        <div class="cart-data-view">
+
+
+                <div class="cart-data-modal-view">
+                    <label for="">
+                        <div class="cart-data-view"><!-- 
                             <label for="cart-data">
                                 <div class="cart-data-label-btn-close">
                                     <p>X</p>
                                 </div>
-                            </label>
+                            </label> -->
                             <main class="main-productCart">
                                 <section class="section-productCart">
                                     <!-- Columnas -->
@@ -76,21 +82,22 @@
                                     <!-- Articulos -->
                                     <% for(let i=0; i < 4; i++){ %>
                                         <article>
-                                            <div class="wine-x"><img src="./img/vino-x.png" alt=""></div>
+                                            <div class="wine-x"><img src="/img/vino-x.png" alt=""></div>
                                             <div class="detail">
                                                 <p id="nombre">Nombre del vino</p>
                                                 <p id="precio">$2.500</p>
                                                 <div class="cant">
-                                                    <input type="button" name="menos" id="buttons" class="menos" value="-">
+                                                    <input type="button" name="menos" id="buttons" class="menos"
+                                                        value="-">
                                                     <input type="text" name="cantidad" id="cantidad" class="cantidad"
                                                         value="0">
                                                     <input type="button" name="mas" id="buttons" class="mas" value="+">
                                                 </div>
-    
+
                                             </div>
                                             <div class="subtotal">
                                                 <p>$2.500</p>
-                                                <img class="tachito" src="./img/tachito.png" alt="carrito">
+                                                <img class="tachito" src="/img/tachito.png" alt="carrito">
                                             </div>
                                         </article>
                                         <% } %>
@@ -101,16 +108,18 @@
                                             <!-- Métodos de envío -->
                                             <form action="" method="GET">
                                                 <div class="met-envio">
-                                                    <p><img src="./img/camioncito.png" alt="camioncito"> Métodos de envío
+                                                    <p><img src="/img/camioncito.png" alt="camioncito"> Métodos de
+                                                        envío
                                                     </p>
                                                     <div class="calcular">
                                                         <input type="text" name="codigo-postal" id="codigo-postal"
                                                             value="Tu código postal">
-                                                        <input type="button" name="calcular" id="calcular" value="CALCULAR">
+                                                        <input type="button" name="calcular" id="calcular"
+                                                            value="CALCULAR">
                                                     </div>
                                                 </div>
                                             </form>
-    
+
                                             <div class="total">
                                                 <h4>Total:</h4>
                                                 <h4>$5.000</h4>
@@ -122,9 +131,9 @@
                                 </section>
                             </main>
                         </div>
-                        </label>
-                    </div>
-                
+                    </label>
+                </div>
+
             </label>
 
             </input>
@@ -147,7 +156,8 @@
             <div class="check-on">
                 <% for(let i=1; i < 7; i++){ %>
                     <div class="item">
-                        <p> <a href="/Tinto"></a> <%- i %>
+                        <p><a href="/Tinto"></a>
+                            <%- i %>
                         </p>
                     </div>
                     <% } %>
@@ -161,22 +171,22 @@
 </nav>
 <nav class="desktop-nav">
     <a id="inicio" href="#">INICIO</a>
-    <input type="checkbox" class="input-productos-check" id="check">
-        <label for="check">
-            <label for="">
-                <div class="check-on">
-                    <% for(let i=1; i < 7; i++){ %>
-                        <div class="item">
-                            <p>Item <%- i %>
-                            </p>
-                        </div>
-                        <% } %>
-                </div>
-            </label>
-        </label>
-        <label for="check">
-            <p>PRODUCTOS</p>
-        </label>
+    <input type="checkbox" class="input-productos-check" id="check2">
+    <label for="check">
+        <!-- <label for=""> -->
+            <div class="check-on2">
+                <% for(let i=1; i < 7; i++){ %>
+                    <div class="item">
+                        <p>Item <%- i %>
+                        </p>
+                    </div>
+                    <% } %>
+            </div>
+        <!-- </label> -->
+    </label>
+    <label for="check2">
+        <p>PRODUCTOS</p>
+    </label>
     <a href="#">COMO COMPRAR</a>
     <a href="/aboutUs">QUIENES SOMOS</a>
     <a href="/politicaDeDevolucion">POLITICA DE DEVOLUCION</a>
