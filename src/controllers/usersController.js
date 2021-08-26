@@ -9,46 +9,44 @@ module.exports = {
     register:(req,res) => { 
         res.render("general/register", {title: "Registro"})
     },
-    registerProcess :(req,res) =>{
+    registerProcess :(req, res) =>{
         let errors = validationResult(req);
-      
+        let newId = 0;
         if(errors.isEmpty()){
-            let lastId = 0;
-
+            
             users.forEach(user =>{
-                if(user.id > lastId){
-                    lastId = user.id
+                if(user.id > newId){
+                    newId = user.id
                 }
                 
             });
-            
-            let {
-                email,
-                fullname,
-                password
-            } = req.body
+            newId++;
 
+            delete req.body.password2;
+            delete req.body.terms;
             let newUser = {
-                id: lastId +1,
-                email,
-                fullname,
-                password: bcrypt.hashSync(password, 10),
+                id: newId,
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 10),
                 rol: "ROL-USER",
-                image:  req.file ? '/UsersJson/' + req.file.filename : "default-img.jpg"
+                image:  req.file ? '/users/' + req.file.filename : "/users/default-img.jpg"
             };
 
             users.push(newUser);
             writeUsersJSON(users);
             res.redirect('/users/login');
         
-        } else {
+        }
 
             res.render('general/register',{
-                error: errors.mapped(),
+                errors : errors.mapped(),
                 old: req.body,
                 title: "registro"
             })
-        }
 
+    },
+    processLogin : (req, res)=>{
+        
+        res.send(req.body);
     }
 };

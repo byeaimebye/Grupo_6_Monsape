@@ -1,7 +1,7 @@
 const { check, body } = require('express-validator');
 const {users} = require("../data/db");
 
-module.exports =[
+let validations =[
     check('email')
     .notEmpty()
     .withMessage('Debes ingresar un email'),
@@ -39,3 +39,5 @@ module.exports =[
     .withMessage('Debes aceptar las bases y condiciones')
 
 ]
+
+module.exports = validations;
