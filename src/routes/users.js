@@ -1,15 +1,19 @@
 const express = require('express');
 const router = express.Router();
-
 let {
     login,
-    register
+    register,
+    registerProcess
     }  = require("../controllers/usersController");
+    let registerValidator = require('../validations/registerValidator');
 
 
-    /* GET users listing. */
+    /* GET login */
 router.get('/login', login);
+
+/*Get Register */
 router.get('/register', register);
+router.post('/register', registerValidator, registerProcess);
 
 module.exports = router;
 

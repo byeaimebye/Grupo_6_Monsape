@@ -1,6 +1,6 @@
 const express = require("express");
 let router = express.Router();
-
+let uploadFiles = require('../middlewares/uploadFiles');
 let {admin,
     products,
     charge,
@@ -20,11 +20,11 @@ router.get("/products", products);
 router.get('/cargaDeProducto', charge);
 
 /* POST- Crear producto */
-router.post('/cargaDeProducto', productCreate); 
+router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate); 
 
  /* Editar productos*/
 router.get('/editProduct/:id', edit);
-router.put('/editProduct/:id', productEdit);
+router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)

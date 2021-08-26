@@ -16,6 +16,7 @@ module.exports  = {
         res.render("admin/chargeProduct", {title: "Carga de productos"})
     },
     productCreate: (req,res) =>{
+        
         let lastId = 1;
         vinos.forEach(vino => {
 			if(vino.id > lastId){
@@ -51,7 +52,7 @@ module.exports  = {
                 temperaturaRecomendada,
                 precio,
                 descuento,
-                image: "default-img.jpg" 
+                image:  req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
 		};
 
        
@@ -104,7 +105,7 @@ module.exports  = {
             vino.temperaturaRecomendada = temperaturaRecomendada,
             vino.precio = precio,
             vino.descuento = descuento,
-            vino.image = "default-img.jpg"
+            vino.image = req.file ? '/VinosJson/' + req.file.filename : vino.image 
             }
         })
         
