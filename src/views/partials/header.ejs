@@ -39,6 +39,7 @@
         <a href="/home">
             <h1>MONSAPE</h1>
         </a>
+        
     </div>
     <!-- ------------------- -->
     <!-- anclas de desktop -->
@@ -141,6 +142,10 @@
         <!--  -------------- -->
     </div>
 </header>
+<% if (typeof session.user != "undefined") { %>
+    <a href="/">Tu perfil</a>
+    <a href="/users/logout">Cerrar Sesion</a>
+   <% } %>
 
 <!-- nav de mobile -->
 <nav class="header-nav">
