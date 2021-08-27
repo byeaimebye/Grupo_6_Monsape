@@ -241,6 +241,7 @@ header .anclas .register-cart-header a>button {
     display: grid;
     position: absolute;
     background-color: var(--color-grisOscuro);
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
     opacity: 0;
     top: 155px;
     transition: 0.5s;
@@ -250,14 +251,49 @@ header .anclas .register-cart-header a>button {
     z-index: 899;
 }
 
-.check-on2 .item {
+.check-on2 .div-item-check-on2 {/* 
+    border: solid 2px white; */
+}
+
+.p-item-check-on2 {
+    border-bottom: solid gainsboro;
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.div-a-check-on2 {
+    margin: 20% auto 10%;
+}
+
+.img-item-check-on2 {
+    background-image: url("/img/image-product-view.jpg");
+    background-size: cover;
+    margin: 5%;
+    height: 90%;
+    width: 90%;
+}
+
+.a-item-check-on2 {
+    align-items: center;/* 
+    border: solid 2px red; */
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+    height: 55px;
+    justify-content: center;
+}
+
+/* .check-on2 .item {
     display: flex;
     align-items: center;
     border-bottom: solid 1px white;
     color: white;
     justify-content: center;
     padding: 10px;
-}
+} */
 
 .input-productos-check:checked+label>.check-on2 {
     opacity: 1;
