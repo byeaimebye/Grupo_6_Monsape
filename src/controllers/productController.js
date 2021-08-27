@@ -6,7 +6,8 @@ module.exports = {
     tienda : (req, res) =>{
         res.render("product/tienda", {
             title: "Tienda",
-            vinos: vinos
+            vinos: vinos,
+            session: req.session,
         })
     },
     /* Trae todos los detalles del producto solicitado. */
@@ -17,7 +18,8 @@ module.exports = {
         console.log(detail);
         res.render("product/productDetail", {
             title: "Detalle de producto",
-            detalle : detail
+            detalle : detail,
+            session: req.session,
         });
     },
     /* Trae los datos necesarios para el carrito de compras. */
@@ -41,7 +43,8 @@ module.exports = {
 	 	res.render('product/result', {
 			title: "resultados",
             result, 
-			search: req.query.keywords
+			search: req.query.keywords,
+            session: req.session,
 		}) 
         
 	},

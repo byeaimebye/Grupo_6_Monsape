@@ -4,19 +4,24 @@ let {
     login,
     register,
     registerProcess,
-    processLogin
+    processLogin,
+    logout
+
     }  = require("../controllers/usersController");
     let registerValidator = require('../validations/registerValidator');
-
+    let loginValidator = require('../validations/loginValidator');
     let upload = require('../middlewares/uploadFiles'); 
+    let userSession = require('../middlewares/userSession');
 
     /* GET login */
 router.get('/login', login);
-router.post("/login", processLogin);
+router.post("/login", loginValidator, processLogin);
+router.get('/logout', logout);
 
 /*Get Register */
 router.get('/register', register);
 router.post('/register', /* upload.single("image"), */ registerValidator, registerProcess);
+
 
 module.exports = router;
 

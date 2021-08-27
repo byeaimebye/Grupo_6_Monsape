@@ -193,9 +193,17 @@
     },
     {
         "id": 25,
-        "email": "jacinto@jacinto.com",
-        "fullname": "Federico Montenegro",
-        "password": "$2a$10$HGi2HE96ZLSnyGs/YLucyeKuvS85EeUoR4z6qXyvrHM5ETouZXfly",
+        "email": "aime-agustina@live.com.ar",
+        "fullname": "aime pelozo",
+        "password": "$2a$10$ru4gI0LYLQoBvGXH0MyeBeKFSo4QcvY02bMx0BTl51H4cKEk3oa3u",
+        "rol": "ROL-USER",
+        "image": "/users/default-img.jpg"
+    },
+    {
+        "id": 26,
+        "email": "nuevouser@hotmail.com",
+        "fullname": "nuevo user",
+        "password": "$2a$10$WKhUkjBK2pwDkxFF39FnJeNlY9BighTfXYAe8YqG5.mvpTqIIY.sK",
         "rol": "ROL-USER",
         "image": "/users/default-img.jpg"
     }

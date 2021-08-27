@@ -4,10 +4,10 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     login:(req,res) => { 
-        res.render("general/login", {title: "Login"})
+        res.render("general/login", {title: "Login", session: req.session})
     },
     register:(req,res) => { 
-        res.render("general/register", {title: "Registro"})
+        res.render("general/register", {title: "Registro", session: req.session} )
     },
     registerProcess :(req, res) =>{
         let errors = validationResult(req);
@@ -41,12 +41,43 @@ module.exports = {
             res.render('general/register',{
                 errors : errors.mapped(),
                 old: req.body,
-                title: "registro"
+                title: "registro",
+                session: req.session,
             })
 
     },
     processLogin : (req, res)=>{
-        
-        res.send(req.body);
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email);
+            req.session.user ={
+                id: user.id,
+                fullname: user.fullname,
+                email: user.email,
+                rol: user.rol,
+                image: user.image
+            }
+
+            if(req.body.remember){
+                res.cookie('cookieMonsape', req.session.user, {maxAge: 1000*60})
+            }
+            res.locals.user = req.session.user
+            res.redirect("/home")
+        }else{
+            res.render('general/login', {
+                errors: errors.mapped(),
+                session: req.session,
+                old: req.body,
+                title: 'Ingresá a Monsape'
+            })
+        }
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if(req.cookies.cookieMonsape){
+            res.cookie('cookieMonsape', '', {maxAge:-1})
+        }
+        res.redirect('/home')
     }
 };
