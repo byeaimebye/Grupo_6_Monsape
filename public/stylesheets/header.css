@@ -55,7 +55,7 @@ header .logo h1 {/*
     display: none; */
     font-weight: 100;
     font-family: 'Rosarivo', serif;
-    font-size: 1rem;
+    font-size: 25px;
     color: white;
 }
 
@@ -73,8 +73,8 @@ header .anclas .register-cart-header a>button {
     display: none;
 }
 
-.cart-data-label {
-    display: none;
+.cart-data-label {/* 
+    display: none; */
     border-radius: 25px;
     padding: 22px 11px 9px 8px;
     z-index: 905;
@@ -132,12 +132,12 @@ header .anclas .register-cart-header a>button {
 
 /* nav mobile tiene el buscador y el products */
 
-.header-nav {
-    display: none;
+.header-nav {/* 
+    display: none; */
     background-color: var(--color-grisOscuro);
     height: 34px;
-    width: 100%;/* 
-    display: grid; */
+    width: 100%;
+    display: grid;
     grid-template-columns: 60% 40%;
 }
 
@@ -251,10 +251,6 @@ header .anclas .register-cart-header a>button {
     z-index: 899;
 }
 
-.check-on2 .div-item-check-on2 {/* 
-    border: solid 2px white; */
-}
-
 .p-item-check-on2 {
     border-bottom: solid gainsboro;
     color: white;
@@ -297,7 +293,7 @@ header .anclas .register-cart-header a>button {
 
 .input-productos-check:checked+label>.check-on2 {
     opacity: 1;
-    height: 100vh;
+    height: 80vh;
     z-index: 899;
 }
 
@@ -394,9 +390,12 @@ header .anclas .modal2 {
     .cart-data-label {
         display: block;
     }
+    header .logo h1 {
+        font-size: 30px;
+    }
 
     header .logo a>img {
-        height: 55px;
+        height: 70px;
         padding: 0;
     }
     .check-on {
@@ -423,7 +422,8 @@ header .anclas .modal2 {
     header {
         background-color: black;
         height: 120px;
-        grid-template-columns: 1fr 3fr 0.7fr;
+        grid-template-columns: 1fr 3fr 0.7fr;/* 
+        grid-template-columns: 1fr 3fr 1fr; */
         background-position: cover;
     }
     header .burger {
@@ -438,6 +438,7 @@ header .anclas .modal2 {
         gap: 5px;
     }
     header .anclas button {
+        align-items: center;
         display: flex;
         background-color: transparent;
         color: white;

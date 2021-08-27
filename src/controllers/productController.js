@@ -37,7 +37,15 @@ module.exports = {
 		vinos.forEach(vino => {
 			if(vino.nombre.toLowerCase().includes(req.query.keywords.toLowerCase())){
 				result.push(vino) 
-			}
+			}else if(vino.variedad.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}else if(vino.coleccion.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}else if(vino.categoria.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}else if(result.length === 0){
+                result.push(vinos);
+            }
 		});
 	
 	 	res.render('product/result', {
@@ -50,9 +58,9 @@ module.exports = {
 	},
     categorias: (req, res) =>{
       
-        let categoria = vinos.filter( vino => vino.categoria === req.params.categoria)
-       if(categoria){
-           res.render( "product/tienda" , { title: "Monsape", vinos: categoria})
+        let vinosPorCategoria = vinos.filter( vino => vino.categoria === req.params.categoria)
+       if(vinosPorCategoria){
+           res.render( "product/result" , { title: "Monsape", vinos: VinosPorcategoria})
        }else{
             res.render("error")
         }
