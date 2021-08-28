@@ -163,9 +163,11 @@
     left: 0;
     height: 0;
     position: fixed;
-    transition: height 0,
+    /* transition: height 0,
                 top 0;
-    transition-delay: 0.3s;
+    transition-delay: 0.3s; */
+    opacity: 0;
+    transition: 0.5s opacity;
     top: 100%;
     width: 100vw;
 }
@@ -177,7 +179,6 @@
     top: 100%;
     transition: height 1s,
                 top 1s;
-    transition-delay: 0.1s;
     height: 0;
     width: 100%;
 }
@@ -185,6 +186,7 @@
 .more-details:checked + label .container-more-details {
     height: 100vh;
     top: 0;
+    opacity: 1;
 }
 
 .more-details:checked + label .container-more-details label .container-more-details-content {

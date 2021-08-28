@@ -12,18 +12,18 @@
         <div class="form-container">
             <h2>Registro</h2>
             <hr>
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <form action="/users/register" method="POST">
                 <div class="form">
                     <div class="input-container">
                         <label for="email">Dirección de Correo Electrónico:</label>
-                        <input class="input-style" type="email" name="email">
-                        <% if (locals.errors && errors.email) { %>
+                        <input class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
+                        <% if(locals.errors && errors.email) { %>
                             <small class="text-danger"><%= errors.email.msg %> </small>
                         <% } %>
                     </div>
                     <div class="input-container">
                         <label for="fullname">Nombre y apellido:</label>
-                        <input class="input-style" type="text" name="fullname" value="<%= locals.old && old.name %> ">
+                        <input class="input-style" type="text" name="fullname" value="<%= locals.old && old.fullname %>">
                         <% if (locals.errors && errors.fullname) { %>
                             <small class="text-danger"><%= errors.fullname.msg %> </small>
                         <% } %>
@@ -44,13 +44,13 @@
                     </div>                    
                     <div class="check">
                         <label for="terms"> Aceptar <a href="">términos y condiciones</a> </label>
-                        <input type="checkbox" name="terms" id="recordar">
+                        <input type="checkbox" name="terms" id="recordar" name="terms">
                         <% if (locals.errors && errors.terms) { %>
                             <small class="text-danger"><%= errors.terms.msg %> </small>
                         <% } %>
                     </div>
-                    <div class="button-container">
-                        <span class="error-message">Credenciales inválidas</span>
+                    <div class="button-container"><!-- 
+                        <span class="error-message">Credenciales inválidas</span> -->
                         <button type="submit" class="btn btn-submit">Registrarse</button>
                     </div>
                     <span>¿Ya tenés una cuenta? <a href="./login">iniciá sesión</a></span>

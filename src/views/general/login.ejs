@@ -7,22 +7,26 @@
         <div class="form-container">
             <h2>INICIA SESION</h2>
             <hr>
-            <form action="" method="">
+            <form action="/users/login" method="POST">
                 <div class="form">
                     <div class="input-container">
                         <label for="email">Dirección de Correo Electrónico:</label>
-                        <input class="input-style" type="email" name="email">
-                        <span class="error-message">Debe ingresar su email</span>
+                        <input class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
+                        <% if(locals.errors && errors.email) { %>
+                            <small class="text-danger"><%= errors.email.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="input-container">
                         <label for="password">Contraseña:</label>
                         <input class="input-style" type="password" name="password">
-                        <span class="error-message">Debe ingresar su contraseña</span>
+                        <% if (locals.errors && errors.password) { %>
+                            <small class="text-danger"><%= errors.password.msg %> </small>
+                        <% } %>
                     </div>
                  
                     <div class="check">
-                        <label for="terms"> Recordar contraseña</label>
-                        <input type="checkbox" name="terms" id="recordar">
+                        <label for="remember"> Recordar contraseña</label>
+                        <input type="checkbox" name="remember" id="recordar">
                         <span class="error-message">Debe aceptar los términos y condiciones</span>
                     </div>
                     <div class="button-container">

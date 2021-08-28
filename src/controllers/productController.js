@@ -6,7 +6,8 @@ module.exports = {
     tienda : (req, res) =>{
         res.render("product/tienda", {
             title: "Tienda",
-            vinos: vinos
+            vinos: vinos,
+            session: req.session,
         })
     },
     /* Trae todos los detalles del producto solicitado. */
@@ -17,7 +18,8 @@ module.exports = {
         console.log(detail);
         res.render("product/productDetail", {
             title: "Detalle de producto",
-            detalle : detail
+            detalle : detail,
+            session: req.session,
         });
     },
     /* Trae los datos necesarios para el carrito de compras. */
@@ -35,21 +37,30 @@ module.exports = {
 		vinos.forEach(vino => {
 			if(vino.nombre.toLowerCase().includes(req.query.keywords.toLowerCase())){
 				result.push(vino) 
-			}
+			}else if(vino.variedad.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}else if(vino.coleccion.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}else if(vino.categoria.toLowerCase().includes(req.query.keywords.toLowerCase())){
+				result.push(vino) 
+			}else if(result.length === 0){
+                result.push(vinos);
+            }
 		});
 	
 	 	res.render('product/result', {
 			title: "resultados",
             result, 
-			search: req.query.keywords
+			search: req.query.keywords,
+            session: req.session,
 		}) 
         
 	},
     categorias: (req, res) =>{
       
-        let categoria = vinos.filter( vino => vino.categoria === req.params.categoria)
-       if(categoria){
-           res.render( "product/tienda" , { title: "Monsape", vinos: categoria})
+        let vinosPorCategoria = vinos.filter( vino => vino.categoria === req.params.categoria)
+       if(vinosPorCategoria){
+           res.render( "product/result" , { title: "Monsape", vinos: VinosPorcategoria})
        }else{
             res.render("error")
         }

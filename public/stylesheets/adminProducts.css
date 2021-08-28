@@ -1,6 +1,6 @@
 /*Main*/
 main.main-admin-products{
-    background-color: var(--color-grisBotones);
+    background-color: grey;
     border-radius: 10px;
     margin: 10px 2px;
     font-size: 12px;

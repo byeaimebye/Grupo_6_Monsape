@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %> 
+<body>
+    <%- include("../partials/header") %>
+    <body class="body-profile">
+        <div class="div-container-profile">
+            <h1>MI PERFIL</h1>
+            <form action="">
+                <div class="avatar-profile">
+                    <img src="/img/users/default-avatar.jpg" alt="avatar">
+                    <input class="input-avatar-profile" type="file" name="avatar">
+                </div>
+                <div class="container-data-profile">
+                    <div class="div-grid-profile">
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="fullname">Nombre y apellido</label>
+                            <input class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname">
+
+                        </div>
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="email">Email</label>
+                            <input class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com">
+
+                        </div>
+
+                    </div>
+                    <div class="div-grid-profile div-grid-profile2">
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="password">Contraseña</label>
+                            <input class="input-form-profile" type="password">
+
+                        </div>
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="dni">Documento</label>
+                            <input class="input-form-profile" type="text" name="dni" placeholder="Documento">
+
+                        </div>
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="tel">Teléfono</label>
+                            <input class="input-form-profile" type="text" name="tel" placeholder="Teléfono">
+
+                        </div>
+
+                    </div>
+                    <div class="div-grid-profile">
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="cp">Código Postal</label>
+                            <input class="input-form-profile" type="text" name="cp" placeholder="Código Postal">
+                        </div>
+                        <div class="div-flex-profile">
+                            <label class="lbl-form-profile" for="date">Fecha de nacimiento</label>
+                            <input class="input-form-profile input-date-form-profile" type="date" name="date">
+                        </div>
+
+                    </div>
+                    <button class="btn-form-profile" type="submit" name="btn-profile">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <%- include("../partials/footer") %>
+</body>
+</html>
