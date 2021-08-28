@@ -3,8 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const methodOverride = require('method-override');
-const session = require('express-session');
+let methodOverride = require('method-override');
+let session = require('express-session');
 
 var indexRouter = require('./routes/indexRouter');
 var usersRouter = require('./routes/users');

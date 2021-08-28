@@ -18,8 +18,7 @@ module.exports = {
             users.forEach(user =>{
                 if(user.id > lastId){
                     lastId = user.id
-                }
-                
+                }                
             });
             
             let {
@@ -29,10 +28,10 @@ module.exports = {
             } = req.body
 
             let newUser = {
-                id: lastId +1,
+                id: lastId + 1,
                 email,
                 fullname,
-                password: bcrypt.hashSync(password, 10),
+                password: bcrypt.hashSync("password", 10),
                 rol: "ROL-USER",
                 image:  req.file ? '/UsersJson/' + req.file.filename : "default-img.jpg"
             };

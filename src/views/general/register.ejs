@@ -22,8 +22,8 @@
                         <% } %>
                     </div>
                     <div class="input-container">
-                        <label for="nombreCompleto">Nombre y apellido:</label>
-                        <input class="input-style" type="text" name="fullname">
+                        <label for="fullname">Nombre y apellido:</label>
+                        <input class="input-style" type="text" name="fullname" value="<%= locals.old && old.name %> ">
                         <% if (locals.errors && errors.fullname) { %>
                             <small class="text-danger"><%= errors.fullname.msg %> </small>
                         <% } %>

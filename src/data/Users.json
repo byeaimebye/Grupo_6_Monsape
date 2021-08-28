@@ -198,5 +198,59 @@
         "password": "4Ak3YU",
         "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADNSURBVCjPhZBNCsIwFIQnWvAGunHhSrBbQT2Op3EvCJ7JCxTcuhB0YytaW9N0fElbbIs/GZI8eF+GzFPE79X504dXXEq1GyytFYYYoPvh6RkH5raYJqE2GZtKuFljhI61mWlz55URY95FES88CXIsEQEs/xCl7rwx5FmAWKqtIEqAncEe2gWiyOCJRZVh7hVZ/erv0rYKkSNDv4qpELzjSTt3e1yfg1+fgAMMWAeCxghyB02+ORRf5W8HC/mfHdi61XJ162WoS7utXc30BXX/jFnkwiD5AAAAAElFTkSuQmCC",
         "age": 25
+    },
+    {
+        "id": 26,
+        "rol": "ROL-USER"
+    },
+    {
+        "id": 27,
+        "rol": "ROL-USER"
+    },
+    {
+        "id": 28,
+        "password": "$2a$10$V8MABBhdS2tLOT.FFmzKLugCQnmioAZxHqalzJqQr/vNKj6XMVES6",
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 29,
+        "password": "$2a$10$ulI0FVvut/O20smMBUsCUO1Nr2nnI7GWRQ1WrMAm2Iz.GrqTlInrS",
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 30,
+        "password": "$2a$10$/GlxDC1RsL.oUN6EY.cEB.bFOHfF45Wpn8KhZ2DryuVCbNN9n4EFi",
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 31,
+        "password": "$2a$10$Ik76.z/pyvdTJ6RGvaKwwONJyRFH9VMQ7LxEqETd7Tx1y5UlcXily",
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 32,
+        "password": "$2a$10$Zs6Zc2TE.ANT08x4Uy/KmuTDFVS1L1cRvxuv5tIx7zUOuvPfuK9d2",
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 33,
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 34,
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
+    },
+    {
+        "id": 35,
+        "password": "$2a$10$KgrgNY7BZxawMFm8lY2gwuF0/ektuGVty913dhKD8Ef0mAK.88uS6",
+        "rol": "ROL-USER",
+        "image": "default-img.jpg"
     }
 ]
