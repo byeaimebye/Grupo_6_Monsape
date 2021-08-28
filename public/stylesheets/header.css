@@ -21,7 +21,7 @@ header {
 
 header form > .buscador {
     display: none;
-    margin: 0 auto 0 5px;
+    margin: 0 5px 0 5px;
     position: relative;
 }
 
@@ -429,7 +429,8 @@ header .anclas .modal2 {
     header .burger {
         display: none;
     }
-    header form > .buscador {
+    header form > .buscador {/* 
+        border: solid red; */
         display: flex;
     }
     header .anclas {

@@ -79,5 +79,8 @@ module.exports = {
             res.cookie('cookieMonsape', '', {maxAge:-1})
         }
         res.redirect('/home')
+    },
+    profile : (req, res)=>{
+        res.render("general/profile", {title: "Perfil"});
     }
 };

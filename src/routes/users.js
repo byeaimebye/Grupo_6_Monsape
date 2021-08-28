@@ -5,8 +5,8 @@ let {
     register,
     registerProcess,
     processLogin,
-    logout
-
+    logout,
+    profile
     }  = require("../controllers/usersController");
     let registerValidator = require('../validations/registerValidator');
     let loginValidator = require('../validations/loginValidator');
@@ -22,6 +22,8 @@ router.get('/logout', logout);
 router.get('/register', register);
 router.post('/register', /* upload.single("image"), */ registerValidator, registerProcess);
 
+/* Get Profile */
+router.get("/profile", profile);
 
 module.exports = router;
 
