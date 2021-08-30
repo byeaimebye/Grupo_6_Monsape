@@ -7,7 +7,8 @@ let {admin,
     productCreate,
     edit,
     productEdit,
-    productDelete } = require("../controllers/adminController");
+    productDelete,
+    usersTable } = require("../controllers/adminController");
 
 
 /* GET - Admin  ----(login)----- */
@@ -15,7 +16,7 @@ router.get("/", admin);
 
 
 /*GET - Admin products */
-router.get("/products", products);
+router.get('/products', products);
 /*GET - Formulario de producto */
 router.get('/cargaDeProducto', charge);
 
@@ -29,7 +30,8 @@ router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 
-
+//-------------------Rutas de Admin Users-------------------------
+router.get('/usersTable', usersTable);
 
 
 
