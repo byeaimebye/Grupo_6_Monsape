@@ -170,6 +170,7 @@
     transition: 0.5s opacity;
     top: 100%;
     width: 100vw;
+    z-index: 0;
 }
 
 .container-more-details .container-more-details-content {
@@ -187,10 +188,10 @@
     height: 100vh;
     top: 0;
     opacity: 1;
+    z-index: 850;
 }
 
 .more-details:checked + label .container-more-details label .container-more-details-content {
-    
     height: 60%;
     top: 40%;
 }
