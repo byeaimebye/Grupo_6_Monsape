@@ -1,19 +1,15 @@
 /*generales*/
-form{
+.form-container form{
     font-weight: bolder;
 }
-a{
-    color: darkblue;
-    text-decoration: none;
-}
 
-h2{
+.form-container h2{
     margin-top: 2rem;
     margin-bottom: 1rem;
     text-align: center;
     text-transform: uppercase;
 }
-hr{
+.form-container hr{
     background-color: black;
     height: 2px;
     margin-bottom: 3rem;
@@ -48,13 +44,10 @@ main.main-register{
     margin: 1rem 1rem;
     width: 100%;
 }
-/* 
-span.error-message{
+
+small.text-danger{
     color: red;
-    display: none;
-    font-size: 0.8rem;
-    margin: 0px auto;
-} */
+}
 
 input.input-style{
     background: #e4d8db;
