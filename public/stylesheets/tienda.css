@@ -430,7 +430,7 @@ section.products{
     .monsape-ofrece{
         display: grid;
         grid-template-columns: repeat(3, 33%);
-        gap: 25px;
+        gap: 18px;
         margin: 30px 25px;
     }
     
