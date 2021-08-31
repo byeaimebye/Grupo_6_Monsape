@@ -1,4 +1,4 @@
-const {vinos, writeVinosJSON} = require("../data/db");
+const {vinos, writeVinosJSON, users, writeUsersJSON} = require("../data/db");
 
 module.exports  = {
     admin: (req, res) => {
@@ -6,6 +6,7 @@ module.exports  = {
             title: "vista admin"
         });
     },
+    //--------------------Administración de Productos-----------------------
     products: (req, res)=> {
         res.render("admin/adminProducts", {
             vinos,
@@ -123,4 +124,11 @@ module.exports  = {
      writeVinosJSON(vinos);
      res.redirect("/admin/products")
 
-}};
+    },
+    usersTable: (req, res) => {
+        res.render("admin/adminUsers", {
+            users,
+            title: "Tabla de Usuarios Registrados"
+        })
+    }
+};

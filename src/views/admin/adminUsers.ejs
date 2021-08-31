@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">    
+<%- include("../partials/headAdmin") %>    
+<body>
+    <!--headerAdmin-->
+    <%- include("../partials/headerAdmin") %>              
+    <main class="main-admin-users">
+      <div class="title">
+        <h1>Listado de Usuarios Registrados</h1>              
+      </div>
+      <table class="table-users">
+        <thead>
+          <tr class="category">
+            <th class="id" scope="col">id</th>            
+            <th class="imagen" scope="col">imagen</th>
+            <th class="nombre" scope="col">Nombre</th>
+            <th class="email" scope="col">Email</th>
+            <th class="edad" scope="col">Edad</th>
+            <th class="editar" scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+              <tr class="users">
+                  <td class="id"><%- user.id%></td>
+                  <td class="imagen"><img src="<%- user.image%>" alt="Imagen del usuario"></td>
+                  <td class="nombre"><%- user.fullname%></td>
+                  <td class="email"><%- user.email%></td>                  
+                  <td class="edad"><%- user.age%></td>
+                  <td class="btn-options">
+                      <a class="btn-edit" href="/admin/#/<%- user.id %>"><img src="/img/editar.svg" alt="editar información de usuario"></a>                      
+                  </td>
+                </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </main>       
+  
+</body>
+</html>
