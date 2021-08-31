@@ -1,357 +1,213 @@
-.body-productDetail {
-    background-color: var(--color-fondo-main);
+body {
+    background-color: gainsboro;
 }
 
-.main-productDetail {
-    background-color: var(--color-fondo-main);
-    margin-top: 55px;
-    position: relative;
-    text-align: center;
-}
+/* .border-prueba {
+    border: solid 2px;
+} */
 
-.main-productDetail .img-cuerpo-detail #img-carrito2 {
-    box-shadow: 0px 0px 25px 21px rgb(0, 0, 0, 20%);
-    top: 2px;
-    width: 200px;
-}
-
-.main-productDetail .detalle {
-    margin: 0 50px;
-}
-
-.h3-detail-colleccion{
-    color: rgba(0,0,0, 0.4);
-    margin: 30px auto 0;
-}
-
-.main-productDetail .img-cuerpo-detail .cuerpo-detail .h2-detail-nombre {
-    font-size: x-large;
-    margin: 0 auto;
-    max-width: 390px;
-    text-align: center;
-}
-
-.main-productDetail .img-cuerpo-detail .cuerpo-detail .h5-detail-variedad {
-    color: var(--color-rojoVino);
-    max-width: 390px;
-    margin: 0 auto 20px;
-    padding-bottom: 5px;
-    text-align: center;
-    width: 85%;
-}
-
-.section-description {
-    margin: auto 27px 10px;
-    background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent);
-    padding: 20px;
-}
-
-/* Botones de seleccion de cantidad de unidades. */
-.main-productDetail .cant-precio-detail {
+.main-prueba {
     align-items: center;
-    display: flex;
-    flex-direction: column-reverse;
-    height: 70px;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr 0.2fr 0.1fr 0.2fr 0.1fr 1fr 0.1fr;
+    grid-template-areas: 
+    "img-prueba img-prueba img-prueba img-prueba"
+    "collection collection collection collection"
+    "title-p title-p title-p title-p"
+    "variedad variedad variedad variedad"
+    "price price price price"
+    "cant cant cant cant"
+    "description description description description"
+    "agregar agregar agregar agregar" 
+    "ver-mas ver-mas ver-mas ver-mas" 
+    "confirmar confirmar confirmar confirmar";
+    
+    margin: 30px;
+    text-align: center;/* 
+    height: 100vh; */
+
 }
 
-.main-productDetail .cant {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    height: 32px;
-    width: 100px;
+.ver-mas {
+    display: none;
 }
 
-.main-productDetail .cant #buttons {
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 12px;
-    padding: 1px 3px;
-    height: 22px;
-    width: 24px;
-}
-
-.main-productDetail .cant .cantidad {
-    border: none;
-    border-radius: 10px;
-    height: 22px;
-    text-align: center;
-    width: 26px;
-}
-
-.main-productDetail .precio {
-    color: var(--color-rojoVino);
-    font-size: 24px;
-    font-weight: 900;
-    text-align: center;
-}
-
-/* Botones agregar al carrito, costo de envío y confirmar. */
-
-.main-productDetail .botones {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.img-prueba {
+    grid-area: img-prueba;
     margin-bottom: 20px;
 }
-
-.main-productDetail .botones #agregar {
-    background-color: silver;
-    border-radius: 15px;
-    font-size: 16px;
-    height: 25px;
-    margin-bottom: 10px;
-    width: 150px;
+.collection {
+    color: var(--color-grisOscuro);
+    grid-area: collection;
 }
-
-.main-productDetail .botones #costo-envio {
-    background-color: silver;
-    border-radius: 15px;
-    display: none;
-    font-size: 16px;
-    height: 25px;
-    width: 150px;
+.title-p {
+    grid-area: title-p;
 }
-
-.main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #confirmar {
-    background-color: var(--color-rojoVino);
-    border-radius: 15px;
-    color: white;
-    font-size: 16px;
-    height: 25px;
-    margin-bottom: 5px;
-    width: 150px;
+.variedad {
+    color: var(--color-rojoVino);
+    grid-area: variedad;
 }
-
-.main-productDetail #confirmar-2 {
-    background-color: var(--color-rojoVino);
-    border-radius: 15px;
-    color: white;
-    display : none;
-    font-size: 16px;
-    height: 25px;
-    width: 150px;
+.price {
+    color: var(--color-rojoVino);
+    font-size: 20px;
+    grid-area: price;
+    margin: 10px auto 5px;
 }
-
-.more-details {
-    display: none;
-}
-
-.more-details-p > p{
-    align-items: center;
-    background-color: var(--color-rojoVino);
-    bottom: 20vh;
-    color: white;
+.cant {
+    border: solid 1px var(--color-rojoVino);
+    border-radius: 10px;
     display: flex;
-    font-size: 40px;
-    height: 30px;
-    justify-content: center;
-    opacity: 0.5;
-    position: fixed;
-    right: 5vw;
-    width: 30px;
+    grid-area: cant;
+    height: 25px;
+    margin: 10px auto 10px;
+    width: 100px;
+}
+.btns {
+    width: 100px;
+    font-size: 20px;
+}
+.menos-detail {
+    border-radius: 15px 0 0 15px;
 }
 
-.container-more-details {
-    background-color: rgba(0,0,0,0.5);
-    left: 0;
-    height: 0;
-    position: fixed;
-    /* transition: height 0,
-                top 0;
-    transition-delay: 0.3s; */
-    opacity: 0;
-    transition: 0.5s opacity;
-    top: 100%;
-    width: 100vw;
-    z-index: 0;
+.mas-detail {
+    border-radius: 0 15px 15px 0;
 }
-
-.container-more-details .container-more-details-content {
-    background: linear-gradient(338deg, gainsboro 0%, rgba(124,127,124, 1) 0%, gainsboro);
-    padding: 20px;
-    position: fixed;
-    top: 100%;
-    transition: height 1s,
-                top 1s;
-    height: 0;
+.cantidad {
+    border-left: solid 1px var(--color-rojoVino);
+    border-right: solid 1px var(--color-rojoVino);
+    font-size: 20px;
+    text-align: center;
     width: 100%;
 }
 
-.more-details:checked + label .container-more-details {
-    height: 100vh;
-    top: 0;
-    opacity: 1;
-    z-index: 850;
-}
-
-.more-details:checked + label .container-more-details label .container-more-details-content {
-    height: 60%;
-    top: 40%;
-}
-
-.container-more-details-content {
-    display: grid;
-    grid-template-columns: 100%;
-    overflow: auto;
-}
-
-.general-section {
-    background-color: transparent;
-    height: 50vh;
-}
-
-.div-distribution {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 33.33%;
-}
-
-.div-distribution > img {
-    width: 30px;
-}
-
-.title {
-    color: var(--color-rojoVino);
+.description {/* 
+    background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent); */
     font-size: 15px;
+    grid-area: description;
+    margin: 10px auto 20px;
+}
+.agregar {
+    grid-area: agregar;
+}
+.ver-mas {
+    grid-area: ver-mas;
 }
 
-.description {
-    font-size: 12px;
+.btn-button {
+    border: solid 1px var(--color-rojoVino);
+    margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-    .main-productDetail {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 0 auto 55px;
-        max-width: 1000px;
-        position: relative;
+.title-p {
+    margin: 0;
+}
+
+.img-prueba > img{
+    box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 20%);
+    width: 250px;
+}
+
+.btn-button {
+    border-radius: 10px;
+    height: 25px;
+    margin: 0 auto 10px;
+    width: 200px;
+}
+
+.confirmar {
+    background-color: var(--color-rojoVino);
+    border-radius: 10px;
+    color: white;
+    grid-area: confirmar;
+    height: 25px;
+    margin: 0 auto;
+    width: 200px;
+}
+
+@media(min-width: 768px){
+    .main-prueba {
+        display: grid;
+        grid-template-columns:0.2fr 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.4fr 0.5fr 0.5fr 0.2fr;
+        grid-template-areas:
+        "img-prueba img-prueba collection collection"
+        "img-prueba img-prueba title-p title-p"
+        "img-prueba img-prueba variedad variedad"
+        "img-prueba img-prueba price cant"
+        "img-prueba img-prueba description description"
+        "img-prueba img-prueba agregar ver-mas"
+        "confirmar confirmar confirmar confirmar";
+        text-align: center;
+    
     }
 
-    .main-productDetail .img-cuerpo-detail{
-        display: flex;
-        justify-content: space-between;
-        height: 374px;
+    .ver-mas {
+        display: block;
     }
 
-    .main-productDetail .img-cuerpo-detail #img-carrito2 {
-        margin: 30px auto 0 10px;
-        height: 330px;
-        width: 330px;
-    }
-
-    .main-productDetail .cuerpo-detail{
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        flex-direction: column;
-        height: 370px;
-        width: 60%;
-    }
-
-    .main-productDetail .cuerpo-detail .detalle {
-        max-width: none;
-        width: 90%;
+    .img-prueba {
+        margin-bottom: 50px;
     }
     
-    .main-productDetail .detalle h4,
-    .main-productDetail .detalle ul {
-        max-width: none;
-    }
-
-    .main-productDetail .cant-precio-detail {
-        flex-direction: row;
-        justify-content: space-between;
+    .price,
+    .cant,
+    .description,
+    .btn-button,
+    .confirmar {
         margin: 0 auto;
-        width: 60%;
     }
 
-    .main-productDetail {
-        display: flex;
+    .confirmar {
+        width: 600px;
     }
 
-    .main-productDetail .botones {
-        height: 45px;
-        margin: 0 auto;
-        width: 400px;
+}
+
+@media (min-width: 1200px) {
+    .main-prueba {
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.3fr 0.5fr 0.5fr 0.2fr;
+        margin: 90px;
     }
 
-    .main-productDetail .botones .cart-cost {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        width: 90%;
-    }
-
-    .main-productDetail .botones #costo-envio {
-        display: block;
-    }
-
-    .main-productDetail .botones #confirmar {
-        display: none;
-    }
-
-    .main-productDetail #confirmar-2 {
-        display: block;
-        margin: 200px auto 0;
-        position: relative;
+    .img-prueba > img{
         width: 350px;
     }
 
-    .more-details-p > p{
-        z-index: 0;
+    .collection {
+        font-size: 20px;
     }
 
-    .more-details:checked + label .container-more-details label .container-more-details-content {
-    
-        height: 60%;
-        top: 0;
-    }
-    
-    .container-more-details-content {
-        grid-template-columns: 55% 45%;
-    }
-    
-    .section-2 {
-        border-left: solid 2px rgba(0,0,0, 0.1);
+    .title-p {
+        font-size: 28px;
     }
 
-    .more-details:checked + label .container-more-details label .container-more-details-content {
-    
-        height: 60%;
-        top: 40%;
-    }
-}
-
-@media (min-width : 1200px) {
-    .main-productDetail {
-        justify-content: space-between;
-        max-width: 1100px;
+    .price {
+        font-size: 25px;
     }
 
-    .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #agregar,
-    .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones #costo-envio{
-        height: 35px;
+    .description {
+        border-top: solid 1px rgba(0, 0, 0, 0.3);
+        font-size: 19px;
+        padding: 15px 30px 0;
     }
 
-    .main-productDetail .img-cuerpo-detail .cuerpo-detail .botones{
-        height: 60px;
+    .btn-button {
+        width: 230px;
     }
 
-    .main-productDetail #confirmar-2 {
-        height: 35px;
-        margin: 100px auto 0;
-        width: 500px;
+    .variedad {
+        font-size: 18px;
+    }
+
+    .btn-button {
+        font-size: 18px;
+        height: 30px;
+    }
+
+    .confirmar {
+        font-size: 18px;
+        height: 30px;
     }
 }

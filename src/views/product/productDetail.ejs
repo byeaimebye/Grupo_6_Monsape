@@ -1,105 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+    <%- include("../partials/head") %> 
+<body>
+    <%- include("../partials/header") %>
+    <main class="main-prueba">
+        <div class="img-prueba border-prueba">
+            <img  src="/img/<%= detalle.image %>" alt="img-prueba">
+        </div>
+        <h3 class="collection border-prueba"><%= detalle.coleccion %></h3>
+        <h2 class="title-p border-prueba"><%= detalle.nombre %></h2>
+        <h4 class="variedad border-prueba"><%= detalle.variedad %></h4>
+        <p class="price border-prueba">$<%= detalle.precio %></p>
+        <div class="cant">
+            <input type="button" name="menos" class="menos-detail btns" value="-">
+            <input type="text" name="cantidad" class="cantidad" value="0">
+            <input type="button" name="mas" class="mas-detail btns" value="+">
+        </div>
+        <p class="description border-prueba"><%= detalle.descripcion %></p>
+        <button type="button" class="btn-button agregar border-prueba">Agregar</button>
+        <button type="button" class="btn-button ver-mas border-prueba">Ver mas</button>
+        <button type="submit" class="confirmar border-prueba">Confirmar</button>
 
-<%- include("../partials/head.ejs") %>
-
-    <body class="body-productDetail">
-
-        <!-- Header start here -->
-        <%- include("../partials/header.ejs") %>
-
-            <!-- Main -->
-            <main class="main-productDetail">
-                <div class="galeria">
-
-                </div>
-                <div class="img-cuerpo-detail">
-                    <img id="img-carrito2" src="/img/<%= detalle.image %>" alt="Vino">
-                    <div class="cuerpo-detail">
-                        <h3 class="h3-detail-colleccion">
-                            <%= detalle.coleccion %>
-                        </h3>
-                        <h2 class="h2-detail-nombre">
-                            <%= detalle.nombre %>
-                        </h2>
-                        <h5 class="h5-detail-variedad">
-                            <%= detalle.variedad %>
-                        </h5>
-                        <section class="section-description">
-                            <%= detalle.descripcion %>
-                        </section>
-                        <!-- Botones para regular la cantidad de unidades de producto a adquirir -->
-                        <div class="cant-precio-detail">
-                            <p class="precio">$<%= detalle.precio %>
-                            </p>
-                            <div class="cant">
-                                <input type="button" name="menos" id="buttons" class="menos" value="-">
-                                <input type="text" name="cantidad" id="cantidad" class="cantidad" value="0">
-                                <input type="button" name="mas" id="buttons" class="mas" value="+">
-                            </div>
-
-                        </div>
-
-                        <div class="botones">
-                            <div class="cart-cost">
-                                <input type="button" name="agregar" id="agregar" value="Agregar al carrito">
-                                <input type="button" name="costo-envio" id="costo-envio" value="Costo de envío">
-                            </div>
-                            <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
-                        </div>
-                    </div>
-                </div>
-                <input type="submit" name="confirmar" id="confirmar-2" value="Confirmar">
-                <input type="checkbox" name="more-details" id="more-details" value="" class="more-details">
-                <label for="more-details" class="more-details-p">
-
-                    <p>+</p>
-                    <label for="more-details">
-                        <div class="container-more-details">
-                            <label for="">
-                                <div class="container-more-details-content">
-                                    <section class="general-section section-1">
-                                        <div class="div-distribution div-distribution-1">
-                                            <img src="/img/maridaje.png" alt="maridaje">
-                                            <p class="p-section-1 title">Maridaje</p>
-                                            <p class="p-section-1-description description"><%= detalle.Maridaje %> </p>
-                                        </div>
-                                        <div class="div-distribution div-distribution-2">
-                                            <img src="/img/porcentaje.png" alt="maridaje">
-                                            <p class="p-section-2 title">Graduación alcohólica</p>
-                                            <p class="p-section-2-description description"><%= detalle.graduacionAlcoholica %> </p>
-                                        </div>
-                                        <div class="div-distribution div-distribution-3">
-                                            <img src="/img/acidez.png" alt="maridaje">
-                                            <p class="p-section-3 title">Acidez total</p>
-                                            <p class="p-section-3-description description"><%= detalle.acidezTotal %> </p>
-                                        </div>
-                                    </section>
-                                    <section class="general-section  section-2">
-                                        <div class="div-distribution div-distribution-4">
-                                            <img src="/img/azucar.png" alt="maridaje">
-                                            <p class="p-section-4 title">Azúcar residual</p>
-                                            <p class="p-section-4-description description"><%= detalle.azucarResidual %> </p>
-                                        </div>
-                                        <div class="div-distribution div-distribution-5">
-                                            <img src="/img/temperatura.png" alt="temperatura">
-                                            <p class="p-section-5 title">Servicio</p>
-                                            <p class="p-section-5-description description"><%= detalle.temperaturaRecomendada %> </p>
-                                        </div>
-                                        <div class="div-distribution div-distribution-6">
-                                            <img src="/img/variedad.svg" alt="variedad">
-                                            <p class="p-section-6 title">Stock</p>
-                                            <p class="p-section-6-description description"><%= detalle.stock %> </p>
-                                        </div>
-                                    </section>
-                                </div>
-                            </label>
-                        </div>
-                    </label>
-                </label>
-            </main>
-
-            <%- include("../partials/footer") %>
-    </body>
-
+        <%- include("../partials/desplegable-productDetail") %> 
+    </main>
+    <%- include("../partials/monsape-ofrece") %>
+    <%- include("../partials/footer") %> 
+</body>
 </html>
