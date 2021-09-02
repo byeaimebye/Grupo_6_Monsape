@@ -1,6 +1,6 @@
 @import url("header.css");
-@import url("productCart.css");/* 
-@import url("productDetail.css"); */
+@import url("productCart.css");
+@import url("productDetail.css");
 @import url("register.css");
 @import url("footer.css");
 @import url("tienda.css");
@@ -18,6 +18,4 @@
 @import url("adminProducts.css");
 @import url("profile.css");
 @import url("desplegable-productDetail.css");
-
-@import url("prueba.css");
 

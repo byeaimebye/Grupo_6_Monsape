@@ -10,7 +10,7 @@ body {
     align-items: center;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.1fr 0.2fr 0.1fr 0.2fr 0.1fr 1fr 0.1fr;
+    grid-template-rows: 1fr 0.1fr 0.2fr 0.1fr 0.2fr 0.1fr 0.8fr 0.2fr 0.1fr;
     grid-template-areas: 
     "img-prueba img-prueba img-prueba img-prueba"
     "collection collection collection collection"
@@ -19,6 +19,7 @@ body {
     "price price price price"
     "cant cant cant cant"
     "description description description description"
+    "maridaje maridaje maridaje maridaje"
     "agregar agregar agregar agregar" 
     "ver-mas ver-mas ver-mas ver-mas" 
     "confirmar confirmar confirmar confirmar";
@@ -86,8 +87,17 @@ body {
     background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent); */
     font-size: 15px;
     grid-area: description;
-    margin: 10px auto 20px;
+    margin: 10px auto 0;
 }
+.maridaje {
+    font-size: 15px;
+    grid-area: maridaje;
+    margin-bottom: 20px;
+}
+.maridaje > b{
+    color: var(--color-rojoVino);
+}
+
 .agregar {
     grid-area: agregar;
 }
@@ -130,13 +140,14 @@ body {
     .main-prueba {
         display: grid;
         grid-template-columns:0.2fr 0.5fr 0.5fr 0.5fr;
-        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.4fr 0.5fr 0.5fr 0.2fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.4fr 0.5fr 0.3fr 0.5fr 0.2fr;
         grid-template-areas:
         "img-prueba img-prueba collection collection"
         "img-prueba img-prueba title-p title-p"
         "img-prueba img-prueba variedad variedad"
         "img-prueba img-prueba price cant"
         "img-prueba img-prueba description description"
+        "img-prueba img-prueba maridaje maridaje"
         "img-prueba img-prueba agregar ver-mas"
         "confirmar confirmar confirmar confirmar";
         text-align: center;
@@ -159,6 +170,10 @@ body {
         margin: 0 auto;
     }
 
+    .maridaje {
+        margin-top: 10px;
+    }
+
     .confirmar {
         width: 600px;
     }
@@ -167,7 +182,7 @@ body {
 
 @media (min-width: 1200px) {
     .main-prueba {
-        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.3fr 0.5fr 0.5fr 0.2fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.3fr 0.5fr 0.3fr 0.3fr 0.2fr;
         margin: 90px;
     }
 
@@ -191,6 +206,10 @@ body {
         border-top: solid 1px rgba(0, 0, 0, 0.3);
         font-size: 19px;
         padding: 15px 30px 0;
+    }
+
+    .maridaje {
+        font-size: 18px;
     }
 
     .btn-button {

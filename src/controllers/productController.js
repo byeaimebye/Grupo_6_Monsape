@@ -24,6 +24,9 @@ module.exports = {
     },
     /* Trae los datos necesarios para el carrito de compras. */
     productCart : (req, res) =>{
+
+        let cargaDeProducto = [];
+
         res.render("product/productCart", {title: "Carrito de compras"});
     },
     filtrar: (req, res) => {
