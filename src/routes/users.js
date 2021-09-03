@@ -23,7 +23,7 @@ router.get('/register', register);
 router.post('/register', /* upload.single("image"), */ registerValidator, registerProcess);
 
 /* Get Profile */
-router.get("/profile", profile);
+router.get("/profile", userSession ,profile);
 
 module.exports = router;
 
