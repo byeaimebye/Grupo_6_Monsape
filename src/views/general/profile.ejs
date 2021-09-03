@@ -6,21 +6,21 @@
     <body class="body-profile">
         <div class="div-container-profile">
             <h1>MI PERFIL</h1>
-            <form action="">
+            <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="avatar-profile">
-                    <img src="/img/users/default-avatar.jpg" alt="avatar">
+                    <img src="/img/<%= user.image?user.image:"users/default-avatar.jpg"%>" alt="avatar">
                     <input class="input-avatar-profile" type="file" name="avatar">
                 </div>
                 <div class="container-data-profile">
                     <div class="div-grid-profile">
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="fullname">Nombre y apellido</label>
-                            <input class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname">
+                            <input class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname" value=<%= user.fullname?user.fullname:""%>>
 
                         </div>
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="email">Email</label>
-                            <input class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com">
+                            <input class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com" value=<%= user.email?user.email:""%>>
 
                         </div>
 
@@ -28,17 +28,17 @@
                     <div class="div-grid-profile div-grid-profile2">
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="password">Contraseña</label>
-                            <input class="input-form-profile" type="password">
+                            <input class="input-form-profile" type="password" value=<%= user.password?user.password:""%>>
 
                         </div>
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="dni">Documento</label>
-                            <input class="input-form-profile" type="text" name="dni" placeholder="Documento">
+                            <input class="input-form-profile" type="text" name="dni" placeholder="Documento" value=<%= user.dni?user.dni:""%>>
 
                         </div>
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="tel">Teléfono</label>
-                            <input class="input-form-profile" type="text" name="tel" placeholder="Teléfono">
+                            <input class="input-form-profile" type="text" name="tel" placeholder="Teléfono" value=<%= user.phone?user.phone:""%>>
 
                         </div>
 
@@ -46,11 +46,11 @@
                     <div class="div-grid-profile">
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="cp">Código Postal</label>
-                            <input class="input-form-profile" type="text" name="cp" placeholder="Código Postal">
+                            <input class="input-form-profile" type="text" name="cp" placeholder="Código Postal" value=<%= user.cp?user.cp:""%>>
                         </div>
                         <div class="div-flex-profile">
                             <label class="lbl-form-profile" for="date">Fecha de nacimiento</label>
-                            <input class="input-form-profile input-date-form-profile" type="date" name="date">
+                            <input class="input-form-profile input-date-form-profile" type="date" name="date" value=<%= user.date?user.date:""%>>
                         </div>
 
                     </div>

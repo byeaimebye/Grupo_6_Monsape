@@ -18,7 +18,6 @@ module.exports = {
                 if(user.id > newId){
                     newId = user.id
                 }
-                
             });
             newId++;
 
@@ -29,7 +28,7 @@ module.exports = {
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
                 rol: "ROL-USER",
-                image:  req.file ? '/users/' + req.file.filename : "/users/default-img.jpg"
+                image:  req.file ? '/users/' + req.file.filename : "/users/default-avatar.jpg"
             };
 
             users.push(newUser);
@@ -81,6 +80,22 @@ module.exports = {
         res.redirect('/home')
     },
     profile : (req, res)=>{
-        res.render("general/profile", {title: "Perfil"});
+        let user = req.session.user;
+
+        res.render("general/profile", {title: "Perfil", user : user});
+    },
+    editProfile : (req, res)=>{
+        let user = {...req.body};
+        let edit = "";
+        users.forEach(element => {
+            if(element.email === user.email){
+                
+                    element.id = element.id,
+                    element.fullname = user.fullname
+            }
+            
+        })
+        writeUsersJSON(users);
+        res.redirect("/users/profile");
     }
 };

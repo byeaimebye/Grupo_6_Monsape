@@ -206,5 +206,13 @@
         "password": "$2a$10$WKhUkjBK2pwDkxFF39FnJeNlY9BighTfXYAe8YqG5.mvpTqIIY.sK",
         "rol": "ROL-USER",
         "image": "/users/default-img.jpg"
+    },
+    {
+        "id": 27,
+        "email": "jacinto@jacinto.com",
+        "fullname": "Jacinto",
+        "password": "$2a$10$j/QAxEhN.nLNFMbjI/ACx.Y/Fsgoe6f2VYipuDtP028JJGR6vl3V.",
+        "rol": "ROL-USER",
+        "image": "/users/default-avatar.jpg"
     }
 ]
