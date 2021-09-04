@@ -57,7 +57,7 @@ main.home  .logo-home1{
 
 main.home .logo-home1 img{
     width: 128px;
-    height: 108px;
+    height: 95px;
 }
 main.home{
     height: 100%;
@@ -178,6 +178,7 @@ main.home{
         /* height: 100%; */
         width: 100%;
         
+        
     }
     main.home .linkeables #box1{
         position: relative; 
@@ -197,6 +198,7 @@ main.home{
     main.home .linkeables #box2{
         position: relative;
         z-index: -1;
+        
     }
     main.home .linkeables #box2 button a{
         position: absolute;
@@ -210,21 +212,29 @@ main.home{
         left: 10%;
 
     }
+    
 
-    main.home .vacaciones{   
-        background-image: url(../img/pexels-taryn-elliott-7607996.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 24rem;
-        background-attachment: fixed;
-        margin-top: 22px;
+    main.home .vacaciones video{   
+      /*   background-image: url(../img/pexels-taryn-elliott-7607996.jpg); */
+      
+   
+       
+        width: 100%;
+    
+       
+        position: absolute;
+        /* margin-bottom: 101px; */
+    }
+    main.home .vacaciones .txt{
+        font-weight: 100;
+        position: relative;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* margin-bottom: 101px; */
+        color: white;
+        top: 45px;
     }
     
 
@@ -235,6 +245,7 @@ main.home{
         font-family: 'Rosarivo', serif;
         font-weight: lighter;
         margin-bottom: 10px;
+        position: relative;
     }
     main.home .vacaciones button{
         padding: 8px;
@@ -313,15 +324,32 @@ main.home .linkeables-tablet{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
+    
 }
 main.home .linkeables-tablet img{
     width: 100%;
+    
+}
+main.home .linkeables-tablet .bx1:hover{
+    transition: 1s all;
+    color: var(--color-rojoVino);
+    border: 5px solid white;
+}
+main.home .linkeables-tablet .bx2:hover{
+    transition: 1s all;
+    color: var(--color-rojoVino);
+    border: 5px solid white;
+}
+main.home .linkeables-tablet .bx3:hover{
+    transition: 1s all;
+    color: var(--color-rojoVino);
+    border: 5px solid white;
 }
 
 main.home .linkeables{
     display:none
 }
-main.home .vacaciones{
+main.home .vacaciones .txt{
     margin-top: 0px;
     height: 41rem;
 }
@@ -332,7 +360,7 @@ main.home .cabecera{
     }
     main.home .logo-home1 img {
         width: 234px;
-        height: 180px;
+        height: 155px;
     }
 }
 
