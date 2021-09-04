@@ -211,8 +211,11 @@
         "id": 27,
         "email": "jacinto@jacinto.com",
         "fullname": "Jacinto",
-        "password": "$2a$10$j/QAxEhN.nLNFMbjI/ACx.Y/Fsgoe6f2VYipuDtP028JJGR6vl3V.",
         "rol": "ROL-USER",
-        "image": "/users/default-avatar.jpg"
+        "image": "/users/default-avatar.jpg",
+        "dni": "123123121",
+        "tel": "23123211",
+        "cp": "1231",
+        "date": "2021-09-07"
     }
 ]

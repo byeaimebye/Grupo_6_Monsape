@@ -85,13 +85,26 @@ module.exports = {
         res.render("general/profile", {title: "Perfil", user : user});
     },
     editProfile : (req, res)=>{
-        let user = {...req.body};
-        let edit = "";
+        let {
+            fullname,
+            email,
+            password,
+            dni,
+            tel,
+            cp,
+            date
+        } = req.body
         users.forEach(element => {
-            if(element.email === user.email){
+            if(element.email === email){
                 
                     element.id = element.id,
-                    element.fullname = user.fullname
+                    element.fullname = fullname,
+                    element.email = email,
+                    element.password = password,
+                    element.dni = dni,
+                    element.tel = tel,
+                    element.cp = cp,
+                    element.date = date
             }
             
         })
