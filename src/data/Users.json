@@ -206,5 +206,16 @@
         "password": "$2a$10$WKhUkjBK2pwDkxFF39FnJeNlY9BighTfXYAe8YqG5.mvpTqIIY.sK",
         "rol": "ROL-USER",
         "image": "/users/default-img.jpg"
+    },
+    {
+        "id": 27,
+        "email": "jacinto@jacinto.com",
+        "fullname": "Jacinto",
+        "rol": "ROL-USER",
+        "image": "/users/default-avatar.jpg",
+        "dni": "123123121",
+        "tel": "23123211",
+        "cp": "1231",
+        "date": "2021-09-07"
     }
 ]
