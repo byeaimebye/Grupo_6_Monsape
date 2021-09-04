@@ -206,5 +206,13 @@
         "password": "$2a$10$WKhUkjBK2pwDkxFF39FnJeNlY9BighTfXYAe8YqG5.mvpTqIIY.sK",
         "rol": "ROL-USER",
         "image": "/users/default-img.jpg"
+    },
+    {
+        "id": 27,
+        "email": "guillesanabria@yahoo.com",
+        "fullname": " Guillermo Sanabria",
+        "password": "$2a$10$1FEATiTH7NqfrDXCUPJIIuwhn92SKIcvnl.I2QspZkRhiTlKx/j12",
+        "rol": "ROL-USER",
+        "image": "/users/default-img.jpg"
     }
 ]

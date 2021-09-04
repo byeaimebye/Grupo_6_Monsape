@@ -3,7 +3,7 @@ const {users} = require("../data/db");
 
 let validations =[
     check('email')
-    .notEmpty()
+    .isEmail()
     .withMessage('Debes ingresar un email'),
 
     body('email').custom(value => {

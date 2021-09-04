@@ -7,29 +7,32 @@ let {admin,
     productCreate,
     edit,
     productEdit,
-    productDelete } = require("../controllers/adminController");
+    productDelete,
+    usersTable } = require("../controllers/adminController");
+    let adminSession = require('../middlewares/adminSession');
 
 
 /* GET - Admin  ----(login)----- */
-router.get("/", admin);
+router.get("/", adminSession, admin);
 
 
 /*GET - Admin products */
-router.get("/products", products);
+router.get('/products',adminSession, products);
 /*GET - Formulario de producto */
-router.get('/cargaDeProducto', charge);
+router.get('/cargaDeProducto',adminSession, charge);
 
 /* POST- Crear producto */
 router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate); 
 
  /* Editar productos*/
-router.get('/editProduct/:id', edit);
+router.get('/editProduct/:id', adminSession, edit);
 router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 
-
+//-------------------Rutas de Admin Users-------------------------
+router.get('/usersTable',adminSession, usersTable);
 
 
 

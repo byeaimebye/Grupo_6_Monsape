@@ -1,12 +1,11 @@
-/*Main*/
-main.main-admin-products{
+main.main-admin-users{
     background-color: var(--color-grisBotones);
     border-radius: 10px;
     margin: 10px 2px;
-    font-size: 12px;
+    font-size: 10px;
 }
-/*Titulo y botón agregar*/
-div.new-product{    
+/*Titulo*/
+div.title{    
     background-color: var(--color-grisOscuro);
     border-radius: 10px;
     display: flex;
@@ -14,28 +13,12 @@ div.new-product{
     margin-bottom: 10px;
     padding: 4px 2px;
 }
-div.new-product h1{
+div.title h1{
     align-self: center;
 }
-/*boton agregar*/
-div.btn-add-product{
-    align-self: flex-end;
-    border: 2px solid var(--color-rojoVino);
-    border-radius: 5px;
-    padding: 10px;
-}
-div.btn-add-product:hover{
-    background-color: var(--color-rojoVino);
-    color: white;
-}
 
-a.btn-add{
-    color: white;
-    font-weight: bolder;
-}
-
-/*Tabla de productos*/
-table.table-products{
+/*Tabla de Usuarios*/
+table.table-users{
     padding: 2px;
     width: 99%;
 }
@@ -52,26 +35,25 @@ tr.category th{
     padding: 4px;
 }
 /*categorias*/
-tr.category th.descuento,
-tr.products td.descuento,
-tr.category th.stock,
-tr.products td.stock,
-tr.category th.opciones{
+tr.category th.imagen,
+tr.users td.imagen,
+tr.category th.edad,
+tr.users td.edad{
     display: none;
 }
 
-/*productos*/
-tr.products{
+/*usuarios*/
+tr.users{
     text-align: center;
 }
-tr.products td{
+tr.users td{
     padding: 4px;    
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: black;
 }
 
-tr.products:nth-child(odd){
+tr.users:nth-child(odd){
     background-color: rgb(155, 114, 114)
 }
 
@@ -91,21 +73,14 @@ a.btn-edit{
     border-radius: 4px;    
     margin-bottom: 2px;
 }
-form button.btn-delete{
-    background-color: rgb(179, 68, 68);
-    padding: 6px;
-    border: 1px solid var(--color-rojoVino);
-    border-radius: 4px;
-}
 
 /*********************************************************************************************************/
 
 /*Media Querie*/
 @media(min-width: 400px){
-tr.category th.stock,
-tr.products td.stock,
-tr.category th.opciones{
-    display: table-cell;
+
+main.main-admin-users{
+    font-size: 12px;
 }
 
 /*Botones de opción*/
@@ -128,13 +103,13 @@ a.btn-edit{
 /*tablet*/
 @media(min-width: 640px){
     /*Main*/
-main.main-admin-products{
+main.main-admin-users{
     border-radius: 10px;
     margin: 10px 10px;
     font-size: 16px;
 }
-/*Titulo y botón agregar*/
-div.new-product{
+/*Titulo*/
+div.title{
     background-color: var(--color-grisOscuro);
     border-radius: 10px;
     display: flex;
@@ -143,10 +118,10 @@ div.new-product{
     padding: 4px 4px;
 }
 
-/*Tabla de productos*/
-table.table-products{
+/*Tabla de usuarios*/
+table.table-users{
     padding: 10px;
-    width: 99%;
+    width: 96%;
 }
 
 /*Categorias de la tabla*/
@@ -155,14 +130,11 @@ tr.category th{
     font-size: 1.2rem;
     padding: 4px;
 }
-/*categoria descuento*/
-tr.category th.descuento,
-tr.products td.descuento{
+    
+tr.category th.imagen,
+tr.users td.imagen,
+tr.category th.edad,
+tr.users td.edad{
     display: table-cell;
 }
 }
-
-
-
-
-
