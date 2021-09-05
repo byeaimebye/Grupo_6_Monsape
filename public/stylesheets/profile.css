@@ -18,16 +18,17 @@
     /* 
     border: solid red; */
     display: flex;
-    border-radius: 70px;
+    border-radius: 65px;
     justify-content: center;
     margin: 10px auto;
     position: relative;
-    width: 21%;
+    width: 130px;
 }
 
 .avatar-profile img {
-    border-radius: 60px;
+    border-radius: 65px;
     height: 125px;
+    width: 130px;
 }
 
 .input-avatar-profile {

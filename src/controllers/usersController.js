@@ -50,16 +50,18 @@ module.exports = {
 
         if(errors.isEmpty()){
             let user = users.find(user => user.email === req.body.email);
+            delete user.password;
             req.session.user ={
-                id: user.id,
+                /* id: user.id,
                 fullname: user.fullname,
                 email: user.email,
                 rol: user.rol,
-                image: user.image
+                image: user.image */
+                ...user
             }
 
             if(req.body.remember){
-                res.cookie('cookieMonsape', req.session.user, {maxAge: 1000*60})
+                res.cookie('cookieMonsape', req.session.user, {maxAge: (10000*60)*60})
             }
             res.locals.user = req.session.user
             res.redirect("/home")
@@ -98,15 +100,15 @@ module.exports = {
             if(element.email === email){
                 
                     element.id = element.id,
-                    element.fullname = fullname,
-                    element.email = email,
-                    element.password = password,
-                    element.dni = dni,
-                    element.tel = tel,
-                    element.cp = cp,
-                    element.date = date
+                    element.image = req.file ? 'users/' + req.file.filename : "users/default-avatar.jpg",
+                    element.fullname = fullname?fullname:element.fullname,
+                    element.email = email?email:element.email,
+                    element.password = password?bcrypt.hashSync(password, 10): element.password,
+                    element.dni = dni?dni:element.dni,
+                    element.tel = tel?tel:element.tel,
+                    element.cp = cp?cp:element.cp,
+                    element.date = date?date:element.date
             }
-            
         })
         writeUsersJSON(users);
         res.redirect("/users/profile");

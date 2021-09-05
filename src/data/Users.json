@@ -214,5 +214,16 @@
         "password": "$2a$10$1FEATiTH7NqfrDXCUPJIIuwhn92SKIcvnl.I2QspZkRhiTlKx/j12",
         "rol": "ROL-USER",
         "image": "/users/default-img.jpg"
+    },
+    {
+        "id": 28,
+        "email": "jacinto@jacinto.com",
+        "fullname": "Jacinto",
+        "rol": "ROL-USER",
+        "image": "users/1630884044785_img_.jpg",
+        "dni": "43432422",
+        "tel": "324242423",
+        "cp": "1234",
+        "date": "2021-09-01"
     }
 ]
