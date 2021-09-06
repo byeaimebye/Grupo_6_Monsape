@@ -49,3 +49,28 @@
                                                  DEJAR DE HACER: No hacer reuniones.
                                                      ----------------------
                                              HACER MENOS: Pushear cosas infuncionales.
+
+                                 *************************************************************
+                                                  <--------- SPRINT 4 --------->
+
+                                                ----------------------------
+
+                           SEGUIR HACIENDO: Reuniones semanales para profundizar temas del sprint.
+
+                                                    ----------------------
+
+                             HACER MÁS: Mantener informado al equipo de movimientos y ediciones realizadas.                 
+
+                                                   -----------------------
+
+                EMPEZAR A HACER: Dejar notas en trello sobre cosas que hay que arreglar, asi sea de sprints pasados para que los compañeros se enteren. Informes daily, compromiso a dejar un informe en discord para poder hacer el md al final del sprint.
+
+                                                   -----------------------
+
+                                   DEJAR DE HACER: Pushear sin ver si rompimos algo en otras vistas.  
+
+                                                   -----------------------
+
+                      HACER MENOS: No pensar tanto en la retrospectiva (plantearla con ideas previas)
+
+                           *************************************************************************
