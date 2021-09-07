@@ -61,9 +61,9 @@ module.exports = {
 	},
     categorias: (req, res) =>{
       
-        let vinosPorCategoria = vinos.filter( vino => vino.categoria === req.params.categoria)
-       if(vinosPorCategoria){
-           res.render( "product/result" , { title: "Monsape", vinos: VinosPorcategoria})
+        let categoria = vinos.filter( vino => vino.categoria === req.params.categoria)
+       if(categoria){
+           res.render( "product/tienda" , { title: "Monsape", vinos: categoria})
        }else{
             res.render("error")
         }
