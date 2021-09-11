@@ -50,16 +50,15 @@ module.exports = {
 
         if(errors.isEmpty()){
             let user = users.find(user => user.email === req.body.email);
-            delete user.password;
+           
             req.session.user ={
-                /* id: user.id,
+                id: user.id,
                 fullname: user.fullname,
                 email: user.email,
                 rol: user.rol,
-                image: user.image */
-                ...user
+                image: user.image 
             }
-
+/**nose que invento fede pero no funcionaba, dejar las cosas como funcionan por favor */
             if(req.body.remember){
                 res.cookie('cookieMonsape', req.session.user, {maxAge: (10000*60)*60})
             }
@@ -82,9 +81,11 @@ module.exports = {
         res.redirect('/home')
     },
     profile : (req, res)=>{
-        let user = req.session.user;
+        let user = users.find(user => user.email === req.session.user.email);
+        /*no lo traia a la vista la info sin el user.email aclarar que pido los datos del usuario */
+        
 
-        res.render("general/profile", {title: "Perfil", user : user});
+        res.render("general/profile", {title: "Perfil", user});
     },
     editProfile : (req, res)=>{
         let {
@@ -109,6 +110,7 @@ module.exports = {
                     element.cp = cp?cp:element.cp,
                     element.date = date?date:element.date
             }
+            
         })
         writeUsersJSON(users);
         res.redirect("/users/profile");

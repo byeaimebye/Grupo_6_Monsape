@@ -225,5 +225,96 @@
         "tel": "324242423",
         "cp": "1234",
         "date": "2021-09-01"
+    },
+    {
+        "id": 29,
+        "email": "lili@mail.com",
+        "fullname": "Aime Agustina",
+        "rol": "ROL-USER",
+        "image": "users/default-avatar.jpg"
+    },
+    {
+        "id": 30,
+        "email": "aa@mail.com",
+        "fullname": "aaadsfdgdrfgfhteryjutdgd",
+        "rol": "ROL-USER",
+        "image": "users/default-avatar.jpg",
+        "dni": "fdgdfghfdg",
+        "tel": "dgffg"
+    },
+    {
+        "id": 31,
+        "email": "momo@mail.com",
+        "fullname": "momosssssssss",
+        "rol": "ROL-USER",
+        "image": "users/default-avatar.jpg"
+    },
+    {
+        "id": 32,
+        "email": "tobi@mail.com",
+        "fullname": "tretreasdasdasfdfgdag",
+        "rol": "ROL-USER",
+        "image": "users/default-avatar.jpg",
+        "dni": "dsfds",
+        "tel": "dfsdfsdf"
+    },
+    {
+        "id": 33,
+        "email": "88@mail.com",
+        "fullname": "asasadad",
+        "rol": "ROL-USER",
+        "image": "users/default-avatar.jpg"
+    },
+    {
+        "id": 34,
+        "email": "pepe@mail.com",
+        "fullname": "asasa",
+        "rol": "ROL-USER",
+        "cp": ""
+    },
+    {
+        "id": 35,
+        "email": "lili2@mail.com",
+        "fullname": "asas",
+        "rol": "ROL-USER",
+        "cp": ""
+    },
+    {
+        "id": 36,
+        "email": "ee@mail.com",
+        "fullname": "ewe",
+        "rol": "ROL-USER",
+        "cp": ""
+    },
+    {
+        "id": 37,
+        "email": "chabon@mail.com",
+        "fullname": "asdasd",
+        "rol": "ROL-USER",
+        "cp": ""
+    },
+    {
+        "id": 38,
+        "email": "ww@mail.com",
+        "fullname": "ww",
+        "rol": "ROL-USER",
+        "cp": ""
+    },
+    {
+        "id": 39,
+        "email": "yuy@mail.com",
+        "fullname": "123456789",
+        "rol": "ROL-USER",
+        "cp": ""
+    },
+    {
+        "id": 40,
+        "email": "pp@p.com",
+        "fullname": "asddasdas",
+        "password": "$2a$10$y7kbdlsSFnDxRYCdElMlkeaekSKt0mjn7bx/1uDiAUAitqffOeY9K",
+        "rol": "ROL-ADMIN",
+        "cp": "",
+        "image": "users/default-avatar.jpg",
+        "dni": "asdasdsad"
     }
 ]

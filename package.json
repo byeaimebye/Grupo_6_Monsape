@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node ./src/bin/www"
   },
+  "nodemonConfig": {
+    "ignore": "src/data/*.json"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
