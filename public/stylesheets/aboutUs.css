@@ -5,11 +5,11 @@ p.bodega{
     font-family: 'Rosarivo', serif;
     font-weight: 200;
     font-size:31px;
-    
-    
+    color: white;
+
     }
     main.about .first-cont{
-        background-image: url('../img/uverta\ 1.png');
+        background-image: url(/img/uverta.jpg);
         height: 355px;
         background-position: center center;
         background-repeat: no-repeat;

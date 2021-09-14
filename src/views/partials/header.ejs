@@ -1,12 +1,11 @@
-<header>
-    <!-- VENTANA MODAL MOBILE -->
-    <div class="modal-burger">
+<header class="prueba">
+     <!-- VENTANA MODAL MOBILE -->
+     <div class="modal-burger">
         <button onclick="openModal()">
             <div class="burger">
                 <img src="/img/Vector.svg" alt="">
-                
-    </div>
         </button>
+    </div>
     </div>
     <div class="modal" id="modalAdd">
         <div class="modal-conteiner">
@@ -22,112 +21,113 @@
         </div>
     </div>
     <!-- FIN VENTANA MODAL MOBILE -->
-    <!-- Lupa para desktop -->
-    
-    <form action="/products/search" method="GET">
-    <div class="buscador">
-            <input name="keywords" type="text" placeholder="Buscador" class="buscador">
-            <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
-    </div>
-    </form>
-    <!-- ------------------------- -->
-    <!-- titulo y logo -->
-    <div class="logo">
-        <a href="/home">
-            <h1>MONSAPE</h1>
-        </a>
-        <a href="/home"><img src="/img/logomon.svg" alt=""></a><!-- 
-        <a href="/home">
-            <h1>MONSAPE</h1>
-        </a> -->
-        
-    </div>
-    <!-- ------------------- -->
-    <!-- anclas de desktop -->
-    <div class="anclas">
-        <!--  -----------------MODAL DESKTOP------------- -->
-        <button onclick="openModal2()">Ingresar</button>
-        <div class="modal2" id="modalAdd2">
-            <div class="modal-container2">
-                <div class="close-modal2" onclick="closeModal2()">X</div>
-                <h1>INICIAR SESION</h1>
-                <label for="email">Ingrese su correo electronico:</label>
-                <input type="email" name="tel" id="email">
-                <label for="password">Ingrese su contraseña:</label>
-                <input type="password" name="password" id="password">
-                <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
-                <button>INICIAR SESION</button>
+<div class="linksFirst">
+    <a href="/aboutUs">NOSOTROS</a>
+    <a href="/products/tienda">PRODUCTOS ∇</a>
+    <a href="/products/tienda">TIENDA</a>
+</div>
+<a href="/home">
+<div class="logoCenter">
+    <img src="/img/logomon.svg" alt="">
+    <h1>MONSAPE</h1>
+</div>
+</a>
+<div class="linksLast">
+    <div class="linksLast">
+        <div class="loginH">
+            <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br> <p>Ingresá</p></button>
+            <div class="modal2" id="modalAdd2">
+                <div class="modal-container2">
+                    <div class="close-modal2" onclick="closeModal2()">X</div>
+                    <h1>INICIAR SESION</h1>
+                    <label for="email">Ingrese su correo electronico:</label>
+                    <input type="email" name="tel" id="email">
+                    <label for="password">Ingrese su contraseña:</label>
+                    <input type="password" name="password" id="password">
+                    <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
+                    <button>INICIAR SESION</button>
+                </div>
             </div>
         </div>
-        <!--        ------------------ MODAL DESKTOP ENDS------------>
-        <div class="register-cart-header">
-            <a href="/users/register"><button>Registrarse</button></a>
+        <div class="carroDeCompras">
             <input class="cart-data" type="checkbox" name="cart-data" id="cart-data">
-            <label class="cart-data-label" for="cart-data"><img src="/img/carrito-de-compras (1) 1.svg" alt="carrito">
+          <label class="cart-data-label" for="cart-data"><img src="/img/carrito-de-compras (1) 1.svg" alt="carrito">
 
 
-                <div class="cart-data-modal-view">
-                    <label for="">
-                        <div class="cart-data-view">
-                            <label for="cart-data">
-                                <div class="cart-data-label-btn-close">
-                                    <p>X</p>
-                                </div>
-                            </label>
-                            <%- include("../partials/mainProductCart") %> 
-                        </div>
-                    </label>
-                </div>
+              <div class="cart-data-modal-view">
+                  <label for="">
+                      <div class="cart-data-view"><!-- 
+                          <label for="cart-data">
+                              <div class="cart-data-label-btn-close">
+                                  <p>X</p>
+                              </div>
+                          </label> -->
+                          <main class="main-productCart">
+                              <section class="section-productCart">
+                                  <!-- Columnas -->
+                                  <div class="column">
+                                      <p>PRODUCTO</p>
+                                      <p>SUBTOTAL</p>
+                                  </div>
+                                  <!-- Articulos -->
+                                  <% for(let i=0; i < 4; i++){ %>
+                                      <article>
+                                          <div class="wine-x"><img src="/img/vino-x.png" alt=""></div>
+                                          <div class="detail">
+                                              <p id="nombre">Nombre del vino</p>
+                                              <p id="precio">$2.500</p>
+                                              <div class="cant">
+                                                  <input type="button" name="menos" id="buttons" class="menos"
+                                                      value="-">
+                                                  <input type="text" name="cantidad" id="cantidad" class="cantidad"
+                                                      value="0">
+                                                  <input type="button" name="mas" id="buttons" class="mas" value="+">
+                                              </div>
 
-            </label>
+                                          </div>
+                                          <div class="subtotal">
+                                              <p>$2.500</p>
+                                              <img class="tachito" src="/img/tachito.png" alt="carrito">
+                                          </div>
+                                      </article>
+                                      <% } %>
+                                          <!-- Subtotal (sin envío) -->
+                                          <div class="sub-sin-envio">
+                                              <p>Subtotal (sin envío):</p>
+                                          </div>
+                                          <!-- Métodos de envío -->
+                                          <form action="" method="GET">
+                                              <div class="met-envio">
+                                                  <p><img src="/img/camioncito.png" alt="camioncito"> Métodos de
+                                                      envío
+                                                  </p>
+                                                  <div class="calcular">
+                                                      <input type="text" name="codigo-postal" id="codigo-postal"
+                                                          value="Tu código postal">
+                                                      <input type="button" name="calcular" id="calcular"
+                                                          value="CALCULAR">
+                                                  </div>
+                                              </div>
+                                          </form>
 
-            </input>
-        </div>
-        <!--  -------------- -->
+                                          <div class="total">
+                                              <h4>Total:</h4>
+                                              <h4>$5.000</h4>
+                                          </div>
+                                          <div class="fin">
+                                              <input type="button" name="mas" id="mas" value="Ver más productos">
+                                              <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
+                                          </div>
+                              </section>
+                          </main>
+                      </div>
+                  </label>
+              </div>
+
+          </label>
+
+          </input>
+      </div>
     </div>
+    <script src="/javascripts/header.js" ></script>
 </header>
-
-<!-- nav de mobile -->
-<nav class="header-nav">
-    <div class="search-mobile">
-        <form action="/products/search">
-            <input type="search" placeholder="Buscador" class="search">
-            <button><img src="/img/lupa.svg" alt=""></button>
-        </form>
-    </div>
-    <div class="product-nav">
-        <input type="checkbox" class="input-productos-check" id="check">
-        <label for="check">
-            <div class="check-on">
-                <%- include("../partials/menuDesplegableProductos") %> 
-            </div>
-        </label>
-        <label for="check" class="productos-check">
-            <p>PRODUCTOS</p>
-            <i class="fas fa-chevron-down"></i>
-        </label>
-    </div>
-</nav>
-<nav class="desktop-nav">
-    <a id="inicio" href="#">INICIO</a>
-    <input type="checkbox" class="input-productos-check" id="check2">
-    <label for="check">
-        <!-- <label for=""> -->
-            <div class="check-on2">
-                <div class="div-item-check-on2">
-                    <div class="div-item-check-on2 img-item-check-on2">
-                    </div>
-                </div>
-                <%- include("../partials/menuDesplegableProductos") %> 
-                </div>
-            </div>
-        <!-- </label> -->
-    </label>
-    <label for="check2">
-        <p>PRODUCTOS</p>
-    </label>
-    <a href="#">COMO COMPRAR</a>
-    <a href="/aboutUs">QUIENES SOMOS</a>
-    <a href="/politicaDeDevolucion">POLITICA DE DEVOLUCION</a>
-    <a href="/contact">CONTACTO</a>
-</nav>
