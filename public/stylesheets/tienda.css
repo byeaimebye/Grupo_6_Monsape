@@ -4,12 +4,12 @@ ul{
 body.home{
     background-color: black;
 }
-.body-tienda{
-    background-image: url(/img/tienda/pexels-posawee-suwannaphati-391213.jpg);
-    background-repeat: no-repeat;
+/* .body-tienda{
+    background-image: url(/img/biljana-martinic-IGJ_21drT3g-unsplash.jpg);
+    
     font-weight: bolder;
     background-size: cover;
-}
+} */
 .frase p{
     font-size: 14px;
 }

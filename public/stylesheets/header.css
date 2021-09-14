@@ -162,7 +162,7 @@ header .logoCenter h1 {
 
 
 header.prueba .linksLast{
-    padding: 20px;
+  
     align-items: center;
     text-align: center;
     justify-content: space-around;
@@ -262,8 +262,8 @@ header.prueba .anclas .modal2 {
     display: none;
 }
 
-.cart-data-label {/* 
-    display: none; */
+.cart-data-label {
+    
     border-radius: 25px;
     padding: 22px 11px 9px 8px;
     z-index: 905;
@@ -304,7 +304,7 @@ header.prueba .anclas .modal2 {
 .cart-data:checked+.cart-data-label .cart-data-modal-view .cart-data-view {
     left: 60%;
     opacity: 1;
-    width: 40%;
+    width: 50%;
 }
 
 .cart-data:checked+.cart-data-label>label .cart-data-view .cart-data-label-btn-close {
@@ -336,6 +336,9 @@ header.prueba .anclas .modal2 {
         }
         header.prueba .loginH #ing img{
             width: 30px;
+        }
+        header.prueba .cart-data-label {
+            margin-left:45px;
         }
     
 }
