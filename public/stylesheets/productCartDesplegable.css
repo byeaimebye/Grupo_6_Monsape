@@ -1,0 +1,97 @@
+/* Ventana desplegable del carrito */
+
+.cart-data {
+    display: none;
+}
+
+.cart-data-label {
+    border-radius: 25px;
+    padding: 22px 11px 9px 8px;
+    z-index: 905;
+}
+
+.cart-data-modal-view {
+    background-color: rgba(0, 0, 0, 0.5);/* 
+    display: block; */
+    height: 100vh;
+    left: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: 1s opacity;
+    width: 0;
+    z-index: 901;
+}
+
+.cart-data-view {
+    background-color: white;
+    height: 100%;
+    left: 100%;
+    overflow: auto;
+    transition: left 1s,
+                width 1s;
+    position: relative;
+    top: 0;
+    width: 0;
+    z-index: 910;
+}
+
+.cart-data-label-btn-close {
+    font-size: 20px;
+    height: 30px;
+    margin: 15px 0 0 10px;
+    position: absolute;
+    width: 40px;
+}
+
+.cart-data:checked+.cart-data-label .cart-data-modal-view {
+    left: 0;
+    opacity: 1;
+    width: 100vw;
+}
+
+.cart-data:checked+.cart-data-label .cart-data-modal-view .cart-data-view {
+    left: 0;
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    
+    .cart-data-label {
+        display: block;
+    }
+    .check-on {
+        top: 149px;
+    }
+
+    .cart-data:checked+.cart-data-label .cart-data-modal-view .cart-data-view {
+        left: 40%;
+        position: fixed;
+        opacity: 1;
+        width: 60%;
+    }
+}
+
+/* query desktop  */
+
+@media (min-width: 1000px) {
+    
+    .cart-data:checked+.cart-data-label>label .cart-data-view {
+        left: 50%;
+        opacity: 1;
+        width: 40%;
+    }
+
+    .cart-data:checked+.cart-data-label .cart-data-modal-view .cart-data-view {
+        left: 60%;
+        opacity: 1;
+        width: 40%;
+    }
+}
+
+@media (min-width:1200px) {
+    .cart-data:checked+.cart-data-label .cart-data-modal-view .cart-data-view {
+        left: 60%;
+        width: 40%;
+    }
+}
