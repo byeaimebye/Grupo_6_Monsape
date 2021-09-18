@@ -1,4 +1,6 @@
 header.home{
+    text-align: center;
+    align-items: center;
     background-image: none;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -7,6 +9,9 @@ header.home{
     background-color: rgba(0, 0,0, 0.5);
     padding: 10px;
     z-index: 9999;
+}
+.modal-burger button{
+    background-color: transparent;
 }
 header.home img{
     height: 27%;

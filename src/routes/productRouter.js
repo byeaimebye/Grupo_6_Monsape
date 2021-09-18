@@ -7,7 +7,7 @@ router.get("/tienda", tienda);
 /* Detalle de producto */
 router.get("/detail/:id", productDetail);
 /* Carrito de compras */
-router.get("/cart", productCart);
+router.get("/", productCart);
 
 router.get('/search', search); 
 

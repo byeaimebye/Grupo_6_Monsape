@@ -58,7 +58,7 @@ module.exports = {
                 rol: user.rol,
                 image: user.image 
             }
-/**nose que invento fede pero no funcionaba, dejar las cosas como funcionan por favor */
+
             if(req.body.remember){
                 res.cookie('cookieMonsape', req.session.user, {maxAge: (10000*60)*60})
             }
@@ -82,9 +82,7 @@ module.exports = {
     },
     profile : (req, res)=>{
         let user = users.find(user => user.email === req.session.user.email);
-        /*no lo traia a la vista la info sin el user.email aclarar que pido los datos del usuario */
-        
-
+    
         res.render("general/profile", {title: "Perfil", user});
     },
     editProfile : (req, res)=>{

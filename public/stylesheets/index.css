@@ -4,9 +4,8 @@
     background-image: url(../img/Background.png);
     background-size: cover;
     display: flex;
-    
     justify-content: center;
-    margin: 0 auto;
+  
 }
 
 .main-ingreso .difu {
