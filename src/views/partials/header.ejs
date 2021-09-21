@@ -1,6 +1,6 @@
 <header class="prueba">
-     <!-- VENTANA MODAL MOBILE -->
-     <div class="modal-burger">
+    <!-- VENTANA MODAL MOBILE -->
+    <div class="modal-burger">
         <button onclick="openModal()">
             <div class="burger">
                 <img src="/img/Vector.svg" alt="">
@@ -21,51 +21,47 @@
         </div>
     </div>
     <!-- FIN VENTANA MODAL MOBILE -->
-<div class="linksFirst">
-    <a href="/aboutUs">NOSOTROS</a>
-    <a href="/products/tienda">PRODUCTOS ∇</a>
-    <a href="/products/tienda">TIENDA</a>
-</div>
-<a href="/home">
-<div class="logoCenter">
-    <img src="/img/logomon.svg" alt="">
-    <h1>MONSAPE</h1>
-</div>
-</a>
-<div class="linksLast">
+    <div class="linksFirst">
+        <a href="/aboutUs">NOSOTROS</a>
+        <a href="#">PRODUCTOS</a>
+        <a href="/products/tienda">TIENDA</a>
+    </div>
+    <a href="/home">
+        <div class="logoCenter">
+            <img src="/img/logomon.svg" alt="">
+            <h1>MONSAPE</h1>
+        </div>
+    </a>
     <div class="linksLast">
-        <div class="loginH">
-            <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br> <p>Ingresá</p></button>
-            <div class="modal2" id="modalAdd2">
-                <div class="modal-container2">
-                    <div class="close-modal2" onclick="closeModal2()">X</div>
-                    <h1>INICIAR SESION</h1>
-                    <label for="email">Ingrese su correo electronico:</label>
-                    <input type="email" name="tel" id="email">
-                    <label for="password">Ingrese su contraseña:</label>
-                    <input type="password" name="password" id="password">
-                    <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
-                    <button>INICIAR SESION</button>
+        <div class="linksLast">
+            <div class="loginH">
+                <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br>
+                    <p>Ingresá</p>
+                </button>
+                <div class="modal2" id="modalAdd2">
+                    <div class="modal-container2">
+                        <div class="close-modal2" onclick="closeModal2()">X</div>
+                        <h1>INICIAR SESION</h1>
+                        <label for="email">Ingrese su correo electronico:</label>
+                        <input type="email" name="tel" id="email">
+                        <label for="password">Ingrese su contraseña:</label>
+                        <input type="password" name="password" id="password">
+                        <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
+                        <button>INICIAR SESION</button>
+                    </div>
                 </div>
             </div>
+            <div class="carroDeCompras">
+                <input class="cart-data" type="checkbox" name="cart-data" id="cart-data">
+                <label class="cart-data-label" for="cart-data"><img src="/img/carrito-de-compras (1) 1.svg"
+                        alt="carrito">
+                    <div class="cart-data-modal-view">
+                        <%- include("mainProductCart") %>
+                    </div>
+                </label>
+            </div>
         </div>
-        <div class="carroDeCompras">
-            <input class="cart-data" type="checkbox" name="cart-data" id="cart-data">
-          <label class="cart-data-label" for="cart-data"><img src="/img/carrito-de-compras (1) 1.svg" alt="carrito">
 
-
-              <div class="cart-data-modal-view">
-               
-                      <%- include("mainProductCart") %> 
-                      </div>
-                  </label>
-              </div>
-
-          </label>
-
-          </input>
-      </div>
-      
     </div>
-    <script src="/javascripts/header.js" ></script>
+    <script src="/javascripts/header.js"></script>
 </header>
