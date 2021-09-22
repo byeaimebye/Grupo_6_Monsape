@@ -44,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
         image:{
             type: DataTypes.STRING(100),
             allowNull: false
+        },
+        category_id :{
+          type: DataTypes.INTEGER(11),
+          allowNull: false
         }
     }
 
@@ -51,7 +55,18 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'wines',
         timestamps: false
     }
-
     const Wine = sequelize.define(alias, cols, config)
+    Wine.associate = models => {
+        Wine.hasMany(models.Image,{
+            as: "images",
+            foreignKey: "wine_id"
+        })
+       /*  Wine.belongsTo(models.Category,{
+           as: "category",
+           foreignKey: "category_id"
+       }) */
+    }
+    /* tenenmos mas de una imagen en cada vino? sino eto es al pedo */
+
     return Wine;
 }
