@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `carts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carts` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `quantity` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -49,7 +49,7 @@ DROP TABLE IF EXISTS `carts_items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carts_items` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_item_price` decimal(10,2) NOT NULL,
   `order_item_quantity` int(11) NOT NULL,
   `cart_id` int(11) NOT NULL,
@@ -151,7 +151,7 @@ DROP TABLE IF EXISTS `tickets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tickets` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `total` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
   `cart_id` int(11) DEFAULT NULL,
@@ -296,7 +296,7 @@ DROP TABLE IF EXISTS `wines_varieties`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wines_varieties` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `wines_id` int(11) NOT NULL,
   `variety_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -329,4 +329,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-22 15:21:49
+-- Dump completed on 2021-09-22 17:16:34
