@@ -9,9 +9,13 @@ body#homeBody{
     background-color: black;
     background-image: none;
 }
-/*  body{
-    background-image: url(/img/biljana-martinic-IGJ_21drT3g-unsplash.jpg);
-    background-repeat: no-repeat;
 
+input{
+    outline:none ;
+}
+ body{
+    background-image: url("../img/banners/black-simple-textured-background-design.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-}  */
+}  

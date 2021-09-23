@@ -33,7 +33,7 @@ p.bodega{
     }
  main.about .second{
      width: 100%;
-     
+     color: white;
      text-align: center;
      display: flex;
      justify-content: center;
@@ -59,6 +59,7 @@ p.bodega{
      text-align: center;
  }
  main.about .history p{
+    color: white;
      line-height: 190%;
      padding: 20px;
  }
@@ -78,7 +79,7 @@ p.bodega{
      width: 100%;
  }
  hr {
-    background-color: black;
+    color: white;
     height: 1px;
     margin-bottom: 3rem;
     width: 80%;

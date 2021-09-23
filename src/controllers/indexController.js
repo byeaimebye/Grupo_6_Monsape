@@ -12,7 +12,7 @@ module.exports = {
         let vinosDescuento = vinos.filter(vino => vino.descuento >= 15)
 
         res.render('general/home', {
-            vinosDescuento, title: "Monsape Oficial", session: req.session})
+            vinosDescuento, title: "Monsape Oficial", session: req.session, logo: 1})
     
     },
     aboutUs:(req,res) => { 

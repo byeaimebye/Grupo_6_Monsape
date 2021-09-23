@@ -16,8 +16,9 @@
     width: 100%;
 }
 main.main-register{
-    background-image: url(/img/tienda/manchaDeVinoPeque.jpg);
-    padding: 50px 2px;
+    background-image: url("../img/banners/black-simple-textured-background-design.jpg");
+
+  background-attachment: fixed;
 }
 /*formulario*/
 .form{

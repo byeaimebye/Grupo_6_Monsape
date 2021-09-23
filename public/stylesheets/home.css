@@ -238,8 +238,9 @@ main.home{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: black;
         top: 45px;
+        
     }
     
 
@@ -253,11 +254,19 @@ main.home{
         position: relative;
     }
     main.home .vacaciones button{
+        margin-top: 20px;
         padding: 8px;
     background-color: #C4C4C4;
     border-radius: 55px;
-    font-weight: bolder;
+    font-weight: 999;
     cursor: pointer;
+    }
+    main.home .vacaciones button:hover{
+        transition: 1s all;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: red;
+        border: 0.5px solid var(--color-rojoVino);
+        font-weight: bolder;
     }
 
 
