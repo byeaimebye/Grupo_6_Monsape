@@ -41,7 +41,7 @@ body {
 }
 .collection {/* 
     color: var(--color-grisOscuro); */
-    /* color: white; */
+    color: white;
     grid-area: collection;
 }
 .title-p {/* 
