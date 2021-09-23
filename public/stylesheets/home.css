@@ -8,6 +8,7 @@ header.home{
     width: 100%;
     background-color: rgba(0, 0,0, 0.5);
     padding: 10px;
+    top: 0;
     z-index: 9999;
 }
 .modal-burger button{
@@ -45,6 +46,7 @@ body.home{
     background-color: black;
     height: max-content;
     background-attachment: fixed;
+    margin-top: 0;
 }
 main.home .cabecera{
     top: 3rem;

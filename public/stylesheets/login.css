@@ -19,8 +19,8 @@ hr{
     margin-bottom: 3rem;
     width: 100%;
 }
-main.main-register{
-    background-color: var(--color-grisBotones);
+main.main-register{/* 
+    background-color: var(--color-grisBotones); */
     padding: 50px 2px;
 }
 /*formulario*/

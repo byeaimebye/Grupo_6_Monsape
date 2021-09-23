@@ -6,6 +6,11 @@
     border: none;
     font-family: 'Raleway', sans-serif;
 }
+
+header.prueba {
+    top:0;
+}
+
 header.prueba .linksFirst{
     display: none; 
 }

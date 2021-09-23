@@ -267,6 +267,7 @@ section.products{
     }
     /*lo que ofece monsape MOBILE*/
     .monsape-ofrece{
+        background-color: rgba(169,169,169,0.2);
         display: none;
     }
     
@@ -274,6 +275,7 @@ section.products{
     .slides1 .envio p,
     .slides1 .tarjetas-credito p,
     .slides1 .satisfaccion p{
+        color: white;
         font-size: 20px;
     }
     .slides1 .envio .camion img,

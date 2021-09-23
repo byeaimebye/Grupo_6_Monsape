@@ -15,3 +15,9 @@ body#homeBody{
 
     background-size: cover;
 }  */
+
+body {
+    margin-top: 180px;
+    background-image: url(/img/wallpaperbetter.jpg);
+    background-size: cover;
+}

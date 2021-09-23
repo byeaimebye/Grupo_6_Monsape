@@ -8,6 +8,7 @@ body {
 
 .main-prueba {
     align-items: center;
+    background-color: rgba(169,169,169,0.2);
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 0.1fr 0.2fr 0.1fr 0.2fr 0.1fr 0.8fr 0.2fr 0.1fr;
@@ -38,19 +39,23 @@ body {
     grid-area: img-prueba;
     margin-bottom: 20px;
 }
-.collection {
-    color: var(--color-grisOscuro);
+.collection {/* 
+    color: var(--color-grisOscuro); */
+    /* color: white; */
     grid-area: collection;
 }
-.title-p {
+.title-p {/* 
+    color: white; */
     grid-area: title-p;
 }
-.variedad {
-    color: var(--color-rojoVino);
+.variedad {/* 
+    color: var(--color-rojoVino); */
+    color: #fc1924;
     grid-area: variedad;
 }
-.price {
-    color: var(--color-rojoVino);
+.price {/* 
+    color: var(--color-rojoVino); */
+    color: #fc1924;
     font-size: 20px;
     grid-area: price;
     margin: 10px auto 5px;
@@ -85,17 +90,20 @@ body {
 
 .description {/* 
     background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent); */
+    color: white;
     font-size: 15px;
     grid-area: description;
     margin: 10px auto 0;
 }
 .maridaje {
+    color: white;
     font-size: 15px;
     grid-area: maridaje;
     margin-bottom: 20px;
 }
-.maridaje > b{
-    color: var(--color-rojoVino);
+.maridaje > b{/* 
+    color: var(--color-rojoVino); */
+    color: #fc1924;
 }
 
 .agregar {
@@ -111,6 +119,7 @@ body {
 }
 
 .title-p {
+    color: white;
     margin: 0;
 }
 
