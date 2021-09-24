@@ -180,6 +180,7 @@ section.products{
     margin-bottom: 10px;
 }
 .slides1 .envio p{
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -205,6 +206,7 @@ section.products{
     margin-bottom: 10px;
 }
 .slides1 .satisfaccion p{
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -447,6 +449,7 @@ section.products{
     .envio p,
     .tarjetas-credito p,
     .satisfaccion p{
+        color: white;
         font-size: 18px;
     }
     .envio .camion img,
