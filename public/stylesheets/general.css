@@ -9,15 +9,12 @@ body#homeBody{
     background-color: black;
     background-image: none;
 }
-/*  body{
-    background-image: url(/img/biljana-martinic-IGJ_21drT3g-unsplash.jpg);
-    background-repeat: no-repeat;
-
-    background-size: cover;
-}  */
 
 body {
     margin-top: 180px;
-    background-image: url(/img/wallpaperbetter.jpg);
+    background-image: url(/img/Background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+
 }
