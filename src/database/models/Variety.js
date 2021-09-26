@@ -18,5 +18,15 @@ module.exports = (sequelize, DataTypes) => {
     };
     const Variety = sequelize.define(alias,cols,config);
 
+    Variety.associate = models => {
+        Variety.belongsToMany(models.Wine,{
+            as: "wines",
+            through: "wines_varieties",
+            foreignKey: "variety_id",
+            otherKey: "wines_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
+            timestamps: false
+        })
+    }
+
     return Variety;
 }

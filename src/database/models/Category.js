@@ -16,7 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "categories",
         timestamps: false
     };
-    const category = sequelize.define(alias,cols,config);
+    const Category = sequelize.define(alias,cols,config);
 
-    return category;
+    Category.associate = models => {
+        Category.hasMany(models.Wine,{
+            as: "wines",
+            foreignKey: "category_id"
+        })
+    }
+
+    return Category;
 }
