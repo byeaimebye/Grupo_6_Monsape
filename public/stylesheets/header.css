@@ -8,6 +8,7 @@
 }
 
 header.prueba {
+    padding-left: 50px;
     top:0;
 }
 
@@ -263,7 +264,7 @@ header.prueba .anclas .modal2 {
 }
 /* Ventana desplegable del carrito */
 
-.cart-data {
+/* .cart-data {
     display: none;
 }
 
@@ -318,7 +319,7 @@ header.prueba .anclas .modal2 {
 
 .cart-data:checked+.cart-data-modal-view {
     display: block;
-}
+} */
 
 
 /* ends modal */
@@ -342,7 +343,7 @@ header.prueba .anclas .modal2 {
         header.prueba .loginH #ing img{
             width: 30px;
         }
-        header.prueba .cart-data-label {
+        header.prueba .cart-data-label-drop-down {
             margin-left:45px;
         }
     
