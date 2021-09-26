@@ -1,3 +1,7 @@
+.body-ingreso{
+    margin-top: 0;
+}
+
 .main-ingreso {
    font-family: 'Rosarivo', serif;
     background-color:white;
@@ -5,7 +9,6 @@
     background-size: cover;
     display: flex;
     justify-content: center;
-  
 }
 
 .main-ingreso .difu {
@@ -30,9 +33,9 @@
     font-weight: 100;
     font-family: 'Rosarivo', serif;
     color: white;
-    font-size: 36px;
-    text-align: center;
-    margin-top: 18px;
+    font-size: 40px;
+    text-align: center;/* 
+    margin-top: 18px; */
     margin-bottom: 10px;
     justify-content: center;
 }
@@ -41,15 +44,15 @@
     font-weight: 100;
     font-family: 'Rosarivo', serif;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 45px;
     text-align: center;
 }
 
 .main-ingreso .difu .monsape .logo-svg img {
-    margin: 22px auto;
+    margin-top: 100px;
     text-align: center;
-    width: 120px;
+    width: 220px;
 }
 
 .main-ingreso .difu .year {
@@ -63,44 +66,52 @@
 
 .main-ingreso .difu .ingresar {
     border: none;
-    margin: 106px 15px;
+    margin: 55px 15px;
     padding-bottom: 15px;
     text-align: center;
 }
 
 .main-ingreso .difu #año {
-    background: rgba(86, 7, 12, 0.5);
-    border-radius: 20px;
-    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    border: solid 1px gray;
+    box-shadow: 0 0 5px rgb(0,0,0, 0.7);
     font-size: larger;
     font-weight: inherit;
     height: 4px;
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 17px;
     text-align: center;
-    width: 100px;
+    width: 180px;
 }
 
 .main-ingreso .difu #ing {
-    background: rgba(86, 7, 12, 0.8);
-    border-radius: 30px;
-    border: none;
-    font-size: 14px;
-    font-weight: inherit;
-    height: 35px;
-    margin: -55px -52px;
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    width: 100px;
+
+    background-color: var(--color-rojoVino);
+    border-radius: 1.5rem; 
+    box-shadow: 0 0 15px rgb(255, 255, 255, 0.7);  
     color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 2.2rem;
+    text-transform: uppercase;
+    width: 20rem; 
+    margin-bottom: 8px;
+}
+
+.main-ingreso .difu #ing:hover{
+    transition: 1s all;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--color-rojoVino);
+    border: 0.5px solid var(--color-rojoVino);
+    font-weight: bolder;
 }
 
 .main-ingreso .difu .year .adn {
     font-weight: 100;
     font-family: 'Rosarivo', serif;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     padding-bottom: 10px;
 }
 

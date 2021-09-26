@@ -16,33 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `addresses`
---
-
-DROP TABLE IF EXISTS `addresses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `addresses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `street` varchar(100) NOT NULL,
-  `district` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  `country` varchar(100) NOT NULL,
-  `postal_code` varchar(15) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `addresses`
---
-
-LOCK TABLES `addresses` WRITE;
-/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `carts`
 --
 
@@ -55,8 +28,8 @@ CREATE TABLE `carts` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_eb57a310-20bf-4699-b220-05c4678cec7e` (`user_id`),
-  CONSTRAINT `FK_eb57a310-20bf-4699-b220-05c4678cec7e` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `FK_eb57a310-20bf-4699-b220-05c4678cec7e` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,14 +52,14 @@ CREATE TABLE `carts_items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cart_id` int(11) NOT NULL,
   `wine_id` int(11) NOT NULL,
-  `order_item_price` decimal(10,2) NOT NULL,
-  `order_item_quantity` int(11) NOT NULL,
+  `cart_item_price` decimal(10,2) NOT NULL,
+  `cart_item_quantity` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_ccfe3d4e-a0a1-4b04-bffb-e2df50978b58` (`wine_id`),
   KEY `FK_38868937-8450-4488-9a73-821a5be94f02` (`cart_id`),
-  CONSTRAINT `FK_38868937-8450-4488-9a73-821a5be94f02` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`),
-  CONSTRAINT `FK_ccfe3d4e-a0a1-4b04-bffb-e2df50978b58` FOREIGN KEY (`wine_id`) REFERENCES `wines` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `FK_38868937-8450-4488-9a73-821a5be94f02` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `FK_ccfe3d4e-a0a1-4b04-bffb-e2df50978b58` FOREIGN KEY (`wine_id`) REFERENCES `wines` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +82,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +105,7 @@ CREATE TABLE `colections` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,32 +115,6 @@ CREATE TABLE `colections` (
 LOCK TABLES `colections` WRITE;
 /*!40000 ALTER TABLE `colections` DISABLE KEYS */;
 /*!40000 ALTER TABLE `colections` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `images`
---
-
-DROP TABLE IF EXISTS `images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `wine_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_e29d4dfa-ddfb-4c2c-8646-c0183be50231` (`wine_id`),
-  CONSTRAINT `FK_e29d4dfa-ddfb-4c2c-8646-c0183be50231` FOREIGN KEY (`wine_id`) REFERENCES `wines` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `images`
---
-
-LOCK TABLES `images` WRITE;
-/*!40000 ALTER TABLE `images` DISABLE KEYS */;
-/*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -184,8 +131,8 @@ CREATE TABLE `tickets` (
   `cart_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_0a9cc7e3-2274-464a-b722-adae41dc719f` (`cart_id`),
-  CONSTRAINT `FK_0a9cc7e3-2274-464a-b722-adae41dc719f` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `FK_0a9cc7e3-2274-464a-b722-adae41dc719f` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,34 +142,6 @@ CREATE TABLE `tickets` (
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_address`
---
-
-DROP TABLE IF EXISTS `user_address`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_address` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `address_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_dc6b6564-8470-4014-8eaa-476f45b2298a` (`user_id`),
-  KEY `FK_e3796acf-5e24-4aba-bb25-77884e8bc0f5` (`address_id`),
-  CONSTRAINT `FK_dc6b6564-8470-4014-8eaa-476f45b2298a` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `FK_e3796acf-5e24-4aba-bb25-77884e8bc0f5` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_address`
---
-
-LOCK TABLES `user_address` WRITE;
-/*!40000 ALTER TABLE `user_address` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -242,7 +161,7 @@ CREATE TABLE `users` (
   `avatar` varchar(100) DEFAULT NULL,
   `rol` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -255,26 +174,26 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `variedad`
+-- Table structure for table `varieties`
 --
 
-DROP TABLE IF EXISTS `variedad`;
+DROP TABLE IF EXISTS `varieties`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `variedad` (
+CREATE TABLE `varieties` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `variedad`
+-- Dumping data for table `varieties`
 --
 
-LOCK TABLES `variedad` WRITE;
-/*!40000 ALTER TABLE `variedad` DISABLE KEYS */;
-/*!40000 ALTER TABLE `variedad` ENABLE KEYS */;
+LOCK TABLES `varieties` WRITE;
+/*!40000 ALTER TABLE `varieties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `varieties` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -303,7 +222,7 @@ CREATE TABLE `wines` (
   KEY `FK_45607e9a-91e2-4e57-bce6-a5526327b141` (`category_id`),
   CONSTRAINT `FK_45607e9a-91e2-4e57-bce6-a5526327b141` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
   CONSTRAINT `FK_850a0689-4de5-4b1e-beec-d021e0122aac` FOREIGN KEY (`colection_id`) REFERENCES `colections` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,31 +235,31 @@ LOCK TABLES `wines` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `wines_variedades`
+-- Table structure for table `wines_varieties`
 --
 
-DROP TABLE IF EXISTS `wines_variedades`;
+DROP TABLE IF EXISTS `wines_varieties`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wines_variedades` (
+CREATE TABLE `wines_varieties` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `wines_id` int(11) NOT NULL,
-  `variedad_id` int(11) NOT NULL,
+  `variety_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_e13b97d0-4eef-49d8-8a5d-0ab48b6f1326` (`wines_id`),
-  KEY `FK_05c3be40-666e-4f08-9d34-97678f46f76f` (`variedad_id`),
-  CONSTRAINT `FK_05c3be40-666e-4f08-9d34-97678f46f76f` FOREIGN KEY (`variedad_id`) REFERENCES `variedad` (`id`),
-  CONSTRAINT `FK_e13b97d0-4eef-49d8-8a5d-0ab48b6f1326` FOREIGN KEY (`wines_id`) REFERENCES `wines` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `FK_05c3be40-666e-4f08-9d34-97678f46f76f` (`variety_id`),
+  CONSTRAINT `FK_05c3be40-666e-4f08-9d34-97678f46f76f` FOREIGN KEY (`variety_id`) REFERENCES `varieties` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `FK_e13b97d0-4eef-49d8-8a5d-0ab48b6f1326` FOREIGN KEY (`wines_id`) REFERENCES `wines` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `wines_variedades`
+-- Dumping data for table `wines_varieties`
 --
 
-LOCK TABLES `wines_variedades` WRITE;
-/*!40000 ALTER TABLE `wines_variedades` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wines_variedades` ENABLE KEYS */;
+LOCK TABLES `wines_varieties` WRITE;
+/*!40000 ALTER TABLE `wines_varieties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wines_varieties` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -356,4 +275,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-23 21:55:40
+-- Dump completed on 2021-09-24 22:45:21
