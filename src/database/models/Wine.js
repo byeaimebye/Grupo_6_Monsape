@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
     }
     const Wine = sequelize.define(alias, cols, config)
 
-    Wine.associate = models => {
+/*     Wine.associate = models => {
         Wine.belongsTo(models.Category,{
            as: "categories",
            foreignKey: "category_id"
@@ -81,7 +81,7 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: "variety_id",
             timestamps: false
         })
-    }
+    } */
 
     return Wine;
 }

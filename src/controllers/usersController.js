@@ -1,9 +1,23 @@
 const {users, writeUsersJSON} = require('../data/db');
 const {validationResult} = require('express-validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const db = require('../database/models');
 
 module.exports = {
-    login:(req,res) => { 
+    prueba: (req,res)=>{
+     db.User.findAll({
+         include: [{
+             association: "user_cart",
+             include: [{
+                assocation: "tickets"
+            }]
+         }] 
+     })
+     .then(cualquiercosa =>{
+         res.send(cualquiercosa)
+     })
+    },
+    login:(req,res) => {     
         res.render("general/login", {title: "Login", session: req.session})
     },
     register:(req,res) => { 

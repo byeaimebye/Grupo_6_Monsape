@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(20)
         },
         rol: {
-            type: DataTypes.VARCHAR(10).UNSIGNED,
+            type: DataTypes.STRING(10),
             allowNull: false
         },
         date:{
@@ -38,13 +38,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100)
         },
         cp: {
-            type: DataTypes.String(10)
+            type: DataTypes.STRING(10)
         }
     }
     let config = {
         tableName:"users",
-        timestamps: true
+        timestamps: false
     }
     const User = sequelize.define(alias, cols, config)
-    return User;
-}
+
+    User.associate = models => {
+        User.hasMany(models.Cart,{
+            as: "user_cart",
+            foreignKey: "user_id"
+        })}
+        return User;
+    }
+

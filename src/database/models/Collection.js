@@ -25,5 +25,5 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
 
-    return Collection;
+    return Colection;
 }

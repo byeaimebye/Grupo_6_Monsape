@@ -20,7 +20,19 @@ module.exports = (sequelize, DataTypes)=>{
         tableName: "carts",
         timestamps: false
     };
-
+    
     const Cart = sequelize.define(alias, cols, config);
+
+    Cart.associate = models => {
+        Cart.belongsTo(models.User,{
+            as: "users",
+            foreignKey: "user_id"
+        })
+        Cart.belongsTo(models.Ticket,{
+            as: "tickets",
+            foreignKey: "cart_id"
+        })
+    }
+
     return Cart;
 };

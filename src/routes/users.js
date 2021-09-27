@@ -7,7 +7,8 @@ let {
     processLogin,
     logout,
     profile,
-    editProfile
+    editProfile,
+    prueba
     }  = require("../controllers/usersController");
     let registerValidator = require('../validations/registerValidator');
     let loginValidator = require('../validations/loginValidator');
@@ -18,6 +19,7 @@ let {
 router.get('/login', login);
 router.post("/login", loginValidator, processLogin);
 router.get('/logout', logout);
+router.get('/prueba', prueba);
 
 /*Get Register */
 router.get('/register', register);

@@ -26,5 +26,12 @@ module.exports = (sequelize, DataTypes)=>{
     };
 
     const Ticket = sequelize.define(alias, cols, config);
+
+    Ticket.associate = models => {
+        Ticket.belongsTo(models.Cart,{
+            as: "cart",
+            foreignKey: "cart_id"
+        })
+    }
     return Ticket;
 }
