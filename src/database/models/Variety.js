@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             as: "wines",
             through: "wines_varieties",
             foreignKey: "variety_id",
-            otherKey: "wines_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
+            otherKey: "wine_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
             timestamps: false
         })
     }

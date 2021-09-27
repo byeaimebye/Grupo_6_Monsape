@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Colection";
+    let alias = "Collection";
     let cols = {
         id: {
             type: DataTypes.INTEGER(11).UNSIGNED,
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     let config = {
-        tableName: "colections",
+        tableName: "collections",
         timestamps: false
     };
     const Colection = sequelize.define(alias,cols,config);
@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     Colection.associate = models => {
         Colection.hasMany(models.Wine, {
             as: "wines",
-            foreignKey: "colection_id"
+            foreignKey: "collection_id"
         })
     }
 
-    return Colection;
+    return Collection;
 }

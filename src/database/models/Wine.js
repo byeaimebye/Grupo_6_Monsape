@@ -45,13 +45,16 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        colection_id :{
+        collection_id :{
             type: DataTypes.INTEGER(11),
             allowNull: false
           },
         category_id :{
           type: DataTypes.INTEGER(11),
           allowNull: false
+        },
+        service_temperature: {
+            type: DataTypes.STRING(150)
         }
     }
 

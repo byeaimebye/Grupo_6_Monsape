@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         email: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(150),
             allowNull: false,
             unique: true
         },
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.VARCHAR(10).UNSIGNED,
             allowNull: false
         },
-        birthday:{
+        date:{
             type: DataTypes.DATE,
             allowNull: false
         },
@@ -36,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar:{
             type: DataTypes.STRING(100)
+        },
+        cp: {
+            type: DataTypes.String(10)
         }
     }
     let config = {
