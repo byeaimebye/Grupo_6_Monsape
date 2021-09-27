@@ -45,6 +45,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
+        colection_id :{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+          },
         category_id :{
           type: DataTypes.INTEGER(11),
           allowNull: false
@@ -56,17 +60,25 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
     const Wine = sequelize.define(alias, cols, config)
+
     Wine.associate = models => {
-        Wine.hasMany(models.Image,{
-            as: "images",
-            foreignKey: "wine_id"
-        })
-       /*  Wine.belongsTo(models.Category,{
-           as: "category",
+        Wine.belongsTo(models.Category,{
+           as: "categories",
            foreignKey: "category_id"
-       }) */
+        })
+        Wine.belongsTo(models.Colection,{
+        as: "colections",
+        foreignKey: "colection_id"
+        })
+
+        Wine.belongsToMany(models.Variety,{
+            as: "varieties",
+            through: "wines_varieties",
+            foreignKey: "wines_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
+            otherKey: "variety_id",
+            timestamps: false
+        })
     }
-    /* tenenmos mas de una imagen en cada vino? sino eto es al pedo */
 
     return Wine;
 }
