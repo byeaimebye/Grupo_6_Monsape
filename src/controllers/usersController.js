@@ -5,13 +5,12 @@ const db = require('../database/models');
 
 module.exports = {
     prueba: (req,res)=>{
-     db.User.findAll({
-         include: [{
-             association: "user_cart",
-             include: [{
-                assocation: "tickets"
-            }]
-         }] 
+     db.Wine.findAll({
+          include: [
+             {association: "category"},
+             {association: "collection"},
+             {association: "variety"}
+         ] 
      })
      .then(cualquiercosa =>{
          res.send(cualquiercosa)

@@ -64,24 +64,24 @@ module.exports = (sequelize, DataTypes) => {
     }
     const Wine = sequelize.define(alias, cols, config)
 
-/*     Wine.associate = models => {
+   Wine.associate = models => {
         Wine.belongsTo(models.Category,{
-           as: "categories",
+           as: "category",
            foreignKey: "category_id"
         })
-        Wine.belongsTo(models.Colection,{
-        as: "colections",
-        foreignKey: "colection_id"
+        Wine.belongsTo(models.Collection,{
+        as: "collection",
+        foreignKey: "collection_id"
         })
 
         Wine.belongsToMany(models.Variety,{
-            as: "varieties",
+            as: "variety",
             through: "wines_varieties",
-            foreignKey: "wines_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
+            foreignKey: "wine_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
             otherKey: "variety_id",
             timestamps: false
         })
-    } */
+    } 
 
     return Wine;
 }
