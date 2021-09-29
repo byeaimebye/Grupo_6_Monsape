@@ -73,7 +73,7 @@ module.exports = {
                 {association: "collection"},
                 {association: "variety"}
               ]},
-              {where: {  category_id :{[Op.like]: `$%{req.query.search}%`}}}
+              {where: {  category :{[Op.like]: `$%{req.query.search}%`}}}
 		).then(wines=>{/* wines => {
                 if(wines.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
                     result.push(wines) 
@@ -93,6 +93,30 @@ module.exports = {
                 search: req.query.keywords,
                 session: req.session,
             })}  )
-        }
+        },
+    category: (req, res) => {
+        
+        //probando ando :)        
+        
+        // db.Wine.findAll({ 
+        //     include: [
+        //         {association: "category"},
+        //         {association: "collection"},
+        //         {association: "variety"}
+        //       ]})
+        // .then(wine=>{
+        //     db.Category.findOne({
+        //         where: { name : req.query.keywords }
+        //     }).then(wines => {
+        //         res.render('product/result', {
+        //             title: "resultados",
+        //             wines,
+        //             search: req.query.keywords,
+        //             session: req.session,
+        //         })
+        //     })
+        // })
+              
+    }    
   
 }
