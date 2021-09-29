@@ -65,13 +65,11 @@
         <div class="categorias-principales">
             <h5>Categorias principales</h5>
             <ul>
-                <li><a href="/products/categoria/Tinto">Tintos</a></li>
-                <li><a href="/products/categoria/Blanco">Blancos</a></li>
-                <li><a href="/products/categoria/Espumoso">Espumantes</a></li>
-                <li>Gift Card</li>
-                <li><a href="/products/categoria/Rosado">Rosado</a></li>
-                <li>Box</li>
-                <li>Merchandising oficial</li>
+                <li><a href="/products/search?keywords=Tinto">Tintos</a></li>
+                <li><a href="/products/search?keywords=Blanco">Blancos</a></li>
+                <li><a href="/products/search?keywords=Espumoso">Espumantes</a></li>
+                <li><a href="/products/search?keywords=Rosado">Rosado</a></li>
+                
             </ul>
         </div>
    
@@ -80,7 +78,7 @@
                 <article class="product-container">
                     <a href="/products/detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>                    
                     <div class="descuento-porcentaje">
-                        <p><%= vino.descuento %>% OFF</p>
+                        <p><%= vino.discount %>% OFF</p>
                     </div>
                     <div class="caja-de-vino">
                         <img class="caja" src="/img/tienda/caja.svg" alt="caja de vino">
@@ -88,11 +86,11 @@
                     </div>
                     <div class="descripcion-producto">
                         <p class="precio-por-caja">Precio caja x6  botellas</p>
-                        <h4 class="nombre-producto"><%= vino.nombre %> </h4>
+                        <h4 class="nombre-producto"><%= vino.name %> </h4>
                     </div>
                     <div class="descuento-y-precio">
-                        <span class="descuento">$<%= Math.round((100*vino.precio)/(100-vino.descuento)) %> </span>
-                        <span class="precio">$<%= vino.precio %> </span>
+                        <span class="descuento">$<%= Math.round((100*vino.price)/(100-vino.discount)) %> </span>
+                        <span class="precio">$<%= vino.price %> </span>
                     </div>
                     <button class="agregar-producto-al-carrito">Agregar</button>
                 </article>
