@@ -13,10 +13,10 @@ module.exports = {
                {association: "variety"}
            ] 
        })
-       .then(vinos =>{
+       .then(wines =>{
            res.render("product/tienda", {
             title: "Tienda",
-            vinos: vinos,
+            wines: wines,
             session: req.session,
         })
        }).catch(error =>{
