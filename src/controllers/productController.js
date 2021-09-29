@@ -1,31 +1,62 @@
 const {vinos} = require("../data/db");
-const db = require("../database/models");
-
+const db = require('../database/models');
+const {Op} = require('sequelize');
 
 module.exports = {
     /* Lista todos los productos disponibles. */
     tienda : (req, res) =>{
 
-        db.Wine.findAll()
-            .then(wines => {
-                res.render("product/tienda", {
-                    title: "Tienda",
-                    wines: wines,
-                    session: req.session,
-                })
-            })
+        db.Wine.findAll({
+            include: [
+               {association: "category"},
+               {association: "collection"},
+               {association: "variety"}
+           ] 
+       })
+       .then(vinos =>{
+           res.render("product/tienda", {
+            title: "Tienda",
+            vinos: vinos,
+            session: req.session,
+        })
+       }).catch(error =>{
+           res.send(error)
+       }) 
+       /*  res.render("product/tienda", {
+            title: "Tienda",
+            vinos: vinos,
+            session: req.session,
+        }) */
     },
     /* Trae todos los detalles del producto solicitado. */
     productDetail: (req, res) => {
-        let param = +req.params.id;
+          db.Wine.findByPk(req.params.id,{
+              include: [
+                {association: "category"},
+                {association: "collection"},
+                {association: "variety"}
+              ]
+          })       
+          .then(detail =>{
+            let varieties = detail.variety.map(element =>{
+                return element.name
+            }) //element me va a traer el nombre de la variedad que tiene el vino. con la funcion map
 
+            res.render("product/productDetail", {
+             varieties: varieties.join(" , "),
+             title: "Tienda",
+             detail: detail,
+             session: req.session,
+         })
+        }) 
+        /* let param = +req.params.id;
         let detail = vinos.find(product => product.id === param);
         console.log(detail);
         res.render("product/productDetail", {
             title: "Detalle de producto",
             detalle : detail,
             session: req.session,
-        });
+        }); */
     },
     /* Trae los datos necesarios para el carrito de compras. */
     productCart : (req, res) =>{
@@ -33,12 +64,6 @@ module.exports = {
         let cargaDeProducto = [];
 
         res.render("product/productCart", {title: "Carrito de compras"});
-    },
-    filtrar: (req, res) => {
-        let param = req.body.categoria;
-
-        let filtro = vinos.filter(element => element.categoria === param);
-        /* Aca deberia filtrarse los vinos por categorias. Tambien podemos hacer un filtrado por coleccion. */
     },
     search: (req, res) => {
 

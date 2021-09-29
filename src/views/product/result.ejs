@@ -46,11 +46,11 @@
         </div>
         <section class="products">
         
-            <% result.forEach(vino => { %>
+            <% wines.forEach(wine => { %>
                 <article class="product-container">
-                    <a href="/products/detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>
+                    <a href="/products/detail/<%- wine.id %>"><img class="imagen-producto" src="/img/<%= wine.image %> " alt="Imagen de vino Monsape"></a>
                     <div class="descuento-porcentaje">
-                        <p><%= vino.descuento %>  OFF</p>
+                        <p><%= wine.discount %>  OFF</p>
                     </div>
                     <div class="caja-de-vino">
                         <img class="caja" src="/img/tienda/caja.svg" alt="caja de vino">
@@ -58,11 +58,11 @@
                     </div>
                     <div class="descripcion-producto">
                         <p class="precio-por-caja">Precio caja x6  botellas</p>
-                        <h4 class="nombre-producto"><%= vino.nombre %> </h4>
+                        <h4 class="nombre-producto"><%= wine.name %> </h4>
                     </div>
                     <div class="descuento-y-precio">
-                        <span class="descuento">$<%= Math.round((100*vino.precio)/(100-vino.descuento)) %> </span>
-                        <span class="precio">$<%= vino.precio %> </span>
+                        <span class="descuento">$<%= Math.round((100*wine.price)/(100-wine.discount)) %> </span>
+                        <span class="precio">$<%= wine.price %> </span>
                     </div>
                     <button class="agregar-producto-al-carrito">Agregar</button>
                 </article>
