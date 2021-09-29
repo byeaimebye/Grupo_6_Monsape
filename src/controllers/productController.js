@@ -73,7 +73,7 @@ module.exports = {
                 {association: "collection"},
                 {association: "variety"}
               ]},
-              {where: {  category_id :{[Op.like]: `$%{req.query.search}%`}}}
+              {where: {  category : {[Op.like]: `$%{req.query.search}%`}}}
 		).then(wines=>{/* wines => {
                 if(wines.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
                     result.push(wines) 
@@ -92,7 +92,8 @@ module.exports = {
                 wines: wines,
                 search: req.query.keywords,
                 session: req.session,
-            })}  )
+            })
+        })
         }
   
 }
