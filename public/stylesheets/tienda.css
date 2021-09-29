@@ -2,14 +2,12 @@ ul{
     list-style: none;
 }
 body.home{
+
     background-color: black;
 }
-/* .body-tienda{
-    background-image: url(/img/biljana-martinic-IGJ_21drT3g-unsplash.jpg);
-    
-    font-weight: bolder;
-    background-size: cover;
-} */
+ .body-tienda{
+    margin-top: 0;
+} 
 .frase p{
     font-size: 14px;
 }
