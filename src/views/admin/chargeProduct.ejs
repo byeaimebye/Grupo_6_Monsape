@@ -17,7 +17,10 @@
                    </div>
                    <div class="inputs-create">
                      <label for="variedad">Variedad:</label>
-                     <input type="text" name="variedad" id="variedad">
+                     <% varietyPromise.forEach(variety => { %>
+                     <label for="<%= variety.name %>"><%= variety.name %></label>
+                     <input type="checkbox" name="<%= variety.name %>" id="variedad" value="<%= variety.id %>">
+                     <% }) %>
                         </div>
                        <div class="inputs-create">
                         <label for="categoria">Categoria:</label>
