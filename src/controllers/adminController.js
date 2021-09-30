@@ -1,10 +1,22 @@
 const {vinos, writeVinosJSON, users, writeUsersJSON} = require("../data/db");
+const db = require('../database/models');
+const {Op} = require('sequelize');
 
 module.exports  = {
     admin: (req, res) => {
+     db.Wine.findAll({
+         include: [
+         {association: "category"},
+         {association: "collection"},
+         {association: "variety"}]
+     }).then((wines)=>{
         res.render("admin/admin", {
-            title: "vista admin"
+            title: "vista admin",
+            wines: wines
         });
+     })
+
+       
     },
     //--------------------Administración de Productos-----------------------
     products: (req, res)=> {
