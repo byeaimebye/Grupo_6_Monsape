@@ -13,7 +13,7 @@ let {admin,
 
 
 /* GET - Admin  ----(login)----- */
-router.get("/", adminSession, admin);
+/* router.get("/", adminSession, products); */
 
 
 /*GET - Admin products */

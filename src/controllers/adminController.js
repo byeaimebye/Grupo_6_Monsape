@@ -3,7 +3,8 @@ const db = require('../database/models');
 const {Op} = require('sequelize');
 
 module.exports  = {
-    admin: (req, res) => {
+
+    products: (req, res) => {
      db.Wine.findAll({
          include: [
          {association: "category"},
@@ -14,23 +15,58 @@ module.exports  = {
             title: "vista admin",
             wines: wines
         });
-     })
-
-       
-    },
-    //--------------------Administración de Productos-----------------------
-    products: (req, res)=> {
-        res.render("admin/adminProducts", {
-            vinos,
-            title: "vista admin"
-        })
+     }).catch((error) => res.send(error)) 
     },
     charge: (req, res) =>{
-        res.render("admin/chargeProduct", {title: "Carga de productos"})
-    },
-    productCreate: (req,res) =>{
+        let collectionPromise = db.Collection.findAll()
+        let categoryPromise = db.Collection.findAll()
+        let varietyPromise = db.Collection.findAll()
         
-        let lastId = 1;
+
+        Promise.all([collectionPromise, categoryPromise, varietyPromise])
+        .then(([collectionPromise, categoryPromise, varietyPromise]) => { 
+            res.render('/admin/chargeProduct', {title: "carga de producto",
+             collectionPromise,
+              categoryPromise,
+               varietyPromise,
+            session: req.session})
+        }).catch((error) => res.send(error))
+    },
+    //--------------------Administración de Productos-----------------------
+    productCreate: (req,res) =>{
+        let { name, 
+			description, 
+			variety,
+			category,
+            collection,
+            stock, 
+			pairing,
+            alcoholContent,
+            totalAcidity,
+            residualSugar,
+            service_temperature,
+            price,
+            discount } = req.body;
+
+            db.Wines.create({
+            name, 
+            description, 
+            variety,
+            category,
+            collection,
+            stock, 
+            pairing,
+            alcoholContent,
+            totalAcidity,
+            residualSugar,
+            service_temperature,
+            price,
+            discount 
+            })
+           .then()
+
+        
+      /*   let lastId = 1;
         vinos.forEach(vino => {
 			if(vino.id > lastId){
 				lastId = vino.id
@@ -74,7 +110,7 @@ module.exports  = {
 
 		writeVinosJSON(vinos); 
 
-		 res.redirect('/admin/products')  
+		 res.redirect('/admin/products')   */
     }, 
     edit: (req, res) =>{
      let vino = vinos.find(vino => { return vino.id === +req.params.id}) 
@@ -82,11 +118,14 @@ module.exports  = {
          title: "Edición de productos",
         vino 
      })
+     .catch(err => console.log(err))
      
     },   
     
     productEdit : (req, res) =>{
-        let {
+        
+
+       /*  let {
             nombre, 
 			descripcion, 
 			variedad,
@@ -123,7 +162,7 @@ module.exports  = {
         })
         
         writeVinosJSON(vinos);
-        res.redirect("/admin/products")
+        res.redirect("/admin/products") */
     },
     productDelete: (req,res)=>{    
      vinos.forEach(vino => {
