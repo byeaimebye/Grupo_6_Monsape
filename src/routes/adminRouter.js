@@ -17,22 +17,22 @@ let {admin,
 
 
 /*GET - Admin products */
-router.get('/products',adminSession, products);
+router.get('/products', products);
 /*GET - Formulario de producto */
-router.get('/cargaDeProducto',adminSession, charge);
+router.get('/cargaDeProducto', charge);
 
 /* POST- Crear producto */
 router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate); 
 
  /* Editar productos*/
-router.get('/editProduct/:id', adminSession, edit);
+router.get('/editProduct/:id',  edit);
 router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 
 //-------------------Rutas de Admin Users-------------------------
-router.get('/usersTable',adminSession, usersTable);
+router.get('/usersTable', usersTable);
 
 
 
