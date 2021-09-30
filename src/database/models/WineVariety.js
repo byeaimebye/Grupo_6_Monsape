@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        wines_id: {
+        wine_id: {
             type: DataTypes.INTEGER(11).UNSIGNED,
             references: {
-                model: "wine",
+                model: "Wine",
                 key: "id"
             }
         },

@@ -25,14 +25,14 @@ router.get('/cargaDeProducto',/* adminSession, */ charge);
 router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate); 
 
  /* Editar productos*/
-router.get('/editProduct/:id', adminSession, edit);
+router.get('/editProduct/:id',  edit);
 router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 
 //-------------------Rutas de Admin Users-------------------------
-router.get('/usersTable',adminSession, usersTable);
+router.get('/usersTable', usersTable);
 
 
 

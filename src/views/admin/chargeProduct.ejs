@@ -8,40 +8,39 @@
      <div class="create-forms">
          <form class="create" action="/admin/cargaDeProducto" method="POST" enctype="multipart/form-data">
              <div class="inputs-create">
-          <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre">
+          <label for="name">Nombre:</label>
+          <input type="text" name="name" id="name">
              </div>
              <div class="large">
-                <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
+                <label for="description">Descripción:</label>
+                <textarea name="description" id="description" cols="30" rows="5"></textarea>
                    </div>
                    <div class="inputs-create">
-                     <label for="variedad">Variedad:</label>
+                     <label for="variety">variety:</label>
                      <% variety.forEach(variety => { %>
                         <label for="<%= variety.name %>">
-                           <input type="checkbox" name="variety" id="variedad" value="<%= variety.id %>"><%= variety.name %>
+                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>"><%= variety.name %>
                         </label>
                         
                      <% }) %>
                         </div>
-                       <div class="inputs-create">
-                        <label for="categoria">Categoria:</label>
-                        <select name="categoria" id="">
-                            <option value="blanco">Blanco</option>
-                            <option value="tinto">Tinto</option>
-                            <option value="rosado">Rosado</option>
-                            <option value="espumante">Espumante</option>
+                       <div class="inputs-create"> 
+                              <label for="category"> Categorias: </label>
+                                 <select name="category" id="">
+                                    <% category.forEach(category => { %>
+                                    <option value="<%= category.id %>"><%= category.name %> </option>
+                                    <% }) %>
+
+                                 </select>
                            
                         </select>
                            </div>
                        <div class="inputs-create">
-                        <label for="coleccion">Coleccion:</label>
-                        <select name="coleccion" id="">
-                            <option value="fines">Fines</option>
-                            <option value="galla">Galla</option>
-                            <option value="terroir">Terroir</option>
-                            <option value="insignia">Insignia</option>
-                            <option value="calebracion">Celebración</option>
+                        <label for="collection">Collection:</label>
+                        <select name="collection" id="">
+                           <% collection.forEach(collection => { %>
+                              <option value="<%= collection.id %>"><%= collection.name %></option>
+                              <% }) %>
                         </select>
                            </div>
                            <div class="inputs-create">
@@ -49,38 +48,38 @@
                               <input type="number" name="stock" id="stock">
                            </div>
                            <div class="large">
-                            <label for="maridaje">Maridaje:</label>
-                            <textarea name="Maridaje" id="maridaje" cols="30" rows="5"></textarea>
+                            <label for="pairing">Pairing:</label>
+                            <textarea name="pairing" id="pairing" cols="30" rows="5"></textarea>
                                </div>
                                <div class="inputs-create">
-                                <label for="graduacion">Graduacion Alcoholica:</label>
-                                <input type="text" name="graduacionAlcoholica" id="graduacion">
+                                <label for="alcoholContent">Graduacion Alcoholica:</label>
+                                <input type="text" name="alcoholContent" id="alcoholContent">
                                 <p>%</p>
                                    </div>
                                    <div class="inputs-create">
-                                    <label for="acidezTotal">Acidez:</label>
-                                    <input type="text" name="acidezTotal" id="acidez">
+                                    <label for="totalAcidity">Acidez:</label>
+                                    <input type="text" name="totalAcidity" id="acidez">
                                     <p>g/l</p>
                                        </div>
                                        <div class="inputs-create">
-                                        <label for="azucarResidual">Azucar Residual:</label>
-                                        <input type="text" name="azucarResidual" id="azucarResidual">
+                                        <label for="residualSugar">Azucar Residual:</label>
+                                        <input type="text" name="residualSugar" id="residualSugar">
                                         <p>g/l</p>
                                            </div>
                                            <div class="inputs-create">
-                                            <label for="temperaturaRecomendada">Temperatura recomendada:</label>
-                                            <input type="text" name="temperaturaRecomendada" id="temperaturaRecomendada">
+                                            <label for="service_temperature">Temperatura recomendada:</label>
+                                            <input type="text" name="service_temperature" id="service_temperature">
                                                </div>
                                                <div class="inputs-create">
-                                                <label for="precio">Precio:</label>
-                                                <input type="number" name="precio" id="precio">
+                                                <label for="price">price:</label>
+                                                <input type="number" name="price" id="price">
                                                    </div>
                                                    <div class="inputs-create">
-                                                    <label for="nombre">Descuento:</label>
-                                                    <input type="number" name="descuento" id="descuento"><p>%</p>
+                                                    <label for="discount">Descuento:</label>
+                                                    <input type="number" name="discount" id="discount"><p>%</p>
                                                        </div> 
                                                        <div class="inputs-create">
-                                                          <label for="inputFile">Cargar Imagen:</label>
+                                                          <label for="image">Cargar Imagen:</label>
                                                           <input type="file" name="image" id="inputFile">
                                                        </div>
                                                        <button type="submit">CREAR</button>                             

@@ -17,6 +17,7 @@ module.exports = {
             });
         }).catch((error) => res.send(error))
     },
+
     charge: (req, res) => {
         let collectionPromise = db.Collection.findAll()
         let categoryPromise = db.Category.findAll()
@@ -33,14 +34,16 @@ module.exports = {
                     session: req.session
                 })
             }).catch((error) => res.send(error))
+
+
     },
     //--------------------Administración de Productos-----------------------
     productCreate: (req, res) => {
         let { name,
             description,
-            variety,
             category,
             collection,
+            variety,
             stock,
             pairing,
             alcoholContent,
@@ -48,15 +51,15 @@ module.exports = {
             residualSugar,
             service_temperature,
             price,
-            discount } = req.body;/* 
-            res.send(req.body); */
+            discount,
+            } = req.body;
+            
 
-        db.Wines.create({
+        db.Wine.create({
             name,
             description,
-            variety,
-            category,
-            collection,
+            category_id: category,
+            collection_id: collection,
             stock,
             pairing,
             alcoholContent,
@@ -64,11 +67,18 @@ module.exports = {
             residualSugar,
             service_temperature,
             price,
-            discount
+            discount,
+            image : req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
         })
-        .then(result => {
-            res.send(result);
-        })
+            .then(result =>{
+                variety.forEach(element =>{
+                    db.WineVariety.create({
+                     wine_id: result.id,
+                     variety_id: element
+                    })
+                })
+                res.redirect('/admin/products')
+            }).catch((error)=>{ res.send(error)})
 
 
         /*   let lastId = 1;
@@ -118,16 +128,63 @@ module.exports = {
            res.redirect('/admin/products')   */
     },
     edit: (req, res) => {
-        let vino = vinos.find(vino => { return vino.id === +req.params.id })
-        res.render('admin/editProduct', {
+        db.Wine.findByPk(req.params.id)
+        .then(wine => { 
+            res.render('admin/editProduct', {
             title: "Edición de productos",
-            vino
-        })
+            wine
+        })})
             .catch(err => console.log(err))
-
     },
 
     productEdit: (req, res) => {
+        let { name,
+            description,
+            category,
+            collection,
+            variety,
+            stock,
+            pairing,
+            alcoholContent,
+            totalAcidity,
+            residualSugar,
+            service_temperature,
+            price,
+            discount,
+            } = req.body;
+            
+
+        db.Wine.update({
+            name,
+            description,
+            category_id: category,
+            collection_id: collection,
+            stock,
+            pairing,
+            alcoholContent,
+            totalAcidity,
+            residualSugar,
+            service_temperature,
+            price,
+            discount,
+            image : req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
+        },
+        {where: {
+            id: req.params.id
+        }}
+        )
+        .then(result =>{
+            variety.forEach(element =>{
+                db.WineVariety.update({
+                 wine_id: result.id,
+                 variety_id: element
+                },
+                {where: 
+                    { wine_id: req.params.id}
+                })
+            })
+            res.redirect('/admin/products')
+        }).catch((error)=>{ res.send(error)})
 
 
         /*  let {
