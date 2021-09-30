@@ -12,6 +12,17 @@ main.main-admin-create input{
     
     font-weight: 999;
 }
+main.main-admin-create form .variety{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+text-align: center;
+}
+main.main-admin-create form .variety input{
+    margin-right: 10px;
+  
+}
 main.main-admin-create .inputs-create option.option{
 font-weight: 999;
 }
