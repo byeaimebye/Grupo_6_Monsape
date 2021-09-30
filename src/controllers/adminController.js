@@ -48,8 +48,8 @@ module.exports = {
             residualSugar,
             service_temperature,
             price,
-            discount } = req.body;
-            res.send(req.body);
+            discount } = req.body;/* 
+            res.send(req.body); */
 
         db.Wines.create({
             name,
@@ -66,7 +66,9 @@ module.exports = {
             price,
             discount
         })
-            .then()
+        .then(result => {
+            res.send(result);
+        })
 
 
         /*   let lastId = 1;

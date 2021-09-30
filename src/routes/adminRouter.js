@@ -17,9 +17,9 @@ let {admin,
 
 
 /*GET - Admin products */
-router.get('/products',adminSession, products);
+router.get('/products',/* adminSession, */ products);
 /*GET - Formulario de producto */
-router.get('/cargaDeProducto',adminSession, charge);
+router.get('/cargaDeProducto',/* adminSession, */ charge);
 
 /* POST- Crear producto */
 router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate); 
