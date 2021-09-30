@@ -312,7 +312,7 @@
     "email": "pp@p.com",
     "fullname": "asddasdas",
     "password": "$2a$10$y7kbdlsSFnDxRYCdElMlkeaekSKt0mjn7bx/1uDiAUAitqffOeY9K",
-    "rol": "ROL-USER",
+    "rol": "ROL-ADMIN",
     "cp": "",
     "image": "users/default-avatar.jpg",
     "dni": "asdasdsad"
