@@ -298,6 +298,16 @@ module.exports = {
         res.redirect("/admin/products")
 
     },
+    userDelete:(req,res) =>{
+     db.User.findByPk(req.params.id)
+     .then(user =>{
+         db.User.destroy({
+             where: {id: user.id}
+         })
+         res.redirect("/admin/usersTable") 
+     })
+     .catch((error) => { res.send(error) })
+    },
     usersTable: (req, res) => {
         res.render("admin/adminUsers", {
             users,
