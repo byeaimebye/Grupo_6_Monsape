@@ -1,4 +1,3 @@
-
 let { vinos } = require('../data/db')
 const db = require('../database/models')
 const {Op}= require('sequelize')

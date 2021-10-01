@@ -139,17 +139,38 @@ module.exports = {
         let collectionPromise = db.Collection.findAll();
         let categoryPromise = db.Category.findAll();
         let varietyPromise = db.Variety.findAll();
-
+        
 
         Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
             .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
                 /* res.send(wineEditPromise); */
-                res.render('probandoCheck', {
+                let productVariety = [];
+                let wineVariety = [];
+                wineEditPromise.variety.forEach(v => {
+                    productVariety.push({id: v.id, name: v.name, status: "checked"})
+                })
+
+                varietyPromise.forEach(v2 => {
+                    wineVariety.push({id: v2.id, name: v2.name, status: ""})
+                })
+
+                productVariety.forEach(element => {
+                    wineVariety.forEach(element2 => {
+                        if(element.id === element2.id){
+                            wineVariety.splice(wineVariety.indexOf(element2), 1, element);
+                        }
+                    })
+                })
+                /* res.send(wineVariety); */
+
+
+                res.render('admin/editProduct', {
                     title: "Edición de producto",
                     wine: wineEditPromise,
                     collection: collectionPromise,
                     category: categoryPromise,
                     variety: varietyPromise,
+                    wineVariety,
                     session: req.session
                 }) 
             }).catch((error) => res.send(error))

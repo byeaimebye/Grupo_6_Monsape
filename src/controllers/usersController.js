@@ -76,18 +76,18 @@ module.exports = {
                 where: {
                     email: req.body.email
                 },
-            }).then((user)=>{
-                
-                req.session.user ={
+            }).then((user) => {
+
+                req.session.user = {
                     id: user.id,
                     fullname: user.fullname,
                     email: user.email,
                     rol: user.rol,
                     avatar: user.avatar
                 };
-                
-                if(req.body.remember){
-                    res.cookie("cookieMonsape", req.session.user,{
+
+                if (req.body.remember) {
+                    res.cookie("cookieMonsape", req.session.user, {
                         expires: new Date(Date.now() + 900000),
                         httpOnly: true,
                         secure: true,
@@ -95,24 +95,9 @@ module.exports = {
                 }
                 res.locals.user = req.session.user;
                 res.redirect("/home")
-            }).catch(error =>{
-           res.send(error)
-       }) ;
-          /*   let user = users.find(user => user.email === req.body.email);
-
-            req.session.user = {
-                id: user.id,
-                fullname: user.fullname,
-                email: user.email,
-                rol: user.rol,
-                image: user.image
-            }
-
-            if (req.body.remember) {
-                res.cookie('cookieMonsape', req.session.user, { maxAge: (10000 * 60) * 60 })
-            }
-            res.locals.user = req.session.user
-            res.redirect("/home") */
+            }).catch(error => {
+                res.send(error)
+            });
         } else {
 
             res.render('general/login', {
@@ -120,10 +105,25 @@ module.exports = {
                 session: req.session,
                 old: req.body,
                 title: 'Ingresá a Monsape'
-            }).catch(error =>{
+            }).catch(error => {
                 res.send(error)
-            }) 
+            })
         }
+        /*   let user = users.find(user => user.email === req.body.email);
+
+          req.session.user = {
+              id: user.id,
+              fullname: user.fullname,
+              email: user.email,
+              rol: user.rol,
+              image: user.image
+          }
+
+          if (req.body.remember) {
+              res.cookie('cookieMonsape', req.session.user, { maxAge: (10000 * 60) * 60 })
+          }
+          res.locals.user = req.session.user
+          res.redirect("/home") */
     },
     logout: (req, res) => {
         req.session.destroy();
@@ -133,22 +133,25 @@ module.exports = {
         res.redirect('/home')
     },
     profile: (req, res) => {
-        db.User.findByPk((req.session.user.id))
-  
-        .then(user =>{ res.render("general/profile",
-         { title: "Perfil", 
-         user, 
-         session:req.session })})
-        .catch(error =>{
-            res.send(error)
-        }) ;
+        db.User.findByPk(req.session.user.id)
+
+            .then(user => {
+                res.render("general/profile", {
+                    title: "Perfil",
+                    user,
+                    session: req.session
+                })
+            })
+            .catch(err => res.send(error));
 
 
-       /*  let user = users.find(user => user.email === req.session.user.email); */
-/* 
-        res.render("general/profile", { title: "Perfil", user }); */
+        /*  let user = users.find(user => user.email === req.session.user.email); */
+        /* 
+                res.render("general/profile", { title: "Perfil", user }); */
     },
     editProfile: (req, res) => {
+
+        let user = db.User.findByPk(req.session.user.id);
         let {
             fullname,
             email,
@@ -157,8 +160,28 @@ module.exports = {
             tel,
             cp,
             date
-        } = req.body
-        users.forEach(element => {
+        } = req.body;
+
+        db.User.update({
+            fullname: fullname ? fullname : user.fullname,
+            email: email ? email : req.session.user.email,
+            password: password ? bcrypt.hashSync(password, 10) : user.password,
+            dni: dni ? dni : user.email,
+            tel: tel ? tel : user.tel,
+            cp: cp ? cp : user.cp,
+            date: date ? date : user.date,
+            rol: user.rol,
+            avatar: req.file ? 'users/' + req.file.filename : user.avatar,
+        }, {
+            where: { id: req.session.user.id }
+        })
+            .then(() => {
+                res.redirect("/users/profile");
+            })
+
+
+
+        /* users.forEach(element => {
             if (element.email === email) {
 
                 element.id = element.id,
@@ -173,7 +196,6 @@ module.exports = {
             }
 
         })
-        writeUsersJSON(users);
-        res.redirect("/users/profile");
+        writeUsersJSON(users); */
     }
 };
