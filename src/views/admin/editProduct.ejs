@@ -17,15 +17,20 @@
                    </div>
                    <div class="inputs-create">
                      <label for="variety">Variedad:</label>
-                     <% for(let i = 0; i < variety.length; i++) { %>
-                        <label for="variety">
-                        <% if(variety[i].name){ %> 
-                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>" checked><%= variety.name %>
-                        <% }else{ %>
-                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>"><%= variety.name %>
-                        <% } %>  
-                        </label>
-                     <% } %>
+                        
+                     <% wine.variety.forEach(wv => { %>
+                        <% variety.forEach(element => { %>
+                              <% if(element.name === wv.name){ %>
+                                 <input type="checkbox" name="variety" id="variety" value="<%= element.id %>" checked><%= element.name %>
+                              <% }else{%>
+                                 <input type="checkbox" name="variety" id="variety" value="<%= element.id %>"><%= element.name %>
+                                    
+                              <% }
+                              delete element %>
+                              
+                           <% }) %>
+                              
+                        <% }) %>
 
                         
                         </div>

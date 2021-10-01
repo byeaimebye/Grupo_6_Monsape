@@ -36,6 +36,7 @@ main.main-admin-create h1{
 }
 main.main-admin-create .inputs-create{
     display: flex;
+    flex-direction: column;
     margin-bottom:10px ;
 }
 main.main-admin-create  .large{
@@ -72,7 +73,7 @@ main.main-admin-create .temperatura-create input{
     main.main-admin-create{
        
         padding: 25px;
-        font-size: 25px;
+        /* font-size: 25px; */
     }
     main.main-admin-create input{
         outline: none;

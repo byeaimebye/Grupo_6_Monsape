@@ -143,8 +143,8 @@ module.exports = {
 
         Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
             .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
-                /* res.send(wineEditPromise.variety[0].name); */
-                res.render('admin/editProduct', {
+                /* res.send(wineEditPromise); */
+                res.render('probandoCheck', {
                     title: "Edición de producto",
                     wine: wineEditPromise,
                     collection: collectionPromise,

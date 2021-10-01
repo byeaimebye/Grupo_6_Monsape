@@ -33,7 +33,7 @@ router.delete('/delete/:id', productDelete)
 
 //-------------------Rutas de Admin Users-------------------------
 router.get('/usersTable', usersTable);
-
-
+/* 
+router.get("/probado-check/:id", edit); */
 
 module.exports = router;
