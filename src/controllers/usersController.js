@@ -1,83 +1,92 @@
-const {users, writeUsersJSON} = require('../data/db');
-const {validationResult} = require('express-validator');
+const { users, writeUsersJSON } = require('../data/db');
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
 
 module.exports = {
-    prueba: (req,res)=>{
-     db.Wine.findAll({
-          include: [
-             {association: "category"},
-             {association: "collection"},
-             {association: "variety"}
-         ] 
-     })
-     .then(cualquiercosa =>{
-         res.send(cualquiercosa)
-     })
+    login: (req, res) => {
+        res.render("general/login", { title: "Login", session: req.session })
     },
-    login:(req,res) => {     
-        res.render("general/login", {title: "Login", session: req.session})
+    register: (req, res) => {
+        res.render("general/register", { title: "Registro", session: req.session })
     },
-    register:(req,res) => { 
-        res.render("general/register", {title: "Registro", session: req.session} )
-    },
-    registerProcess :(req, res) =>{
+    registerProcess: (req, res) => {
         let errors = validationResult(req);
-        let newId = 0;
-        if(errors.isEmpty()){
-            
-            users.forEach(user =>{
+        /* let newId = 0; */
+        if (errors.isEmpty()) {
+
+            /* users.forEach(user =>{
                 if(user.id > newId){
                     newId = user.id
                 }
             });
-            newId++;
+            newId++; */
+            let {
+                email,
+                fullname,
+                password
+            } = req.body;
 
-            delete req.body.password2;
-            delete req.body.terms;
-            let newUser = {
-                id: newId,
-                ...req.body,
-                password: bcrypt.hashSync(req.body.password, 10),
+
+            db.User.create({
+                fullname,
+                email,
+                date: Date.now(),
+                password: bcrypt.hashSync(password, 10),
                 rol: "ROL-USER",
-                image:  req.file ? '/users/' + req.file.filename : "/users/default-avatar.jpg"
-            };
+                avatar: req.file ? '/users/' + req.file.filename : "/users/default-avatar.jpg"
+            })
+                .then(user => {
+                    if (user) {
+                        res.redirect("/users/login");
+                    }
+                })
+        } else {
 
-            users.push(newUser);
-            writeUsersJSON(users);
-            res.redirect('/users/login');
-        
-        }
-
-            res.render('general/register',{
-                errors : errors.mapped(),
+            res.render('general/register', {
+                errors: errors.mapped(),
                 old: req.body,
-                title: "registro",
+                title: "Registro",
                 session: req.session,
             })
+        }
+
+        /* delete req.body.password2;
+        delete req.body.terms;
+        let newUser = {
+            id: newId,
+            ...req.body,
+            password: bcrypt.hashSync(req.body.password, 10),
+        };
+
+        users.push(newUser);
+        writeUsersJSON(users);
+        res.redirect('/users/login');
+    
+    } */
+
 
     },
-    processLogin : (req, res)=>{
+    processLogin: (req, res) => {
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             let user = users.find(user => user.email === req.body.email);
-           
-            req.session.user ={
+
+            req.session.user = {
                 id: user.id,
                 fullname: user.fullname,
                 email: user.email,
                 rol: user.rol,
-                image: user.image 
+                image: user.image
             }
 
-            if(req.body.remember){
-                res.cookie('cookieMonsape', req.session.user, {maxAge: (10000*60)*60})
+            if (req.body.remember) {
+                res.cookie('cookieMonsape', req.session.user, { maxAge: (10000 * 60) * 60 })
             }
             res.locals.user = req.session.user
             res.redirect("/home")
-        }else{
+        } else {
             res.render('general/login', {
                 errors: errors.mapped(),
                 session: req.session,
@@ -88,17 +97,17 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy();
-        if(req.cookies.cookieMonsape){
-            res.cookie('cookieMonsape', '', {maxAge:-1})
+        if (req.cookies.cookieMonsape) {
+            res.cookie('cookieMonsape', '', { maxAge: -1 })
         }
         res.redirect('/home')
     },
-    profile : (req, res)=>{
+    profile: (req, res) => {
         let user = users.find(user => user.email === req.session.user.email);
-    
-        res.render("general/profile", {title: "Perfil", user});
+
+        res.render("general/profile", { title: "Perfil", user });
     },
-    editProfile : (req, res)=>{
+    editProfile: (req, res) => {
         let {
             fullname,
             email,
@@ -109,19 +118,19 @@ module.exports = {
             date
         } = req.body
         users.forEach(element => {
-            if(element.email === email){
-                
-                    element.id = element.id,
+            if (element.email === email) {
+
+                element.id = element.id,
                     element.image = req.file ? 'users/' + req.file.filename : "users/default-avatar.jpg",
-                    element.fullname = fullname?fullname:element.fullname,
-                    element.email = email?email:element.email,
-                    element.password = password?bcrypt.hashSync(password, 10): element.password,
-                    element.dni = dni?dni:element.dni,
-                    element.tel = tel?tel:element.tel,
-                    element.cp = cp?cp:element.cp,
-                    element.date = date?date:element.date
+                    element.fullname = fullname ? fullname : element.fullname,
+                    element.email = email ? email : element.email,
+                    element.password = password ? bcrypt.hashSync(password, 10) : element.password,
+                    element.dni = dni ? dni : element.dni,
+                    element.tel = tel ? tel : element.tel,
+                    element.cp = cp ? cp : element.cp,
+                    element.date = date ? date : element.date
             }
-            
+
         })
         writeUsersJSON(users);
         res.redirect("/users/profile");

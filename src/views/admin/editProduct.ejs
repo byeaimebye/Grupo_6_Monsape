@@ -6,7 +6,11 @@
     <main class="main-admin-create">
         <h1>AGREGAR PRODUCTO</h1>
      <div class="create-forms">
+<<<<<<< HEAD
          <form class="create" action="/admin/editProduct/<%- wine.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+=======
+         <form class="create" action="/admin/products/<%= wine.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+>>>>>>> d2a7c431d460f2149ef903e7282439925b7a79d3
              <div class="inputs-create">
           <label for="name">Nombre:</label>
           <input type="text" name="name" id="name" value="<%= wine.name %>">
@@ -17,19 +21,16 @@
                    </div>
                    <div class="inputs-create variety">
                      <label for="variety">Variedad:</label>
-                     <% variety.forEach(variety => { %>
-                   
+                     <% for(let i = 0; i < variety.length; i++) { %>
                         <label for="variety">
-                           <% if (variety.id === variety_id && wine.id === wine_id) { %>
-                              <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>" checked><%= variety.name %>
-                           <% }else{ %>
-                              <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>"><%= variety.name %>
-                           <% } %>  
+                        <% if(variety[i].name){ %> 
+                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>" checked><%= variety.name %>
+                        <% }else{ %>
+                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>"><%= variety.name %>
+                        <% } %>  
                         </label>
-                        
-                        
+                     <% } %>
 
-                     <% }) %>
                         
                         </div>
                        <div class="inputs-create"> 
