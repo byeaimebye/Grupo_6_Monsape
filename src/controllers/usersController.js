@@ -77,6 +77,7 @@ module.exports = {
                     email: req.body.email
                 },
             }).then((user)=>{
+                
                 req.session.user ={
                     id: user.id,
                     fullname: user.fullname,
@@ -84,6 +85,7 @@ module.exports = {
                     rol: user.rol,
                     avatar: user.avatar
                 };
+                
                 if(req.body.remember){
                     res.cookie("cookieMonsape", req.session.user,{
                         expires: new Date(Date.now() + 900000),
@@ -93,7 +95,9 @@ module.exports = {
                 }
                 res.locals.user = req.session.user;
                 res.redirect("/home")
-            });
+            }).catch(error =>{
+           res.send(error)
+       }) ;
           /*   let user = users.find(user => user.email === req.body.email);
 
             req.session.user = {
@@ -110,12 +114,15 @@ module.exports = {
             res.locals.user = req.session.user
             res.redirect("/home") */
         } else {
+
             res.render('general/login', {
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body,
                 title: 'Ingresá a Monsape'
-            })
+            }).catch(error =>{
+                res.send(error)
+            }) 
         }
     },
     logout: (req, res) => {
@@ -126,9 +133,20 @@ module.exports = {
         res.redirect('/home')
     },
     profile: (req, res) => {
-        let user = users.find(user => user.email === req.session.user.email);
+        db.User.findByPk((req.session.user.id))
+  
+        .then(user =>{ res.render("general/profile",
+         { title: "Perfil", 
+         user, 
+         session:req.session })})
+        .catch(error =>{
+            res.send(error)
+        }) ;
 
-        res.render("general/profile", { title: "Perfil", user });
+
+       /*  let user = users.find(user => user.email === req.session.user.email); */
+/* 
+        res.render("general/profile", { title: "Perfil", user }); */
     },
     editProfile: (req, res) => {
         let {

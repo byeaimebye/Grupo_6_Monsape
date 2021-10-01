@@ -8,7 +8,7 @@
             <h1>MI PERFIL</h1>
             <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="avatar-profile">
-                    <img src="/img/<%= user.image?user.image:"users/default-avatar.jpg"%>" alt="avatar">
+                    <img src="/img/<%= user.avatar?user.avatar:"users/default-avatar.jpg"%>" alt="avatar">
                     <input class="input-avatar-profile" type="file" name="avatar">
                 </div>
                 <div class="container-data-profile">
