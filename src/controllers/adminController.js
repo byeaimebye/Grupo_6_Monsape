@@ -130,30 +130,34 @@ module.exports = {
     edit: (req, res) => {
         
         let contador = 0;
-        let wineEditPromise = db.Wine.findByPk(req.params.id);
+        let wineEditPromise = db.Wine.findByPk(req.params.id, {include: [
+            { association: "category" },
+            { association: "collection" },
+            { association: "variety" }]});
         let collectionPromise = db.Collection.findAll();
         let categoryPromise = db.Category.findAll();
         let varietyPromise = db.Variety.findAll();
-        let wineVarietiesPromise = db.WineVariety.findAll({
+       /*  let wineVarietiesPromise = db.WineVariety.findAll({
             where: {
                 wine_id: req.params.id
             }
-        });
+        }); */
 
 
-        Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise, wineVarietiesPromise])
-            .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise, wineVarietiesPromise]) => {
-                /* res.send(wineVarietiesPromise); */
-                res.render('admin/editProduct', {
+        Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise /* wineVarietiesPromise */])
+            .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise /* wineVarietiesPromise */]) => {
+                /* res.send(wineVarietiesPromise);  */
+                res.send(wineEditPromise)
+             /*    res.render('admin/editProduct', {
                     title: "Edición de producto",
                     wine: wineEditPromise,
                     collection: collectionPromise,
                     category: categoryPromise,
                     variety: varietyPromise,
-                    wineVariety: wineVarietiesPromise,
+                    wineVariety: wineVarietiesPromise, 
                     contador,
                     session: req.session
-                })
+                }) */
             }).catch((error) => res.send(error))
     },
 
@@ -188,7 +192,7 @@ module.exports = {
             service_temperature,
             price,
             discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : wine.image
+            image: req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
         },
             {
                 where: {
