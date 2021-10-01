@@ -71,7 +71,30 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let user = users.find(user => user.email === req.body.email);
+
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                },
+            }).then((user)=>{
+                req.session.user ={
+                    id: user.id,
+                    fullname: user.fullname,
+                    email: user.email,
+                    rol: user.rol,
+                    avatar: user.avatar
+                };
+                if(req.body.remember){
+                    res.cookie("cookieMonsape", req.session.user,{
+                        expires: new Date(Date.now() + 900000),
+                        httpOnly: true,
+                        secure: true,
+                    })
+                }
+                res.locals.user = req.session.user;
+                res.redirect("/home")
+            });
+          /*   let user = users.find(user => user.email === req.body.email);
 
             req.session.user = {
                 id: user.id,
@@ -85,7 +108,7 @@ module.exports = {
                 res.cookie('cookieMonsape', req.session.user, { maxAge: (10000 * 60) * 60 })
             }
             res.locals.user = req.session.user
-            res.redirect("/home")
+            res.redirect("/home") */
         } else {
             res.render('general/login', {
                 errors: errors.mapped(),

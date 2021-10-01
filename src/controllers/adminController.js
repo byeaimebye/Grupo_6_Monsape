@@ -151,7 +151,7 @@ module.exports = {
                     category: categoryPromise,
                     variety: varietyPromise,
                     session: req.session
-                }) */
+                }) 
             }).catch((error) => res.send(error))
     },
 
