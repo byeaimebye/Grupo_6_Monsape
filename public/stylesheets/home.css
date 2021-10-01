@@ -65,8 +65,8 @@ main.home  .logo-home1{
 }
 
 main.home .logo-home1 img{
-    width: 128px;
-    height: 95px;
+    width: 95px;
+    height: 74px
 }
 main.home{
     height: 100%;
@@ -266,23 +266,12 @@ main.home{
 
 
 /* Se rompen linkeables QUERY HELP*/
-@media(min-width: 389px){
-    main.home .linkeables #box2 button a{
-        left: 12%;
-        font-size: 32px ;
+ @media(min-width: 465px){
+    main.home .logo-home1 img {
+        width: 116px;
+        height: 170px;
     }
-    main.home .linkeables #box1 button a{
-        left: 5%;
-font-size: 32px ;
-
-}
-main.home .cabecera{
-    top: 5rem;
-    font-size: 118%;
-    }
-
-   
-}
+} 
     /*  query tablet   */
 
 

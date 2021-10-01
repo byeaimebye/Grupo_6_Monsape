@@ -8,6 +8,7 @@
 }
 
 header.header-admin{
+    margin-top: -180px;
     background-image: url(/img/header-desktop.png);
     display: flex;
     flex-direction: column;

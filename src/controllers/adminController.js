@@ -151,7 +151,7 @@ module.exports = {
                     category: categoryPromise,
                     variety: varietyPromise,
                     session: req.session
-                })
+                }) 
             }).catch((error) => res.send(error))
     },
 
@@ -186,7 +186,7 @@ module.exports = {
             service_temperature,
             price,
             discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : wine.image
+            image: req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
         },
             {
                 where: {

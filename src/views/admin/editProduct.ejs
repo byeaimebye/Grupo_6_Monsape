@@ -6,7 +6,7 @@
     <main class="main-admin-create">
         <h1>AGREGAR PRODUCTO</h1>
      <div class="create-forms">
-         <form class="create" action="/admin/products/<%= wine.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+         <form class="create" action="/admin/editProduct/<%- wine.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
              <div class="inputs-create">
           <label for="name">Nombre:</label>
           <input type="text" name="name" id="name" value="<%= wine.name %>">
@@ -15,7 +15,7 @@
                 <label for="description">Descripción:</label>
                 <textarea name="description" id="description" cols="30" rows="5"><%= wine.description %></textarea>
                    </div>
-                   <div class="inputs-create">
+                   <div class="inputs-create variety">
                      <label for="variety">Variedad:</label>
                         
                      <% wine.variety.forEach(wv => { %>
