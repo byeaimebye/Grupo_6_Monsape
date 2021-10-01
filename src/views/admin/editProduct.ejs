@@ -17,10 +17,8 @@
                    </div>
                    <div class="inputs-create variety">
                      <label for="variety">Variedad:</label>
-                        
                      <% wineVariety.forEach(element => { %>
-                        <input type="checkbox" name="variety" id="variety" value="<%= element.id %>" <%= element.status %> ><%= element.name %>
-                        
+                        <input type="checkbox" name="variety" id="variety" value="<%= element.id %>" <%= element.status %>  ><%= element.name %>
                      <% }) %>
                         
                         </div>
