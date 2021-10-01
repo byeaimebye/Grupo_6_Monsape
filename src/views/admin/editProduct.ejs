@@ -6,7 +6,7 @@
     <main class="main-admin-create">
         <h1>AGREGAR PRODUCTO</h1>
      <div class="create-forms">
-         <form class="create" action="/admin/cargaDeProducto" method="POST" enctype="multipart/form-data">
+         <form class="create" action="/admin/products/<%= wine.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
              <div class="inputs-create">
           <label for="name">Nombre:</label>
           <input type="text" name="name" id="name" value="<%= wine.name %>">
@@ -17,20 +17,16 @@
                    </div>
                    <div class="inputs-create">
                      <label for="variety">Variedad:</label>
-                     <% variety.forEach(variety => { %>
-                     <% wineVariety.forEach(pivot => { %>
-                        
+                     <% for(let i = 0; i < variety.length; i++) { %>
                         <label for="variety">
-                           <% if (variety.id === pivot.variety_id && wine.id === pivot.wine_id) { %>
-                              <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>" checked><%= variety.name %>
-                           <% }else{ %>
-                              <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>"><%= variety.name %>
-                           <% } %>  
+                        <% if(variety[i].name){ %> 
+                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>" checked><%= variety.name %>
+                        <% }else{ %>
+                           <input type="checkbox" name="variety" id="variety" value="<%= variety.id %>"><%= variety.name %>
+                        <% } %>  
                         </label>
-                        
-                        <% }) %>
+                     <% } %>
 
-                     <% }) %>
                         
                         </div>
                        <div class="inputs-create"> 

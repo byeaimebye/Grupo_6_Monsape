@@ -19,7 +19,6 @@ let {
 router.get('/login', login);
 router.post("/login", loginValidator, processLogin);
 router.get('/logout', logout);
-router.get('/prueba', prueba);
 
 /*Get Register */
 router.get('/register', register);
