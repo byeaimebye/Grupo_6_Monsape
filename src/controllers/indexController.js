@@ -9,6 +9,14 @@ module.exports = {
         res.render("general/index", { title: "Bienvenidos a Monsape", session: req.session, });
 
     },
+
+    indexProcess: (req, res)=> {
+        if(req.body.year <= 2003){
+            res.redirect("/home");
+        }else {
+            res.send("Volá de acá, incordio.");
+        }
+    },
     home: (req, res) => {
         db.Wine.findAll({
             where: {

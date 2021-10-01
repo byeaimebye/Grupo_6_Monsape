@@ -139,10 +139,11 @@ module.exports = {
         let collectionPromise = db.Collection.findAll();
         let categoryPromise = db.Category.findAll();
         let varietyPromise = db.Variety.findAll();
+        let wineVarietiesPromise = db.WineVariety.findAll()
         
 
-        Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
-            .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
+        Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise, wineVarietiesPromise])
+            .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise, wineVarietiesPromise]) => {
                 /* res.send(wineEditPromise); */
                 let productVariety = [];
                 let wineVariety = [];
@@ -192,9 +193,9 @@ module.exports = {
             price,
             discount,
         } = req.body;
+        /* res.send(req.body); */
 
-
-        db.Wine.update({
+        let update = db.Wine.update({
             name,
             description,
             category_id: category,
@@ -207,29 +208,33 @@ module.exports = {
             service_temperature,
             price,
             discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
+            image: req.file ? '/VinosJson/' + req.file.filename : ""
         },
             {
                 where: {
                     id: req.params.id
                 }
             }
-        )
-            .then(result => {
-                db.WineVariety.destroy({
-                    where: {
-                        wine_id: req.params.id
-                    }
-                })
+        );
 
-                variety.forEach(element => {
-                    db.WineVariety.create({
-                        wine_id: result.id,
-                        variety_id: element
-                    })
-                })
+        let destroy = db.WineVariety.destroy({
+            where: {
+                wine_id: req.params.id
+            }
+        }).then(()=>{})
+
+        let create = variety.forEach(element => {
+            db.WineVariety.create({
+                wine_id: +req.params.id,
+                variety_id: +element
+            }).then(()=>{})
+        });
+
+        Promise.all([update, destroy, create])
+            .then(()=> {
                 res.redirect('/admin/products')
-            }).catch((error) => { res.send(error) })
+            })
+            .catch((error) => { res.send(error) })
 
 
         /*  let {
@@ -272,14 +277,24 @@ module.exports = {
          res.redirect("/admin/products") */
     },
     productDelete: (req, res) => {
-        vinos.forEach(vino => {
+
+        db.Wine.findBy.pk(req.params.id)
+            .then(wine => {
+                wine.destroy({
+                    where: {id: wine.id}
+                })
+
+                res.redirect("/admin/products");
+            }).catch(err => res.send(err));
+
+        /* vinos.forEach(vino => {
             if (vino.id === +req.params.id) {
                 let vinoToDelete = vinos.indexOf(vino);
                 vinos.splice(vinoToDelete, 1)
             }
         })
 
-        writeVinosJSON(vinos);
+        writeVinosJSON(vinos); */
         res.redirect("/admin/products")
 
     },
