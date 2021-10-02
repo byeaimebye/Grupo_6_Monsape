@@ -74,3 +74,25 @@
                       HACER MENOS: No pensar tanto en la retrospectiva (plantearla con ideas previas)
 
                            *************************************************************************
+                                                      -    SPRINT 5   -
+                                                     ----------------------
+
+                    SEGUIR HACIENDO: Trabajar grupalmente, Comunicacion efectiva, Entender al compañero.
+
+                                                     ---------------------- 
+
+                         HACER MÁS: Dejar anotaciones en trello, reuniones firmes en el sprint, planificar bien espacio y tiempos para entrega del sprint.
+                       
+                                                     ----------------------
+
+                                       EMPEZAR A HACER: Dailys e informes de Dailys.
+
+                                                     ----------------------   
+
+                                             DEJAR DE HACER:  Postergar reuniones.
+
+                                                     ----------------------
+
+                         HACER MENOS: No dejar pasar mucho tiempo para comenzar a realizar tareas.
+
+                                        <!-- **************************************** -->
