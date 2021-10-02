@@ -139,11 +139,10 @@ module.exports = {
         let collectionPromise = db.Collection.findAll();
         let categoryPromise = db.Category.findAll();
         let varietyPromise = db.Variety.findAll();
-        let wineVarietiesPromise = db.WineVariety.findAll()
         
 
-        Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise, wineVarietiesPromise])
-            .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise, wineVarietiesPromise]) => {
+        Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
+            .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
                 /* res.send(wineEditPromise); */
                 let productVariety = [];
                 let wineVariety = [];

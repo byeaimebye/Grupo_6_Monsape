@@ -1,97 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/headAdmin") %>
-<body>
-    <%- include("../partials/headerAdmin") %>
-    <main class="main-admin-create">
-        <h1>AGREGAR PRODUCTO</h1>
-     <div class="create-forms">
-         <form class="create" action="/admin/editProduct/<%- wine.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-             <div class="inputs-create">
-          <label for="name">Nombre:</label>
-          <input type="text" name="name" id="name" value="<%= wine.name %>">
-             </div>
-             <div class="large">
-                <label for="description">Descripción:</label>
-                <textarea name="description" id="description" cols="30" rows="5"><%= wine.description %></textarea>
-                   </div>
-                   <div class="inputs-create variety">
-                     <label for="variety">Variedad:</label>
-                     <% wineVariety.forEach(element => { %>
-                        <input type="checkbox" name="variety" id="variety" value="<%= element.id %>" <%= element.status %>  ><%= element.name %>
-                     <% }) %>
-                        
-                        </div>
-                       <div class="inputs-create"> 
-                              <label for="category"> Categorias: </label>
-                                 <select name="category" id="">
-                                    <% category.forEach(category => { %>
-                                     <% if (category.id === wine.category_id) { %>
-                                       <option value="<%= category.id %>" selected><%= category.name %> </option>
-                                      
-                                       <% }else{ %>
-                                          <option value="<%= category.id %>"><%= category.name %> </option>
-                                          
-                                       <% } %>
+<%- include("../partials/headAdmin") %>
+
+   <body>
+      <%- include("../partials/headerAdmin") %>
+         <main class="main-admin-create">
+            <h2>NUEVO PRODUCTO</h2>
+            <div class="create-forms">
+               <form class="create" action="/admin/editProduct/<%- wine.id %>?_method=PUT" method="POST"
+                  enctype="multipart/form-data">
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="name">Nombre:</label>
+                     <input class="input-form-create-product" type="text" name="name" value="<%= wine.name %>">
+                  </div>
+                  <div class="large">
+                     <label class="lbl-form-create-product" for="description">Descripción:</label>
+                     <textarea class="txt-form-edit-product" name="description" cols="30" rows="5"><%= wine.description %></textarea>
+                  </div>
+                  
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="category"> Categorias: </label>
+                     <select class="input-form-create-product" name="category">
+                        <% category.forEach(category=> { %>
+                           <% if (category.id===wine.category_id) { %>
+                              <option value="<%= category.id %>" selected>
+                                 <%= category.name %>
+                              </option>
+
+                              <% }else{ %>
+                                 <option value="<%= category.id %>">
+                                    <%= category.name %>
+                                 </option>
+
+                                 <% } %>
                                     <% }) %>
 
-                                 </select>
-                           </div>
-                       <div class="inputs-create">
-                        <label for="collection">Colección:</label>
-                        <select name="collection" id="">
-                           <% collection.forEach(collection => { %>
-                            <% if (collection.id === wine.collection_id) { %>
-                              <option value="<%= collection.id %>" selected><%= collection.name %> </option>
+                     </select>
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="collection">Colección:</label>
+                     <select class="input-form-create-product" name="collection" id="">
+                        <% collection.forEach(collection=> { %>
+                           <% if (collection.id===wine.collection_id) { %>
+                              <option value="<%= collection.id %>" selected>
+                                 <%= collection.name %>
+                              </option>
                               <% }else{ %>
-                                 <option value="<%= collection.id %>"><%= collection.name %> </option>
-                                 
-                              <% } %>
-                           <% }) %>
+                                 <option value="<%= collection.id %>">
+                                    <%= collection.name %>
+                                 </option>
 
-                        </select>
-                           </div>
-                           <div class="inputs-create">
-                              <label for="stock">Stock:</label>
-                              <input type="number" name="stock" id="stock" value="<%= wine.stock %>">
-                           </div>
-                           <div class="large">
-                            <label for="pairing">Maridaje:</label>
-                            <textarea name="pairing" id="pairing" cols="30" rows="5" ><%= wine.pairing %></textarea>
-                               </div>
-                               <div class="inputs-create">
-                                <label for="alcoholContent">Graduacion Alcoholica:</label>
-                                <input type="text" name="alcoholContent" id="alcoholContent" value="<%= wine.alcoholContent%>">
-                                <p>%</p>
-                                   </div>
-                                   <div class="inputs-create">
-                                    <label for="totalAcidity">Acidez:</label>
-                                    <input type="text" name="totalAcidity" id="acidez" value="<%= wine.totalAcidity %>">
-                                    <p>g/l</p>
-                                       </div>
-                                       <div class="inputs-create">
-                                        <label for="residualSugar">Azucar Residual:</label>
-                                        <input type="text" name="residualSugar" id="residualSugar" value="<%= wine.residualSugar %>">
-                                        <p>g/l</p>
-                                           </div>
-                                           <div class="inputs-create">
-                                            <label for="service_temperature">Temperatura recomendada:</label>
-                                            <input type="text" name="service_temperature" id="service_temperature" value="<%= wine.service_temperature%>">
-                                               </div>
-                                               <div class="inputs-create">
-                                                <label for="price">price:</label>
-                                                <input type="number" name="price" id="price" value="<%= wine.price %>">
-                                                   </div>
-                                                   <div class="inputs-create">
-                                                    <label for="discount">Descuento:</label>
-                                                    <input type="number" name="discount" id="discount" value="<%= wine.discount %>"><p>%</p>
-                                                       </div> 
-                                                       <div class="inputs-create">
-                                                          <label for="image">Cargar Imagen:</label>
-                                                          <input type="file" name="image" id="inputFile">
-                                                       </div>
-                                                       <button type="submit">CREAR</button>                             
-     </div>
-    </main>
-</body>
+                                 <% } %>
+                                    <% }) %>
+
+                     </select>
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="stock">Stock:</label>
+                     <input class="input-form-create-product" type="number" name="stock" value="<%= wine.stock %>">
+                  </div>
+                  <div class="large">
+                     <label class="lbl-form-create-product" for="pairing">Maridaje:</label>
+                     <textarea class="txt-form-edit-product" name="pairing" cols="30" rows="5"><%= wine.pairing %></textarea>
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="alcoholContent">Graduacion Alcoholica:</label>
+                     <input class="input-form-create-product" type="text" name="alcoholContent"
+                        value="<%= wine.alcoholContent%>">
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="totalAcidity">Acidez:</label>
+                     <input class="input-form-create-product" type="text" name="totalAcidity"
+                        value="<%= wine.totalAcidity %>">
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="residualSugar">Azucar Residual:</label>
+                     <input class="input-form-create-product" type="text" name="residualSugar"
+                        value="<%= wine.residualSugar %>">
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="service_temperature">Temperatura recomendada:</label>
+                     <input class="input-form-create-product" type="text" name="service_temperature"
+                        value="<%= wine.service_temperature%>">
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="price">price:</label>
+                     <input class="input-form-create-product" type="number" name="price" value="<%= wine.price %>">
+                  </div>
+                  <div class="inputs-create">
+                     <label class="lbl-form-create-product" for="discount">Descuento:</label>
+                     <input class="input-form-create-product" type="number" name="discount"
+                        value="<%= wine.discount %>">
+                  </div>
+
+                  <label class="lbl-form-create-product">Variedad:</label>
+                  <div class="div-varieties-form-create-product">
+                     <% wineVariety.forEach(element=> { %>
+                        <label class="lbl-checkbox-form-product-create" for="variety">
+                           <%= element.name %>
+                        </label>
+                        <input class="input-form-create-product checkbox-form-create-product" type="checkbox"
+                           name="variety" value="<%= element.id %>" <%=element.status %>>
+                        <% }) %>
+                  </div>
+
+                  <div class="input-file-form-edit-product">
+                     <p class="p-file-img">Nueva Imagen</p>
+                     <input class="input-file-img" type="file" name="image">
+                  </div>
+                  <button type="submit">EDITAR</button>
+            </div>
+         </main>
+   </body>
+
 </html>
