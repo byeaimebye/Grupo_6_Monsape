@@ -192,7 +192,8 @@ module.exports = {
             price,
             discount,
         } = req.body;
-        /* res.send(req.body); */
+        
+        let wine = db.Wine.findByPk(req.params.id)
 
         let update = db.Wine.update({
             name,
@@ -207,7 +208,7 @@ module.exports = {
             service_temperature,
             price,
             discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : ""
+            image: req.file ? '/VinosJson/' + req.file.filename : wine.image
         },
             {
                 where: {
@@ -229,7 +230,7 @@ module.exports = {
             }).then(()=>{})
         });
 
-        Promise.all([update, destroy, create])
+        Promise.all([update, destroy, create, wine])
             .then(()=> {
                 res.redirect('/admin/products')
             })
