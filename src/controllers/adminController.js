@@ -308,9 +308,25 @@ module.exports = {
      .catch((error) => { res.send(error) })
     },
     usersTable: (req, res) => {
-        res.render("admin/adminUsers", {
-            users,
-            title: "Tabla de Usuarios Registrados"
+        db.User.findAll().then((users)=>{
+            res.render("admin/adminUsers", {
+                users,
+                title: "Tabla de Usuarios Registrados"
+            })
         })
-    }
-};
+    
+    },
+     userToDelete: (req, res) => {
+        db.User.findByPk(req.params.id)
+        .then((user) => {
+                
+                res.render("admin/userProfileAdmin", {
+                    title: "Edicion de usuario",
+                    user,
+                    session: req.session
+                })
+            })
+            .catch(error => res.send(error));
+ 
+
+}}

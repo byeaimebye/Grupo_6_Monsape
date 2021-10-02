@@ -8,7 +8,11 @@ let {admin,
     edit,
     productEdit,
     productDelete,
-    usersTable } = require("../controllers/adminController");
+    usersTable,
+    userToDelete,
+userDelete,
+
+ } = require("../controllers/adminController");
     let adminSession = require('../middlewares/adminSession');
 
 
@@ -30,6 +34,11 @@ router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
+/*delete elimina usuarios el admin */
+router.get('/userProfileAdmin/:id', userToDelete)
+router.delete('/userProfileAdmin/:id', userDelete) 
+
+
 
 //-------------------Rutas de Admin Users-------------------------
 router.get('/usersTable', usersTable);
