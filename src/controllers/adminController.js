@@ -192,7 +192,8 @@ module.exports = {
             price,
             discount,
         } = req.body;
-        
+        /* res.send() */
+
         let wine = db.Wine.findByPk(req.params.id)
 
         let update = db.Wine.update({
@@ -223,12 +224,22 @@ module.exports = {
             }
         }).then(()=>{})
 
-        let create = variety.forEach(element => {
-            db.WineVariety.create({
+        let create = "";
+        
+        if(variety && Array.isArray(variety)){
+            create = variety.forEach(element => {
+                db.WineVariety.create({
+                    wine_id: +req.params.id,
+                    variety_id: +element
+                }).then(()=>{})
+            });
+
+        }else if(variety && !Array.isArray(variety)){
+            create = db.WineVariety.create({
                 wine_id: +req.params.id,
-                variety_id: +element
+                variety_id: variety
             }).then(()=>{})
-        });
+        }
 
         Promise.all([update, destroy, create, wine])
             .then(()=> {
