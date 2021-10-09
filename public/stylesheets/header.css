@@ -208,6 +208,11 @@ header.prueba .loginH #ing{
     justify-content: center;
     align-items: center;
     z-index: 1000;
+   
+}
+
+.modal a{
+    color: white;
 }
 
 header.prueba .modal-burger {
