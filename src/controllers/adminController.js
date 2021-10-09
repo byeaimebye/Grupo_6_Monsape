@@ -192,7 +192,9 @@ module.exports = {
             price,
             discount,
         } = req.body;
-        /* res.send(req.body); */
+        /* res.send() */
+
+        let wine = db.Wine.findByPk(req.params.id)
 
         let update = db.Wine.update({
             name,
@@ -207,7 +209,7 @@ module.exports = {
             service_temperature,
             price,
             discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : ""
+            image: req.file ? '/VinosJson/' + req.file.filename : wine.image
         },
             {
                 where: {
@@ -222,14 +224,24 @@ module.exports = {
             }
         }).then(()=>{})
 
-        let create = variety.forEach(element => {
-            db.WineVariety.create({
-                wine_id: +req.params.id,
-                variety_id: +element
-            }).then(()=>{})
-        });
+        let create = "";
+        
+        if(variety && Array.isArray(variety)){
+            create = variety.forEach(element => {
+                db.WineVariety.create({
+                    wine_id: +req.params.id,
+                    variety_id: +element
+                }).then(()=>{})
+            });
 
-        Promise.all([update, destroy, create])
+        }else if(variety && !Array.isArray(variety)){
+            create = db.WineVariety.create({
+                wine_id: +req.params.id,
+                variety_id: variety
+            }).then(()=>{})
+        }
+
+        Promise.all([update, destroy, create, wine])
             .then(()=> {
                 res.redirect('/admin/products')
             })
