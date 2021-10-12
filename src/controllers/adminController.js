@@ -289,7 +289,7 @@ module.exports = {
     },
     productDelete: (req, res) => {
 
-        db.Wine.findBy.pk(req.params.id)
+        db.Wine.findByPk(req.params.id)
             .then(wine => {
                 wine.destroy({
                     where: {id: wine.id}

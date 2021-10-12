@@ -56,46 +56,29 @@
                 <option value="precio-mayor">Precio: Mayor a Menor</option>
                 <option value="a-z">A - Z</option>
                 <option value="z-a">Z - A</option>
-                <option value="mas-nuevo">Más Nuevo al más Viejo</option>
-                <option value="mas-viejo">Más Viejo al más Nuevo</option>
             </select>            
         </div>
         <div class="categorias-principales">                
                 <ul class="category">
                     <li><a href="#">Categoría <i class="fas fa-chevron-down"></i></a>
                         <ul class="tipo">
-                            <li><a href="/products/category?keywords=Tinto">Tintos</a></li>
-                            <li><a href="/products/category?keywords=Blanco">Blancos</a></li>
-                            <li><a href="/products/category?keywords=Espumoso">Espumantes</a></li>
-                            <li><a href="/products/category?keywords=Rosado">Rosado</a></li>                            
+                            <li><a href="/products/search?keywords=Tinto">Tintos</a></li>
+                            <li><a href="/products/search?keywords=Blanco">Blancos</a></li>
+                            <li><a href="/products/search?keywords=Espumante">Espumantes</a></li>
+                            <li><a href="/products/search?keywords=Rosado">Rosado</a></li>                            
                         </ul>
                     </li>
                 </ul>
         </div>
     </div>    
     <!--MAIN-->
-    <main class="main-tienda">
-        <!--categorias de productos-->
-
-        <!-- <div class="categorias-principales">
-            <h5>Categorias principales</h5>
-            <ul>
-                <li><a href="/products/search?keywords=Tinto">Tintos</a></li>
-                <li><a href="/products/search?keywords=Blanco">Blancos</a></li>
-                <li><a href="/products/search?keywords=Espumoso">Espumantes</a></li>
-                <!-- <li>Gift Card</li> -->
-                <li><a href="/products/search?keywords=Rosado">Rosado</a></li>
-                <!-- <li>Box</li>
-                <li>Merchandising oficial</li> -->
-            </ul>
-        </div> -->
-   
+    <main class="main-tienda">   
         <section class="products">
             <% wines.forEach(wine => { %>
                 <article class="product-container">
                     <a href="/products/detail/<%- wine.id %>"><img class="imagen-producto" src="/img/<%= wine.image %> " alt="Imagen de vino Monsape"></a>                    
                     <div class="descuento-porcentaje">
-                        <p><%= wine.discount %>% OFF</p>
+                        <p><%= Math.trunc(wine.discount) %>% OFF</p>
                     </div>
                     <div class="caja-de-vino">
                         <img class="caja" src="/img/tienda/caja.svg" alt="caja de vino">
@@ -106,8 +89,8 @@
                         <h4 class="nombre-producto"><%= wine.name %> </h4>
                     </div>
                     <div class="descuento-y-precio">
-                        <span class="descuento">$<%= Math.round((100*wine.price)/(100-wine.discount)) %> </span>
-                        <span class="precio">$<%= wine.price %> </span>
+                        <span class="descuento">$<%= Math.round((100*wine.price)/(100-wine.discount))%> </span>
+                        <span class="precio">$<%= wine.price %></span>
                     </div>
                     <button class="agregar-producto-al-carrito">Agregar</button>
                 </article>
