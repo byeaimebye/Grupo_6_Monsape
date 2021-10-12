@@ -15,8 +15,8 @@
             <a href="/products/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
-            <% if(session.user){ %> 
-                <a href="/users/login">CARRITO DE COMPRAS/a>
+            <% if(session){ %> 
+                <a href="/users/login">CARRITO DE COMPRAS</a>
                 <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
             <a href="/users/register">REGISTRATE</a>
@@ -38,24 +38,35 @@
         </div>
     </a>
     <div class="linksLast">
-        <div class="linksLast">
+       
+         <% if(session.user){  %>
             <div class="loginH">
-                <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br>
-                    <p>Ingresá</p>
-                </button>
-                <div class="modal2" id="modalAdd2">
-                    <div class="modal-container2">
-                        <div class="close-modal2" onclick="closeModal2()">X</div>
-                        <h1>INICIAR SESION</h1>
-                        <label for="email">Ingrese su correo electronico:</label>
-                        <input type="email" name="tel" id="email">
-                        <label for="password">Ingrese su contraseña:</label>
-                        <input type="password" name="password" id="password">
-                        <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
-                        <button>INICIAR SESION</button>
+               <a href="/users/logout"><img class="logout" src="/img/banners/logout.png" alt=""> <br> <p>CERRAR SESION</p> </a> 
+            </div> 
+            <div class="perfil">
+                <a href="/users/profile"><img class="perfil" src="/img/banners/user.png" alt="" width="25px"><br>
+                <p>TU PERFIL</p></a> 
+             </div>
+            <% }else{ %> 
+                <div class="loginH">
+                    <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br>
+                        <p>Ingresá</p>
+                    </button>
+                    <div class="modal2" id="modalAdd2">
+                        <div class="modal-container2">
+                            <div class="close-modal2" onclick="closeModal2()">X</div>
+                            <h1>INICIAR SESION</h1>
+                            <label for="email">Ingrese su correo electronico:</label>
+                            <input type="email" name="tel" id="email">
+                            <label for="password">Ingrese su contraseña:</label>
+                            <input type="password" name="password" id="password">
+                            <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
+                            <button>INICIAR SESION</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <% } %> 
+
             <div class="carroDeCompras">
                 <input class="cart-data-drop-down" type="checkbox" name="cart-data-drop-down" id="cart-data-drop-down">
                 <label class="cart-data-label-drop-down" for="cart-data-drop-down"><img src="/img/carrito-de-compras (1) 1.svg"
@@ -65,7 +76,7 @@
                     </div>
                 </label>
             </div>
-        </div>
+        
 
     </div>
     <script src="/javascripts/header.js"></script>

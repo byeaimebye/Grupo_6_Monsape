@@ -40,12 +40,16 @@
             <div class="close-modal" onclick="closeModal()">X</div>
             <div class="ases">
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
-            <a href="/products/tienda#">TIENDA</a>
-            <a href="#">PRODUCTOS</a>
-            <a href="/politicaDeDevolucion">POLITICA DE DEVOLUCION</a>
+            <a href="/home">INICIO</a>
+            <a href="/products/tienda">PRODUCTOS</a>
+            <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
+            <% if(session){ %> 
+                <a href="/users/login">CARRITO DE COMPRAS</a>
+                <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
             <a href="/users/register">REGISTRATE</a>
+            <% } %> 
           </div>
             <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>

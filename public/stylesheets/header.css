@@ -111,6 +111,12 @@ header.prueba .loginH .modal .modal-conteiner>a {
     margin-bottom: 35px;
     font-weight: lighter;
 }
+.loginH p{
+    font-size: 10px;
+}
+.perfil p{
+    font-size: 10px;
+}
 
 header.prueba .loginH .modal .modal-conteiner .close-modal {
     background: rgba(0, 0, 0, 0.5);
@@ -172,7 +178,8 @@ header.prueba .linksLast{
     align-items: center;
     text-align: center;
     justify-content: space-around;
-    display: flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 header.prueba .linksLast a img{
     color: white;
@@ -193,6 +200,18 @@ header.prueba .linksLast  p{
 header.prueba .loginH #ing{
     background-color: transparent;
     display: none;
+}
+
+header.prueba .loginH img.logout{
+    width: 30px;
+}
+
+header.prueba .linkLast .perfil{
+    align-items: center;
+    justify-content: center;
+}
+header.prueba .linkLast .perfil img.perfil{
+    width: 20px;
 }
 /* Ventana modal  */
 
@@ -295,8 +314,8 @@ header.prueba .anclas .modal2 {
         header.prueba .loginH #ing img{
             width: 30px;
         }
-        header.prueba .cart-data-label-drop-down {
+        /* header.prueba .cart-data-label-drop-down {
             margin-left: 130px;
-        }
+        } */
     
 }
