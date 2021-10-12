@@ -15,8 +15,12 @@
             <a href="/products/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
+            <% if(session.user){ %> 
+                <a href="/users/login">CARRITO DE COMPRAS/a>
+                <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
             <a href="/users/register">REGISTRATE</a>
+            <% } %> 
             <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>
     </div>
