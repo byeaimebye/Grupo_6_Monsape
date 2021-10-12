@@ -6,43 +6,51 @@
     <%- include("../partials/header") %> 
     
     <!--frase-->
-    <div class="frase">
+    <div class="frase results">
         <h4>VINO PARA QUEDARSE</h4>
         <P>Bienvenidos a nuestra tienda. Estamos orgullosos de ofrecerle una amplia selección de los mejores vinos argentinos.</P>
         <!--linea horizontal-->
         <hr>
-    </div>    
-    <!--Filtro de productos-->
-    <br>
-    <br>
+    </div>
+    <!-- resultados de busqueda     -->
+    <div class="search-results">
+        <p>Resultados de tu búsqueda para:</p>
+        <div class="number-of-results">
+            <h3><%=search%></h3>
+            <p> <%= wines.length %> resultados</p>
+        </div>
+    </div>
+    
+
+ <!--Filtro de productos-->
+ <div class="filtros">
     <div class="filtro-de-productos">
         <span>Ordenar por: </span>
-        <select>       
-            <option value="mas-vendidos" selected>Más Vendidos</option>
+        <select>        
+            <option value="" selected></option>
+            <option value="mas-vendidos">Más Vendidos</option>
             <option value="precio-menor">Precio: Menor a Mayor</option>
             <option value="precio-mayor">Precio: Mayor a Menor</option>
             <option value="a-z">A - Z</option>
             <option value="z-a">Z - A</option>
-            <option value="mas-nuevo">Más Nuevo al más Viejo</option>
-            <option value="mas-viejo">Más Viejo al más Nuevo</option>
-        </select>
+        </select>            
     </div>
+    <div class="categorias-principales">                
+            <ul class="category">
+                <li><a href="#">Categoría <i class="fas fa-chevron-down"></i></a>
+                    <ul class="tipo">
+                        <li><a href="/products/search?keywords=Tinto">Tintos</a></li>
+                        <li><a href="/products/search?keywords=Blanco">Blancos</a></li>
+                        <li><a href="/products/search?keywords=Espumante">Espumantes</a></li>
+                        <li><a href="/products/search?keywords=Rosado">Rosado</a></li>                            
+                    </ul>
+                </li>
+            </ul>
+    </div>
+</div>
     <!--MAIN-->
     <main class="main-tienda">
-        <!--categorias de productos-->
-        <div class="categorias-principales">
-         
-            <h5>Categorias principales</h5>
-            <ul>
-                <li><a href="/products/search?keywords=Tinto">Tintos</a></li>
-                <li><a href="/products/search?keywords=Blanco">Blancos</a></li>
-                <li><a href="/products/search?keywords=Espumoso">Espumantes</a></li>
-                <li><a href="/products/search?keywords=Rosado">Rosado</a></li>
-                
-            </ul>
-        </div>
-        <section class="products">
-        
+        <section class="products">        
             <% wines.forEach(wine => { %>
                 <article class="product-container">
                     <a href="/products/detail/<%- wine.id %>"><img class="imagen-producto" src="/img/<%= wine.image %> " alt="Imagen de vino Monsape"></a>
@@ -66,7 +74,6 @@
             <% }) %>            
         </section>
     </main>
-
 
     <!--lo que ofrece Monsape-->
     <div class="monsape-ofrece">

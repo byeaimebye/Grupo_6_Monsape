@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
     WineVariety.associate = models => {
         WineVariety.belongsTo(models.Wine,{
-            foreignKey: "wine_id", //Acá deberia ir wine_id en singular, pero en la DB está distinto.
+            foreignKey: "wine_id",
         })
         WineVariety.belongsTo(models.Variety,{
             foreignKey: "variety_id",
