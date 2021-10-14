@@ -47,11 +47,11 @@ body.home{
 div.filtros{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     margin-bottom: 20px;
 }
 .filtro-de-productos{
-    margin: 0 0 10px 10px;
+    margin: 0 20px 10px 30px;
 }
 .filtro-de-productos span{
     font-weight: bolder;
@@ -63,8 +63,9 @@ div.filtros{
     height: 32px;
 }
 
+
 /* Filtrar por categoria */
-.filtros ul,
+/* .filtros ul,
 .tipo ul li{
     list-style: none;
 }
@@ -92,7 +93,7 @@ ul.tipo li{
 }
 ul.category:hover  ul.tipo{
     display:block;
-}
+} */
 
 /*-----------------------MAIN---------------------*/
 section.products{
@@ -110,13 +111,16 @@ section.products{
     align-items: center;
     position: relative;
     padding: 6px;
-    max-width: 320px;
+    width: 280px;
     margin-bottom: 25px;
 }
 /*imagen del producto*/
-.products .product-container .imagen-producto{
-    width: 14.5rem;
-    height: 14.5rem;
+.products .product-container a{
+    width: 96%;
+}
+ .imagen-producto{
+    width: 99%;
+    height: 15rem;
     border-radius: 4px;
     margin-bottom: 7px;
 }
@@ -291,10 +295,17 @@ section.carousel-container1{
     .filtro-de-productos{
         margin: 0 20px 10px 50px;
     }
+    .filtro-de-productos select{
+        height: 34px;
+        width: 180px;
+    }
+    .filtro-de-productos select option{
+        text-align: center;
+    }
     
     /* Filtrar por categoria */    
 
-    .categorias-principales ul.category{
+    /* .categorias-principales ul.category{
         background-color: rgba(169,169,169,0.8);
         padding: 7px 10px;
         border-radius: 2px;
@@ -317,21 +328,22 @@ section.carousel-container1{
     }
     ul.category:hover  ul.tipo{
         display:block;
-    }    
+    } */
+    /*-----------------------MAIN---------------------*/
+    /*producto y su descripcion (article)*/
+    .products .product-container{    
+        width: 270px;
+        margin-bottom: 25px;
+    }  
     
     /*-----------------------MAIN---------------------*/
     section.products{
-        width: 92%;
-        display: flex;
+        width: 96%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-    }
-    /*producto y su descripcion (article)*/
-    .products .product-container{
-        max-width: 350px;        
-        width: 44%;
-    }
+        margin-left: 10px;
+    }    
    
     .products .product-container .descripcion-producto .precio-por-caja{
         font-size: 14px;
@@ -395,21 +407,15 @@ section.carousel-container1{
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-   
-    /*filtro de productos*/
-
+    }  
+ 
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
     }
     /*producto y su descripcion (article)*/
     .products .product-container{       
-        width: 32%;
+        width: 246px;
     }
     /*lo que ofece monsape MOBILE*/
     .monsape-ofrece{
@@ -460,15 +466,10 @@ section.carousel-container1{
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
     }
     /*producto y su descripcion (article)*/
-    .products .product-container{
-        max-width: 350px;        
-        width: 24%;
+    .products .product-container{                
+        width: 240px;
     }
         
     /*SLIDER MOBILE*/
@@ -534,17 +535,14 @@ section.carousel-container1{
     .categorias-principales select option{
         font-size: 16px;
     }
-    /*categorias principales*/
-    /* .categorias-principales{
-        top: -40%;
-    } */
+    
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
     }
     /*producto y su descripcion (article)*/
     .products .product-container{
-        max-width: 350px;        
-        width: 19%;
+        max-width: 260px;        
+        width: 230px;
     }
 }   
