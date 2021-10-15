@@ -15,5 +15,7 @@ $agregar.addEventListener("click", ()=>{
     if(+add.quantity != 0){
         localStorage.setItem(localStorage.length + 1, JSON.stringify(add));
     }
+
+    
     
 });

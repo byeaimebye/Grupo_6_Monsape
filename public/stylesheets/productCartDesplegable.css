@@ -278,7 +278,7 @@
 }
 
 .cart-data-view-drop-down {
-    background-color: rgba(220,220,220,0.85);
+    background-color: rgba(220,220,220);
     height: 100%;
     left: 100%;
     overflow: auto;
