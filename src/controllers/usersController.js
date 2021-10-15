@@ -159,7 +159,8 @@ module.exports = {
             dni,
             tel,
             cp,
-            date
+            date,
+            address
         } = req.body;
 
         db.User.update({
@@ -170,6 +171,7 @@ module.exports = {
             tel: tel ? tel : user.tel,
             cp: cp ? cp : user.cp,
             date: date ? date : user.date,
+            address: address ? address: user.address,
             rol: user.rol,
             avatar: req.file ? 'users/' + req.file.filename : user.avatar,
         }, {

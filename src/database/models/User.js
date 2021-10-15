@@ -39,6 +39,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         cp: {
             type: DataTypes.STRING(10)
+        },
+        address: {
+            type: DataTypes.TEXT
         }
     }
     let config = {

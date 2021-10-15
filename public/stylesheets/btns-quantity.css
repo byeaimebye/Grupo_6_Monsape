@@ -1,0 +1,33 @@
+
+/* .main-productCart .section-productCart article */ .cant {
+    background-color: rgb(194, 194, 194);
+    border: solid 1px var(--color-rojoVino);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 25px;
+    width: 110px;
+}
+
+/* .main-productCart .section-productCart article .cant #buttons {
+    border: none;
+    font-size: 20px;
+    height: fit-content;
+} */
+
+.menos {
+    border-radius: 15px 0 0 15px;
+}
+
+.mas {
+    border-radius: 0 15px 15px 0;
+}
+
+/* .main-productCart .section-productCart article .cant */ .cantidad {
+    border-left: solid 1px var(--color-rojoVino);
+    border-right: solid 1px var(--color-rojoVino);
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
