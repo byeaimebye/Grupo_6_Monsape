@@ -38,6 +38,7 @@
         font-size: 22px;
     }
  main.about .second{
+     background-color:rgba(1, 1, 1, 0.4) ;
      width: 100%;
      text-align: center;
      display: flex;
@@ -64,6 +65,7 @@
      text-align: center;
  }
  main.about .history p{
+     background-color: rgba(196, 196, 196, 0.4);
      line-height: 190%;
      padding: 20px;
  }
