@@ -61,8 +61,11 @@ window.addEventListener("load", () => {
         })
 
     } else {
-        $articles.innerHTML = `<h3>Tu carrito está vacío</h3>
-        <a href="/products/tienda"><p>Ir a la tienda</p></a>`;
+        $articles.innerHTML = `
+        <div class="container-not-found">
+            <h3 class="msg-cart-not-found">Tu carrito está vacío</h3>
+            <a href="/products/tienda"><p class="p-go-to-store">Ir a la tienda</p></a>
+        </div>`;
     }
 
 

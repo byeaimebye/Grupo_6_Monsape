@@ -32,8 +32,9 @@
 .main-ingreso .difu .monsape .monsape-title {
     font-weight: 100;
     font-family: 'Rosarivo', serif;
-    color: white;
-    font-size: 40px;
+    color: white;/* 
+    font-size: 40px; */
+    font-size: 30px;
     text-align: center;
     margin-bottom: 10px;
     justify-content: center;
@@ -42,16 +43,18 @@
 .main-ingreso .difu .welcome {
     font-weight: 100;
     font-family: 'Rosarivo', serif;
-    color: white;
-    font-size: 20px;
+    color: white;/* 
+    font-size: 20px; */
+    font-size: 16px;
     margin-top: 45px;
     text-align: center;
 }
 
 .main-ingreso .difu .monsape .logo-svg img {
     margin-top: 100px;
-    text-align: center;
-    width: 220px;
+    text-align: center;/* 
+    width: 220px; */
+    width: 160px;
 }
 
 .main-ingreso .difu .year {
@@ -93,8 +96,9 @@
     cursor: pointer;
     font-weight: bold;
     height: 2.2rem;
-    text-transform: uppercase;
-    width: 20rem; 
+    text-transform: uppercase;/* 
+    width: 20rem;  */
+    width: 12rem;
     margin-bottom: 8px;
 }
 
@@ -109,8 +113,9 @@
 .main-ingreso .difu .year .adn {
     font-weight: 100;
     font-family: 'Rosarivo', serif;
-    color: white;
-    font-size: 15px;
+    color: white;/* 
+    font-size: 15px; */
+    font-size: 12px;
     padding-bottom: 10px;
 }
 
@@ -120,5 +125,27 @@
     .main-ingreso .difu {
         max-width: 768px;
         margin: 0 2%;
+    }
+}
+
+@media(min-width: 1200px) {
+    .main-ingreso .difu .welcome {
+        font-size: 20px;
+    }
+
+    .main-ingreso .difu .monsape .logo-svg img {
+        width: 220px;
+    }
+
+    .main-ingreso .difu .monsape .monsape-title {
+        font-size: 40px;
+    }
+
+    .main-ingreso .difu .year .adn {
+        font-size: 15px;
+    }
+
+    .main-ingreso .difu #ing {
+        width: 20rem;
     }
 }

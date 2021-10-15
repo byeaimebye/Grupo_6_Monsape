@@ -4,9 +4,11 @@
     border: solid 1px var(--color-rojoVino);
     border-radius: 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;/* 
+    grid-area: cant; */
     height: 25px;
     width: 110px;
+
 }
 
 /* .main-productCart .section-productCart article .cant #buttons {

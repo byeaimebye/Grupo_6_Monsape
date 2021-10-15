@@ -11,7 +11,9 @@
         <h2 class="title-p border-prueba"><%= detail.name %></h2>
         <h4 class="variedad border-prueba"><%= varieties %></h4>
         <p class="price border-prueba">$<%= detail.price %></p>
-        <%- include("../partials/btns-quantity") %> 
+        <div class="cant">
+            <%- include("../partials/btns-quantity") %> 
+        </div>
         <p class="description border-prueba"><%= detail.description %></p>
         <p class="maridaje"><b>Maridaje: </b><%= detail.pairing %></p>
             <button type="submit" class="btn-button agregar border-prueba">Agregar</button>
