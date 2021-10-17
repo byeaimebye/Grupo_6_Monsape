@@ -18,27 +18,7 @@
                     <p>SUBTOTAL</p>
                 </div>
                 <!-- Articulos -->
-                <% for(let i=0; i < 4; i++){ %>
-                    <article class="art-cart">
-                        <div class="wine-x"><img src="/img/carrito1.jpg" alt=""></div>
-                        <div class="detail">
-                            <p id="nombre">Nombre del vino</p>
-                            <p id="precio">$2.500</p>
-                            <div class="cant">
-                                <input type="button" name="menos" id="buttons" class="menos"
-                                    value="-">
-                                <input type="text" name="cantidad" id="cantidad" class="cantidad"
-                                    value="0">
-                                <input type="button" name="mas" id="buttons" class="mas" value="+">
-                            </div>
-        
-                        </div>
-                        <div class="subtotal">
-                            <p>$2.500</p>
-                            <img class="tachito" src="/img/tachito.png" alt="carrito">
-                        </div>
-                    </article>
-                    <% } %>
+                <div id="articles"></div>
                         <!-- Subtotal (sin envío) -->
                         <div class="sub-sin-envio">
                             <p>Subtotal:</p>
@@ -73,6 +53,8 @@
         <!--FOOTER-->
         <%- include("../partials/footer.ejs")%>
     </body>
+    <script src="/javascripts/productCartFunctionalities.js" defer></script>
+    <script id="btns-quantity" src="/javascripts/btns-quantity-products-script.js" defer></script>
 </html>
 
 

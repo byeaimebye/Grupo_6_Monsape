@@ -11,11 +11,12 @@
 }
 
 .main-productCart {
-    background-color: rgba(220, 220, 220, 0.7)/* rgba(169,169,169,0.6) */;
+    background-color: rgba(220, 220, 220, 0.8)/* rgba(169,169,169,0.6) */;
     height: auto;
     margin: 0 auto 50px;
     padding: 20px 10px;
-    width: 800px;
+    width: 85%;
+    max-width: 900px;
 }
 
 .main-productCart .section-productCart {
@@ -71,41 +72,10 @@
 }
 
 .main-productCart .section-productCart article .detail p {
-    font-size: 17px;
+    /* font-size: 17px; */
+    font-size: 15px;
 }
 
-.main-productCart .section-productCart article .cant {
-    background-color: rgb(194, 194, 194);
-    border: solid 1px var(--color-rojoVino);
-    border-radius: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 25px;
-    width: 110px;
-}
-
-/* .main-productCart .section-productCart article .cant #buttons {
-    border: none;
-    font-size: 20px;
-    height: fit-content;
-} */
-
-.menos {
-    border-radius: 15px 0 0 15px;
-}
-
-.mas {
-    border-radius: 0 15px 15px 0;
-}
-
-.main-productCart .section-productCart article .cant .cantidad {
-    border-left: solid 1px var(--color-rojoVino);
-    border-right: solid 1px var(--color-rojoVino);
-    font-size: 20px;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-}
 
 .main-productCart .section-productCart article .subtotal {
     /* 
@@ -131,14 +101,15 @@
 }
 
 .main-productCart .section-productCart .sub-sin-envio {
-    display: grid;
-    gap: 200px;
+    display: grid;/* 
+    gap: 200px; */
     grid-template-columns: 1fr 1fr;
     margin: 15px;
 }
 
 .main-productCart .section-productCart .sub-sin-envio p {
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 17px;
     text-align: center;
 }
 
@@ -242,6 +213,26 @@
     font-weight: bolder;
 }
 
+#btns-quantity {
+    display: none;
+}
+
+.container-not-found{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.msg-cart-not-found {
+    text-align: center;
+}
+
+.p-go-to-store {
+    text-align: center;
+}
+
 @media(min-width: 580px){
     .main-productCart .section-productCart article .wine-x {
         height: 159px;
@@ -252,5 +243,19 @@
 @media(min-width: 768px){
     .main-productCart .section-productCart .fin {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 1200px){
+    .main-productCart .section-productCart article .detail p {
+        font-size: 17px;
+    }
+
+    .main-productCart .section-productCart .sub-sin-envio {
+        gap: 200px;
+    }
+
+    .main-productCart .section-productCart .sub-sin-envio p {
+         font-size: 20px;
     }
 }

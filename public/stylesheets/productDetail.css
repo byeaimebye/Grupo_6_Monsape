@@ -2,17 +2,13 @@ body {
     background-color: gainsboro;
 }
 
-/* .border-prueba {
-    border: solid 2px;
-} */
-
 .main-prueba {
     align-items: center;
-    background-color: rgba(169,169,169,0.6);
+    background-color: rgba(169,169,169,0.7);
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.1fr 0.2fr 0.1fr 0.2fr 0.1fr 0.8fr 0.2fr 0.1fr;
-    grid-template-areas: 
+    grid-template-rows: 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr 0.1fr;
+    grid-template-areas:
     "img-prueba img-prueba img-prueba img-prueba"
     "collection collection collection collection"
     "title-p title-p title-p title-p"
@@ -25,8 +21,8 @@ body {
     "ver-mas ver-mas ver-mas ver-mas" 
     "confirmar confirmar confirmar confirmar";
     
-    margin: 30px;
-    padding: 10px 5px 5px 0;
+    margin: 20px;
+    padding: 10px 20px 5px;
     text-align: center;
 
 }
@@ -59,34 +55,6 @@ body {
     grid-area: price;
     margin: 10px auto 5px;
 }
-.cant {/* 
-    border: solid 1px rgba(66, 66, 66, 0.7); */
-    border-radius: 1.5rem;
-    box-shadow: 0 0 15px rgba(66, 66, 66, 0.7);
-    display: flex;
-    grid-area: cant;
-    height: 25px;
-    margin: 10px auto 10px;
-    width: 100px;
-}
-.btns {
-    width: 100px;
-    font-size: 20px;
-}
-.menos-detail {
-    border-radius: 15px 0 0 15px;
-}
-
-.mas-detail {
-    border-radius: 0 15px 15px 0;
-}
-.cantidad {
-    border-left: solid 1px rgba(66, 66, 66, 0.7);
-    border-right: solid 1px rgba(66, 66, 66, 0.7);
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-}
 
 .description {/* 
     background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent); */
@@ -103,6 +71,11 @@ body {
 }
 .maridaje > b{
     color: var(--color-rojoVino);
+}
+
+.cant {
+    grid-area: cant;
+    margin: 0 auto;
 }
 
 .agregar {
@@ -173,6 +146,7 @@ body {
         "img-prueba img-prueba maridaje maridaje"
         "img-prueba img-prueba agregar ver-mas"
         "confirmar confirmar confirmar confirmar";
+        padding: 20px 20px 5px;
         text-align: center;
     
     }
@@ -181,8 +155,9 @@ body {
         display: block;
     }
 
-    .img-prueba {
-        margin-bottom: 50px;
+    .img-prueba {/* 
+        margin-bottom: 50px; */
+        margin: 86px auto;
     }
     
     .price,
@@ -191,6 +166,15 @@ body {
     .btn-button,
     .confirmar {
         margin: 0 auto;
+    }
+
+    .btn-button {
+        margin: 10px;
+    }
+
+    .description,
+    .maridaje{
+        margin-left: 25px;
     }
 
     .maridaje {
@@ -205,8 +189,8 @@ body {
 
 @media (min-width: 1200px) {
     .main-prueba {
-        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.3fr 0.5fr 0.3fr 0.3fr 0.2fr;
-        gap:10px;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 0.2fr;
+        /* gap:10px; */
     }
 
     .img-prueba > img{
@@ -242,7 +226,6 @@ body {
 
     .variedad {
         font-size: 18px;
-        margin-bottom: 30px;
     }
 
     .btn-button {

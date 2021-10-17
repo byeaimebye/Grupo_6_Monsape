@@ -12,9 +12,7 @@
         <h4 class="variedad border-prueba"><%= varieties %></h4>
         <p class="price border-prueba">$<%= detail.price %></p>
         <div class="cant">
-            <input type="button" name="menos" class="menos-detail btns" value="-">
-            <input type="text" name="cantidad" class="cantidad" value="0">
-            <input type="button" name="mas" class="mas-detail btns" value="+">
+            <%- include("../partials/btns-quantity") %> 
         </div>
         <p class="description border-prueba"><%= detail.description %></p>
         <p class="maridaje"><b>Maridaje: </b><%= detail.pairing %></p>
@@ -27,4 +25,5 @@
     <%- include("../partials/monsape-ofrece") %>
     <%- include("../partials/footer") %> 
 </body>
+    <script src="/javascripts/btnAddProductDetail.js" defer></script>
 </html>

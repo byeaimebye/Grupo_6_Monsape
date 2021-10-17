@@ -43,8 +43,8 @@ module.exports = {
             }) //element me va a traer el nombre de la variedad que tiene el vino. con la funcion map
 
             res.render("product/productDetail", {
-             varieties: varieties.join(" , "),
-             title: "Tienda",
+             varieties: varieties.join(", "),
+             title: detail.name,
              detail: detail,
              session: req.session,
          })
@@ -63,7 +63,11 @@ module.exports = {
 
         let cargaDeProducto = [];
 
+<<<<<<< HEAD
         res.render("product/productCart", {title: "Carrito de compras", session:req.session});
+=======
+        res.render("product/productCart", {title: "Carrito de compras", session: req.session});
+>>>>>>> 82446c0b09360f269ff95781b8bb9e342250eaf7
     },
     search: (req, res) => {
 
