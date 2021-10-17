@@ -63,7 +63,7 @@ module.exports = {
 
         let cargaDeProducto = [];
 
-        res.render("product/productCart", {title: "Carrito de compras"});
+        res.render("product/productCart", {title: "Carrito de compras", session:req.session});
     },
     search: (req, res) => {
 
