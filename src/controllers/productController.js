@@ -71,7 +71,7 @@ module.exports = {
                 writeCartsJSON(cart);
                 res.redirect("/products/tienda");
             })
-
+        res.render("product/productCart", {title: "Carrito de compras", session:req.session});
     },
     search: (req, res) => {
 
