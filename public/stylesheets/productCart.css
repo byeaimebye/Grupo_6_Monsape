@@ -195,7 +195,7 @@
 
 .main-productCart .section-productCart .fin #compra {
     background-color: var(--color-rojoVino);
-    border-radius: 1.5rem; 
+    border-radius: 1.5rem;
     box-shadow: 0 0 15px rgba(66, 66, 66, 0.7);
     color: white;
     cursor: pointer;

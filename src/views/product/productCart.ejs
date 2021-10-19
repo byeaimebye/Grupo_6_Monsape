@@ -18,7 +18,9 @@
                     <p>SUBTOTAL</p>
                 </div>
                 <!-- Articulos -->
-                <div id="articles"></div>
+                <div id="articles">
+                            <!-- <script id="btns-quantity" src="/javascripts/btns-quantity-products-script.js" defer></script> -->
+                </div>
                         <!-- Subtotal (sin envío) -->
                         <div class="sub-sin-envio">
                             <p>Subtotal:</p>
@@ -44,7 +46,7 @@
                             <h4>$5.000</h4>
                         </div>
                         <div class="fin">
-                            <input type="button" name="mas" id="mas" value="Ver más productos">
+                            <a href="/products/tienda"><input type="button" name="mas" id="mas" value="Ver más productos"></a>
                             <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
                         </div>
             </section>
@@ -54,7 +56,6 @@
         <%- include("../partials/footer.ejs")%>
     </body>
     <script src="/javascripts/productCartFunctionalities.js" defer></script>
-    <script id="btns-quantity" src="/javascripts/btns-quantity-products-script.js" defer></script>
 </html>
 
 

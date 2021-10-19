@@ -7,15 +7,15 @@
         <div class="img-prueba border-prueba">
             <img  src="/img/<%= detail.image %>" alt="img-prueba">
         </div>
-        <h3 class="collection border-prueba"><%= detail.collection.name %></h3>
-        <h2 class="title-p border-prueba"><%= detail.name %></h2>
-        <h4 class="variedad border-prueba"><%= varieties %></h4>
-        <p class="price border-prueba">$<%= detail.price %></p>
+        <h3 name="collection" class="collection border-prueba"><%= detail.collection.name %></h3>
+        <h2 name="name" class="title-p border-prueba"><%= detail.name %></h2>
+        <h4 name="variety" class="variedad border-prueba"><%= varieties %></h4>
+        <p name="price" class="price border-prueba">$<%= detail.price %></p>
         <div class="cant">
             <%- include("../partials/btns-quantity") %> 
         </div>
-        <p class="description border-prueba"><%= detail.description %></p>
-        <p class="maridaje"><b>Maridaje: </b><%= detail.pairing %></p>
+        <p name="description" class="description border-prueba"><%= detail.description %></p>
+        <p name="pairing" class="maridaje"><b>Maridaje: </b><%= detail.pairing %></p>
             <button type="submit" class="btn-button agregar border-prueba">Agregar</button>
             <button type="button" class="btn-button ver-mas border-prueba">Ver mas</button>
             <button type="submit" class="confirmar border-prueba">Confirmar</button>

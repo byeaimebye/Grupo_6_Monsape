@@ -1,4 +1,4 @@
-const {vinos} = require("../data/db");
+const {vinos, cart, writeCartsJSON} = require("../data/db");
 const db = require('../database/models');
 const {Op} = require('sequelize');
 
@@ -61,9 +61,17 @@ module.exports = {
     /* Trae los datos necesarios para el carrito de compras. */
     productCart : (req, res) =>{
 
-        let cargaDeProducto = [];
+        res.render("product/productCart", {title: "Carrito de compras", session: req.session, cart});
+    },
+    addToCart: (req, res)=>{
+        db.Wine.findByPk(+req.params.id)
+            .then(wine => {
+                let add = {name: wine.name, price: wine.price, quantity: req.body.cantidad, image: wine.image};
+                cart.push(add);
+                writeCartsJSON(cart);
+                res.redirect("/products/tienda");
+            })
 
-        res.render("product/productCart", {title: "Carrito de compras", session: req.session});
     },
     search: (req, res) => {
 
