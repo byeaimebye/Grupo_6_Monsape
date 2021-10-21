@@ -155,7 +155,7 @@ module.exports = {
         let {
             fullname,
             email,
-            password,
+            pass,
             dni,
             tel,
             cp,
@@ -166,7 +166,7 @@ module.exports = {
         db.User.update({
             fullname: fullname ? fullname : user.fullname,
             email: email ? email : req.session.user.email,
-            password: password ? bcrypt.hashSync(password, 10) : user.password,
+            password: pass ? bcrypt.hashSync(pass, 10) : user.password,
             dni: dni ? dni : user.email,
             tel: tel ? tel : user.tel,
             cp: cp ? cp : user.cp,
@@ -180,6 +180,7 @@ module.exports = {
             .then(() => {
                 res.redirect("/users/profile");
             })
+            .catch(err=> res.send(err));
 
 
 

@@ -224,40 +224,13 @@
     margin-bottom: 15px;
 }
 
-.fa-info-circle{
-    color: darkred;
-    display: none;
-    position: absolute;
-    right: 8px;
-    top: 6px;
-}
-.fa-check-circle{
-    color: green;
-    display: none;
-    position: absolute;
-    right: 8px;
-    top: 6px;
-}
-
 .small-form-profile{
     display: none;
     left: 8px;
     position: absolute;
 }
 
-.error {
-    border: solid 1px darkred;
-    color: darkred;
-}
 
-.valid{
-    border: solid 1px green;
-}
-
-.warning {
-    border: solid 1px orangered;
-    color: orangered;
-}
 
 @media (min-width:768px){
     .main-profile form {/* 
