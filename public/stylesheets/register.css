@@ -141,6 +141,10 @@ label {
 .register .check{ /*especificidad*/
     width: 100%;
 }
+.div-register-profile{
+    position: relative;
+    margin-bottom: 15px;
+}
 
 /*Media queries*/
 /*Tablet*/
