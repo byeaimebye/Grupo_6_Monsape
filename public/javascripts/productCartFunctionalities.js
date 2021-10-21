@@ -12,12 +12,12 @@ window.addEventListener("load", () => {
             for (let i = 1; i <= localStorage.length; i++) {
 
                 article += `
-                <article class="art-cart">
+                <article class="art-cart" id="${JSON.parse(localStorage.getItem(i)).id}">
                                 <div class="wine-x"><img src="${JSON.parse(localStorage.getItem(i)).image}" alt=""></div>
                                 <div class="detail">
                                     <p id="nombre">${JSON.parse(localStorage.getItem(i)).title}</p>
                                     <p id="precio">${JSON.parse(localStorage.getItem(i)).price}</p>
-                                    <div class="cant">
+                                    <div class="cant" id="${JSON.parse(localStorage.getItem(i)).id}">
                                         <input type="button" name="menos" id="buttons" class="menos"
                                         value="-">
                                         <input type="text" name="cantidad" id="cantidad" class="cantidad"
@@ -64,7 +64,5 @@ window.addEventListener("load", () => {
             <a href="/products/tienda"><p class="p-go-to-store">Ir a la tienda</p></a>
         </div>`;
     }
-
-
 
 })

@@ -6,6 +6,7 @@ $quantity = document.querySelector(".cantidad");
 
 $agregar.addEventListener("click", ()=>{
     let add = {
+        id: localStorage.length + 1,
         title: $title.innerText,
         image: $img.src,
         price: $price.innerText,

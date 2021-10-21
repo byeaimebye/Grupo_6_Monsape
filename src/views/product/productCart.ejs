@@ -19,14 +19,13 @@
                 </div>
                 <!-- Articulos -->
                 <div id="articles">
-                            <!-- <script id="btns-quantity" src="/javascripts/btns-quantity-products-script.js" defer></script> -->
                 </div>
-                        <!-- Subtotal (sin envío) -->
-                        <div class="sub-sin-envio">
-                            <p>Subtotal:</p>
-                            <p>$0</p>
-                        </div>
-                        <!-- Métodos de envío -->
+                <!-- Subtotal (sin envío) -->
+                <div class="sub-sin-envio">
+                    <p>Subtotal:</p>
+                    <p>$0</p>
+                </div>
+                <!-- Métodos de envío -->
                         <form action="" method="GET">
                             <div class="met-envio">
                                 <p><img src="/img/camioncito.png" alt="camioncito"> Métodos de
@@ -34,13 +33,13 @@
                                 </p>
                                 <div class="calcular">
                                     <input type="text" name="codigo-postal" id="codigo-postal"
-                                        placeholder="Tu código postal">
+                                    placeholder="Tu código postal">
                                     <input type="button" name="calcular" id="calcular"
-                                        value="CALCULAR">
+                                    value="CALCULAR">
                                 </div>
                             </div>
                         </form>
-        
+                        
                         <div class="total">
                             <h4>Total:</h4>
                             <h4>$5.000</h4>
@@ -49,12 +48,13 @@
                             <a href="/products/tienda"><input type="button" name="mas" id="mas" value="Ver más productos"></a>
                             <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
                         </div>
-            </section>
-        </main>
-
-        <!--FOOTER-->
-        <%- include("../partials/footer.ejs")%>
-    </body>
+                    </section>
+                </main>
+                
+                <!--FOOTER-->
+                <%- include("../partials/footer.ejs")%>
+            </body>
+    <script id="btns-quantity" src="/javascripts/btns-quantity-products-script.js" defer></script>
     <script src="/javascripts/productCartFunctionalities.js" defer></script>
 </html>
 

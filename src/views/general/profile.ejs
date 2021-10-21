@@ -13,33 +13,56 @@
                         <img src="/img/<%= user.avatar?user.avatar:" users/default-avatar.jpg"%>" alt="avatar">
                         <input class="input-avatar-profile" type="file" name="avatar" disabled>
                     </div>
+
                     <label id="lbl-fullname-profile" class="lbl-form-profile" for="fullname">Nombre y apellido</label>
-                    <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
-                        value="<%= user.fullname?user.fullname:""%>" disabled>
+                    <div class="div-fullname-profile div-form-profile">
+                        <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
+                            value="<%= user.fullname?user.fullname:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="nameErrors"></small>
+                    </div>
 
                     <label id="lbl-email-profile" class="lbl-form-profile" for="email">Email</label>
-                    <input id="input-email-profile" class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com"
-                        value=<%=user.email?user.email:""%> disabled>
+                    <div class="div-email-profile div-form-profile">
+                        <input id="input-email-profile" class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com"
+                            value="<%=user.email?user.email:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="emailErrors"></small>
+                    </div>
 
                     <label id="lbl-dni-profile" class="lbl-form-profile" for="dni">Documento</label>
-                    <input id="input-dni-profile" class="input-form-profile" type="text" name="dni" placeholder="Documento"
-                        value=<%=user.dni?user.dni:""%> disabled>
+                    <div class="div-dni-profile div-form-profile">
+                        <input id="input-dni-profile" class="input-form-profile" type="text" name="dni" placeholder="Documento"
+                            value="<%=user.dni?user.dni:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="dniErrors"></small>
+                    </div>
 
                     <label id="lbl-tel-profile" class="lbl-form-profile" for="tel">Teléfono</label>
-                    <input id="input-tel-profile" class="input-form-profile" type="text" name="tel" placeholder="Teléfono"
-                        value=<%=user.tel?user.tel:""%> disabled>
+                    <div class="div-tel-profile div-form-profile">
+                        <input id="input-tel-profile" class="input-form-profile" type="text" name="tel" placeholder="Teléfono"
+                            value="<%=user.tel?user.tel:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="telErrors"></small>
+                    </div>
 
                     <label id="lbl-cp-profile" class="lbl-form-profile" for="cp">Código Postal</label>
-                    <input id="input-cp-profile" class="input-form-profile" type="text" name="cp" placeholder="Código Postal"
-                        value=<%=user.cp?user.cp:""%> disabled>
+                    <div class="div-cp-profile div-form-profile">
+                        <input id="input-cp-profile" class="input-form-profile" type="text" name="cp" placeholder="Código Postal"
+                            value="<%=user.cp?user.cp:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="cpErrors"></small>
+                    </div>
 
                     <label id="lbl-date-profile" class="lbl-form-profile" for="date">Fecha de nacimiento</label>
-                    <input id="input-date-profile" class="input-form-profile input-date-form-profile" type="date" name="date"
-                        value=<%=user.date?user.date:""%> disabled>
+                    <div class="div-date-profile div-form-profile">
+                        <input id="input-date-profile" class="input-form-profile input-date-form-profile" type="date" name="date"
+                            value="<%=user.date?user.date:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="dateErrors"></small>
+                    </div>
 
                     <label id="lbl-address-profile" class="lbl-form-profile" for="address">Domicilio</label>
-                    <textarea name="address" id="txtarea-address" disabled><%=user.address?user.address:""%></textarea>
-
+                    <div class="div-address-profile div-form-profile">
+                        <textarea name="address" class="txtarea-address" disabled><%=user.address?user.address:""%></textarea>
+                        <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <small class="small-form-profile" id="addressErrors"></small>
+                    </div>
+                    
                     <button id="edit" class="btn-form-profile" type="button" name="btn-profile">Editar</button>
                     <button id="accept" class="" type="submit" name="btn-profile">Aceptar</button>
                     <button id="cancel" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button>
