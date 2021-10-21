@@ -4,14 +4,18 @@
     display: grid;
     gap: 8px;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.6fr 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.6fr 0.1fr 0.1fr 0.1fr;
     grid-template-areas: 
     "h1-profile" 
     "avatar-profile" 
     "lbl-fullname-profile" 
     "div-fullname-profile" 
     "lbl-email-profile" 
-    "div-email-profile" 
+    "div-email-profile"
+    "lbl-pass-profile" 
+    "div-pass-profile"
+    "lbl-rePass-profile" 
+    "div-rePass-profile"
     "lbl-dni-profile" 
     "div-dni-profile" 
     "lbl-tel-profile" 
@@ -76,6 +80,22 @@
 } 
 .div-email-profile {
     grid-area: div-email-profile;
+    
+} 
+#lbl-pass-profile{
+    grid-area: lbl-pass-profile;
+
+} 
+.div-pass-profile {
+    grid-area: div-pass-profile;
+    
+} 
+#lbl-rePass-profile{
+    grid-area: lbl-rePass-profile;
+
+} 
+.div-rePass-profile {
+    grid-area: div-rePass-profile;
     
 } 
 #lbl-dni-profile{
@@ -201,6 +221,7 @@
 .div-form-profile{/* 
     border: solid 2px green; */
     position: relative;
+    margin-bottom: 15px;
 }
 
 .fa-info-circle{
@@ -222,7 +243,6 @@
     display: none;
     left: 8px;
     position: absolute;
-    top: 6px;
 }
 
 .error {
@@ -245,12 +265,14 @@
         display: grid;
         gap: 8px; */
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.6fr 0.1fr;
+        grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.6fr 0.1fr;
         grid-template-areas: 
         "h1-profile h1-profile h1-profile h1-profile h1-profile h1-profile h1-profile h1-profile" 
         "avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile" 
         "lbl-fullname-profile lbl-fullname-profile lbl-fullname-profile lbl-fullname-profile lbl-email-profile lbl-email-profile lbl-email-profile lbl-email-profile"
         "div-fullname-profile div-fullname-profile div-fullname-profile div-fullname-profile div-email-profile div-email-profile div-email-profile div-email-profile" 
+        "lbl-pass-profile lbl-pass-profile lbl-pass-profile lbl-pass-profile lbl-rePass-profile lbl-rePass-profile lbl-rePass-profile lbl-rePass-profile"
+        "div-pass-profile div-pass-profile div-pass-profile div-pass-profile div-rePass-profile div-rePass-profile div-rePass-profile div-rePass-profile" 
         "lbl-dni-profile lbl-dni-profile lbl-tel-profile lbl-tel-profile lbl-cp-profile lbl-cp-profile lbl-date-profile lbl-date-profile"
         "div-dni-profile div-dni-profile div-tel-profile div-tel-profile div-cp-profile div-cp-profile div-date-profile div-date-profile" 
         "lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile" 

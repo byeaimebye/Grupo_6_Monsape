@@ -1,33 +1,36 @@
 window.addEventListener("load", () => {
     //Capturando campos...
-    let _edit = document.querySelector("#edit");
-    let _cancel = document.querySelector("#cancel");
-    let _accept = document.querySelector("#accept");
-    let _inputs = document.querySelectorAll("input");//Contiene todos los inputs.
-    let _form = document.querySelector(".main-profile form");
+    let _edit = document.querySelector("#edit"),
+        _cancel = document.querySelector("#cancel"),
+        _accept = document.querySelector("#accept"),
+        _inputs = document.querySelectorAll("input"),//Contiene todos los inputs.
+        _form = document.querySelector(".main-profile form"),
     //inputs capturados individualmente.
-    let _fullname = document.querySelector("#input-fullname-profile");
-    let _email = document.querySelector("#input-email-profile");
-    let _dni = document.querySelector("#input-dni-profile");
-    let _tel = document.querySelector("#input-tel-profile");
-    let _cp = document.querySelector("#input-cp-profile");
-    let _date = document.querySelector("#input-date-profile");
-    let _address = document.querySelector(".txtarea-address");
+        _fullname = document.querySelector("#input-fullname-profile"),
+        _email = document.querySelector("#input-email-profile"),
+        _pass = document.querySelector("#input-pass-profile"),
+        _rePass = document.querySelector("#input-rePass-profile"),
+        _dni = document.querySelector("#input-dni-profile"),
+        _tel = document.querySelector("#input-tel-profile"),
+        _cp = document.querySelector("#input-cp-profile"),
+        _date = document.querySelector("#input-date-profile"),
+        _address = document.querySelector(".txtarea-address"),
     //errors
-    let _allErrors = document.querySelectorAll(".small-form-profile")
-    _fullnameErrors = document.querySelector("#nameErrors"),
+        _allErrors = document.querySelectorAll(".small-form-profile")
+        _fullnameErrors = document.querySelector("#nameErrors"),
         _emailErrors = document.querySelector("#emailErrors"),
+        _passErrors = document.querySelector("#passErrors"),
+        _rePassErrors = document.querySelector("#rePassErrors"),
         _dniErrors = document.querySelector("#dniErrors"),
         _telErrors = document.querySelector("#telErrors"),
         _cpErrors = document.querySelector("#cpErrors"),
         _dateErrors = document.querySelector("#dateErrors"),
-        _addressErrors = document.querySelector("#addressErrors");
+        _addressErrors = document.querySelector("#addressErrors"),
     //Expresiones regulares.
-    let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+        regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExDNI = /^[0-9]{7,8}$/,
         regExTEL = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-        regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/,
         regExCP = /^[0-9]{4,8}$/;
 
     //Evento que desbloquea los campos del formulario al presionar el botón 'editar'.
@@ -36,16 +39,21 @@ window.addEventListener("load", () => {
             input.disabled = false;
         }
         _address.disabled = false;
-
-        console.log("hola")
     });
     //Evento que bloquea los campos del formulario al presionar el botón 'cancelar'.
     _cancel.addEventListener("click", () => {
         //Bloqueando inputs...
+        //Removiendo clases de validaciones de todos los campos...
         for (const input of _inputs) {
             input.disabled = true;
+            input.classList.remove("error");
+            input.classList.remove("valid");
+            input.classList.remove("warning");
         }
         _address.disabled = true;//Bloqueando textarea...
+        _address.classList.remove("error");
+        _address.classList.remove("valid");
+        _address.classList.remove("warning");
 
         //Almacenando todos los íconos de información...
         let _info = document.querySelectorAll(".fa-info-circle");
@@ -62,32 +70,6 @@ window.addEventListener("load", () => {
         for (const error of _allErrors) {
             error.style.display = "none";
         }
-        //Removiendo clases de validaciones de todos los campos...
-        _fullname.classList.remove("error");
-        _fullname.classList.remove("valid");
-        _fullname.classList.remove("warning");
-
-        _email.classList.remove("error");
-        _email.classList.remove("valid");
-        _email.classList.remove("warning");
-
-        _dni.classList.remove("error");
-        _dni.classList.remove("valid");
-        _dni.classList.remove("warning");
-
-        _cp.classList.remove("error");
-        _cp.classList.remove("valid");
-        _cp.classList.remove("warning");
-
-        _tel.classList.remove("error");
-        _tel.classList.remove("valid");
-        _tel.classList.remove("warning");
-
-        _address.classList.remove("error");
-        _address.classList.remove("valid");
-        _address.classList.remove("warning");
-
-
     });
 
 
@@ -113,7 +95,6 @@ window.addEventListener("load", () => {
                 _fullname.placeholder = "";
                 _fullnameErrors.style.display = "block";
                 _fullnameErrors.style.color = "darkred";
-                _fullname.value = "";
                 _fullnameErrors.innerHTML = "";
                 _fullnameErrors.innerHTML = "Ingresa un nombre válido.";
                 _fullname.classList.remove("warning");
@@ -156,7 +137,6 @@ window.addEventListener("load", () => {
                 _email.placeholder = "";
                 _emailErrors.style.display = "block";
                 _emailErrors.style.color = "darkred";
-                _email.value = "";
                 _emailErrors.innerHTML = "";
                 _emailErrors.innerHTML = "Ingresa un email válido.";
                 _email.classList.remove("warning");
@@ -174,6 +154,97 @@ window.addEventListener("load", () => {
                 document.querySelector(".div-email-profile .fa-check-circle").style.display = "block";
                 document.querySelector(".div-email-profile .fa-check-circle").style.color = "green";
                 document.querySelector(".div-email-profile .fa-info-circle").style.display = "none";
+                break;
+        };
+    });
+
+    _pass.addEventListener("blur", () => {
+        let $value = _pass.value.trim();
+
+        switch (true) {
+            case !$value:
+                _pass.placeholder = "";
+                _passErrors.style.display = "block";
+                _passErrors.style.color = "orangered";
+                _passErrors.innerHTML = "";
+                _passErrors.innerHTML = "El campo está vacío.";
+                _pass.classList.remove("error");
+                _pass.classList.remove("valid");
+                _pass.classList.add("warning");
+                document.querySelector(".div-pass-profile .fa-check-circle").style.display = "none";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.display = "block";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.color = "orangered";
+                break;
+            case ($value.length<6||$value.length>12):
+                _pass.placeholder = "";
+                _passErrors.style.display = "block";
+                _passErrors.style.color = "darkred";
+                _passErrors.innerHTML = "";
+                _passErrors.innerHTML = "La contraseña debe contener entre 6 y 12 dígitos.";
+                _pass.classList.remove("warning");
+                _pass.classList.remove("valid");
+                _pass.classList.add("error");
+                document.querySelector(".div-pass-profile .fa-check-circle").style.display = "none";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.display = "block";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.color = "darkred";
+                break;
+            default:
+                _passErrors.style.display = "none";
+                _pass.classList.remove("warning");
+                _pass.classList.remove("error");
+                _pass.classList.add("valid");
+                document.querySelector(".div-pass-profile .fa-check-circle").style.display = "block";
+                document.querySelector(".div-pass-profile .fa-check-circle").style.color = "green";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.display = "none";
+                break;
+        };
+    });
+
+    _rePass.addEventListener("blur", () => {
+        let $value = _rePass.value.trim();
+
+        switch (true) {
+            case !$value:
+                _rePass.placeholder = "";
+                _rePassErrors.style.display = "block";
+                _rePassErrors.style.color = "orangered";
+                _rePassErrors.innerHTML = "";
+                _rePassErrors.innerHTML = "El campo está vacío.";
+                _rePass.classList.remove("error");
+                _rePass.classList.remove("valid");
+                _rePass.classList.add("warning");
+                document.querySelector(".div-rePass-profile .fa-check-circle").style.display = "none";
+                document.querySelector(".div-rePass-profile .fa-info-circle").style.display = "block";
+                document.querySelector(".div-rePass-profile .fa-info-circle").style.color = "orangered";
+                break;
+            case !($value===_pass.value.trim()):
+                _pass.placeholder = "";
+                _passErrors.style.display = "block";
+                _passErrors.style.color = "darkred";
+                _passErrors.innerHTML = "";
+                _passErrors.innerHTML = "Los datos no coinciden.";
+                _pass.classList.remove("warning");
+                _pass.classList.remove("valid");
+                _pass.classList.add("error");
+                document.querySelector(".div-pass-profile .fa-check-circle").style.display = "none";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.display = "block";
+                document.querySelector(".div-pass-profile .fa-info-circle").style.color = "darkred";
+                _passErrors.innerHTML = "Los datos no coinciden.";
+                _rePass.classList.remove("warning");
+                _rePass.classList.remove("valid");
+                _rePass.classList.add("error");
+                document.querySelector(".div-rePass-profile .fa-check-circle").style.display = "none";
+                document.querySelector(".div-rePass-profile .fa-info-circle").style.display = "block";
+                document.querySelector(".div-rePass-profile .fa-info-circle").style.color = "darkred";
+                break;
+            default:
+                _rePassErrors.style.display = "none";
+                _rePass.classList.remove("warning");
+                _rePass.classList.remove("error");
+                _rePass.classList.add("valid");
+                document.querySelector(".div-rePass-profile .fa-check-circle").style.display = "block";
+                document.querySelector(".div-rePass-profile .fa-check-circle").style.color = "green";
+                document.querySelector(".div-rePass-profile .fa-info-circle").style.display = "none";
                 break;
         };
     });
@@ -200,7 +271,6 @@ window.addEventListener("load", () => {
                 _dni.placeholder = "";
                 _dniErrors.style.display = "block";
                 _dniErrors.style.color = "darkred";
-                _dni.value = "";
                 _dniErrors.innerHTML = "";
                 _dniErrors.innerHTML = "Ingresa un dni válido.";
                 _dni.classList.remove("warning");
@@ -243,7 +313,6 @@ window.addEventListener("load", () => {
                 _tel.placeholder = "";
                 _telErrors.style.display = "block";
                 _telErrors.style.color = "darkred";
-                _tel.value = "";
                 _telErrors.innerHTML = "";
                 _telErrors.innerHTML = "Ingresa un teléfono válido.";
                 _tel.classList.remove("warning");
@@ -286,7 +355,6 @@ window.addEventListener("load", () => {
                 _cp.placeholder = "";
                 _cpErrors.style.display = "block";
                 _cpErrors.style.color = "darkred";
-                _cp.value = "";
                 _cpErrors.innerHTML = "";
                 _cpErrors.innerHTML = "Dato inválido.";
                 _cp.classList.remove("warning");
@@ -344,6 +412,12 @@ window.addEventListener("load", () => {
     _email.addEventListener("focus", () => {
         _emailErrors.style.display = "none";
     });
+    _pass.addEventListener("focus", () => {
+        _passErrors.style.display = "none";
+    });
+    _rePass.addEventListener("focus", () => {
+        _rePassErrors.style.display = "none";
+    });
     _dni.addEventListener("focus", () => {
         _dniErrors.style.display = "none";
     });
@@ -373,7 +447,7 @@ window.addEventListener("load", () => {
             for (const error of _allErrors) {
                 error.style.display = "none";
             }
-            _form.innerHTML += `<small class="error">Se encontraron algunos errores</small>`;
+            alert("Se encontraron algunos errores");
         } else {
             _form.submit();
             console.log("se envió");

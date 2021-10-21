@@ -28,6 +28,20 @@
                             <small class="small-form-profile" id="emailErrors"></small>
                     </div>
 
+                    <label id="lbl-pass-profile" class="lbl-form-profile" for="pass">Password</label>
+                    <div class="div-pass-profile div-form-profile">
+                        <input id="input-pass-profile" class="input-form-profile" type="password" name="pass" 
+                        value="<%=user.pass?user.pass:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="passErrors"></small>
+                    </div>
+
+                    <label id="lbl-rePass-profile" class="lbl-form-profile" for="rePass">Repetir password</label>
+                    <div class="div-rePass-profile div-form-profile">
+                        <input id="input-rePass-profile" class="input-form-profile" type="password" name="rePass" 
+                        disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="rePassErrors"></small>
+                    </div>
+
                     <label id="lbl-dni-profile" class="lbl-form-profile" for="dni">Documento</label>
                     <div class="div-dni-profile div-form-profile">
                         <input id="input-dni-profile" class="input-form-profile" type="text" name="dni" placeholder="Documento"
