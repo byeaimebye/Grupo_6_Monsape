@@ -39,6 +39,8 @@ main.main-register{/*
 /*Formulario input*/
 .input-container, 
 .button-container{
+    max-height: 40px;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem;
@@ -151,6 +153,7 @@ label {
 @media screen and (min-width: 475px){
     .input-container,
     .button-container{
+        position: relative;
         width: 80%;
     }
     .form-container{
