@@ -16,22 +16,22 @@
                 <div class="form">
                     <div class="input-container ">
                         <label for="email">Dirección de Correo Electrónico:</label>
-                        <input id="input-email-register" class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
-                        <small id="error-email-register" class="text-danger"></small><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <input id="input-email-register" class="input-style" type="email" name="email" value="<%= locals.old && old.email %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <small id="error-email-register" class="text-danger"></small>
                         <% if(locals.errors && errors.email) { %>
                             <small class="text-danger"><%= errors.email.msg %> </small>
                         <% } %>
                     </div>
-                    <div class="input-container div-fullname-profile div-form-profile">
+                    <div class="input-container">
                         <label for="fullname">Nombre y apellido:</label>
-                        <div class="div-register-profile">
+                        
                         <input id="input-fullname-register" class="input-style" type="text" name="fullname" value="<%= locals.old && old.fullname %>">
                         <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                         <small id="error-fullname-register" class="text-danger"></small>
                         <% if (locals.errors && errors.fullname) { %>
                             <small class="text-danger"><%= errors.fullname.msg %> </small>
                         <% } %>
-                    </div>
+                    
                     </div>
                     <div class="input-container">
                         <label for="password">Contraseña:</label>

@@ -25,7 +25,7 @@ window.addEventListener("load", () =>{
             case !$value:
                 _fullname.placeholder = "";
                 _fullnameErrors.style.display = "block";
-                _fullnameErrors.style.color = "orangered";
+                _fullnameErrors.style.border = "1px oranged solid";
                 _fullnameErrors.innerHTML = "";
                 _fullnameErrors.innerHTML = "El campo está vacío.";
                 _fullname.classList.remove("error");
