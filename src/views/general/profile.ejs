@@ -18,49 +18,78 @@
                     <div class="div-fullname-profile div-form-profile">
                         <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
                             value="<%= user.fullname?user.fullname:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                            <small class="small-form-profile" id="nameErrors"></small>
+                            <% if (locals.errors && errors.fullname) { %>
+                                <small class="small-form-profile validator-error" id="nameErrors"><%= errors.fullname.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="nameErrors"></small>
+                            <% } %>
                     </div>
 
                     <label id="lbl-email-profile" class="lbl-form-profile" for="email">Email</label>
                     <div class="div-email-profile div-form-profile">
                         <input id="input-email-profile" class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com"
                             value="<%=user.email?user.email:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                            <small class="small-form-profile" id="emailErrors"></small>
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="small-form-profile validator-error" id="emailErrors"><%= errors.email.msg %></small>
+                             
+                            <% }else{ %>
+                                <small class="small-form-profile" id="emailErrors"></small>
+                            <% } %>
                     </div>
 
                     <label id="lbl-pass-profile" class="lbl-form-profile" for="pass">Password</label>
                     <div class="div-pass-profile div-form-profile">
                         <input id="input-pass-profile" class="input-form-profile" type="password" name="pass" 
                         value="<%=user.pass?user.pass:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                            <small class="small-form-profile" id="passErrors"></small>
+                            <% if (locals.errors && errors.pass) { %>
+                                <small class="small-form-profile validator-error" id="passErrors"><%= errors.pass.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="passErrors"></small>
+                            <% } %>
                     </div>
 
                     <label id="lbl-rePass-profile" class="lbl-form-profile" for="rePass">Repetir password</label>
                     <div class="div-rePass-profile div-form-profile">
                         <input id="input-rePass-profile" class="input-form-profile" type="password" name="rePass" 
                         disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <% if (locals.errors && errors.rePass) { %>
+                            <small class="small-form-profile validator-error" id="rePassErrors"><%= errors.rePass.msg %></small>
+                        <% }else{ %>
                             <small class="small-form-profile" id="rePassErrors"></small>
+                        <% } %>
                     </div>
 
                     <label id="lbl-dni-profile" class="lbl-form-profile" for="dni">Documento</label>
                     <div class="div-dni-profile div-form-profile">
                         <input id="input-dni-profile" class="input-form-profile" type="text" name="dni" placeholder="Documento"
                             value="<%=user.dni?user.dni:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                            <small class="small-form-profile" id="dniErrors"></small>
+                            <% if (locals.errors && errors.dni) { %>
+                                <small class="small-form-profile validator-error" id="dniErrors"><%= errors.dni.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="dniErrors"></small>
+                            <% } %>
                     </div>
 
                     <label id="lbl-tel-profile" class="lbl-form-profile" for="tel">Teléfono</label>
                     <div class="div-tel-profile div-form-profile">
                         <input id="input-tel-profile" class="input-form-profile" type="text" name="tel" placeholder="Teléfono"
                             value="<%=user.tel?user.tel:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                            <small class="small-form-profile" id="telErrors"></small>
+                            <% if (locals.errors && errors.tel) { %>
+                                <small class="small-form-profile validator-error" id="telErrors"><%= errors.tel.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="telErrors"></small>
+                            <% } %>
                     </div>
 
                     <label id="lbl-cp-profile" class="lbl-form-profile" for="cp">Código Postal</label>
                     <div class="div-cp-profile div-form-profile">
                         <input id="input-cp-profile" class="input-form-profile" type="text" name="cp" placeholder="Código Postal"
                             value="<%=user.cp?user.cp:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                            <small class="small-form-profile" id="cpErrors"></small>
+                            <% if (locals.errors && errors.cp) { %>
+                                <small class="small-form-profile validator-error" id="cpErrors"><%= errors.cp.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="cpErrors"></small>
+                            <% } %>
                     </div>
 
                     <label id="lbl-date-profile" class="lbl-form-profile" for="date">Fecha de nacimiento</label>
@@ -78,6 +107,16 @@
                     </div>
                     
                     <button id="edit" class="btn-form-profile" type="button" name="btn-profile">Editar</button>
+                    <!-- <script>
+                        document.querySelector("#edit").addEventListener("click", ()=>{
+                            
+                            for (const input of document.querySelector(".main-profile form").elements) {
+                                input.disabled = false;
+                                input.classList.remove("validator-error");
+                            }
+                            document.querySelector("#address").disabled = false;
+                        })
+                    </script> -->
                     <button id="accept" class="" type="submit" name="btn-profile">Aceptar</button>
                     <button id="cancel" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button>
                 </form>

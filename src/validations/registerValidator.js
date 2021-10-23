@@ -4,8 +4,8 @@ const db = require("../database/models");
 
 let validations =[
     check('email')
-    .isEmail()
-    .withMessage('Debes ingresar un email'),
+        .isEmail()
+        .withMessage('Debes ingresar un email'),
 
     body('email').custom(value => {
         /* let user = users.filter(user =>{
@@ -24,24 +24,24 @@ let validations =[
     }),
 
     check('fullname')
-    .notEmpty()
-    .withMessage("Debes ingresar un nombre y apellido"),
+        .notEmpty()
+        .withMessage("Debes ingresar un nombre y apellido"),
 
     check('password')
-    .notEmpty()
-    .withMessage('Debes ingresar una contraseña')
-    .isLength({
-        min: 6,
-        max: 15
-    })
+        .notEmpty()
+        .withMessage('Debes ingresar una contraseña')
+        .isLength({
+            min: 6,
+            max: 15
+        })
     .withMessage('La contraseña debe tener entre 6 y 15 caracteres'),
 
     body('password2').custom((value, {req}) => value !== req.body.password ? false : true)
-    .withMessage('Las contraseñas no coinciden'),
+        .withMessage('Las contraseñas no coinciden'),
 
     check('terms')
-    .isString('on')
-    .withMessage('Debes aceptar los términos y condiciones')
+        .isString('on')
+        .withMessage('Debes aceptar los términos y condiciones')
 
 ]
 

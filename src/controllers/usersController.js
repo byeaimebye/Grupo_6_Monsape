@@ -104,7 +104,7 @@ module.exports = {
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body,
-                title: 'Ingresá a Monsape'
+                title: 'Login'
             }).catch(error => {
                 res.send(error)
             })
@@ -150,39 +150,56 @@ module.exports = {
                 res.render("general/profile", { title: "Perfil", user }); */
     },
     editProfile: (req, res) => {
+        let errors = validationResult(req);
 
-        let user = db.User.findByPk(req.session.user.id);
-        let {
-            fullname,
-            email,
-            pass,
-            dni,
-            tel,
-            cp,
-            date,
-            address
-        } = req.body;
-
-        db.User.update({
-            fullname: fullname ? fullname : user.fullname,
-            email: email ? email : req.session.user.email,
-            password: pass ? bcrypt.hashSync(pass, 10) : user.password,
-            dni: dni ? dni : user.email,
-            tel: tel ? tel : user.tel,
-            cp: cp ? cp : user.cp,
-            date: date ? date : user.date,
-            address: address ? address: user.address,
-            rol: user.rol,
-            avatar: req.file ? 'users/' + req.file.filename : user.avatar,
-        }, {
-            where: { id: req.session.user.id }
-        })
-            .then(() => {
-                res.redirect("/users/profile");
+        if(errors.isEmpty()){
+            let user = db.User.findByPk(req.session.user.id);
+            let {
+                fullname,
+                email,
+                pass,
+                dni,
+                tel,
+                cp,
+                date,
+                address
+            } = req.body;
+    
+            db.User.update({
+                fullname: fullname ? fullname : user.fullname,
+                email: email ? email : req.session.user.email,
+                password: pass ? bcrypt.hashSync(pass, 10) : user.password,
+                dni: dni ? dni : user.email,
+                tel: tel ? tel : user.tel,
+                cp: cp ? cp : user.cp,
+                date: date ? date : user.date,
+                address: address ? address: user.address,
+                rol: user.rol,
+                avatar: req.file ? 'users/' + req.file.filename : user.avatar,
+            }, {
+                where: { id: req.session.user.id }
             })
-            .catch(err=> res.send(err));
+                .then(() => {
+                    
+                    res.redirect("/users/profile");
+                })
+                .catch(err=> res.send(err));
 
+        }else {
+            /* res.send(errors) */
+            db.User.findByPk(req.session.user.id)
+                .then(user =>{
+                    res.render('general/profile', {
+                        errors: errors.mapped(),
+                        user,
+                        session: req.session,
+                        old: req.body,
+                        title: 'Profile'
+                    })
 
+                })
+                .catch(error => {res.send(error)});
+        }
 
         /* users.forEach(element => {
             if (element.email === email) {

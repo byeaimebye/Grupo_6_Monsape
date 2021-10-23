@@ -225,9 +225,9 @@
 }
 
 .small-form-profile{
-    display: none;
+    /* display: none; */
     left: 8px;
-    position: absolute;
+    /* position: absolute; */
 }
 
 

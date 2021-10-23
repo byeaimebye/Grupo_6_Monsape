@@ -229,7 +229,7 @@ window.addEventListener("load", () => {
                 document.querySelector(".div-pass-profile .fa-check-circle").style.display = "none";
                 document.querySelector(".div-pass-profile .fa-info-circle").style.display = "block";
                 document.querySelector(".div-pass-profile .fa-info-circle").style.color = "darkred";
-                _passErrors.innerHTML = "Los datos no coinciden.";
+                //_passErrors.innerHTML = "Los datos no coinciden.";
                 _rePass.classList.remove("warning");
                 _rePass.classList.remove("valid");
                 _rePass.classList.add("error");

@@ -12,6 +12,7 @@ let {
     }  = require("../controllers/usersController");
     let registerValidator = require('../validations/registerValidator');
     let loginValidator = require('../validations/loginValidator');
+    let profileValidator = require('../validations/profileValidator');
     let upload = require('../middlewares/usersUploadFiles'); 
     let userSession = require('../middlewares/userSession');
 
@@ -26,7 +27,7 @@ router.post('/register', /* upload.single("image"), */ registerValidator, regist
 
 /* Get Profile */
 router.get("/profile", userSession, profile);
-router.put("/profile", upload.single("avatar"), editProfile);
+router.put("/profile", upload.single("avatar"), profileValidator, editProfile);
 
 module.exports = router;
 
