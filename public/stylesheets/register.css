@@ -39,6 +39,8 @@ main.main-register{/*
 /*Formulario input*/
 .input-container, 
 .button-container{
+    max-height: 40px;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem;
@@ -51,7 +53,6 @@ small.text-danger{
 
 input.input-style{
     background: #e4d8db;
-    border: none;
     border-radius: 20px;
     height: 2rem;
     padding: 0.5rem;
@@ -141,6 +142,10 @@ label {
 .register .check{ /*especificidad*/
     width: 100%;
 }
+.div-register-profile{
+    position: relative;
+    margin-bottom: 15px;
+}
 
 /*Media queries*/
 /*Tablet*/
@@ -148,6 +153,7 @@ label {
 @media screen and (min-width: 475px){
     .input-container,
     .button-container{
+        position: relative;
         width: 80%;
     }
     .form-container{
