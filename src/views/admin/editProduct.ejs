@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/headAdmin") %>
-
    <body>
       <%- include("../partials/headerAdmin") %>
          <main class="main-admin-create">
-            <h2>EDITAR PRODUCTO</h2>
+            <h2>NUEVO PRODUCTO</h2>
             <div class="create-forms">
-               <form class="create" action="/admin/editProduct/<%- wine.id %>?_method=PUT" method="POST"
+               <form class="create" action="/admin/cargaDeProducto" method="POST"
                   enctype="multipart/form-data">
-                  <div class="inputs-create">
-                     <label class="lbl-form-create-product" for="name">Nombre:</label>
-                     <input class="input-form-create-product" type="text" name="name" value="<%= wine.name %>">
-                  </div>
-                  <div class="large">
-                     <label class="lbl-form-create-product" for="description">Descripción:</label>
-                     <textarea class="txt-form-edit-product" name="description" cols="30" rows="5"><%= wine.description %></textarea>
-                  </div>
                   
-                  <div class="inputs-create">
+                  <div class="div-name-charge inputs-create">
+                     <label class="lbl-form-create-product" for="name">Nombre:</label>
+                     <input id="input-name-charge" class="input-form-create-product" type="text" name="name" value="<%= wine.name %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="nameErrors"></small>
+                  </div>
+                  <div class="div-description-charge large">
+                     <label class="lbl-form-create-product" for="description">Descripción:</label>
+                     <textarea id="textarea-description-charge" class="txt-form-edit-product" name="description" cols="30" rows="5"><%= wine.description %></textarea><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="descriptionErrors"></small>
+                  </div>               
+                  
+                  <div class="div-category-charge inputs-create">
                      <label class="lbl-form-create-product" for="category"> Categorias: </label>
-                     <select class="input-form-create-product" name="category">
+                     <select id="select-category-charge" class="input-form-create-product" name="category">
+                        <option value="">Categoría</option>
                         <% category.forEach(category=> { %>
                            <% if (category.id===wine.category_id) { %>
                               <option value="<%= category.id %>" selected>
@@ -34,12 +37,13 @@
 
                                  <% } %>
                                     <% }) %>
-
-                     </select>
+                     </select><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="categoryErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-collection-charge inputs-create">
                      <label class="lbl-form-create-product" for="collection">Colección:</label>
-                     <select class="input-form-create-product" name="collection" id="">
+                     <select id="select-collection-charge" class="input-form-create-product" name="collection" id="">
+                        <option value="">Colección</option>
                         <% collection.forEach(collection=> { %>
                            <% if (collection.id===wine.collection_id) { %>
                               <option value="<%= collection.id %>" selected>
@@ -52,65 +56,76 @@
 
                                  <% } %>
                                     <% }) %>
-
-                     </select>
+                     </select><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="collectionErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-stock-charge inputs-create">
                      <label class="lbl-form-create-product" for="stock">Stock:</label>
-                     <input class="input-form-create-product" type="number" name="stock" value="<%= wine.stock %>">
+                     <input id="input-stock-charge" class="input-form-create-product" type="number" name="stock" value="<%= wine.stock %>><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="stockErrors"></small>
                   </div>
-                  <div class="large">
+                  <div class="div-pairing-charge large">
                      <label class="lbl-form-create-product" for="pairing">Maridaje:</label>
-                     <textarea class="txt-form-edit-product" name="pairing" cols="30" rows="5"><%= wine.pairing %></textarea>
+                     <textarea id="textarea-pairing-charge" class="txt-form-edit-product" name="pairing" cols="30" rows="5"><%= wine.pairing %></textarea><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="pairingErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-alcoholContent-charge inputs-create">
                      <label class="lbl-form-create-product" for="alcoholContent">Graduacion Alcoholica:</label>
-                     <input class="input-form-create-product" type="text" name="alcoholContent"
-                        value="<%= wine.alcoholContent%>">
+                     <input id="input-alcoholContent-charge" class="input-form-create-product" type="text" name="alcoholContent" value="<%= wine.alcoholContent%>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="alcoholContentErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-totalAcidity-charge inputs-create">
                      <label class="lbl-form-create-product" for="totalAcidity">Acidez:</label>
-                     <input class="input-form-create-product" type="text" name="totalAcidity"
-                        value="<%= wine.totalAcidity %>">
+                     <input id="input-totalAcidity-charge" class="input-form-create-product" type="text" name="totalAcidity" value="<%= wine.totalAcidity %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="totalAcidityErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-residualSugar-charge inputs-create">
                      <label class="lbl-form-create-product" for="residualSugar">Azucar Residual:</label>
-                     <input class="input-form-create-product" type="text" name="residualSugar"
-                        value="<%= wine.residualSugar %>">
+                     <input id="input-residualSugar-charge" class="input-form-create-product" type="text" name="residualSugar" value="<%= wine.residualSugar %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="residualSugarErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-serviceTemperature-charge inputs-create">
                      <label class="lbl-form-create-product" for="service_temperature">Temperatura recomendada:</label>
-                     <input class="input-form-create-product" type="text" name="service_temperature"
-                        value="<%= wine.service_temperature%>">
+                     <input id="input-service_temperature-charge" class="input-form-create-product" type="text" name="service_temperature" value="<%= wine.service_temperature%>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="service_temperatureErrors"></small>
+                     <small class="small-form-charge" id="service_temperatureExample">Ejemplo: Entre 15ÂºC y 18ÂºC.</small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-price-charge inputs-create">
                      <label class="lbl-form-create-product" for="price">price:</label>
-                     <input class="input-form-create-product" type="number" name="price" value="<%= wine.price %>">
+                     <input id="input-price-charge" class="input-form-create-product" type="number" name="price" value="<%= wine.price %>><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="priceErrors"></small>
                   </div>
-                  <div class="inputs-create">
+                  <div class="div-discount-charge inputs-create">
                      <label class="lbl-form-create-product" for="discount">Descuento:</label>
-                     <input class="input-form-create-product" type="number" name="discount"
-                        value="<%= wine.discount %>">
+                     <input id="input-discount-charge" class="input-form-create-product" type="number" name="discount" value="<%= wine.discount %>><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="discountErrors"></small>
                   </div>
-
+                  
                   <label class="lbl-form-create-product">Variedad:</label>
-                  <div class="div-varieties-form-create-product">
+                  <div class="div-variety-charge div-varieties-form-create-product">
                      <% wineVariety.forEach(element=> { %>
                         <label class="lbl-checkbox-form-product-create" for="variety">
                            <%= element.name %>
                         </label>
-                        <input class="input-form-create-product checkbox-form-create-product" type="checkbox"
+                        <input id="input-variety-charge" class="input-form-create-product checkbox-form-create-product" type="checkbox"
                            name="variety" value="<%= element.id %>" <%=element.status %>>
-                        <% }) %>
+                        <% }) %>                        
+                        <small class="small-form-charge" id="varietyErrors"></small><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>  
                   </div>
 
-                  <div class="input-file-form-edit-product">
+                  <div class="div-image-charge input-file-form-edit-product">
+                     <!-- <div class="img-container" id="img-preview">
+                        
+                     </div> -->
                      <p class="p-file-img">Nueva Imagen</p>
-                     <input class="input-file-img" type="file" name="image">
-                  </div>
-                  <button type="submit">EDITAR</button>
+                     <input id="input-image-charge" class="input-file-img" type="file" name="image"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <small class="small-form-charge" id="imageErrors"></small>
+                  </div>        
+                  <span id="submitErrors" style="color: red;"></span>          
+                  <button id="create" class="" type="submit" name="btn-create-products">Editar</button>
             </div>
          </main>
    </body>
+   <script src="/javascripts/chargeProductsAdmin.js" defer></script>
 
 </html>

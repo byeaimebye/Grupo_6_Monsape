@@ -14,6 +14,7 @@ userDelete,
 
  } = require("../controllers/adminController");
     let adminSession = require('../middlewares/adminSession');
+    let chargeProductsValidator = require('../validations/chargeProductsValidator');
 
 
 /* GET - Admin  ----(login)----- */
@@ -26,11 +27,11 @@ router.get('/products',/* adminSession, */ products);
 router.get('/cargaDeProducto',/* adminSession, */ charge);
 
 /* POST- Crear producto */
-router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate); 
+router.post('/cargaDeProducto', chargeProductsValidator,uploadFiles.single('image'), productCreate); 
 
  /* Editar productos*/
 router.get('/editProduct/:id',  edit);
-router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
+router.put('/editProduct/:id', chargeProductsValidator,uploadFiles.single('image'), productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
