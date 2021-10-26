@@ -1,5 +1,5 @@
 .main-admin-create{
-    background-color: rgba(139, 0, 0, 0.4);
+    background-color: rgb(22, 21, 21);
     color: white;
     font-weight: 999;
     margin: 50px auto;
@@ -20,9 +20,9 @@
 
 .input-form-create-product{
     border-radius: 7px;
-    font-weight: 999;
+    font-weight: bolder;
     height: 25px;
-    padding-left: 10px;
+    padding: 4px;
 }
 
 .div-varieties-form-create-product {
@@ -31,19 +31,20 @@
     justify-content: space-evenly;
     margin: 10px auto;
     width: 254px;
+    position: relative;
 }
 
 .lbl-checkbox-form-product-create {
     margin-left: 5px;
 }
-
-/* 
-main.main-admin-create form .variety{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.img-container {
+    width: 100%;
+    height: 200px;
+    border: thin solid gray ;
+    border-radius: 10px;
     text-align: center;
-} */
+}
+
 main.main-admin-create form .variety input{
     margin-right: 10px;
   
@@ -58,21 +59,26 @@ main.main-admin-create  select{
 main.main-admin-create .inputs-create{
     display: flex;
     flex-direction: column;
-    margin-bottom:10px ;
+    margin-bottom: 10px ;
+    position: relative;
 }
 main.main-admin-create  .large{
     border-radius: 5px;
     margin-top: 10px;
+    position: relative;
 }
 
 .txt-form-edit-product {
     border-radius: 5px;
     font-weight: 999;
-    margin: 10px auto;
+    margin: 10px auto 0 auto;
     outline: none;
     padding: 10px;
     resize: none;
     width: 100%;
+}
+.div-category-charge{
+    margin-top: 10px;
 }
 
 main.main-admin-create button{
@@ -124,20 +130,126 @@ main.main-admin-create .temperatura-create input{
     opacity: 0;
     width: 100%;
 }
+.small-form-charge{
+    /* display: none; */
+    left: 8px;
+    /* position: absolute; */
+}
 
-@media(min-width: 1000px) {
-    /* main.main-admin-create{
-        padding: 25px;
-    }
-    main.main-admin-create input{
-        outline: none;
-        background-color: rgba(179, 68, 68, 0.1);
-        width: 50%;
-        font-size: 15px;
-    }
-    main.main-admin-create .large textarea{
-        outline: none;
+/*Media Queries*/
+@media(min-width: 768px){
+    .main-admin-create{        
+        max-width: 500px;
+    }  
+    .main-admin-create h2{
+        margin-top: 30px;
+    }  
         
-        font-size: 15px;
-    } */
+    .input-form-create-product{
+        height: 28px;
+    }
+    
+    .div-varieties-form-create-product {        
+        width: 450px;
+    }
+    
+    main.main-admin-create button{
+        background-color: rgba(179, 68, 68, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        border-radius: 8px;
+        color: white;
+        font-size: 17px;
+        padding: 5px;        
+        width: 160px;
+        height: 36px;
+    }
+    main.main-admin-create button:hover{
+        background-color: rgb(182, 35, 35);
+    }
+        
+    .input-file-form-edit-product {
+        align-items: center;
+        border: solid 1px white;
+        border-radius: 8px;
+        background-color: rgb(255, 255, 255, 0.6);
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        margin: 15px auto;
+        position: relative;
+        width: 250px;
+    }
+    
+    .p-file-img {
+        color: black;
+        font-weight: bolder;
+        font-size: 16px;
+    }
+    
+    
+}
+@media(min-width: 1024px){
+    .main-admin-create{        
+        max-width: 800px;
+    }  
+    .main-admin-create h2{
+        margin-top: 40px;
+        font-size: 30px;
+    }
+    .create-forms{
+        width: 600px;
+        margin: 0 auto;
+    } 
+        
+    .input-form-create-product{
+        height: 30px;
+    }
+    
+    .div-varieties-form-create-product {        
+        width: 500px;
+    }
+    .lbl-checkbox-form-product-create{
+        font-size: 18px;
+    }
+    
+    main.main-admin-create button{
+        background-color: rgba(179, 68, 68, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        border-radius: 8px;
+        color: white;
+        font-size: 17px;
+        padding: 5px;        
+        width: 160px;
+        height: 36px;
+    }
+    main.main-admin-create button:hover{
+        background-color: rgb(182, 35, 35);
+    }
+        
+    .input-file-form-edit-product {
+        align-items: center;
+        border: solid 1px white;
+        border-radius: 8px;
+        background-color: rgb(255, 255, 255, 0.6);
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        margin: 15px auto;
+        position: relative;
+        width: 250px;
+    }
+    
+    .p-file-img {
+        color: black;
+        font-weight: bolder;
+        font-size: 16px;
+    }
+    
+    
 }

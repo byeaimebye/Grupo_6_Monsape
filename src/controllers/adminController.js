@@ -1,4 +1,5 @@
 const { vinos, writeVinosJSON, users, writeUsersJSON } = require("../data/db");
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const { Op } = require('sequelize');
 
@@ -39,46 +40,69 @@ module.exports = {
     },
     //--------------------Administración de Productos-----------------------
     productCreate: (req, res) => {
-        let { name,
-            description,
-            category,
-            collection,
-            variety,
-            stock,
-            pairing,
-            alcoholContent,
-            totalAcidity,
-            residualSugar,
-            service_temperature,
-            price,
-            discount,
-        } = req.body;
+        let errors = validationResult(req);
+        res.send(errors);
 
-
-        db.Wine.create({
-            name,
-            description,
-            category_id: category,
-            collection_id: collection,
-            stock,
-            pairing,
-            alcoholContent,
-            totalAcidity,
-            residualSugar,
-            service_temperature,
-            price,
-            discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
-        })
-            .then(result => {
-                variety.forEach(element => {
-                    db.WineVariety.create({
-                        wine_id: result.id,
-                        variety_id: element
+        if(errors.isEmpty()){
+            let { name,
+                description,
+                category,
+                collection,
+                variety,
+                stock,
+                pairing,
+                alcoholContent,
+                totalAcidity,
+                residualSugar,
+                service_temperature,
+                price,
+                discount,
+            } = req.body;
+    
+    
+            db.Wine.create({
+                name,
+                description,
+                category_id: category,
+                collection_id: collection,
+                stock,
+                pairing,
+                alcoholContent,
+                totalAcidity,
+                residualSugar,
+                service_temperature,
+                price,
+                discount,
+                image: req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
+            })
+                .then(result => {
+                    variety.forEach(element => {
+                        db.WineVariety.create({
+                            wine_id: result.id,
+                            variety_id: element
+                        })
                     })
-                })
-                res.redirect('/admin/products')
-            }).catch((error) => { res.send(error) })
+                    res.redirect('/admin/products')
+                }).catch((error) => { res.send(error) })
+        }else{   
+            
+            let collectionPromise = db.Collection.findAll()
+            let categoryPromise = db.Category.findAll()
+            let varietyPromise = db.Variety.findAll()
+            Promise.all([collectionPromise, categoryPromise, varietyPromise])
+                .then(([collectionPromise, categoryPromise, varietyPromise]) => {
+                    res.render('admin/chargeProduct', {
+                        title: "Carga de producto",
+                        collection: collectionPromise,
+                        category: categoryPromise,
+                        variety: varietyPromise,
+                        session: req.session,
+                        errors: errors.mapped(),
+                        old: req.body,
+                    })
+                }).catch((error) => res.send(error))
+        }
+        
 
 
         /*   let lastId = 1;
@@ -178,74 +202,127 @@ module.exports = {
 
     productEdit: (req, res) => {
 
-        let { name,
-            description,
-            category,
-            collection,
-            variety,
-            stock,
-            pairing,
-            alcoholContent,
-            totalAcidity,
-            residualSugar,
-            service_temperature,
-            price,
-            discount,
-        } = req.body;
-        /* res.send() */
+        let errors = validationResult(req);
 
-        let wine = db.Wine.findByPk(req.params.id)
-
-        let update = db.Wine.update({
-            name,
-            description,
-            category_id: category,
-            collection_id: collection,
-            stock,
-            pairing,
-            alcoholContent,
-            totalAcidity,
-            residualSugar,
-            service_temperature,
-            price,
-            discount,
-            image: req.file ? '/VinosJson/' + req.file.filename : wine.image
-        },
-            {
-                where: {
-                    id: req.params.id
+        if(errors.isEmpty()){
+            let { name,
+                description,
+                category,
+                collection,
+                variety,
+                stock,
+                pairing,
+                alcoholContent,
+                totalAcidity,
+                residualSugar,
+                service_temperature,
+                price,
+                discount,
+            } = req.body;
+            /* res.send() */
+    
+            let wine = db.Wine.findByPk(req.params.id)
+    
+            let update = db.Wine.update({
+                name,
+                description,
+                category_id: category,
+                collection_id: collection,
+                stock,
+                pairing,
+                alcoholContent,
+                totalAcidity,
+                residualSugar,
+                service_temperature,
+                price,
+                discount,
+                image: req.file ? '/VinosJson/' + req.file.filename : wine.image
+            },
+                {
+                    where: {
+                        id: req.params.id
+                    }
                 }
-            }
-        );
-
-        let destroy = db.WineVariety.destroy({
-            where: {
-                wine_id: req.params.id
-            }
-        }).then(()=>{})
-
-        let create = "";
-        
-        if(variety && Array.isArray(variety)){
-            create = variety.forEach(element => {
-                db.WineVariety.create({
-                    wine_id: +req.params.id,
-                    variety_id: +element
-                }).then(()=>{})
-            });
-
-        }else if(variety && !Array.isArray(variety)){
-            create = db.WineVariety.create({
-                wine_id: +req.params.id,
-                variety_id: variety
+            );
+    
+            let destroy = db.WineVariety.destroy({
+                where: {
+                    wine_id: req.params.id
+                }
             }).then(()=>{})
+    
+            let create = "";
+            
+            if(variety && Array.isArray(variety)){
+                create = variety.forEach(element => {
+                    db.WineVariety.create({
+                        wine_id: +req.params.id,
+                        variety_id: +element
+                    }).then(()=>{})
+                });
+    
+            }else if(variety && !Array.isArray(variety)){
+                create = db.WineVariety.create({
+                    wine_id: +req.params.id,
+                    variety_id: variety
+                }).then(()=>{})
+            }
+    
+            Promise.all([update, destroy, create, wine])
+                .then(()=> {
+                    res.redirect('/admin/products')
+                })
+                .catch((error) => { res.send(error) })
+        }else{
+            let wineEditPromise = db.Wine.findByPk(req.params.id, {
+                include: [
+                    { association: "category" },
+                    { association: "collection" },
+                    { association: "variety" }]
+            });
+            let collectionPromise = db.Collection.findAll();
+            let categoryPromise = db.Category.findAll();
+            let varietyPromise = db.Variety.findAll();
+            
+    
+            Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
+                .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
+                    /* res.send(wineEditPromise); */
+                    let productVariety = [];
+                    let wineVariety = [];
+                    wineEditPromise.variety.forEach(v => {
+                        productVariety.push({id: v.id, name: v.name, status: "checked"})
+                    })
+    
+                    varietyPromise.forEach(v2 => {
+                        wineVariety.push({id: v2.id, name: v2.name, status: ""})
+                    })
+    
+                    productVariety.forEach(element => {
+                        wineVariety.forEach(element2 => {
+                            if(element.id === element2.id){
+                                wineVariety.splice(wineVariety.indexOf(element2), 1, element);
+                            }
+                        })
+                    })
+                    /* res.send(wineVariety); */
+    
+    
+                    res.render('admin/editProduct', {
+                        title: "Edición de producto",
+                        wine: wineEditPromise,
+                        collection: collectionPromise,
+                        category: categoryPromise,
+                        variety: varietyPromise,
+                        wineVariety,
+                        session: req.session,
+                        errors: errors.mapped(),
+                        old: req.body,
+                    }) 
+                }).catch((error) => res.send(error))            
         }
 
-        Promise.all([update, destroy, create, wine])
-            .then(()=> {
-                res.redirect('/admin/products')
-            })
-            .catch((error) => { res.send(error) })
+        
 
 
         /*  let {

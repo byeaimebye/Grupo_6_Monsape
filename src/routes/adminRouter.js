@@ -20,6 +20,7 @@ let {admin,
     destroy
  } = require("../controllers/adminController");
     let adminSession = require('../middlewares/adminSession');
+    let chargeProductsValidator = require('../validations/chargeProductsValidator');
 
 
 /* GET - Admin  ----(login)----- */
@@ -29,11 +30,15 @@ let {admin,
 /*GET - Admin products */
 router.get('/products', adminSession, products);
 /*GET - Formulario de producto */
-router.get('/cargaDeProducto', adminSession, charge);
-router.post('/cargaDeProducto', uploadFiles.single('image'), productCreate);
+router.get('/cargaDeProducto',/* adminSession, */ charge);
+
+/* POST- Crear producto */
+router.post('/cargaDeProducto', uploadFiles.single('image'), chargeProductsValidator, productCreate); 
+
  /* Editar productos*/
-router.get('/editProduct/:id', adminSession, edit);
-router.put('/editProduct/:id', uploadFiles.single('image'), productEdit);
+router.get('/editProduct/:id',  edit);
+router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValidator,productEdit);
+
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 /*delete elimina usuarios el admin */
