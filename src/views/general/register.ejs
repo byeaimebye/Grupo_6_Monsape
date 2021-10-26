@@ -14,7 +14,7 @@
             <hr>
             <form action="/users/register" method="POST">
                 <div class="form">
-                    <label for="email">Dirección de Correo Electrónico:</label>
+                    <label class="text-forms" for="email">Dirección de Correo Electrónico:</label>
                     <div class="input-container div-email-register">
                         
                         <input id="input-email-register" class="input-style" type="email" name="email" value="<%= locals.old && old.email %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
@@ -23,7 +23,7 @@
                             <small class="text-danger"><%= errors.email.msg %> </small>
                         <% } %>
                     </div>
-                    <label for="fullname">Nombre y apellido:</label>
+                    <label class="text-forms" for="fullname">Nombre y apellido:</label>
                     <div class="input-container div-fullname-register">
                         
                         <input id="input-fullname-register" class="input-style" type="text" name="fullname" value="<%= locals.old && old.fullname %>">
@@ -34,7 +34,7 @@
                         <% } %>
                     
                     </div>
-                    <label for="password">Contraseña:</label>
+                    <label class="text-forms" for="password">Contraseña:</label>
                     <div class="input-container div-password-register">
                         
                         <input id="input-password-register" class="input-style" type="password" name="password">
@@ -44,7 +44,7 @@
                             <small class="text-danger"><%= errors.password.msg %> </small>
                         <% } %>
                     </div>
-                    <label for="password2">Repetir contraseña:</label>
+                    <label class="text-forms" for="password2">Repetir contraseña:</label>
                     <div class="input-container div-password2-register">
                         <input id="input-password2-register" class="input-style" type="password" name="password2">
                         <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>

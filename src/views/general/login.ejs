@@ -10,7 +10,7 @@
             <form class="form-login" action="/users/login" method="POST">
                 <div class="form">
                     
-                        <label for="email">Dirección de Correo Electrónico:</label>
+                        <label class="text-forms" for="email">Dirección de Correo Electrónico:</label>
                         <div class="input-container div-email-login">
                         <input id="input-email-login" class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
                         <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
@@ -20,7 +20,7 @@
                         <% } %>
                     </div>
                     
-                        <label for="password">Contraseña:</label>
+                        <label class="text-forms" for="password">Contraseña:</label>
                         <div class="input-container div-pass-login">
                         <input id="input-pass-login" class="input-style" type="password" name="password">
                         <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
