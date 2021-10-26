@@ -11,10 +11,6 @@ let validations =[
           if(!user){
             return Promise.reject("El usuario no existe")
           }
-    
-            /* if(user.active === 0){
-              return Promise.reject("El usuario no existe")
-            }  */
           }),
       body("password").custom((value, {req}) =>{
         return db.User.findOne({ where : { email:value }})
@@ -23,9 +19,9 @@ let validations =[
            Promise.reject("La contraseña que ingresaste no es correcta")
          } })
       })
-         /*  .catch(() => {
+          .catch(() => {
             return Promise.reject("Credenciales invalidas!");
-          });  */
+          });  
       })
 
 ]
