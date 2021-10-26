@@ -339,6 +339,26 @@ module.exports = {
                 })
             })
             .catch(error => res.send(error));
- 
+    },
+    login: (req, res)=> {
+        res.render("admin/adminLogin", {title: "Login: Modo Administrador", session: req.session});
+    },
+    processLogin: (req, res)=> {
 
-}}
+    },
+    register: (req, res)=> {
+
+    },
+    registerProcess: (req, res)=> {
+
+    },
+    profile: (req, res)=> {
+
+    },
+    editProfile: (req, res)=> {
+
+    },
+    destroy: (req, res)=> {
+
+    },
+}

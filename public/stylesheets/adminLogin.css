@@ -1,0 +1,41 @@
+.main-register-admin-login{
+    background-color: darkred;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "h1-admin-login"
+    "h1-subtitle-admin-login"
+    "div-email-admin-login"
+    "div-pass-admin-login"
+    "check-admin-login"
+    "div-button-container-admin-login"
+    "span-register-admin-login";
+    height: 80%;
+    margin: 0 auto 30px;
+    text-align: center;
+    width: 90%;
+}
+
+.h1-admin-login{
+    grid-area: h1-admin-login;
+}
+.h1-subtitle-admin-login{
+    grid-area: h1-subtitle-admin-login;
+}
+.div-email-admin-login{
+    grid-area: div-email-admin;
+}
+.div-pass-admin-login{
+    grid-area: div-pass-admin;
+}
+.check-admin-login{
+    grid-area: check-admin;
+}
+.div-button-container-admin-login{
+    grid-area: div-button-container-admin;
+}
+.span-register-admin-login{
+    grid-area: span-register-admin;
+}

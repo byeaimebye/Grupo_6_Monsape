@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <main class="main-register-admin-login">
+                <h1 class="h1-title-admin-login">Modo Administrador</h1>
+                <h2 class="h1-subtitle-admin-login">INICIA SESION</h2>
+                <form action="/users/login" method="POST">
+                    <div class="div-container-admin div-email-admin-login">
+                        <label class="lbl-email-admin-login" for="email">Dirección de Correo Electrónico:</label>
+                        <input class="input-style-admin input-email-admin-login" type="email" name="email"
+                            value="<%= locals.old && old.email %>">
+                        <% if(locals.errors && errors.email) { %>
+                            <small class="text-danger">
+                                <%= errors.email.msg %>
+                            </small>
+                            <% } %>
+                    </div>
+                    <div class="div-container-admin-login div-pass-admin-login">
+                        <label class="lbl-pass-admin-login" for="password">Contraseña:</label>
+                        <input class="input-style-admin-login input-pass-admin-login" type="password" name="password">
+                        <% if (locals.errors && errors.password) { %>
+                            <small class="text-danger-admin-login">
+                                <%= errors.password.msg %>
+                            </small>
+                            <% } %>
+                    </div>
+
+                    <div class="check-admin-login">
+                        <label for="remember-admin-login"> Recordar contraseña</label>
+                        <input class="input-remember-admin-login" type="checkbox" name="remember" id="recordar">
+                        <span class="error-message">Debe aceptar los términos y condiciones</span>
+                    </div>
+                    <div class="div-button-container-admin-login">
+                        <span class="error-message-admin-login">Credenciales inválidas</span>
+                        <button type="submit" class="btn btn-submit">INICIAR SESION</button>
+                    </div>
+                    <span class="span-register-admin-login"><a href="./register">Registrarse</a></span>
+                </form>
+            </main>
+            <%- include("../partials/footer") %>
+    </body>
+
+</html>
