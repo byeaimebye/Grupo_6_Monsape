@@ -9,16 +9,24 @@
             <hr>
             <form action="/users/login" method="POST">
                 <div class="form">
-                    <div class="input-container">
+                    
                         <label for="email">Dirección de Correo Electrónico:</label>
-                        <input class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
+                        <div class="input-container div-email-login">
+                        <input id="input-email-login" class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
+                        <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <small class="text-danger error-email-login"></small>
                         <% if(locals.errors && errors.email) { %>
                             <small class="text-danger"><%= errors.email.msg %> </small>
-                        <% } %>
+                        <% }else{  %>
+                            <small class="text-danger error-email-login"></small>
+                            <% }%>
                     </div>
-                    <div class="input-container">
+                    
                         <label for="password">Contraseña:</label>
-                        <input class="input-style" type="password" name="password">
+                        <div class="input-container div-pass-login">
+                        <input id="input-pass-login" class="input-style" type="password" name="password">
+                        <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <small class="text-danger error-password-login"></small>
                         <% if (locals.errors && errors.password) { %>
                             <small class="text-danger"><%= errors.password.msg %> </small>
                         <% } %>
@@ -30,7 +38,7 @@
                         <span class="error-message">Debe aceptar los términos y condiciones</span>
                     </div>
                     <div class="button-container">
-                        <span class="error-message">Credenciales inválidas</span>
+                        <!-- <span class="error-message">Credenciales inválidas</span> -->
                         <button type="submit" class="btn btn-submit">INICIAR SESION</button>
                     </div>
                     <span>¿Aún no estas registrado?<br> <a href="./register">Registrate</a></span>
@@ -39,5 +47,6 @@
         </div>
     </main>
     <%- include("../partials/footer") %> 
+    <script src="/javascripts/login.js"></script>
 </body>
 </html>
