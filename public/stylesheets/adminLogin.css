@@ -1,41 +1,78 @@
 .main-register-admin-login{
-    background-color: darkred;
-    border-radius: 8px;
+    background-color: rgb(22, 21, 21);
+    border-radius: 8px;/* 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
     grid-template-areas: 
-    "h1-admin-login"
-    "h1-subtitle-admin-login"
+    "h1-title-admin-login"
+    "h2-subtitle-admin-login"
     "div-email-admin-login"
     "div-pass-admin-login"
     "check-admin-login"
     "div-button-container-admin-login"
-    "span-register-admin-login";
-    height: 80%;
+    "span-register-admin-login"; */
     margin: 0 auto 30px;
+    padding: 20px 20px;
     text-align: center;
     width: 90%;
 }
 
-.h1-admin-login{
-    grid-area: h1-admin-login;
+/* .h1-title-admin-login{
+    
+    grid-area: h1-title-admin-login;
+} */
+.h2-subtitle-admin-login{
+    
+    grid-area: h2-subtitle-admin-login;
+    margin: 0 auto;
 }
-.h1-subtitle-admin-login{
-    grid-area: h1-subtitle-admin-login;
-}
-.div-email-admin-login{
-    grid-area: div-email-admin;
+/* .div-email-admin-login{
+    
+    grid-area: div-email-admin-login;
 }
 .div-pass-admin-login{
-    grid-area: div-pass-admin;
+    
+    grid-area: div-pass-admin-login;
 }
 .check-admin-login{
-    grid-area: check-admin;
+    
+    grid-area: check-admin-login;
 }
 .div-button-container-admin-login{
-    grid-area: div-button-container-admin;
+    
+    grid-area: div-button-container-admin-login;
 }
 .span-register-admin-login{
-    grid-area: span-register-admin;
+    
+    grid-area: span-register-admin-login;
+} */
+
+.div-container-admin-login {
+    display: flex;
+    flex-direction: column;
+}
+
+.lbl-admin-login {
+    text-align: left;
+}
+
+.h1-admin-login {
+    margin: 0 auto;
+}
+
+.btn-admin-login {
+    margin: 20px auto 0;
+}
+
+/* .input-email-admin-login {
+    margin-bottom: 20px;
+} */
+
+.rows-admin-login {
+    margin-bottom: 20px;
+}
+
+.txt-admin-login {
+    color:white;
 }

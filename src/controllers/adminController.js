@@ -424,13 +424,13 @@ module.exports = {
 
     },
     register: (req, res)=> {
-
+        res.render("admin/adminRegister", {title: "Register: Modo Administrador", session: req.session});
     },
     registerProcess: (req, res)=> {
 
     },
     profile: (req, res)=> {
-
+        
     },
     editProfile: (req, res)=> {
 
