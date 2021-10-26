@@ -57,7 +57,9 @@
                         <label for="terms"> Aceptar <a href="">términos y condiciones</a> </label>
                         <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                         <input type="checkbox" name="terms" id="recordar" name="terms">
+                        
                         <% if (locals.errors && errors.terms) { %>
+                            <br>
                             <small class="text-danger"><%= errors.terms.msg %> </small>
                         <% } %>
                     </div>
