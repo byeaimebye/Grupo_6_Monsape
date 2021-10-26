@@ -3,7 +3,7 @@ window.addEventListener("load", () =>{
     let 
     _email = document.querySelector("#input-email-login"),
     _pass = document.querySelector("#input-pass-login"),
-    _form = document.querySelector(".form-container"),
+    _form = document.querySelector(".form-login"),
     
 
   
@@ -129,7 +129,14 @@ window.addEventListener("load", () =>{
     });
 
   
-   
+    //Focus events.
+
+_email.addEventListener("focus", () => {
+   document.querySelector(".danger-back").style.display = "none";
+});
+_pass.addEventListener("focus", () => {
+    document.querySelector(".danger-back").style.display = "none";
+});
 
    
 

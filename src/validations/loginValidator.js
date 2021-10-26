@@ -8,17 +8,24 @@ let validations =[
     body("email").custom((value,  {req}) => {
         return db.User.findOne({ where: { email: value } })
           .then((user) => {
-            if (!user || !bcrypt.compareSync(req.body.password, user.password)){
-              return Promise.reject()
-            }
+          if(!user){
+            return Promise.reject("El usuario no existe")
+          }
     
-            if(user.active === 0){
-              return Promise.reject()
-            }
-          })
-          .catch(() => {
+            /* if(user.active === 0){
+              return Promise.reject("El usuario no existe")
+            }  */
+          }),
+      body("password").custom((value, {req}) =>{
+        return db.User.findOne({ where : { email:value }})
+        .then((user) =>{ 
+        if (!user || !bcrypt.compareSync(req.body.password, user.password)){
+           Promise.reject("La contraseña que ingresaste no es correcta")
+         } })
+      })
+         /*  .catch(() => {
             return Promise.reject("Credenciales invalidas!");
-          });
+          });  */
       })
 
 ]
