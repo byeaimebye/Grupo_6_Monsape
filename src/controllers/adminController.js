@@ -41,6 +41,7 @@ module.exports = {
     //--------------------Administración de Productos-----------------------
     productCreate: (req, res) => {
         let errors = validationResult(req);
+        res.send(errors);
 
         if(errors.isEmpty()){
             let { name,

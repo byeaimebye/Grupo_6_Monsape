@@ -122,13 +122,8 @@ let validations = [
             return regExNum.test(value);
 
         })
-        .withMessage("Tipo de dato inválido"),
-        
-    check('variety')
-        .notEmpty()
-        .withMessage("El campo variedad está vacío.")
-        .equals("on")
-        .withMessage("Debe selecionar al menos una variedad"),      
+        .withMessage("Tipo de dato inválido"),       
+          
    
 ];
 

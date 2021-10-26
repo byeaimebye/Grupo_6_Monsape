@@ -27,11 +27,11 @@ router.get('/products',/* adminSession, */ products);
 router.get('/cargaDeProducto',/* adminSession, */ charge);
 
 /* POST- Crear producto */
-router.post('/cargaDeProducto', chargeProductsValidator,uploadFiles.single('image'), productCreate); 
+router.post('/cargaDeProducto', uploadFiles.single('image'), chargeProductsValidator, productCreate); 
 
  /* Editar productos*/
 router.get('/editProduct/:id',  edit);
-router.put('/editProduct/:id', chargeProductsValidator,uploadFiles.single('image'), productEdit);
+router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValidator,productEdit);
 
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
