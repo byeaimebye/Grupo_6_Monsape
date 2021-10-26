@@ -1,13 +1,18 @@
 .body-ingreso{
+    display: none;
     margin-top: 0;
+    position: absolute;
+    z-index: 999;
 }
 
 .main-ingreso {
+    display: none;
    font-family: 'Rosarivo', serif;
     background-color:white;
-    background-image: url(../img/Background.png);
+    
     background-size: cover;
-    display: flex;
+    position: absolute;
+    z-index: 999;
     justify-content: center;
 }
 

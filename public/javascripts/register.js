@@ -117,7 +117,7 @@ _pass.addEventListener("blur", ()=>{
             _pass.classList.remove("valid");
             _pass.classList.add("warning");
             document.querySelector(".div-password-register .fa-check-circle").style.display ="none";
-            document.querySelector(".div-password-register .fa-info-cicle").style.display="block";
+            document.querySelector(".div-password-register .fa-info-circle").style.display="block";
             document.querySelector(".div-password-register .fa-info-circle").style.color= "orangered";
             break;
             case ($value.length<6 || $value.length>12):
@@ -130,7 +130,7 @@ _pass.addEventListener("blur", ()=>{
                 _pass.classList.remove("valid");
                 _pass.classList.add("error");
                 document.querySelector(".div-password-register .fa-check-circle").style.display = "none";
-                document.querySelector(".div-password-register .fa-info-cicle").style.display= "block";
+                document.querySelector(".div-password-register .fa-info-circle").style.display= "block";
                 document.querySelector(".div-password-register .fa-info-circle").style.color="darkred";
                 break;
             default:
