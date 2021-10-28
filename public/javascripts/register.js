@@ -35,7 +35,7 @@ window.addEventListener("load", () =>{
                 _fullname.classList.add("error");
                 document.querySelector(".div-fullname-register .fa-check-circle").style.display = "none";
                 document.querySelector(".div-fullname-register .fa-info-circle").style.display = "block";
-                document.querySelector(".div-fullname-register .fa-info-circle").style.color = "darkRed";
+                document.querySelector(".div-fullname-register .fa-info-circle").style.color = "darkred";
                 break;
             case !regExAlpha.test($value):
                 _fullname.placeholder = "";
