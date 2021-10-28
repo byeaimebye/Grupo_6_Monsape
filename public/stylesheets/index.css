@@ -1,7 +1,7 @@
  
 
 .main-ingreso {
-    display: none;
+    display: flex;
    font-family: 'Rosarivo', serif;
     background-image: url(/img/Background.png);
     background-blend-mode: hard-light;
