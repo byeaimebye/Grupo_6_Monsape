@@ -6,7 +6,7 @@ const {Op}= require('sequelize')
 module.exports = {
     index: (req, res) => {
 
-        res.render("general/index", { title: "Bienvenidos a Monsape", session: req.session, });
+        res.render("general/index", { title: "Bienvenidos a Monsape", session: req.session });
 
     },
 
@@ -48,7 +48,7 @@ module.exports = {
         res.render("general/contact", {title:"Contactanos", session: req.session});
     },
     politicaDeDevolucion: (req, res) =>{
-        res.render("general/politicaDeDevolucion",{title:"Politicas de Devolucion", session: req.session})
+        res.render("general/politicaDeDevolucion", {title:"Politicas de Devolucion", session: req.session})
     },
     
 }

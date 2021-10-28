@@ -134,5 +134,8 @@ module.exports = {
             session: req.session,
 		})  */
         
-	}
+	},
+    detailDos: (req, res)=>{
+        res.render("product/productDetail2", {title: "Culia", session: req.session});
+    }
 }
