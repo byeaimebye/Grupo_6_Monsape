@@ -1,34 +1,69 @@
- 
-
-.main-ingreso {
-    display: none;
-   font-family: 'Rosarivo', serif;
-    background-image: url(/img/Background.png);
-    background-blend-mode: hard-light;
-    /* background-size: cover; */
-    position: absolute;
+/* The Modal (background) */
+.modalAge {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     z-index: 999;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    
-}
-.difu{
-    background-color: green;
-    align-items: center;
-    display: flex;
-    text-align: center;
-    height: 80%;
-    width: 80%;
+  }
+  
+  /* Modal Content */
+  .modal-content-age {
+      font-size: 12px;
+    position: relative;
+    background-color: #fefefe;
     margin: auto;
-    justify-content: center;
-}
-.year{
-    height: 100%;
-    margin-top: -50%;
-}
-.year p{
-    margin-bottom: 20%;
-}
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
 
+  
+  .modal-header {
+      align-items: center;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    padding: 50px;
+    background-image: url("/img/Background.png");
+    color: white;
+  }
+   input#año{
+       border-radius: 55px;
+       padding: 5px;
+       margin-top: 18px;
+   }
+   img#logoAge{
+       width: 110px;
+   }
+   button#buttonAge{
+       border-radius: 45px;
+       padding: 10px;
+       margin-top: 20px;
+   }
+ 
+  
