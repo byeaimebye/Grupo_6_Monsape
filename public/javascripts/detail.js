@@ -1,6 +1,6 @@
 const modalAdd = document.querySelector('#modalAdd');
-
 const openModal = () => {
+    console.log("hola")
     modalAdd.style.display = 'flex';
 }
 
