@@ -147,6 +147,16 @@ main.home{
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.linkeables-tablet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+ .linkeables-tablet img{
+    width: 100%;
+} 
+.bx3{
+    display: none;
+}
 /* Puntos indicadores */
 .dot {
    display: none;
@@ -200,7 +210,7 @@ main.home{
     
 
     main.home .linkeables-tablet{
-        display: none;
+      
     }
     main.home .linkeables{
         margin-top: 20px;
