@@ -6,24 +6,43 @@ let article = ``;
 let dir = "/javascripts/btns-quantity-products-script.js";
 /* console.log($script) */
 
-window.addEventListener("load", () => {
+function quantitySelector(id){
+    const $more = document.querySelector("#more" + id);
+    const $less = document.querySelector("#less" + id);
+    const $quantity = document.querySelector("#quantity" + id);
+
+    let contador = $quantity.value;
+    $less.addEventListener("click", e =>{
+        if(contador !== 1){
+            contador--;
+            $quantity.value = contador;
+        }
+    })
+    $more.addEventListener("click", e =>{
+            contador++;
+            $quantity.value = contador;
+    })
+}
+
+window.addEventListener("load", (e) => {
 
         if (localStorage.length > 0) {
             for (let i = 1; i <= localStorage.length; i++) {
 
                 article += `
-                <article class="art-cart" id="${JSON.parse(localStorage.getItem(i)).id}">
+                <article class="art-cart" id="">
                                 <div class="wine-x"><img src="${JSON.parse(localStorage.getItem(i)).image}" alt=""></div>
                                 <div class="detail">
                                     <p id="nombre">${JSON.parse(localStorage.getItem(i)).title}</p>
                                     <p id="precio">${JSON.parse(localStorage.getItem(i)).price}</p>
                                     <div class="cant" id="${JSON.parse(localStorage.getItem(i)).id}">
-                                        <input type="button" name="menos" id="buttons" class="menos"
+                                        <input type="button" name="menos" id="less${JSON.parse(localStorage.getItem(i)).id}" class="menos"
                                         value="-">
-                                        <input type="text" name="cantidad" id="cantidad" class="cantidad"
+                                        <input type="text" name="cantidad" id="quantity${JSON.parse(localStorage.getItem(i)).id}" class="cantidad"
                                         value="${JSON.parse(localStorage.getItem(i)).quantity}">
-                                        <input type="button" name="mas" id="buttons" class="mas" value="+">
+                                        <input type="button" name="mas" id="more${JSON.parse(localStorage.getItem(i)).id}" class="mas" value="+">
                                     </div>
+                                    
                                 </div>
                                 <div class="subtotal">
                                     <p>$2.500</p>
@@ -33,29 +52,13 @@ window.addEventListener("load", () => {
 
             }
             $articles.innerHTML = article;
-            $script.display = "block";
-            let $remove = document.querySelector(".tachito");
-            $remove.addEventListener("click", () => {
-                document.location.reload();
-            })
-
-        $less = document.querySelector(".menos");
-        $quantity = document.querySelector(".cantidad");
-        $more = document.querySelector(".mas");
-        console.log("botoncitos activos");
-
-        let contador = 0;
-
-        $less.addEventListener("click", e => {
-            if (contador !== 0) {
-                contador--;
-                $quantity.value = contador;
+            /* $script.display = "block"; */
+            
+            
+            for(let i = 0; i < localStorage.length; i++){
+                quantitySelector(i);
             }
-        })
-        $more.addEventListener("click", e => {
-            contador++;
-            $quantity.value = contador;
-        })
+            
 
     } else {
         $articles.innerHTML = `

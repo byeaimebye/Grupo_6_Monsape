@@ -13,8 +13,6 @@ $agregar.addEventListener("click", ()=>{
         quantity: $quantity.value
     }
 
-    if(+add.quantity != 0){
-        localStorage.setItem(localStorage.length + 1, JSON.stringify(add));
-    }
+    localStorage.setItem(localStorage.length + 1, JSON.stringify(add));
     
 });

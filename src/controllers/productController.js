@@ -30,26 +30,26 @@ module.exports = {
         }) */
     },
     /* Trae todos los detalles del producto solicitado. */
-    productDetail: async (req, res) => {
-          /* db.Wine.findByPk(req.params.id,{
+    productDetail: /* async */ (req, res) => {
+          db.Wine.findByPk(req.params.id,{
               include: [
                 {association: "category"},
                 {association: "collection"},
                 {association: "variety"}
               ]
-          })   */
-          await fetch("http://localhost:3080/api/hola/"+req.params.id)
-          .then(response => {return response.json()})     
+          })  
+          /* await fetch("http://localhost:3080/api/hola/"+req.params.id)
+          .then(response => {return response.json()})  */    
           .then(detail =>{/* 
               res.send(detail) */
-            let varieties = detail.data.variety.map(element =>{
+            let varieties = detail./* data. */variety.map(element =>{
                 return element.name
             }) //element me va a traer el nombre de la variedad que tiene el vino. con la funcion map
 
             res.render("product/productDetail", {
              varieties: varieties.join(", "),
-             title: detail.data.name,
-             detail: detail.data,
+             title: detail./* data. */name,
+             detail: detail/* .data */,
              session: req.session,
          })
         }).catch(err=> res.send(err));
@@ -138,8 +138,5 @@ module.exports = {
             session: req.session,
 		})  */
         
-	},
-    detailDos: (req, res)=>{
-        res.render("product/productDetail2", {title: "Culia", session: req.session});
-    }
+	}
 }

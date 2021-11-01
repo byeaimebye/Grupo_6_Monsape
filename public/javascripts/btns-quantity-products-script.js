@@ -3,10 +3,10 @@ $quantity = document.querySelector(".cantidad");
 $more = document.querySelector(".mas");
 console.log("botoncitos activos");
 
-let contador = 0;
+let contador = 1;
 
 $less.addEventListener("click", e =>{
-    if(contador !== 0){
+    if(contador !== 1){
         contador--;
         $quantity.value = contador;
     }

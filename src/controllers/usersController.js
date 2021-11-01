@@ -151,6 +151,7 @@ module.exports = {
     },
     editProfile: (req, res) => {
         let errors = validationResult(req);
+        let interruptor = false;
 
         if(errors.isEmpty()){
             let user = db.User.findByPk(req.session.user.id);
@@ -164,7 +165,10 @@ module.exports = {
                 date,
                 address
             } = req.body;
-    
+            
+            req.session.user.email !== email?interruptor = true:interruptor = false;
+            pass?interruptor = true:interruptor = false;
+
             db.User.update({
                 fullname: fullname ? fullname : user.fullname,
                 email: email ? email : req.session.user.email,
@@ -181,7 +185,15 @@ module.exports = {
             })
                 .then(() => {
                     
-                    res.redirect("/users/profile");
+                    if(interruptor){
+                        req.session.destroy();
+                        if (req.cookies.cookieMonsape) {
+                            res.cookie('cookieMonsape', '', { maxAge: -1 })
+                        }
+                        res.redirect('/users/login');
+                    }else{
+                        res.redirect("/users/profile");
+                    }
                 })
                 .catch(err=> res.send(err));
 

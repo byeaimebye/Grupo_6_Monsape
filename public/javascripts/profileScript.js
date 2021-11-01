@@ -5,6 +5,9 @@ window.addEventListener("load", () => {
         _accept = document.querySelector("#accept"),
         _inputs = document.querySelectorAll("input"),//Contiene todos los inputs.
         _form = document.querySelector(".main-profile form"),
+        _modalProfile = document.querySelector(".modal-container-profile"),
+        _modalYes = document.querySelector("#yes"),
+        _modalNo = document.querySelector("#no"),
     //inputs capturados individualmente.
         _fullname = document.querySelector("#input-fullname-profile"),
         _email = document.querySelector("#input-email-profile"),
@@ -26,6 +29,9 @@ window.addEventListener("load", () => {
         _cpErrors = document.querySelector("#cpErrors"),
         _dateErrors = document.querySelector("#dateErrors"),
         _addressErrors = document.querySelector("#addressErrors"),
+    //values
+        emailActual = _email.value,
+        passActual = _pass.value,
     //Expresiones regulares.
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExDNI = /^[0-9]{7,8}$/,
@@ -39,6 +45,7 @@ window.addEventListener("load", () => {
             input.disabled = false;
         }
         _address.disabled = false;
+        _accept.disabled = false;
     });
     //Evento que bloquea los campos del formulario al presionar el botón 'cancelar'.
     _cancel.addEventListener("click", () => {
@@ -54,6 +61,11 @@ window.addEventListener("load", () => {
         _address.classList.remove("error");
         _address.classList.remove("valid");
         _address.classList.remove("warning");
+
+        _accept.disabled = true;//Bloqueando botón 'Aceptar'...
+        if(_accept.disabled){
+            console.log("Disableado");
+        }
 
         //Almacenando todos los íconos de información...
         let _info = document.querySelectorAll(".fa-info-circle");
@@ -432,26 +444,63 @@ window.addEventListener("load", () => {
     });
 
     _form.addEventListener("submit", (e) => {
-        let cont = 0;
-        for (const element of _form.elements) {
-            if (element.classList.contains("error")) {
-                cont++;
-            } else if (element === _email && (element.classList.contains("error") || element.classList.contains("warning"))) {
-                cont++;
-            }
+        e.preventDefault();
+
+        if(emailActual != _email.value || passActual != _pass.value){
+            _modalProfile.style.display = "flex";
+    
+            _modalYes.addEventListener("click", ()=>{
+                let cont = 0;
+                for (const element of _form.elements) {
+                    if (element.classList.contains("error")) {
+                        cont++;
+                    } else if (element === _email && (element.classList.contains("error") || element.classList.contains("warning"))) {
+                        cont++;
+                    }
+                }
+        
+                if (cont !== 0) {
+                    e.preventDefault();
+                    //Apagando mensajes de error...
+                    for (const error of _allErrors) {
+                        error.style.display = "none";
+                    }
+                    alert("Se encontraron algunos errores");
+                } else {
+                    _form.submit();
+                    console.log("se envió");
+                }
+    
+            })
+    
+            _modalNo.addEventListener("click", ()=>{
+                _modalProfile.style.display = "none";
+            })
+
+        }else {
+            let cont = 0;
+                for (const element of _form.elements) {
+                    if (element.classList.contains("error")) {
+                        cont++;
+                    } else if (element === _email && (element.classList.contains("error") || element.classList.contains("warning"))) {
+                        cont++;
+                    }
+                }
+        
+                if (cont !== 0) {
+                    e.preventDefault();
+                    //Apagando mensajes de error...
+                    for (const error of _allErrors) {
+                        error.style.display = "none";
+                    }
+                    alert("Se encontraron algunos errores");
+                } else {
+                    _form.submit();
+                    console.log("se envió");
+                }
         }
 
-        if (cont !== 0) {
-            e.preventDefault();
-            //Apagando mensajes de error...
-            for (const error of _allErrors) {
-                error.style.display = "none";
-            }
-            alert("Se encontraron algunos errores");
-        } else {
-            _form.submit();
-            console.log("se envió");
-        }
+
     })
 })
 

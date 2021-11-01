@@ -19,7 +19,7 @@ let validations = [
         .isEmail()
         .withMessage('Debes ingresar un email'),
 
-    check("pass")
+    check("pass").optional({nullable: true, checkFalsy: true})
         .notEmpty()
         .withMessage("Debes rellenar este campo")
         .isLength({

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {tienda, productDetail, productCart, search, addToCart, detailDos} = require("../controllers/productController");
+const {tienda, productDetail, productCart, search, addToCart} = require("../controllers/productController");
 
 /* Tienda */
 router.get("/tienda", tienda);
@@ -12,5 +12,4 @@ router.get("/cart", productCart);
 
 router.get('/search', search);
 
-router.get("/culia/", detailDos);
 module.exports = router;

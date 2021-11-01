@@ -132,6 +132,34 @@ body {
     font-weight: bolder;
 }
 
+.btn-prev-next {
+    background-color: transparent;
+    border-radius: 2px;
+    color: black;
+    height: 65px;
+    width: 45px;
+    position: fixed;
+    top: 230px;
+    transition: all 0.8s;
+}
+
+.btn-prev-next:hover{/* 
+    background-color: rgba(86, 7, 12, 0.6); */
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-prev {
+    left: 10px;
+}
+.btn-next {
+    right: 10px;
+}
+
+.p-prev-next {
+    font-size: 28px;
+    margin-top: 14px;
+}
+
 @media(min-width: 768px){
     .main-prueba {
         display: grid;
@@ -237,5 +265,9 @@ body {
         font-size: 18px;
         height: 30px;/* 
         margin-top: 30px; */
+    }
+
+    .btn-prev-next {
+        top: 500px;
     }
 }
