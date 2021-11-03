@@ -195,29 +195,30 @@ _rePass.addEventListener("blur", ()=>{
     };
 });
 
-_form.addEventListener("submit", (e)=>{
+_form.addEventListener("submit", (e) => {
     let cont = 0;
-    for (const element of _form.elements){
-        if(element.classList.contains("error")){
+    for (const element of _form.elements) {
+        if (element.classList.contains("error")) {
             cont++;
-        } else if (element === _email && (element.classList.contains("error") || element.classList.contains("warning"))){
-            cont++
+        } else if (element === _email && (element.classList.contains("error") || element.classList.contains("warning"))) {
+            cont++;
         }
-
-        if(cont !==0){
-            e.preventDefault();
-            //apagando mensajes de error
-            for (const error of _allErrors){
-                error.style.display = "none";
-            }
-            alert("se encontraron algunos errores");
-        }else{
-            _form.submit();
-           
-        }
-        
     }
-});
+
+    if (cont !== 0) {
+        e.preventDefault();
+        //Apagando mensajes de error...
+        for (const error of _allErrors) {
+            error.style.display = "none";
+        }
+        alert("Se encontraron algunos errores");
+    } else {
+        _form.submit();
+        console.log("se envió");
+    }
+}
+);
+
  //Focus events.
  _fullname.addEventListener("focus", () => {
     _fullnameErrors.style.display = "none";
