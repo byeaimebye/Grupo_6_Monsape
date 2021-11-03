@@ -10,7 +10,7 @@ let { home,
 
 router.get("/", index);
 router.post("/", indexProcess);
-router.get('/home', home);
+/* router.get('/home', home); Deshabilitada index es el home ahora. */
 router.get('/aboutUs', aboutUs);
 router.get('/contact', contact);
 router.get('/politicaDeDevolucion', politicaDeDevolucion);

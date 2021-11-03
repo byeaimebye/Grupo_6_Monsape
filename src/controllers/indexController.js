@@ -4,20 +4,14 @@ const {Op}= require('sequelize')
 
 
 module.exports = {
-    index: (req, res) => {
-
-        res.render("general/index", { title: "Bienvenidos a Monsape", session: req.session });
-
-    },
-
     indexProcess: (req, res)=> {
-        if(req.body.year <= 2003){
-            res.redirect("/home");
+       /*  if(req.body.year <= 2003){
+            res.redirect("/");
         }else {
             res.send("Volá de acá, incordio.");
-        }
+        } */
     },
-    home: (req, res) => {
+    index: (req, res) => {
         db.Wine.findAll({
             where: {
                 discount: {

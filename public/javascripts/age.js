@@ -1,25 +1,43 @@
-// Get the modal
-var modal = document.getElementById("myModal");
+window.addEventListener("load", ()=>{
+  
+let inputAge = document.querySelector("#año")
+let formAge = document.querySelector("#formAge")
 
-// Get the button that opens the modal
-var home = document.getElementById("homeBody");
-
-// Get the <span> element that closes the modal
-/* var span = document.getElementsByClassName("close")[0]; */
-
-// When the user clicks the button, open the modal 
-home.onclick = function() {
-  modal.style.display = "block";
+if(!sessionStorage.getItem("edad")){
+  /* traemos el id modal de confirmacion */
+let lamodal = document.querySelector("#myModal")
+ /* declaramos la funcion que toma el tiempo de abrir la ventana */
+function abrirModal(){
+  modalAge = window.setTimeout(modalAbierta,3000);
 }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+/*esta funcion cambia el estilo de la ventana */
+function modalAbierta(){
+lamodal.style.display="block";
 }
+/*ejecutamos la funcion principal */
+abrirModal();
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }
+formAge.addEventListener("submit", (e)=>{
+  /*capturamos el año actual */
+let añoActual = new Date()
+
+let elAño = añoActual.getFullYear();
+
+e.preventDefault()
+
+let userAge = elAño - inputAge.value 
+
+if((userAge) >= 18 && inputAge.value > 0){
+ 
+sessionStorage.setItem("edad", userAge)
+window.location.href = "http://localhost:3080/"
+}else{
+alert("Deber ser mayor de 18 años")
+window.location.href = "http://www.google.com"
+} 
+
+})
+});
+
+
