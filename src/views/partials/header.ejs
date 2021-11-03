@@ -43,9 +43,11 @@
             <div class="loginH">
                <a href="/users/logout"><img class="logout" src="/img/banners/logout.png" alt=""> <br> <p>CERRAR SESION</p> </a> 
             </div> 
-            <div class="perfil">
-                <a href="/users/profile"><img class="perfil" src="/img/banners/user.png" alt="" width="25px"><br>
-                <p>TU PERFIL</p></a> 
+            <div class="perfil profile-drop-down">
+                <a href="#"><img class="perfil" src="/img/banners/user.png" alt="" width="25px"><br>
+                    <p>TU PERFIL</p>
+                </a> 
+            <%- include("./profileMenuDropDown") %> 
              </div>
             <% }else{ %> 
                 <div class="loginH">
@@ -53,7 +55,7 @@
                         <p>Ingresá</p>
                     </button>
                     <div class="modal2" id="modalAdd2">
-                        <!-- <form action="/users/login" method="POST">
+                        <form action="/users/login" method="POST">
 
                             <div class="modal-container2">
                                 <div class="close-modal2" onclick="closeModal2()">X</div>
@@ -65,8 +67,8 @@
                                 <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
                                 <button type="submit">INICIAR SESION</button>
                             </div>
-                        </form> -->
-                        <%- include("../partials/partialLogin") %> 
+                        </form>
+                        <%- /* include("../partials/partialLogin") */ %> 
                     </div>
                 </div>
                 <% } %> 

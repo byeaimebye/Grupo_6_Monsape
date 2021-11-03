@@ -28,7 +28,7 @@ let {admin,
 
 
 /*GET - Admin products */
-router.get('/products', adminSession, products);
+router.get('/products', /* adminSession, */ products);
 /*GET - Formulario de producto */
 router.get('/cargaDeProducto',/* adminSession, */ charge);
 
