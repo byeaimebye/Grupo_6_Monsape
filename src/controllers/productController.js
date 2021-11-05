@@ -51,6 +51,7 @@ module.exports = {
              title: detail./* data. */name,
              detail: detail/* .data */,
              session: req.session,
+             id: +req.params.id
          })
         }).catch(err=> res.send(err));
         /* let param = +req.params.id;
