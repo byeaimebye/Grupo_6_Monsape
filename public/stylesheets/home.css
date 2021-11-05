@@ -312,6 +312,9 @@ main.home{
 
 
 @media(min-width: 768px){
+    .bx3{
+        display: inline;
+    }
    header.home {
        height: 105px;
    }
