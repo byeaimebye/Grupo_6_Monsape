@@ -28,7 +28,7 @@ main.main-register{/*
 .form-container{
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0px 25px #cdcfd4;
+    box-shadow: 0 0px 10px #7c7c7c/* #C4C4C4 */;
     margin: 0 auto;
     height: fit-content;
     height: -moz-fit-content;

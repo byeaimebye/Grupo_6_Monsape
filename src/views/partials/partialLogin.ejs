@@ -1,0 +1,39 @@
+<div class="form-container">
+    <h2>INICIA SESION</h2>
+    <hr>
+    <form class="form-login" action="/users/login" method="POST">
+        <div class="form">
+            
+                <label class="text-forms" for="email">Dirección de Correo Electrónico:</label>
+                <div class="input-container div-email-login">
+                <input id="input-email-login" class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
+                <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                <small class="text-danger error-email-login"></small>
+                <% if(locals.errors && errors.email) { %>
+                    <small class="text-danger danger-back"><%= errors.email.msg %> </small>
+                <% } %>
+            </div>
+            
+                <label class="text-forms" for="password">Contraseña:</label>
+                <div class="input-container div-pass-login">
+                <input id="input-pass-login" class="input-style" type="password" name="password">
+                <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                <small class="text-danger error-password-login"></small>
+                <% if (locals.errors && errors.password) { %>
+                    <small class="text-danger danger-back"><%= errors.password.msg %> </small>
+                <% } %>
+            </div>
+         
+            <div class="check">
+                <label for="remember"> Recordar contraseña</label>
+                <input type="checkbox" name="remember" id="recordar">
+                <span class="error-message">Debe aceptar los términos y condiciones</span>
+            </div>
+            <div class="button-container">
+                <!-- <span class="error-message">Credenciales inválidas</span> -->
+                <button type="submit" class="btn btn-submit">INICIAR SESION</button>
+            </div>
+            <span>¿Aún no estas registrado?<br> <a href="./register">Registrate</a></span>
+        </div>
+    </form>
+</div>

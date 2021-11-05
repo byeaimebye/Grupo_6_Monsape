@@ -117,9 +117,18 @@
                             document.querySelector("#address").disabled = false;
                         })
                     </script> -->
-                    <button id="accept" class="" type="submit" name="btn-profile">Aceptar</button>
+                    <button id="accept" class="" type="submit" name="btn-profile" disabled>Aceptar</button>
                     <button id="cancel" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button>
                 </form>
+                <div class="modal-container-profile">
+                    <div class="modal-profile">
+                        <h3 class="h4-modal-profile">¿Seguro quieres modificar el email y/o contraseña?</h3>
+                        <div class="btns-container-modal-profile">
+                            <button class="btn-modal-profile" type="submit" id="yes">Si</button>
+                            <button class="btn-modal-profile" type="button" id="no">No</button>
+                        </div>
+                    </div>
+                </div>
             </main>
             <%- include("../partials/footer") %>
     </body>

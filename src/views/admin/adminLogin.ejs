@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <main class="main-register-admin-login">
+                <h1 class="h1-admin-login h1-title-admin-login rows-admin-login txt-admin-login">Modo Administrador</h1>
+                <h2 class="h2-subtitle-admin-login rows-admin-login txt-admin-login">INICIA SESION</h2>
+                <form action="/users/login" method="POST">
+                    <div class="div-container-admin-login div-email-admin-login rows-admin-login">
+                        <label class="lbl-admin-login lbl-email-admin-login txt-admin-login" for="email">Dirección de Correo Electrónico:</label>
+                        <input class="input-admin-login input-style input-email-admin-login" type="email" name="email"
+                            value="<%= locals.old && old.email %>">
+                        <% if(locals.errors && errors.email) { %>
+                            <small class="text-danger">
+                                <%= errors.email.msg %>
+                            </small>
+                            <% } %>
+                    </div>
+                    <div class="div-container-admin-login div-pass-admin-login">
+                        <label class="lbl-admin-login lbl-pass-admin-login txt-admin-login" for="password">Contraseña:</label>
+                        <input class="input-admin-login input-style input-pass-admin-login" type="password" name="password">
+                        <% if (locals.errors && errors.password) { %>
+                            <small class="text-danger-admin-login">
+                                <%= errors.password.msg %>
+                            </small>
+                            <% } %>
+                    </div>
+
+                    <div class="check-admin-login rows-admin-login">
+                        <label for="remember-admin-login" class="txt-admin-login">Recordar contraseña</label>
+                        <input class="input-remember-admin-login" type="checkbox" name="remember" id="recordar">
+                        <span class="error-message">Debe aceptar los términos y condiciones</span>
+                    </div>
+                    <div class="div-container-admin-login div-button-container-admin-login">
+                        <% if (false) { %>
+                            <span class="error-message-admin-login">Credenciales inválidas</span>
+                        <% } else { %>
+                            <span class="error-message-admin-login"></span>
+                        <% } %>
+                         
+                        <button type="submit" class="btn-admin-login btn-submit">INICIAR SESION</button>
+                    </div>
+                    <a href="./register"><span class="span-register-admin-login rows-admin-login txt-admin-login">Registrarse</span></a>
+                </form>
+            </main>
+            <%- include("../partials/footer") %>
+    </body>
+
+</html>

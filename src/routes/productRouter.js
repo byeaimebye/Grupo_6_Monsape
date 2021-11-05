@@ -12,5 +12,4 @@ router.get("/cart", productCart);
 
 router.get('/search', search);
 
-
 module.exports = router;

@@ -10,8 +10,14 @@ let {admin,
     productDelete,
     usersTable,
     userToDelete,
-userDelete,
-
+    userDelete,
+    login,
+    processLogin,
+    register,
+    registerProcess,
+    profile,
+    editProfile,
+    destroy
  } = require("../controllers/adminController");
     let adminSession = require('../middlewares/adminSession');
     let chargeProductsValidator = require('../validations/chargeProductsValidator');
@@ -22,7 +28,7 @@ userDelete,
 
 
 /*GET - Admin products */
-router.get('/products',/* adminSession, */ products);
+router.get('/products', /* adminSession, */ products);
 /*GET - Formulario de producto */
 router.get('/cargaDeProducto',/* adminSession, */ charge);
 
@@ -36,14 +42,19 @@ router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValida
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 /*delete elimina usuarios el admin */
-router.get('/userProfileAdmin/:id', userToDelete)
-router.delete('/userProfileAdmin/:id', userDelete) 
-
-
-
+router.get('/userProfileAdmin/:id', adminSession, userToDelete)
+router.delete('/userProfileAdmin/:id', userDelete)
 //-------------------Rutas de Admin Users-------------------------
-router.get('/usersTable', usersTable);
+router.get('/usersTable', adminSession, usersTable);
 /* 
 router.get("/probado-check/:id", edit); */
+//Login, register y profile admin
+router.get("/login", login);
+router.post("/login", processLogin);
+router.get("/register", register);
+router.post("/register", registerProcess);
+router.get("/profile/", profile);
+router.put("/profile/", editProfile);
+router.delete("/destroy/", destroy);
 
 module.exports = router;

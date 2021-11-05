@@ -1,6 +1,7 @@
 const {vinos, cart, writeCartsJSON} = require("../data/db");
 const db = require('../database/models');
 const {Op} = require('sequelize');
+const fetch = require("node-fetch")
 
 module.exports = {
     /* Lista todos los productos disponibles. */
@@ -29,26 +30,30 @@ module.exports = {
         }) */
     },
     /* Trae todos los detalles del producto solicitado. */
-    productDetail: (req, res) => {
+    productDetail: /* async */ (req, res) => {
           db.Wine.findByPk(req.params.id,{
               include: [
                 {association: "category"},
                 {association: "collection"},
                 {association: "variety"}
               ]
-          })       
-          .then(detail =>{
-            let varieties = detail.variety.map(element =>{
+          })  
+          /* await fetch("http://localhost:3080/api/hola/"+req.params.id)
+          .then(response => {return response.json()})  */    
+          .then(detail =>{/* 
+              res.send(detail) */
+            let varieties = detail./* data. */variety.map(element =>{
                 return element.name
             }) //element me va a traer el nombre de la variedad que tiene el vino. con la funcion map
 
             res.render("product/productDetail", {
              varieties: varieties.join(", "),
-             title: detail.name,
-             detail: detail,
+             title: detail./* data. */name,
+             detail: detail/* .data */,
              session: req.session,
+             id: +req.params.id
          })
-        }) 
+        }).catch(err=> res.send(err));
         /* let param = +req.params.id;
         let detail = vinos.find(product => product.id === param);
         console.log(detail);

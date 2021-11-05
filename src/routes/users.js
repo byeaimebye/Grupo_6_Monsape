@@ -26,7 +26,7 @@ router.get('/register', register);
 router.post('/register', /* upload.single("image"), */ registerValidator, registerProcess);
 
 /* Get Profile */
-router.get("/profile", userSession, profile);
+router.get("/profile/", userSession, profile);
 router.put("/profile", upload.single("avatar"), profileValidator, editProfile);
 
 module.exports = router;

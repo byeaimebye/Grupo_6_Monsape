@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("../partials/head") %> 
-<body>
+    <%- include("../partials/head.ejs") %> 
+<body class="body-product-detail">
     <%- include("../partials/header") %>
-    <main class="main-prueba">
+    <main class="main-prueba" id="<%= id %>">
+        <a href="/products/detail/<%= detail.id - 1 %>"><div class="btn-prev-next btn-prev"><p class="p-prev-next"><%= "<" %></p></div></a>
+        <a href="/products/detail/<%= detail.id + 1 %>"><div class="btn-prev-next btn-next"><p class="p-prev-next"><%= ">" %></p></div></a>
         <div class="img-prueba border-prueba">
             <img  src="/img/<%= detail.image %>" alt="img-prueba">
         </div>
@@ -24,6 +26,6 @@
     </main>
     <%- include("../partials/monsape-ofrece") %>
     <%- include("../partials/footer") %> 
-</body>
     <script src="/javascripts/btnAddProductDetail.js" defer></script>
+</body>
 </html>

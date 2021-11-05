@@ -41,9 +41,10 @@ module.exports = {
     //--------------------Administración de Productos-----------------------
     productCreate: (req, res) => {
         let errors = validationResult(req);
-        res.send(errors);
+        let newWine = [];
+        /* res.send(errors); */
 
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             let { name,
                 description,
                 category,
@@ -58,9 +59,9 @@ module.exports = {
                 price,
                 discount,
             } = req.body;
-    
-    
-            db.Wine.create({
+
+
+            let createWine = db.Wine.create({
                 name,
                 description,
                 category_id: category,
@@ -74,18 +75,29 @@ module.exports = {
                 price,
                 discount,
                 image: req.file ? '/VinosJson/' + req.file.filename : "default-img.jpg"
-            })
-                .then(result => {
-                    variety.forEach(element => {
+            }).then(result => {
+                let create = "";
+
+                if (variety && Array.isArray(variety)) {
+                    create = variety.forEach(element => {
                         db.WineVariety.create({
                             wine_id: result.id,
-                            variety_id: element
-                        })
-                    })
-                    res.redirect('/admin/products')
-                }).catch((error) => { res.send(error) })
-        }else{   
-            
+                            variety_id: +element
+                        }).then(() => { })
+                    });
+
+                } else if (variety && !Array.isArray(variety)) {
+                    create = db.WineVariety.create({
+                        wine_id: result.id,
+                        variety_id: variety
+                    }).then(() => { })
+                }
+
+                /* res.send(newWine) */
+                res.redirect('/admin/products')
+            }).catch((error) => { res.send(error) })
+        } else {
+
             let collectionPromise = db.Collection.findAll()
             let categoryPromise = db.Category.findAll()
             let varietyPromise = db.Variety.findAll()
@@ -102,7 +114,7 @@ module.exports = {
                     })
                 }).catch((error) => res.send(error))
         }
-        
+
 
 
         /*   let lastId = 1;
@@ -152,8 +164,8 @@ module.exports = {
            res.redirect('/admin/products')   */
     },
     edit: (req, res) => {
-        
-        
+
+
         let wineEditPromise = db.Wine.findByPk(req.params.id, {
             include: [
                 { association: "category" },
@@ -163,7 +175,7 @@ module.exports = {
         let collectionPromise = db.Collection.findAll();
         let categoryPromise = db.Category.findAll();
         let varietyPromise = db.Variety.findAll();
-        
+
 
         Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
             .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
@@ -171,16 +183,16 @@ module.exports = {
                 let productVariety = [];
                 let wineVariety = [];
                 wineEditPromise.variety.forEach(v => {
-                    productVariety.push({id: v.id, name: v.name, status: "checked"})
+                    productVariety.push({ id: v.id, name: v.name, status: "checked" })
                 })
 
                 varietyPromise.forEach(v2 => {
-                    wineVariety.push({id: v2.id, name: v2.name, status: ""})
+                    wineVariety.push({ id: v2.id, name: v2.name, status: "" })
                 })
 
                 productVariety.forEach(element => {
                     wineVariety.forEach(element2 => {
-                        if(element.id === element2.id){
+                        if (element.id === element2.id) {
                             wineVariety.splice(wineVariety.indexOf(element2), 1, element);
                         }
                     })
@@ -196,7 +208,7 @@ module.exports = {
                     variety: varietyPromise,
                     wineVariety,
                     session: req.session
-                }) 
+                })
             }).catch((error) => res.send(error))
     },
 
@@ -204,7 +216,7 @@ module.exports = {
 
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             let { name,
                 description,
                 category,
@@ -220,9 +232,9 @@ module.exports = {
                 discount,
             } = req.body;
             /* res.send() */
-    
+
             let wine = db.Wine.findByPk(req.params.id)
-    
+
             let update = db.Wine.update({
                 name,
                 description,
@@ -244,36 +256,36 @@ module.exports = {
                     }
                 }
             );
-    
+
             let destroy = db.WineVariety.destroy({
                 where: {
                     wine_id: req.params.id
                 }
-            }).then(()=>{})
-    
+            }).then(() => { })
+
             let create = "";
-            
-            if(variety && Array.isArray(variety)){
+
+            if (variety && Array.isArray(variety)) {
                 create = variety.forEach(element => {
                     db.WineVariety.create({
                         wine_id: +req.params.id,
                         variety_id: +element
-                    }).then(()=>{})
+                    }).then(() => { })
                 });
-    
-            }else if(variety && !Array.isArray(variety)){
+
+            } else if (variety && !Array.isArray(variety)) {
                 create = db.WineVariety.create({
                     wine_id: +req.params.id,
                     variety_id: variety
-                }).then(()=>{})
+                }).then(() => { })
             }
-    
+
             Promise.all([update, destroy, create, wine])
-                .then(()=> {
+                .then(() => {
                     res.redirect('/admin/products')
                 })
                 .catch((error) => { res.send(error) })
-        }else{
+        } else {
             let wineEditPromise = db.Wine.findByPk(req.params.id, {
                 include: [
                     { association: "category" },
@@ -283,31 +295,31 @@ module.exports = {
             let collectionPromise = db.Collection.findAll();
             let categoryPromise = db.Category.findAll();
             let varietyPromise = db.Variety.findAll();
-            
-    
+
+
             Promise.all([wineEditPromise, collectionPromise, categoryPromise, varietyPromise])
                 .then(([wineEditPromise, collectionPromise, categoryPromise, varietyPromise]) => {
                     /* res.send(wineEditPromise); */
                     let productVariety = [];
                     let wineVariety = [];
                     wineEditPromise.variety.forEach(v => {
-                        productVariety.push({id: v.id, name: v.name, status: "checked"})
+                        productVariety.push({ id: v.id, name: v.name, status: "checked" })
                     })
-    
+
                     varietyPromise.forEach(v2 => {
-                        wineVariety.push({id: v2.id, name: v2.name, status: ""})
+                        wineVariety.push({ id: v2.id, name: v2.name, status: "" })
                     })
-    
+
                     productVariety.forEach(element => {
                         wineVariety.forEach(element2 => {
-                            if(element.id === element2.id){
+                            if (element.id === element2.id) {
                                 wineVariety.splice(wineVariety.indexOf(element2), 1, element);
                             }
                         })
                     })
                     /* res.send(wineVariety); */
-    
-    
+
+
                     res.render('admin/editProduct', {
                         title: "Edición de producto",
                         wine: wineEditPromise,
@@ -318,11 +330,11 @@ module.exports = {
                         session: req.session,
                         errors: errors.mapped(),
                         old: req.body,
-                    }) 
-                }).catch((error) => res.send(error))            
+                    })
+                }).catch((error) => res.send(error))
         }
 
-        
+
 
 
         /*  let {
@@ -369,8 +381,11 @@ module.exports = {
         db.Wine.findByPk(req.params.id)
             .then(wine => {
                 wine.destroy({
-                    where: {id: wine.id}
-                })
+                    where: { id: wine.id }
+                }).then(()=>{})
+            fs.existsSync("./public/img/VinosJson/", wine.image)
+                ? fs.unlinkSync("./public/img/VinosJson/" + wine.image)
+                  : console.log("-- No se encontró");
 
                 res.redirect("/admin/products");
             }).catch(err => res.send(err));
@@ -386,29 +401,29 @@ module.exports = {
         res.redirect("/admin/products")
 
     },
-    userDelete:(req,res) =>{
-     db.User.findByPk(req.params.id)
-     .then(user =>{
-         db.User.destroy({
-             where: {id: user.id}
-         })
-         res.redirect("/admin/usersTable") 
-     })
-     .catch((error) => { res.send(error) })
+    userDelete: (req, res) => {
+        db.User.findByPk(req.params.id)
+            .then(user => {
+                db.User.destroy({
+                    where: { id: user.id }
+                })
+                res.redirect("/admin/usersTable")
+            })
+            .catch((error) => { res.send(error) })
     },
     usersTable: (req, res) => {
-        db.User.findAll().then((users)=>{
+        db.User.findAll().then((users) => {
             res.render("admin/adminUsers", {
                 users,
                 title: "Tabla de Usuarios Registrados"
             })
         })
-    
+
     },
-     userToDelete: (req, res) => {
+    userToDelete: (req, res) => {
         db.User.findByPk(req.params.id)
-        .then((user) => {
-                
+            .then((user) => {
+
                 res.render("admin/userProfileAdmin", {
                     title: "Edicion de usuario",
                     user,
@@ -416,6 +431,26 @@ module.exports = {
                 })
             })
             .catch(error => res.send(error));
- 
+    },
+    login: (req, res) => {
+        res.render("admin/adminLogin", { title: "Login: Modo Administrador", session: req.session });
+    },
+    processLogin: (req, res) => {
 
-}}
+    },
+    register: (req, res) => {
+        res.render("admin/adminRegister", { title: "Register: Modo Administrador", session: req.session });
+    },
+    registerProcess: (req, res) => {
+
+    },
+    profile: (req, res) => {
+
+    },
+    editProfile: (req, res) => {
+
+    },
+    destroy: (req, res) => {
+
+    },
+}
