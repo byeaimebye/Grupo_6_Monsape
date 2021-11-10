@@ -94,7 +94,7 @@ module.exports = {
                     })
                 }
                 res.locals.user = req.session.user;
-                res.redirect("/home")
+                res.redirect("/")
             }).catch(error => {
                 res.send(error)
             });
@@ -130,7 +130,7 @@ module.exports = {
         if (req.cookies.cookieMonsape) {
             res.cookie('cookieMonsape', '', { maxAge: -1 })
         }
-        res.redirect('/home')
+        res.redirect('/')
     },
     profile: (req, res) => {
         db.User.findByPk(req.session.user.id)

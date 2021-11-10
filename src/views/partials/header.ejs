@@ -15,7 +15,7 @@
             <a href="/products/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
-            <% if(session){ %> 
+            <% if(session.user){ %> 
                 <a href="/users/login">CARRITO DE COMPRAS</a>
                 <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
@@ -31,7 +31,7 @@
         <%- include("menuDesplegableProducts")%>
         <a href="/products/tienda">TIENDA</a>
     </div>
-    <a href="/home">
+    <a href="/">
         <div class="logoCenter">
             <img src="/img/logomon.svg" alt="">
             <h1>MONSAPE</h1>

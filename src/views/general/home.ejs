@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="html-home" lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -41,11 +41,11 @@
             <div class="close-modal" onclick="closeModal()">X</div>
             <div class="ases">
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
-            <a href="/home">INICIO</a>
+            <a href="/">INICIO</a>
             <a href="/products/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
-            <% if(session){ %> 
+            <% if(session.user){ %> 
                 <a href="/users/login">CARRITO DE COMPRAS</a>
                 <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
