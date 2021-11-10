@@ -40,18 +40,18 @@
     <div class="linksLast">
        
          <% if(session.user){  %>
-            <div class="loginH">
+           <!--  <div class="loginH">
                <a href="/users/logout"><img class="logout" src="/img/banners/logout.png" alt=""> <br> <p>CERRAR SESION</p> </a> 
-            </div> 
+            </div>  -->
             <div class="perfil profile-drop-down">
-                <a href="#"><img class="perfil" src="/img/banners/user.png" alt="" width="25px"><br>
-                    <p>TU PERFIL</p>
+                <img class="perfil" src="/img/banners/user (2).svg" alt="" width="25px">
+                  
                 </a> 
             <%- include("./profileMenuDropDown") %> 
              </div>
             <% }else{ %> 
                 <div class="loginH">
-                    <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br>
+                    <button id="ing" onclick="openModal2()"><img src="/img/banners/login.svg" alt=""> <br>
                         <p>Ingresá</p>
                     </button>
                     <div class="modal2" id="modalAdd2">

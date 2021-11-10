@@ -181,14 +181,16 @@ header .logoCenter h1 {
     color: white;
 }
 
-
+img.perfil{
+    width: 38px;
+}
 header.prueba .linksLast{
   
     align-items: center;
     text-align: center;
     justify-content: space-around;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 header.prueba .linksLast a img{
     color: white;
