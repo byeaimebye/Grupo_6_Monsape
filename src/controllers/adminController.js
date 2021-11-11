@@ -197,7 +197,9 @@ module.exports = {
                         }
                     })
                 })
-                /* res.send(wineVariety); */
+                // res.send(wineEditPromise);
+                let imagen = wineEditPromise.image;
+                let inputValue= imagen.replace("/VinosJson/",""); 
 
 
                 res.render('admin/editProduct', {
@@ -207,7 +209,8 @@ module.exports = {
                     category: categoryPromise,
                     variety: varietyPromise,
                     wineVariety,
-                    session: req.session
+                    session: req.session,
+                    inputValue
                 })
             }).catch((error) => res.send(error))
     },
@@ -232,6 +235,7 @@ module.exports = {
                 discount,
             } = req.body;
             /* res.send() */
+            
 
             let wine = db.Wine.findByPk(req.params.id)
 
@@ -256,6 +260,7 @@ module.exports = {
                     }
                 }
             );
+                       
 
             let destroy = db.WineVariety.destroy({
                 where: {
@@ -333,48 +338,6 @@ module.exports = {
                     })
                 }).catch((error) => res.send(error))
         }
-
-
-
-
-        /*  let {
-             nombre, 
-             descripcion, 
-             variedad,
-             categoria,
-             coleccion,
-             stock, 
-             Maridaje,
-             graduacionAlcoholica,
-             acidezTotal,
-             azucarResidual,
-             temperaturaRecomendada,
-             precio,
-             descuento 
-         } = req.body;
- 
-         vinos.forEach(vino =>{
-             if(vino.id === +req.params.id){
-             vino.id = vino.id,
-             vino.nombre = nombre,
-             vino.descripcion = descripcion,
-             vino.variedad = variedad,
-             vino.categoria = categoria,
-             vino.coleccion = coleccion,
-             vino.stock = stock,
-             vino.Maridaje = Maridaje,
-             vino.graduacionAlcoholica = graduacionAlcoholica,
-             vino.acidezTotal = acidezTotal,
-             vino.azucarResidual = azucarResidual,
-             vino.temperaturaRecomendada = temperaturaRecomendada,
-             vino.precio = precio,
-             vino.descuento = descuento,
-             vino.image = req.file ? '/VinosJson/' + req.file.filename : vino.image 
-             }
-         })
-         
-         writeVinosJSON(vinos);
-         res.redirect("/admin/products") */
     },
     productDelete: (req, res) => {
 
