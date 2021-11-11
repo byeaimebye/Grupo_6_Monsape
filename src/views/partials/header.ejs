@@ -15,7 +15,7 @@
             <a href="/products/tienda">PRODUCTOS</a>
             <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
-            <% if(session){ %> 
+            <% if(session.user){ %> 
                 <a href="/users/login">CARRITO DE COMPRAS</a>
                 <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
@@ -31,7 +31,7 @@
         <%- include("menuDesplegableProducts")%>
         <a href="/products/tienda">TIENDA</a>
     </div>
-    <a href="/home">
+    <a href="/">
         <div class="logoCenter">
             <img src="/img/logomon.svg" alt="">
             <h1>MONSAPE</h1>
@@ -40,18 +40,18 @@
     <div class="linksLast">
        
          <% if(session.user){  %>
-            <div class="loginH">
+           <!--  <div class="loginH">
                <a href="/users/logout"><img class="logout" src="/img/banners/logout.png" alt=""> <br> <p>CERRAR SESION</p> </a> 
-            </div> 
+            </div>  -->
             <div class="perfil profile-drop-down">
-                <a href="#"><img class="perfil" src="/img/banners/user.png" alt="" width="25px"><br>
-                    <p>TU PERFIL</p>
+                <img class="perfil" src="/img/banners/user (2).svg" alt="" width="25px">
+                  
                 </a> 
             <%- include("./profileMenuDropDown") %> 
              </div>
             <% }else{ %> 
                 <div class="loginH">
-                    <button id="ing" onclick="openModal2()"><img src="/img/banners/user.png" alt=""> <br>
+                    <button id="ing" onclick="openModal2()"><img src="/img/banners/login.svg" alt=""> <br>
                         <p>Ingresá</p>
                     </button>
                     <div class="modal2" id="modalAdd2">
@@ -64,7 +64,7 @@
                                 <input type="email" name="email" id="email">
                                 <label for="password">Ingrese su contraseña:</label>
                                 <input type="password" name="password" id="password">
-                                <p>¿Aún no tienes cuenta? <a href="/users/register">REGISTRATE</a> </p>
+                                <p class="login-modal-text">¿Aún no tienes cuenta? <a id="anclaRoja" href="/users/register">REGISTRATE</a> </p>
                                 <button type="submit">INICIAR SESION</button>
                             </div>
                         </form>
