@@ -10,12 +10,21 @@ body#homeBody{
     background-image: none;
 }
 
-input{
-    outline:none ;
-}
- body{
-    background-image: url("../img/banners/black-simple-textured-background-design.jpg");
+body {
+    margin-top: 180px;
+    background-image: url(/img/Background.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}  
+}
+input{
+    outline: none;
+}
+html{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header{
+    max-width: 1400px;
+}

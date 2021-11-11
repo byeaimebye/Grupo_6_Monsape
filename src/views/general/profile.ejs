@@ -1,60 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head") %> 
-<body>
-    <%- include("../partials/header") %>
+<%- include("../partials/head") %>
+
     <body class="body-profile">
-        <div class="div-container-profile">
-            <h1>MI PERFIL</h1>
-            <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="avatar-profile">
-                    <img src="/img/<%= user.image?user.image:"users/default-avatar.jpg"%>" alt="avatar">
-                    <input class="input-avatar-profile" type="file" name="avatar">
+        <%- include("../partials/header") %>
+
+            <main class="main-profile">
+
+                <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <h1 id="h1-profile">MI PERFIL</h1>
+                    <div class="avatar-profile">
+                        <img src="/img/<%= user.avatar?user.avatar:" users/default-avatar.jpg"%>" alt="avatar">
+                        <input class="input-avatar-profile" type="file" name="avatar" disabled>
+                    </div>
+
+                    <label id="lbl-fullname-profile" class="lbl-form-profile" for="fullname">Nombre y apellido</label>
+                    <div class="div-fullname-profile div-form-profile">
+                        <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
+                            value="<%= user.fullname?user.fullname:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <% if (locals.errors && errors.fullname) { %>
+                                <small class="small-form-profile validator-error" id="nameErrors"><%= errors.fullname.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="nameErrors"></small>
+                            <% } %>
+                    </div>
+
+                    <label id="lbl-email-profile" class="lbl-form-profile" for="email">Email</label>
+                    <div class="div-email-profile div-form-profile">
+                        <input id="input-email-profile" class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com"
+                            value="<%=user.email?user.email:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="small-form-profile validator-error" id="emailErrors"><%= errors.email.msg %></small>
+                             
+                            <% }else{ %>
+                                <small class="small-form-profile" id="emailErrors"></small>
+                            <% } %>
+                    </div>
+
+                    <label id="lbl-pass-profile" class="lbl-form-profile" for="pass">Password</label>
+                    <div class="div-pass-profile div-form-profile">
+                        <input id="input-pass-profile" class="input-form-profile" type="password" name="pass" 
+                        value="<%=user.pass?user.pass:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <% if (locals.errors && errors.pass) { %>
+                                <small class="small-form-profile validator-error" id="passErrors"><%= errors.pass.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="passErrors"></small>
+                            <% } %>
+                    </div>
+
+                    <label id="lbl-rePass-profile" class="lbl-form-profile" for="rePass">Repetir password</label>
+                    <div class="div-rePass-profile div-form-profile">
+                        <input id="input-rePass-profile" class="input-form-profile" type="password" name="rePass" 
+                        disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <% if (locals.errors && errors.rePass) { %>
+                            <small class="small-form-profile validator-error" id="rePassErrors"><%= errors.rePass.msg %></small>
+                        <% }else{ %>
+                            <small class="small-form-profile" id="rePassErrors"></small>
+                        <% } %>
+                    </div>
+
+                    <label id="lbl-dni-profile" class="lbl-form-profile" for="dni">Documento</label>
+                    <div class="div-dni-profile div-form-profile">
+                        <input id="input-dni-profile" class="input-form-profile" type="text" name="dni" placeholder="Documento"
+                            value="<%=user.dni?user.dni:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <% if (locals.errors && errors.dni) { %>
+                                <small class="small-form-profile validator-error" id="dniErrors"><%= errors.dni.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="dniErrors"></small>
+                            <% } %>
+                    </div>
+
+                    <label id="lbl-tel-profile" class="lbl-form-profile" for="tel">Teléfono</label>
+                    <div class="div-tel-profile div-form-profile">
+                        <input id="input-tel-profile" class="input-form-profile" type="text" name="tel" placeholder="Teléfono"
+                            value="<%=user.tel?user.tel:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <% if (locals.errors && errors.tel) { %>
+                                <small class="small-form-profile validator-error" id="telErrors"><%= errors.tel.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="telErrors"></small>
+                            <% } %>
+                    </div>
+
+                    <label id="lbl-cp-profile" class="lbl-form-profile" for="cp">Código Postal</label>
+                    <div class="div-cp-profile div-form-profile">
+                        <input id="input-cp-profile" class="input-form-profile" type="text" name="cp" placeholder="Código Postal"
+                            value="<%=user.cp?user.cp:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <% if (locals.errors && errors.cp) { %>
+                                <small class="small-form-profile validator-error" id="cpErrors"><%= errors.cp.msg %></small>
+                            <% }else{ %>
+                                <small class="small-form-profile" id="cpErrors"></small>
+                            <% } %>
+                    </div>
+
+                    <label id="lbl-date-profile" class="lbl-form-profile" for="date">Fecha de nacimiento</label>
+                    <div class="div-date-profile div-form-profile">
+                        <input id="input-date-profile" class="input-form-profile input-date-form-profile" type="date" name="date"
+                            value="<%=user.date?user.date:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                            <small class="small-form-profile" id="dateErrors"></small>
+                    </div>
+
+                    <label id="lbl-address-profile" class="lbl-form-profile" for="address">Domicilio</label>
+                    <div class="div-address-profile div-form-profile">
+                        <textarea name="address" class="txtarea-address" disabled><%=user.address?user.address:""%></textarea>
+                        <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <small class="small-form-profile" id="addressErrors"></small>
+                    </div>
+                    
+                    <button id="edit" class="btn-form-profile" type="button" name="btn-profile">Editar</button>
+                    <!-- <script>
+                        document.querySelector("#edit").addEventListener("click", ()=>{
+                            
+                            for (const input of document.querySelector(".main-profile form").elements) {
+                                input.disabled = false;
+                                input.classList.remove("validator-error");
+                            }
+                            document.querySelector("#address").disabled = false;
+                        })
+                    </script> -->
+                    <button id="accept" class="" type="submit" name="btn-profile" disabled>Aceptar</button>
+                    <button id="cancel" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button>
+                </form>
+                <div class="modal-container-profile">
+                    <div class="modal-profile">
+                        <h3 class="h4-modal-profile">¿Seguro quieres modificar el email y/o contraseña?</h3>
+                        <div class="btns-container-modal-profile">
+                            <button class="btn-modal-profile" type="submit" id="yes">Si</button>
+                            <button class="btn-modal-profile" type="button" id="no">No</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="container-data-profile">
-                    <div class="div-grid-profile">
-                        <div class="div-flex-profile">
-                            <label class="lbl-form-profile" for="fullname">Nombre y apellido</label>
-                            <input class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname" value="<%= user.fullname?user.fullname:""%>">
-
-                        </div>
-                        <div class="div-flex-profile">
-                            <label class="lbl-form-profile" for="email">Email</label>
-                            <input class="input-form-profile" type="email" name="email" placeholder="user-profile@example.com" value=<%= user.email?user.email:""%>>
-
-                        </div>
-
-                    </div>
-                    <div class="div-grid-profile div-grid-profile2">
-                   
-                        <div class="div-flex-profile">
-                            <label class="lbl-form-profile" for="dni">Documento</label>
-                            <input class="input-form-profile" type="text" name="dni" placeholder="Documento" value=<%= user.dni?user.dni:""%>>
-
-                        </div>
-                        <div class="div-flex-profile">
-                            <label class="lbl-form-profile" for="tel">Teléfono</label>
-                            <input class="input-form-profile" type="text" name="tel" placeholder="Teléfono" value=<%= user.tel?user.tel:""%>>
-
-                        </div>
-
-                    </div>
-                    <div class="div-grid-profile">
-                        <div class="div-flex-profile">
-                            <label class="lbl-form-profile" for="cp">Código Postal</label>
-                            <input class="input-form-profile" type="text" name="cp" placeholder="Código Postal" value=<%= user.cp?user.cp:""%>>
-                        </div>
-                        <div class="div-flex-profile">
-                            <label class="lbl-form-profile" for="date">Fecha de nacimiento</label>
-                            <input class="input-form-profile input-date-form-profile" type="date" name="date" value=<%= user.date?user.date:""%>>
-                        </div>
-
-                    </div>
-                    <button class="btn-form-profile" type="submit" name="btn-profile">Aceptar</button>
-                </div>
-            </form>
-        </div>
+            </main>
+            <%- include("../partials/footer") %>
     </body>
-    <%- include("../partials/footer") %>
-</body>
+    <script src="/javascripts/profileScript.js" defer></script>
 </html>

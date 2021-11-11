@@ -4,40 +4,10 @@
 <body>
   <%- include("../partials/header") %> 
     <main class="main-register">
-        <div class="form-container">
-            <h2>INICIA SESION</h2>
-            <hr>
-            <form action="/users/login" method="POST">
-                <div class="form">
-                    <div class="input-container">
-                        <label for="email">Dirección de Correo Electrónico:</label>
-                        <input class="input-style" type="email" name="email" value="<%= locals.old && old.email %>">
-                        <% if(locals.errors && errors.email) { %>
-                            <small class="text-danger"><%= errors.email.msg %> </small>
-                        <% } %>
-                    </div>
-                    <div class="input-container">
-                        <label for="password">Contraseña:</label>
-                        <input class="input-style" type="password" name="password">
-                        <% if (locals.errors && errors.password) { %>
-                            <small class="text-danger"><%= errors.password.msg %> </small>
-                        <% } %>
-                    </div>
-                 
-                    <div class="check">
-                        <label for="remember"> Recordar contraseña</label>
-                        <input type="checkbox" name="remember" id="recordar">
-                        <span class="error-message">Debe aceptar los términos y condiciones</span>
-                    </div>
-                    <div class="button-container">
-                        <span class="error-message">Credenciales inválidas</span>
-                        <button type="submit" class="btn btn-submit">INICIAR SESION</button>
-                    </div>
-                    <span>¿Aún no estas registrado?<br> <a href="./register">Registrate</a></span>
-                </div>
-            </form>
-        </div>
+        <%- include("../partials/partialLogin") %> 
     </main>
+    <script src="/javascripts/unlockAdmin.js"></script>
     <%- include("../partials/footer") %> 
+    <script src="/javascripts/login.js"></script>
 </body>
 </html>

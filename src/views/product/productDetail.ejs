@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("../partials/head") %> 
-<body>
+    <%- include("../partials/head.ejs") %> 
+<body class="body-product-detail">
     <%- include("../partials/header") %>
-    <main class="main-prueba">
+    <div class="winesExplorer">
+    <a href="/products/detail/<%= detail.id - 1 %>"><div class="btn-prev-next btn-prev"><p class="p-prev-next"><%= "<" %></p></div></a>
+    <h5 style="color: white; font-size: 25px; padding-top: 28px;">EXPLORÁ MÁS VINOS</h5>
+    <a href="/products/detail/<%= detail.id + 1 %>"><div class="btn-prev-next btn-next"><p class="p-prev-next"><%= ">" %></p></div></a>
+</div>
+    <main class="main-prueba" id="<%= id %>">
+      
         <div class="img-prueba border-prueba">
-            <img  src="/img/<%= detalle.image %>" alt="img-prueba">
+            <img  src="/img/<%= detail.image %>" alt="img-prueba">
         </div>
-        <h3 class="collection border-prueba"><%= detalle.coleccion %></h3>
-        <h2 class="title-p border-prueba"><%= detalle.nombre %></h2>
-        <h4 class="variedad border-prueba"><%= detalle.variedad %></h4>
-        <p class="price border-prueba">$<%= detalle.precio %></p>
+        <h3 name="collection" class="collection border-prueba"><%= detail.collection.name %></h3>
+        <h2 name="name" class="title-p border-prueba"><%= detail.name %></h2>
+        <h4 name="variety" class="variedad border-prueba"><%= varieties %></h4>
+        <p name="price" class="price border-prueba">$<%= detail.price %></p>
         <div class="cant">
-            <input type="button" name="menos" class="menos-detail btns" value="-">
-            <input type="text" name="cantidad" class="cantidad" value="0">
-            <input type="button" name="mas" class="mas-detail btns" value="+">
+            <%- include("../partials/btns-quantity") %> 
         </div>
-        <p class="description border-prueba"><%= detalle.descripcion %></p>
-        <p class="maridaje"><b>Maridaje: </b><%= detalle.Maridaje %></p>
+        <p name="description" class="description border-prueba"><%= detail.description %></p>
+        <p name="pairing" class="maridaje"><b>Maridaje: </b><%= detail.pairing %></p>
             <button type="submit" class="btn-button agregar border-prueba">Agregar</button>
             <button type="button" class="btn-button ver-mas border-prueba">Ver mas</button>
             <button type="submit" class="confirmar border-prueba">Confirmar</button>
 
-        <%- include("../partials/desplegable-productDetail") %> 
+       <%- include("../partials/desplegable-productDetail") %> 
     </main>
     <%- include("../partials/monsape-ofrece") %>
     <%- include("../partials/footer") %> 
+    <script src="/javascripts/btnAddProductDetail.js" defer></script>
 </body>
 </html>

@@ -46,41 +46,49 @@
         <hr>
     </div>    
     <!--Filtro de productos-->
-    <div class="filtro-de-productos">
-        <span>Ordenar por: </span>
-        <select>        
-            <option value="mas-vendidos" selected>Más Vendidos</option>
-            <option value="precio-menor">Precio: Menor a Mayor</option>
-            <option value="precio-mayor">Precio: Mayor a Menor</option>
-            <option value="a-z">A - Z</option>
-            <option value="z-a">Z - A</option>
-            <option value="mas-nuevo">Más Nuevo al más Viejo</option>
-            <option value="mas-viejo">Más Viejo al más Nuevo</option>
-        </select>
-    </div>
-    <!--MAIN-->
-    <main class="main-tienda">
-        <!--categorias de productos-->
-
-        <div class="categorias-principales">
-            <h5>Categorias principales</h5>
-            <ul>
-                <li><a href="/products/categoria/Tinto">Tintos</a></li>
-                <li><a href="/products/categoria/Blanco">Blancos</a></li>
-                <li><a href="/products/categoria/Espumoso">Espumantes</a></li>
-                <li>Gift Card</li>
-                <li><a href="/products/categoria/Rosado">Rosado</a></li>
-                <li>Box</li>
-                <li>Merchandising oficial</li>
-            </ul>
+    <div class="filtros">
+        <div class="filtro-de-productos">
+            <span>Ordenar por: </span>
+            <select>        
+                <option value="" selected></option>
+                <option value="mas-vendidos">Más Vendidos</option>
+                <option value="precio-menor">Precio: Menor a Mayor</option>
+                <option value="precio-mayor">Precio: Mayor a Menor</option>
+                <option value="a-z">A - Z</option>
+                <option value="z-a">Z - A</option>
+            </select>            
         </div>
-   
+        <div class="filtro-de-productos">
+            <span>Categorías: </span>
+            <select>
+                <option value="" selected></option>                
+                <option value=""><a href="/products/search?keywords=Tinto">Tintos</a></option>
+                <a href="/products/search?keywords=Blanco"><option value="">Blancos</option></a>
+                <a href="/products/search?keywords=Espumante"><option value="">Espumantes</option></a>
+                <a href="/products/search?keywords=Rosado"><option value="">Rosado</option></a>
+            </select>
+        </div>
+        <!-- <div class="categorias-principales">                
+                <ul class="category">
+                    <li><a href="#">Categoría <i class="fas fa-chevron-down"></i></a>
+                        <ul class="tipo">
+                            <li><a href="/products/search?keywords=Tinto">Tintos</a></li>
+                            <li><a href="/products/search?keywords=Blanco">Blancos</a></li>
+                            <li><a href="/products/search?keywords=Espumante">Espumantes</a></li>
+                            <li><a href="/products/search?keywords=Rosado">Rosado</a></li>                            
+                        </ul>
+                    </li>
+                </ul>
+        </div> -->
+    </div>    
+    <!--MAIN-->
+    <main class="main-tienda">   
         <section class="products">
-            <% vinos.forEach(vino => { %>
+            <% wines.forEach(wine => { %>
                 <article class="product-container">
-                    <a href="/products/detail/<%- vino.id %>"><img class="imagen-producto" src="/img/<%= vino.image %> " alt="Imagen de vino Monsape"></a>                    
+                    <a href="/products/detail/<%- wine.id %>"><img class="imagen-producto" src="/img/<%= wine.image %> " alt="Imagen de vino Monsape"></a>                    
                     <div class="descuento-porcentaje">
-                        <p><%= vino.descuento %>% OFF</p>
+                        <p><%= Math.trunc(wine.discount) %>% OFF</p>
                     </div>
                     <div class="caja-de-vino">
                         <img class="caja" src="/img/tienda/caja.svg" alt="caja de vino">
@@ -88,11 +96,11 @@
                     </div>
                     <div class="descripcion-producto">
                         <p class="precio-por-caja">Precio caja x6  botellas</p>
-                        <h4 class="nombre-producto"><%= vino.nombre %> </h4>
+                        <h4 class="nombre-producto"><%= wine.name %> </h4>
                     </div>
                     <div class="descuento-y-precio">
-                        <span class="descuento">$<%= Math.round((100*vino.precio)/(100-vino.descuento)) %> </span>
-                        <span class="precio">$<%= vino.precio %> </span>
+                        <span class="descuento">$<%= Math.round((100*wine.price)/(100-wine.discount))%> </span>
+                        <span class="precio">$<%= wine.price %></span>
                     </div>
                     <button class="agregar-producto-al-carrito">Agregar</button>
                 </article>

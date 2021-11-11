@@ -9,5 +9,9 @@ module.exports={
     users: JSON.parse(fs.readFileSync(path.join(__dirname, '/users.json'), "utf-8")),
     writeUsersJSON: (db) =>{
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(db), "utf-8")
+    },
+    cart: JSON.parse(fs.readFileSync(path.join(__dirname, '/cart.json'), "utf-8")),
+    writeCartsJSON: (db) =>{
+        fs.writeFileSync(path.join(__dirname, "../data/cart.json"), JSON.stringify(db), "utf-8")
     }
 }

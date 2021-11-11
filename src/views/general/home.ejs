@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="html-home" lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -27,16 +27,52 @@
 
 </head>
 <body class="home" id="homeBody">
-   <%-include("../partials/header.ejs") %> 
+  <%- include("../partials/index") %> 
+    <header class="home">
+    <div class="modal-burger">
+        <button onclick="openModal()">
+            <div class="burger">
+                <img src="/img/Vector.svg" alt="">
+            </div>
+        </button>
+    </div>
+    <div class="modal" id="modalAdd">
+        <div class="modal-conteiner">
+            <div class="close-modal" onclick="closeModal()">X</div>
+            <div class="ases">
+            <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
+            <a href="/">INICIO</a>
+            <a href="/products/tienda">PRODUCTOS</a>
+            <a href="#">COMO COMPRAR</a>
+            <a href="/aboutUs">QUIENES SOMOS</a>
+            <% if(session.user){ %> 
+                <a href="/users/login">CARRITO DE COMPRAS</a>
+                <% }else{ %> 
+            <a href="/users/login">INICIAR SESION</a>
+            <a href="/users/register">REGISTRATE</a>
+            <% } %> 
+          </div>
+            <!-- <button onclick="closeModal()">Cancelar</button> -->
+        </div>
+    </div>
+    <!-- FIN VENTANA MODAL MOBILE -->
+    <div class="logo-home">
+        <h1>MONSAPE</h1>
+    </div>
+    <div class="carrito-home">
+       <a href="/products/cart"><img src="/img/carrito-de-compras (1) 1.svg" alt=""></a>
+    </div>
+</header>
     <main class="home">
-      <div class="cabecera">
+    
+            <!-- CAROUSEL -->
+        <section class="carousel-container">
+            <div class="cabecera">
       <div class="logo-home1">
         <img src="/img/logomon.svg" alt="">
         <p>Soñamos el tiempo y lo encontramos. <br> Tenemos historia y tradición, pero sobre todo, futuro. </p>
       </div>
     </div>
-            <!-- CAROUSEL -->
-        <section class="carousel-container">
           <div class="slides fade">
               <img src="/img/carryhome1.png" alt="">
           </div>
@@ -76,11 +112,11 @@
             
             <div class="carrusel-items">
               
-              <% vinosDescuento.forEach(vino => { %>
+              <% wines.forEach(wine => { %>
                 <div class="carrusel-item">
-                  <a href="/products/detail/<%- vino.id %>"><img src="/img/<%= vino.image %> " alt="" /></a>
-                  <p><%- vino.descuento %> % Descuento</p>
-                  <h3><%- vino.nombre %></h1>
+                  <a href="/products/detail/<%- wine.id %>"><img src="/img/<%= wine.image %> " alt="" /></a>
+                  <p><%- wine.discount %> % Descuento</p>
+                  <h3><%- wine.name %></h1>
                 </div>
               <% }) %>
             </div>
@@ -97,6 +133,7 @@
            <a href="/tienda"><img src="/img/Frame 9.png" alt=""></a> 
         </div>
         </div>
+<<<<<<< HEAD
         <div class="linkeables">
         <div id="box1">
            <img src="/img/MOBILE1.svg" alt="">
@@ -107,6 +144,9 @@
            <button><a href="/products/tienda">TIENDA OFICIAL</a></button>
         </div>
         </div>
+=======
+  
+>>>>>>> 3c7b65361be195cde9fda89e39ca910932e41450
         <div class="vacaciones">
           <video src="/img/vacaciones.mp4" muted autoplay loop></video>
           <div class="txt">
@@ -115,17 +155,7 @@
         </div>
         </div>
     </main>
-    <footer>
-        <div class="footer-description">
-            <p>© 2021. Bodegas Monsape - Mendoza, Argentina.</p>
-            <p>Beber con moderación. Prohibida su venta a menores de 18 años.</p>
-        </div>
-        <div class="social-media-icons">
-            <img src="/img/facebook.svg" alt="icono de facebook">
-            <img src="/img/instagram.svg" alt="icono de instagram">
-            <img src="/img/pinterest.svg" alt="icono de pinterest">
-        </div>
-    </footer>
+    <script src="/javascripts/age.js"></script>
 </body>
 
 </html>

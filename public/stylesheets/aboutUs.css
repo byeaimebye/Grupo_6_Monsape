@@ -1,4 +1,4 @@
-p.bodega{
+    p.bodega{
     text-align: center;
     width: 100%;
     font-size: 45px;
@@ -6,7 +6,13 @@ p.bodega{
     font-weight: 200;
     font-size:31px;
     color: white;
-
+    }
+    main.about p{
+        color: white;
+    }
+    
+    main.about{
+        margin-top: -181px;
     }
     main.about .first-cont{
         background-image: url(/img/uverta.jpg);
@@ -32,8 +38,8 @@ p.bodega{
         font-size: 22px;
     }
  main.about .second{
+     background-color:rgba(1, 1, 1, 0.4) ;
      width: 100%;
-     color: white;
      text-align: center;
      display: flex;
      justify-content: center;
@@ -47,7 +53,7 @@ p.bodega{
      font-size: 2rem;
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
-     background-image: url("/img/vacaciones.png");
+     background-image: url("/img/uverta.jpg");
      margin-bottom: 20px;
      background-attachment: fixed;
     }
@@ -59,7 +65,7 @@ p.bodega{
      text-align: center;
  }
  main.about .history p{
-    color: white;
+     background-color: rgba(196, 196, 196, 0.4);
      line-height: 190%;
      padding: 20px;
  }

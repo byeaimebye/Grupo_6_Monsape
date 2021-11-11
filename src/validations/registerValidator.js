@@ -1,42 +1,47 @@
 const { check, body } = require('express-validator');
 const {users} = require("../data/db");
+const db = require("../database/models");
 
 let validations =[
     check('email')
-    .isEmail()
-    .withMessage('Debes ingresar un email'),
+        .isEmail()
+        .withMessage('Debes ingresar un email'),
 
     body('email').custom(value => {
-        let user = users.filter(user =>{
+        /* let user = users.filter(user =>{
             return user.email == value
+        }) */
+        return db.User.findOne({
+            where : {
+                email : value
+            }
         })
-        if(user == false){
-            return true
-        }else{
-            return false
-        }
-    })
-    .withMessage('Este email ya fue registrado'),
+        .then(user => {
+            if(user){
+                return Promise.reject('Este email ya está registrado')
+            }
+        })
+    }),
 
     check('fullname')
-    .notEmpty()
-    .withMessage("Debes ingresar un nombre y apellido"),
+        .notEmpty()
+        .withMessage("Debes ingresar un nombre y apellido"),
 
     check('password')
-    .notEmpty()
-    .withMessage('Debes ingresar una contraseña')
-    .isLength({
-        min: 8,
-        max: 15
-    })
-    .withMessage('La contraseña debe tener entre 8 y 15 caracteres'),
+        .notEmpty()
+        .withMessage('Debes ingresar una contraseña')
+        .isLength({
+            min: 6,
+            max: 15
+        })
+    .withMessage('La contraseña debe tener entre 6 y 15 caracteres'),
 
     body('password2').custom((value, {req}) => value !== req.body.password ? false : true)
-    .withMessage('Las contraseñas no coinciden'),
+        .withMessage('Las contraseñas no coinciden'),
 
     check('terms')
-    .isString('on')
-    .withMessage('Debes aceptar las bases y condiciones')
+        .isString('on')
+        .withMessage('Debes aceptar los términos y condiciones')
 
 ]
 

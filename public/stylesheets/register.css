@@ -15,10 +15,9 @@
     margin-bottom: 3rem;
     width: 100%;
 }
-main.main-register{
-    background-image: url("../img/banners/black-simple-textured-background-design.jpg");
-
-  background-attachment: fixed;
+main.main-register{/* 
+    background-image: url(/img/tienda/manchaDeVinoPeque.jpg); */
+    padding: 50px 2px;
 }
 /*formulario*/
 .form{
@@ -29,7 +28,7 @@ main.main-register{
 .form-container{
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 40px 60px #cdcfd4;
+    box-shadow: 0 0px 10px #7c7c7c/* #C4C4C4 */;
     margin: 0 auto;
     height: fit-content;
     height: -moz-fit-content;
@@ -40,6 +39,8 @@ main.main-register{
 /*Formulario input*/
 .input-container, 
 .button-container{
+    max-height: 40px;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem;
@@ -52,7 +53,6 @@ small.text-danger{
 
 input.input-style{
     background: #e4d8db;
-    border: none;
     border-radius: 20px;
     height: 2rem;
     padding: 0.5rem;
@@ -142,6 +142,10 @@ label {
 .register .check{ /*especificidad*/
     width: 100%;
 }
+.div-register-profile{
+    position: relative;
+    margin-bottom: 15px;
+}
 
 /*Media queries*/
 /*Tablet*/
@@ -149,6 +153,7 @@ label {
 @media screen and (min-width: 475px){
     .input-container,
     .button-container{
+        position: relative;
         width: 80%;
     }
     .form-container{

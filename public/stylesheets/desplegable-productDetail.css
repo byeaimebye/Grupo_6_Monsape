@@ -33,8 +33,9 @@
     z-index: 0;
 }
 
-.container-more-details .container-more-details-content {
-    background: linear-gradient(338deg, gainsboro 0%, rgba(124,127,124, 1) 0%, gainsboro);
+.container-more-details .container-more-details-content {/* 
+    background: linear-gradient(338deg, gainsboro 0%, rgba(124,127,124, 1) 0%, gainsboro); */
+    background-color: rgba(220, 220, 220, 0.7);
     padding: 20px;
     position: fixed;
     top: 100%;

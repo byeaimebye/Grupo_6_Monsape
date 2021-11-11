@@ -1,19 +1,15 @@
-ul{
-    list-style: none;
-}
-body.home{
+body.home1{
+
     background-color: black;
 }
-/* .body-tienda{
-    background-image: url(/img/biljana-martinic-IGJ_21drT3g-unsplash.jpg);
-    
-    font-weight: bolder;
-    background-size: cover;
-} */
+ .body-tienda{
+    margin-top: 0;
+} 
 .frase p{
     color: white;
     font-size: 14px;
 }
+
 .main-tienda{
     
     display: flex;
@@ -31,34 +27,78 @@ body.home{
     justify-content: space-between;
     text-align: center;
 }
-
+.frase p{
+    color: #ffffff;
+    font-size: 16px;
+}
 .frase h4{
-    color: white;
-    
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bolder;
 }
 
 .frase hr{
     color: white;
     width: 80%;
+    height: 2px;
     align-self: center;
     background: var(--color-rojoVino); 
     margin-bottom: 20px;   
 }
 
 /*filtro de productos*/
+/*Ordenar por: */
+div.filtros{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 20px;
+}
 .filtro-de-productos{
-    margin: 0 10px 10px 20px;
-
+    margin: 0 20px 10px 30px;
+}
+.filtro-de-productos span{
+    font-weight: bolder;
+    color: #ffffff;
 }
 .filtro-de-productos select{
     font-weight: bolder;
-    color: white;
+    background-color: var(--color-grisBotones);
+    height: 32px;
 }
 
-/*categorias principales*/
-.categorias-principales{
-    display: none;
+
+/* Filtrar por categoria */
+/* .filtros ul,
+.tipo ul li{
+    list-style: none;
 }
+
+.categorias-principales ul.category{
+    background-color: rgba(169,169,169,0.8);
+    padding: 7px 10px;
+    border-radius: 2px;
+    position: relative;
+    margin-right: 8px;
+}
+.categorias-principales ul.category li a{
+    color: #ffffff;
+    font-weight: bolder;
+}
+ul.tipo{    
+    background-color: rgba(169,169,169,0.7);
+    display: none;
+    position: absolute;    
+    z-index: 100;
+    height: 120px;
+}
+ul.tipo li{    
+    line-height: 30px;
+}
+ul.category:hover  ul.tipo{
+    display:block;
+} */
+
 /*-----------------------MAIN---------------------*/
 section.products{
     width: 80%;
@@ -75,13 +115,16 @@ section.products{
     align-items: center;
     position: relative;
     padding: 6px;
-    max-width: 320px;
+    width: 280px;
     margin-bottom: 25px;
 }
 /*imagen del producto*/
-.products .product-container .imagen-producto{
-    width: 98%;
-    height: 70%;
+.products .product-container a{
+    width: 96%;
+}
+ .imagen-producto{
+    width: 99%;
+    height: 15rem;
     border-radius: 4px;
     margin-bottom: 7px;
 }
@@ -177,20 +220,30 @@ section.products{
 }
 
 /*SLIDER MOBILE*/
+section.carousel-container1{
+    margin: 20px;
+    padding: 30px;
+    border-radius: 2%;
+    background-color: rgba(145, 137, 137, 0.3);
+}
 .slides1 .envio{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 30px;
     margin-bottom: 10px;
 }
 .slides1 .envio p{
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .slides1 .tarjetas-credito{
+    color: #ffffff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -206,18 +259,19 @@ section.products{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: 30px;
     margin-bottom: 10px;
 }
 .slides1 .satisfaccion p{
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
-.tarjetas img,
-.envio img,
-.satisfaccion img{
+.slides1  img{
     width: 40px;
     height: 40px;
+    color: #ffffff
 }
 
 
@@ -230,6 +284,8 @@ section.products{
     }
     .frase p{
         font-size: 16px;
+        margin: 0 auto;
+        width: 84%;
     }
     .main-tienda{
         display: flex;
@@ -238,28 +294,60 @@ section.products{
     }
    
     /*filtro de productos*/
+    /*Ordenar por: */
+    
     .filtro-de-productos{
-        color: white;
-        margin: 0 10px 15px 60px;    
+        margin: 0 20px 10px 50px;
     }
-        
-    /*categorias principales*/
-    .categorias-principales{
+    .filtro-de-productos select{
+        height: 34px;
+        width: 180px;
+    }
+    .filtro-de-productos select option{
+        text-align: center;
+    }
+    
+    /* Filtrar por categoria */    
+
+    /* .categorias-principales ul.category{
+        background-color: rgba(169,169,169,0.8);
+        padding: 7px 10px;
+        border-radius: 2px;
+        position: relative;
+        margin-right: 50px;
+    }
+    .categorias-principales ul.category li a{
+        color: #ffffff;
+        font-weight: bolder;
+    }
+    ul.tipo{    
+        background-color: rgba(169,169,169,0.7);
         display: none;
+        position: absolute;    
+        z-index: 100;
+        height: 120px;
     }
+    ul.tipo li{    
+        line-height: 30px;
+    }
+    ul.category:hover  ul.tipo{
+        display:block;
+    } */
+    /*-----------------------MAIN---------------------*/
+    /*producto y su descripcion (article)*/
+    .products .product-container{    
+        width: 270px;
+        margin-bottom: 25px;
+    }  
+    
     /*-----------------------MAIN---------------------*/
     section.products{
-        width: 92%;
-        display: flex;
+        width: 96%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-    }
-    /*producto y su descripcion (article)*/
-    .products .product-container{
-        max-width: 350px;        
-        width: 44%;
-    }
+        margin-left: 10px;
+    }    
    
     .products .product-container .descripcion-producto .precio-por-caja{
         font-size: 14px;
@@ -273,13 +361,21 @@ section.products{
     }
     /*lo que ofece monsape MOBILE*/
     .monsape-ofrece{
+        background-color: rgba(169,169,169,0.2);
         display: none;
     }
     
     /*SLIDER MOBILE*/
+    section.carousel-container1{
+        margin: 20px 12%;
+        padding: 30px;
+        border-radius: 2%;
+        background-color: rgba(145, 137, 137, 0.3);
+    }
     .slides1 .envio p,
     .slides1 .tarjetas-credito p,
     .slides1 .satisfaccion p{
+        color: white;
         font-size: 20px;
     }
     .slides1 .envio .camion img,
@@ -315,33 +411,15 @@ section.products{
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-   
-    /*filtro de productos*/
-    .filtro-de-productos{
-        margin: 0 10px 15px 80px;
-        height: 40px; 
-        font-size: 20px;   
-    }
-    .filtro-de-productos select{
-        height: 25px;
-    }
-        
-    /*categorias principales*/
-    .categorias-principales{
-        display: none;
-    }
+    }  
+ 
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
     }
     /*producto y su descripcion (article)*/
     .products .product-container{       
-        width: 32%;
+        width: 246px;
     }
     /*lo que ofece monsape MOBILE*/
     .monsape-ofrece{
@@ -349,16 +427,22 @@ section.products{
     }
     
     /*SLIDER MOBILE*/
+    section.carousel-container1{
+        margin: 20px 14%;
+        padding: 30px;
+        border-radius: 2%;
+        background-color: rgba(145, 137, 137, 0.3);
+    }
     .slides1 .envio p,
     .slides1 .tarjetas-credito p,
     .slides1 .satisfaccion p{
-        font-size: 25px;
+        font-size: 20px;
     }
     .slides1 .envio .camion img,
     .slides1 .tarjetas-credito .tarjetas img,
     .slides1 .satisfaccion .copa-con-vino img{
-        width: 70px;
-        height: 60px;
+        width: 60px;
+        height: 50px;
     }
     span.dot1{
         margin-right: 10px;
@@ -379,53 +463,19 @@ section.products{
     }
     .frase p{
         font-size: 22px;
-    }
-    .main-tienda{
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-    }
+    }    
    
     /*filtro de productos*/
-    .filtro-de-productos{
-        margin: 0 10px 15px 100px;
-        height: 40px; 
-        font-size: 22px;   
-    }
-    .filtro-de-productos select{
-        height: 28px;
-    }
-        
-    /*categorias principales*/
-    .categorias-principales{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 10px;
-        
-        top: -720px;
-    }
-    .categorias-principales h5{
-        font-size: 20px;
-        margin-bottom: 6px;
-    }
-    .categorias-principales li{
-        margin-bottom: 7px;
-    }
 
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
     }
     /*producto y su descripcion (article)*/
-    .products .product-container{
-        max-width: 350px;        
-        width: 32%;
+    .products .product-container{                
+        width: 240px;
     }
-    
+        
     /*SLIDER MOBILE*/
     .carousel-container1,
     .dots1{
@@ -435,9 +485,13 @@ section.products{
     /*lo que ofece monsape MOBILE*/
     .monsape-ofrece{
         display: grid;
-        grid-template-columns: repeat(3, 33%);
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 18px;
         margin: 30px 25px;
+        margin: 20px;
+        padding: 30px;
+        border-radius: 2%;
+        background-color: rgba(145, 137, 137, 0.3);
     }
     
     .envio,
@@ -446,11 +500,15 @@ section.products{
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 10px;
+        border-radius: 2%;
+        background-color: rgba(145, 137, 137, 0.5);
     }
 
     .envio p,
     .tarjetas-credito p,
     .satisfaccion p{
+        color: white;
         font-size: 18px;
     }
     .envio .camion img,
@@ -476,32 +534,19 @@ section.products{
         width: 70%;
         margin: 0 auto;
     }
-    .main-tienda{
-        display: grid;
-        grid-template-columns: 0.8fr 4fr;
+     
+    .filtro-de-productos select option,
+    .categorias-principales select option{
+        font-size: 16px;
     }
-   
-    /*filtro de productos*/
-    .filtro-de-productos{
-        margin: 0 10px 15px 10%;
-        height: 50px; 
-        font-size: 24px;   
-    }
-    .filtro-de-productos select{
-        height: 30px;
-    }
-        
-    /*categorias principales*/
-    .categorias-principales{
-        top: -40%;
-    }
+    
     /*-----------------------MAIN---------------------*/
     section.products{
         width: 98%;
     }
     /*producto y su descripcion (article)*/
     .products .product-container{
-        max-width: 350px;        
-        width: 24%;
+        max-width: 260px;        
+        width: 230px;
     }
 }   

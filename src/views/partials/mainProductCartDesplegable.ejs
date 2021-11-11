@@ -1,0 +1,67 @@
+<label for="">
+    <div class="cart-data-view-drop-down">
+        <label for="cart-data-drop-down">
+            <div class="cart-data-label-btn-close-drop-down">
+                <p id="cart-data-label-btn-close-drop-down-p">X</p>
+            </div>
+        </label> 
+<main class="main-productCart-drop-down">
+    <section class="section-productCart-drop-down">
+        <h2 class="h2-product-cart-drop-down">MI CARRITO</h2>
+        <!-- Columnas -->
+        <div class="column-drop-down">
+            <p>PRODUCTO</p>
+            <p>SUBTOTAL</p>
+        </div>
+        <!-- Articulos -->
+        <% for(let i=0; i < 4; i++){ %>
+            <article class="art-cart-drop-down">
+                <div class="wine-x-drop-down"><img src="/img/carrito1.jpg" alt=""></div>
+                <div class="detail-drop-down">
+                    <p id="nombre-drop-down">Nombre del vino</p>
+                    <p id="precio-drop-down">$2.500</p>
+                    <div class="cant-drop-down">
+                        <input type="button" name="menos" class="menos-drop-down buttons-drop-down"
+                            value="-">
+                        <input type="text" name="cantidad" class="cantidad-drop-down"
+                            value="0">
+                        <input type="button" name="mas" class="mas-drop-down buttons-drop-down" value="+">
+                    </div>
+
+                </div>
+                <div class="subtotal-drop-down">
+                    <p>$2.500</p>
+                    <img class="tachito-drop-down" src="/img/tachito.png" alt="carrito">
+                </div>
+            </article>
+            <% } %>
+                <!-- Subtotal (sin envío) -->
+                <div class="sub-sin-envio-drop-down">
+                    <p>Subtotal:</p>
+                    <p>$0</p>
+                </div>
+                <!-- Métodos de envío -->
+                <form action="" method="GET">
+                    <div class="met-envio-drop-down">
+                        <p><img src="/img/camioncito.png" alt="camioncito"> Métodos de
+                            envío
+                        </p>
+                        <div class="calcular-drop-down">
+                            <input type="text" name="codigo-postal" id="codigo-postal-drop-down"
+                                placeholder="Tu código postal">
+                            <input type="button" name="calcular" id="calcular-drop-down"
+                                value="CALCULAR">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="total-drop-down">
+                    <h4>Total:</h4>
+                    <h4>$5.000</h4>
+                </div>
+                <div class="fin-drop-down">
+                    <input type="button" name="mas" id="mas-drop-down" value="Ver más productos">
+                    <input type="submit" name="compra" id="compra-drop-down" value="REALIZAR COMPRA">
+                </div>
+    </section>
+</main>

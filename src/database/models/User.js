@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         email: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(150),
             allowNull: false,
             unique: true
         },
@@ -24,10 +24,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(20)
         },
         rol: {
-            type: DataTypes.VARCHAR(10).UNSIGNED,
+            type: DataTypes.STRING(10),
             allowNull: false
         },
-        birthday:{
+        date:{
             type: DataTypes.DATE,
             allowNull: false
         },
@@ -36,12 +36,25 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar:{
             type: DataTypes.STRING(100)
+        },
+        cp: {
+            type: DataTypes.STRING(10)
+        },
+        address: {
+            type: DataTypes.TEXT
         }
     }
     let config = {
         tableName:"users",
-        timestamps: true
+        timestamps: false
     }
     const User = sequelize.define(alias, cols, config)
-    return User;
-}
+
+    User.associate = models => {
+        User.hasMany(models.Cart,{
+            as: "user_cart",
+            foreignKey: "user_id"
+        })} 
+        return User;
+    }
+

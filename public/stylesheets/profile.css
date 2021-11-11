@@ -1,24 +1,42 @@
-.body-profile {
-    background-color: var(--color-fondo-main);
-}
-
-.div-container-profile {
-    background-color: var(--color-fondo-main);
-    border-radius: 10px;
-    height: 90%;
-    margin: 20px auto;
-    max-width: 560px;
-    text-align: center;
-    width: 90%;
+.main-profile form {
+    background-color: rgba(220, 220, 220, 0.9);
+    border-radius: 3px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.6fr 0.1fr 0.1fr 0.1fr;
+    grid-template-areas: 
+    "h1-profile" 
+    "avatar-profile" 
+    "lbl-fullname-profile" 
+    "div-fullname-profile" 
+    "lbl-email-profile" 
+    "div-email-profile"
+    "lbl-pass-profile" 
+    "div-pass-profile"
+    "lbl-rePass-profile" 
+    "div-rePass-profile"
+    "lbl-dni-profile" 
+    "div-dni-profile" 
+    "lbl-tel-profile" 
+    "div-tel-profile" 
+    "lbl-cp-profile" 
+    "div-cp-profile" 
+    "lbl-date-profile" 
+    "div-date-profile" 
+    "lbl-address-profile" 
+    "div-address-profile" 
+    "edit"
+    "accept"
+    "cancel";
+    margin: 50px 30px;
+    padding: 20px;
 }
 
 .avatar-profile {
-    /* 
-    height: 40px; */
-    /* 
-    border: solid red; */
     display: flex;
     border-radius: 65px;
+    grid-area: avatar-profile;
     justify-content: center;
     margin: 10px auto;
     position: relative;
@@ -33,6 +51,7 @@
 
 .input-avatar-profile {
     border-radius: 60px;
+    cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
@@ -43,58 +62,244 @@
     width: 100%;
 }
 
-.container-data-profile {
-    /* 
-    border: solid red; */
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto 10px;
-    text-align: left;
-    width: 90%;
+#h1-profile {
+    grid-area: h1-profile;
+    text-align: center;
 }
+#lbl-fullname-profile {
+    grid-area: lbl-fullname-profile;
 
-.div-flex-profile {
-    display: flex;
-    flex-direction: column;
+} 
+.div-fullname-profile{
+    grid-area: div-fullname-profile;
+
+} 
+#lbl-email-profile{
+    grid-area: lbl-email-profile;
+
+} 
+.div-email-profile {
+    grid-area: div-email-profile;
+    
+} 
+#lbl-pass-profile{
+    grid-area: lbl-pass-profile;
+
+} 
+.div-pass-profile {
+    grid-area: div-pass-profile;
+    
+} 
+#lbl-rePass-profile{
+    grid-area: lbl-rePass-profile;
+
+} 
+.div-rePass-profile {
+    grid-area: div-rePass-profile;
+    
+} 
+#lbl-dni-profile{
+    grid-area: lbl-dni-profile;
+
+} 
+.div-dni-profile{
+    grid-area: div-dni-profile;
+
+} 
+#lbl-tel-profile {
+    grid-area: lbl-tel-profile;
+
+} 
+.div-tel-profile{
+    grid-area: div-tel-profile;
+
+} 
+#lbl-cp-profile {
+    grid-area: lbl-cp-profile;
+
+} 
+.div-cp-profile{
+    grid-area: div-cp-profile;
+
+} 
+#lbl-date-profile{
+    grid-area: lbl-date-profile;
+
+} 
+.div-date-profile {
+    grid-area: div-date-profile;
+
+} 
+#lbl-address-profile {
+    grid-area: lbl-address-profile;
+} 
+.div-address-profile {
+    grid-area: div-address-profile;
+
+}
+.div-address-profile > textarea {
+    border-radius: 10px;
+    height: 100%;
+    padding-left: 10px;
+    resize: none;
+    width: 100%;
+} 
+#edit{
+    grid-area: edit;
+
+}
+#accept{
+    background-color: var(--color-rojoVino);
+    border-radius: 1.5rem; 
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.7);  
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    grid-area: accept;
+    height: 2.2rem;
+    margin: 15px auto;
+    text-transform: uppercase;
+    width: 200px;
+
+}
+#accept:hover{
+    transition: 1s all;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--color-rojoVino);
+    font-weight: bolder;
+}
+#cancel{
+    grid-area: cancel;
+
 }
 
 .lbl-form-profile {
-    margin: 10px 0;
+    cursor: pointer;
 }
 
 .input-form-profile {
     border-radius: 10px;
-    height: 27px;
-    margin: 5px 0;
+    height: 27px;/* 
+    margin: 5px 0; */
     padding-left: 10px;
-}
-
-.input-date-form-profile {
-    background: white;
     width: 100%;
 }
 
-.btn-form-profile {
+.input-date-form-profile {/* 
+    background: white; */
+    width: 100%;
+}
+
+/* .btn-form-profile {
     background-color: var(--color-rojoVino);
     border-radius: 20px;
     color: white;
     height: 30px;
     margin: 15px auto;
     width: 50%;
+} */
+.btn-form-profile {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 1.5rem; 
+    box-shadow: 0 0 15px rgba(66, 66, 66, 0.7);
+    color: var(--color-rojoVino);
+    cursor: pointer;
+    font-weight: bold;
+    height: 2.2rem;
+    margin: 15px auto;
+    text-transform: uppercase;
+    width: 200px;
 }
 
-@media(min-width: 1000px) {
-    .div-container-profile {
-        max-width: none;
-        padding: 10px;
-        width: 80%;
-    }
-    .div-grid-profile {
+.btn-form-profile:hover{
+    transition: 1s all;
+    background-color: var(--color-rojoVino);
+    color: white;
+    font-weight: bolder;
+}
+
+.div-form-profile{/* 
+    border: solid 2px green; */
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.small-form-profile{
+    /* display: none; */
+    left: 8px;
+    /* position: absolute; */
+}
+
+.modal-container-profile {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.modal-profile {
+    align-items: center;
+    background-color: gainsboro;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 400px;
+}
+
+.btns-container-modal-profile {
+    display: flex;
+    height: 15px;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.btn-modal-profile {
+    background-color: var(--color-rojoVino);
+    border-radius: 3px;
+    color: white;
+    height: 30px;
+    width: 40px;
+}
+
+@media (min-width:768px){
+    .main-profile form {/* 
+        background-color: rgba(220, 220, 220, 0.6);
         display: grid;
-        gap: 20px;
-        grid-template-columns: 1fr 1fr;
+        gap: 8px; */
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.6fr 0.1fr;
+        grid-template-areas: 
+        "h1-profile h1-profile h1-profile h1-profile h1-profile h1-profile h1-profile h1-profile" 
+        "avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile avatar-profile" 
+        "lbl-fullname-profile lbl-fullname-profile lbl-fullname-profile lbl-fullname-profile lbl-email-profile lbl-email-profile lbl-email-profile lbl-email-profile"
+        "div-fullname-profile div-fullname-profile div-fullname-profile div-fullname-profile div-email-profile div-email-profile div-email-profile div-email-profile" 
+        "lbl-pass-profile lbl-pass-profile lbl-pass-profile lbl-pass-profile lbl-rePass-profile lbl-rePass-profile lbl-rePass-profile lbl-rePass-profile"
+        "div-pass-profile div-pass-profile div-pass-profile div-pass-profile div-rePass-profile div-rePass-profile div-rePass-profile div-rePass-profile" 
+        "lbl-dni-profile lbl-dni-profile lbl-tel-profile lbl-tel-profile lbl-cp-profile lbl-cp-profile lbl-date-profile lbl-date-profile"
+        "div-dni-profile div-dni-profile div-tel-profile div-tel-profile div-cp-profile div-cp-profile div-date-profile div-date-profile" 
+        "lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile lbl-address-profile" 
+        "div-address-profile div-address-profile div-address-profile div-address-profile div-address-profile div-address-profile div-address-profile div-address-profile" 
+        "edit edit edit accept accept cancel cancel cancel";/* 
+        margin: 50px 30px;
+        padding: 20px; */
     }
-    .div-grid-profile2 {
-        grid-template-columns: 1fr 1fr 1fr;
+
+    .btn-form-profile{
+        margin: 15px auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-profile form {
+        gap: 15px;
     }
 }

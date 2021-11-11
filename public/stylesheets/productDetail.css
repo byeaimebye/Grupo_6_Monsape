@@ -2,16 +2,13 @@ body {
     background-color: gainsboro;
 }
 
-/* .border-prueba {
-    border: solid 2px;
-} */
-
 .main-prueba {
     align-items: center;
+    background-color: rgba(169,169,169,0.7);
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.1fr 0.2fr 0.1fr 0.2fr 0.1fr 0.8fr 0.2fr 0.1fr;
-    grid-template-areas: 
+    grid-template-rows: 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr 0.1fr;
+    grid-template-areas:
     "img-prueba img-prueba img-prueba img-prueba"
     "collection collection collection collection"
     "title-p title-p title-p title-p"
@@ -24,9 +21,9 @@ body {
     "ver-mas ver-mas ver-mas ver-mas" 
     "confirmar confirmar confirmar confirmar";
     
-    margin: 30px;
-    text-align: center;/* 
-    height: 100vh; */
+    margin: 20px;
+    padding: 10px 20px 5px;
+    text-align: center;
 
 }
 
@@ -38,12 +35,15 @@ body {
     grid-area: img-prueba;
     margin-bottom: 20px;
 }
-.collection {
-    color: var(--color-grisOscuro);
+.collection {/* 
+    color: var(--color-grisOscuro); */
+    color: gainsboro;
     grid-area: collection;
 }
 .title-p {
+    color: gainsboro;
     grid-area: title-p;
+    margin: 0;
 }
 .variedad {
     color: var(--color-rojoVino);
@@ -55,47 +55,27 @@ body {
     grid-area: price;
     margin: 10px auto 5px;
 }
-.cant {
-    border: solid 1px var(--color-rojoVino);
-    border-radius: 10px;
-    display: flex;
-    grid-area: cant;
-    height: 25px;
-    margin: 10px auto 10px;
-    width: 100px;
-}
-.btns {
-    width: 100px;
-    font-size: 20px;
-}
-.menos-detail {
-    border-radius: 15px 0 0 15px;
-}
-
-.mas-detail {
-    border-radius: 0 15px 15px 0;
-}
-.cantidad {
-    border-left: solid 1px var(--color-rojoVino);
-    border-right: solid 1px var(--color-rojoVino);
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-}
 
 .description {/* 
     background: linear-gradient(180deg, transparent 1%, rgba(3,3,12, 0.1) 25%, transparent); */
+    color: gainsboro;
     font-size: 15px;
     grid-area: description;
     margin: 10px auto 0;
 }
 .maridaje {
+    color: gainsboro;
     font-size: 15px;
     grid-area: maridaje;
     margin-bottom: 20px;
 }
 .maridaje > b{
     color: var(--color-rojoVino);
+}
+
+.cant {
+    grid-area: cant;
+    margin: 0 auto;
 }
 
 .agregar {
@@ -106,34 +86,84 @@ body {
 }
 
 .btn-button {
-    border: solid 1px var(--color-rojoVino);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 1.5rem; 
+    box-shadow: 0 0 15px rgba(66, 66, 66, 0.7);
+    color: var(--color-rojoVino);
+    cursor: pointer;
+    font-weight: bold;
+    height: 2.2rem;
     margin: 0 auto;
+    text-transform: uppercase;
+    width: 200px;
 }
 
-.title-p {
-    margin: 0;
+.btn-button:hover{
+    transition: 1s all;
+    background-color: var(--color-rojoVino);
+    color: white;
+    font-weight: bolder;
 }
 
 .img-prueba > img{
     box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 20%);
     width: 250px;
-}
-
-.btn-button {
-    border-radius: 10px;
-    height: 25px;
-    margin: 0 auto 10px;
-    width: 200px;
+    margin-top: 30px;
 }
 
 .confirmar {
     background-color: var(--color-rojoVino);
-    border-radius: 10px;
+    border-radius: 1.5rem; 
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.7);  
     color: white;
+    cursor: pointer;
+    font-weight: bold;
     grid-area: confirmar;
-    height: 25px;
+    height: 2.2rem;
     margin: 0 auto;
+    text-transform: uppercase;
     width: 200px;
+}
+
+.confirmar:hover{
+    transition: 1s all;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--color-rojoVino);
+    font-weight: bolder;
+}
+
+.winesExplorer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-prev-next {
+    background-color: transparent;
+    border-radius: 2px;
+    color: white;
+  /*   height: 65px;
+    width: 45px;
+   
+    top: 230px; */
+    padding: 25px;
+    transition: all 0.8s;
+}
+
+.btn-prev-next:hover{/* 
+    background-color: rgba(86, 7, 12, 0.6); */
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-prev {
+    left: 10px;
+}
+.btn-next {
+    right: 10px;
+}
+
+.p-prev-next {
+    font-size: 28px;
+   
 }
 
 @media(min-width: 768px){
@@ -150,6 +180,7 @@ body {
         "img-prueba img-prueba maridaje maridaje"
         "img-prueba img-prueba agregar ver-mas"
         "confirmar confirmar confirmar confirmar";
+        padding: 20px 20px 5px;
         text-align: center;
     
     }
@@ -158,8 +189,9 @@ body {
         display: block;
     }
 
-    .img-prueba {
-        margin-bottom: 50px;
+    .img-prueba {/* 
+        margin-bottom: 50px; */
+        margin: 86px auto;
     }
     
     .price,
@@ -168,6 +200,15 @@ body {
     .btn-button,
     .confirmar {
         margin: 0 auto;
+    }
+
+    .btn-button {
+        margin: 10px;
+    }
+
+    .description,
+    .maridaje{
+        margin-left: 25px;
     }
 
     .maridaje {
@@ -182,8 +223,8 @@ body {
 
 @media (min-width: 1200px) {
     .main-prueba {
-        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.3fr 0.5fr 0.3fr 0.3fr 0.2fr;
-        margin: 90px;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 0.2fr;
+        /* gap:10px; */
     }
 
     .img-prueba > img{
@@ -191,7 +232,8 @@ body {
     }
 
     .collection {
-        font-size: 20px;
+        font-size: 20px;/* 
+        margin-top: 30px; */
     }
 
     .title-p {
@@ -227,6 +269,11 @@ body {
 
     .confirmar {
         font-size: 18px;
-        height: 30px;
+        height: 30px;/* 
+        margin-top: 30px; */
+    }
+
+    .btn-prev-next {
+        top: 500px;
     }
 }

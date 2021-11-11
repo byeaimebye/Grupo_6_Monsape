@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include("../partials/head.ejs") %> 
-<body>
+<%- include("../partials/head.ejs")%>
+    <body class="body-productCart">
+        <!-- Header start here -->
+        <%- include("../partials/header.ejs")%>
 
-    <!-- Header start here -->
-    <%- include("../partials/header.ejs") %> 
-    <%- include("../partials/mainProductCart") %> 
-    <!--FOOTER-->
-    <%- include("../partials/footer") %>
-</body>
-
+        <!-- MAIN -->
+        <label for="">
+            <div class="cart-data-view">
+        <main class="main-productCart">
+            <section class="section-productCart">
+                <h2 class="h2-product-cart">MI CARRITO</h2>
+                <!-- Columnas -->
+                <div class="column">
+                    <p>PRODUCTO</p>
+                    <p>SUBTOTAL</p>
+                </div>
+                <!-- Articulos -->
+                <div id="articles">
+                </div>
+                
+                <!-- Subtotal (sin envío) -->
+                <div class="sub-sin-envio">
+                    <p>Subtotal:</p>
+                    <p>$0</p>
+                </div>
+                <!-- Métodos de envío -->
+                        <!-- <form action="" method="GET">
+                            <div class="met-envio">
+                                <p><img src="/img/camioncito.png" alt="camioncito"> Métodos de
+                                    envío
+                                </p>
+                                <div class="calcular">
+                                    <input type="text" name="codigo-postal" id="codigo-postal"
+                                    placeholder="Tu código postal">
+                                    <input type="button" name="calcular" id="calcular"
+                                    value="CALCULAR">
+                                </div>
+                            </div>
+                        </form> -->
+                        
+                        <div class="total">
+                            <h4>Total:</h4>
+                            <h4>$5.000</h4>
+                        </div>
+                        <div class="fin">
+                            <a href="/products/tienda"><input type="button" name="mas" id="mas" value="Ver más productos"></a>
+                            <input type="submit" name="compra" id="compra" value="REALIZAR COMPRA">
+                        </div>
+                    </section>
+                </main>
+                
+                <!--FOOTER-->
+                <%- include("../partials/footer.ejs")%>
+                <script src="/javascripts/productCartScript.js" defer></script>
+            </body>
 </html>
 
 

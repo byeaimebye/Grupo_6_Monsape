@@ -1,3 +1,34 @@
+html.html-home{
+    
+}
+header.home .modal .modal-container{
+    text-align: center;
+    max-width: 90%;
+    min-width: 400px;
+    min-height: 400px;
+    max-height: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.modal#modalAdd .ases{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.modal#modalAdd .ases a{
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 35px;
+    font-weight: lighter;
+
+}
+
 header.home{
     text-align: center;
     align-items: center;
@@ -8,6 +39,7 @@ header.home{
     width: 100%;
     background-color: rgba(0, 0,0, 0.5);
     padding: 10px;
+    top: 0;
     z-index: 9999;
 }
 .modal-burger button{
@@ -45,6 +77,7 @@ body.home{
     background-color: black;
     height: max-content;
     background-attachment: fixed;
+    margin-top: 0;
 }
 main.home .cabecera{
     top: 3rem;
@@ -61,8 +94,8 @@ main.home  .logo-home1{
 }
 
 main.home .logo-home1 img{
-    width: 128px;
-    height: 95px;
+    width: 95px;
+    height: 74px
 }
 main.home{
     height: 100%;
@@ -117,6 +150,16 @@ main.home{
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.linkeables-tablet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+ .linkeables-tablet img{
+    width: 100%;
+} 
+.bx3{
+    display: none;
+}
 /* Puntos indicadores */
 .dot {
    display: none;
@@ -170,7 +213,7 @@ main.home{
     
 
     main.home .linkeables-tablet{
-        display: none;
+      
     }
     main.home .linkeables{
         margin-top: 20px;
@@ -271,27 +314,19 @@ main.home{
 
 
 /* Se rompen linkeables QUERY HELP*/
-@media(min-width: 389px){
-    main.home .linkeables #box2 button a{
-        left: 12%;
-        font-size: 32px ;
+ @media(min-width: 465px){
+    main.home .logo-home1 img {
+        width: 116px;
+        height: 170px;
     }
-    main.home .linkeables #box1 button a{
-        left: 5%;
-font-size: 32px ;
-
-}
-main.home .cabecera{
-    top: 5rem;
-    font-size: 118%;
-    }
-
-   
-}
+} 
     /*  query tablet   */
 
 
 @media(min-width: 768px){
+    .bx3{
+        display: inline;
+    }
    header.home {
        height: 105px;
    }
@@ -365,7 +400,7 @@ main.home .linkeables{
 }
 main.home .vacaciones .txt{
     margin-top: 0px;
-    height: 41rem;
+   
 }
 main.home .cabecera{
     top: 11rem;
