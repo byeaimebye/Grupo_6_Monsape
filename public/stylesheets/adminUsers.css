@@ -1,7 +1,28 @@
+/*Search Users*/
+/*search*/
+.search-admin2{
+    width: 300px;
+    height: 60px;
+    margin: 10px auto;
+}
+.input-search-admin2{
+    width: 280px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.filter-users-admin2{
+    display: none;
+}
+
+/*Main Users*/
 main.main-admin-users{
     background-color: var(--color-grisBotones);
     border-radius: 10px;
-    margin: 10px 2px;
+    margin: 10px;
     font-size: 10px;
 }
 /*Titulo*/
@@ -35,10 +56,10 @@ tr.category th{
     padding: 4px;
 }
 /*categorias*/
-tr.category th.imagen,
-tr.users td.imagen,
-tr.category th.edad,
-tr.users td.edad{
+tr.category th.date,
+tr.users td.date,
+tr.category th.rol,
+tr.users td.rol{
     display: none;
 }
 
@@ -101,11 +122,11 @@ a.btn-edit{
 
 
 /*tablet*/
-@media(min-width: 640px){
+@media(min-width: 776px){
     /*Main*/
 main.main-admin-users{
     border-radius: 10px;
-    margin: 10px 10px;
+    margin: 10px;
     font-size: 16px;
 }
 /*Titulo*/
@@ -120,8 +141,9 @@ div.title{
 
 /*Tabla de usuarios*/
 table.table-users{
-    padding: 10px;
-    width: 96%;
+    padding: 4px;
+    width: 98%;
+    margin-left: 14px;
 }
 
 /*Categorias de la tabla*/
@@ -131,10 +153,10 @@ tr.category th{
     padding: 4px;
 }
     
-tr.category th.imagen,
-tr.users td.imagen,
-tr.category th.edad,
-tr.users td.edad{
+tr.category th.date,
+tr.users td.date,
+tr.category th.rol,
+tr.users td.rol{
     display: table-cell;
 }
 }

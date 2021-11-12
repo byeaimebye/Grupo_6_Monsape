@@ -3,7 +3,10 @@
 <%- include("../partials/headAdmin") %>    
 <body>
     <!--headerAdmin-->
-    <%- include("../partials/headerAdmin") %>              
+    <%- include("../partials/headerAdmin") %> 
+    <div class="search-admin2">
+      <input class="input-search-admin2" type="text" placeholder="Buscar Usuario...">
+    </div>              
     <main class="main-admin-users">
       <div class="title">
         <h1>Listado de Usuarios Registrados</h1>              
@@ -12,10 +15,10 @@
         <thead>
           <tr class="category">
             <th class="id" scope="col">id</th>            
-            <th class="imagen" scope="col">imagen</th>
             <th class="nombre" scope="col">Nombre</th>
             <th class="email" scope="col">Email</th>
-            <th class="edad" scope="col">Edad</th>
+            <th class="date" scope="col">Fecha de nacimiento</th>
+            <th class="rol" scope="col">Rol</th>
             <th class="editar" scope="col">Editar</th>
           </tr>
         </thead>
@@ -23,10 +26,10 @@
             <% users.forEach(user => { %>
               <tr class="users">
                   <td class="id"><%- user.id%></td>
-                  <td class="imagen"><img src="<%- user.image%>" alt="Imagen del usuario"></td>
                   <td class="nombre"><%- user.fullname%></td>
                   <td class="email"><%- user.email%></td>                  
-                  <td class="edad"><%- user.age%></td>
+                  <td class="date"><%- user.date%></td>
+                  <td class="rol"><%- user.rol %></td>
                   <td class="btn-options">
                       <a class="btn-edit" href="/admin/userProfileAdmin/<%- user.id %>"><img src="/img/editar.svg" alt="editar información de usuario"></a>                      
                   </td>
@@ -34,7 +37,8 @@
             <% }) %>
         </tbody>
       </table>
-    </main>       
+    </main>     
+    <script src="/javascripts/adminTableUsers.js" defer></script>  
   
 </body>
 </html>
