@@ -45,7 +45,7 @@ router.delete('/delete/:id', productDelete)
 router.get('/userProfileAdmin/:id', adminSession, userToDelete)
 router.delete('/userProfileAdmin/:id', userDelete)
 //-------------------Rutas de Admin Users-------------------------
-router.get('/usersTable', adminSession, usersTable);
+router.get('/usersTable', /*adminSession,*/ usersTable);
 /* 
 router.get("/probado-check/:id", edit); */
 //Login, register y profile admin

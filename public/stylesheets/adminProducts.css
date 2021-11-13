@@ -1,3 +1,24 @@
+/*search*/
+.search-admin1{
+    width: 300px;
+    height: 60px;
+    margin: 10px auto;
+}
+.input-search-admin1{
+    width: 280px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.filter-products-admin1{
+    display: none;
+}
+
+
+
 /*Main*/
 main.main-admin-products{
     background-color: var(--color-grisBotones);
