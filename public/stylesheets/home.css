@@ -233,7 +233,7 @@ main.home{
         z-index: -1;
         
     }
-    main.home .linkeables #box1 button a{
+ /*    main.home .linkeables #box1 button a{
         position: absolute;
         bottom: 40%;
         color: white;
@@ -242,7 +242,7 @@ main.home{
         text-align: center;
         text-decoration: none;
         font-size: 20px;
-    }
+    } */
     main.home .linkeables #box2{
         position: relative;
         z-index: -1;
@@ -281,28 +281,34 @@ main.home{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: black;
+        color: white;
         top: 45px;
         
     }
     
 
     main.home .vacaciones h3{
-        background-color: rgba(151, 156, 146, 0.3) ;
+        backdrop-filter: blur(55px);
         padding: 10px;
         border-radius: 55px;
         font-family: 'Rosarivo', serif;
         font-weight: lighter;
         margin-bottom: 10px;
         position: relative;
+        font-size: 10px;
     }
     main.home .vacaciones button{
-        margin-top: 20px;
-        padding: 8px;
-    background-color: #C4C4C4;
-    border-radius: 55px;
-    font-weight: 999;
-    cursor: pointer;
+            border: 1px solid white;
+            margin-top: 20px;
+            padding: 8px;
+            /* background-color: #C4C4C4; */
+            border-radius: 55px;
+            font-weight: 999;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+            backdrop-filter: blur(17px);
+        
     }
     main.home .vacaciones button:hover{
         transition: 1s all;
@@ -324,6 +330,9 @@ main.home{
 
 
 @media(min-width: 768px){
+    main.home .vacaciones h3{
+    font-size:24px;
+}
     .bx3{
         display: inline;
     }
@@ -382,24 +391,52 @@ main.home .linkeables-tablet img{
 main.home .linkeables-tablet .bx1:hover{
     transition: 1s all;
     color: var(--color-rojoVino);
-    border: 5px solid white;
+   
+    animation-name: testAnim;
+	 animation-duration: 2s;
+	 animation-iteration-count: 1;
+	 animation-direction: alternate;
+	 animation-timing-function: ease-out;
+	 animation-fill-mode: forwards;
+	 animation-delay: 0s;
 }
 main.home .linkeables-tablet .bx2:hover{
     transition: 1s all;
     color: var(--color-rojoVino);
-    border: 5px solid white;
+    animation-name: testAnim;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
 }
 main.home .linkeables-tablet .bx3:hover{
     transition: 1s all;
     color: var(--color-rojoVino);
-    border: 5px solid white;
+        animation-name: testAnim;
+	 animation-duration: 2s;
+	 animation-iteration-count: 1;
+	 animation-direction: alternate;
+	 animation-timing-function: ease-out;
+	 animation-fill-mode: forwards;
+	 animation-delay: 0s;
 }
+@keyframes testAnim {
+	0% {
+		filter: grayscale(0.5)  saturate(2);
+	}
+	100% {
+		filter: grayscale(0.2) saturate(9);
+	}
+}
+
 
 main.home .linkeables{
     display:none
 }
 main.home .vacaciones .txt{
-    margin-top: 0px;
+    padding-top: 16%;
    
 }
 main.home .cabecera{
@@ -449,7 +486,7 @@ main.home .nuestros-vinos h4{
     font-size: 25px;
 }
 main.home .cabecera {
-    top: 25rem;
+    top: 15rem;
     font-size: 35px;
 }
 main.home .logo-home1 img{
