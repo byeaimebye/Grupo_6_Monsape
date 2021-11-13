@@ -1,6 +1,4 @@
-html.html-home{
-    
-}
+
 header.home .modal .modal-container{
     text-align: center;
     max-width: 90%;
@@ -212,9 +210,7 @@ main.home{
     
     
 
-    main.home .linkeables-tablet{
-      
-    }
+  
     main.home .linkeables{
         margin-top: 20px;
         display: grid;
