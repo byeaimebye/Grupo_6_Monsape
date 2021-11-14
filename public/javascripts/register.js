@@ -3,7 +3,7 @@ window.addEventListener("load", () =>{
     _email = document.querySelector("#input-email-register"),
     _pass = document.querySelector("#input-password-register"),
     _rePass = document.querySelector("#input-password2-register"),
-    _form = document.querySelector(".form-container")
+    _form = document.querySelector("#elForm")
 
     _fullnameErrors = document.querySelector("#error-fullname-register"),
     _emailErrors = document.querySelector("#error-email-register"),

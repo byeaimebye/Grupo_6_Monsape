@@ -31,7 +31,7 @@ module.exports = {
 
        /*  let vinosDescuento = vinos.filter(vino => vino.descuento >= 15)
 
-        res.render('general/home', {
+        res.render('general', {
             vinosDescuento, title: "Monsape Oficial", session: req.session}) */
     
     },

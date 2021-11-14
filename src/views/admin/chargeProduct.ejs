@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <%- include("../partials/headAdmin") %>
    <body>
       <%- include("../partials/headerAdmin") %>
@@ -11,13 +11,21 @@
                   
                   <div class="div-name-charge inputs-create">
                      <label class="lbl-form-create-product" for="name">Nombre:</label>
-                     <input id="input-name-charge" class="input-form-create-product" type="text" name="name"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="nameErrors"></small>
+                     <input id="input-name-charge" class="input-form-create-product" type="text" name="name" value="<%= locals.old && old.name %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <% if (locals.errors && errors.name) { %>
+                        <small class="small-form-charge validator-error" id="nameErrors"><%= errors.name.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="nameErrors"></small>
+                    <% } %>
                   </div>
                   <div class="div-description-charge large">
                      <label class="lbl-form-create-product" for="description">Descripción:</label>
-                     <textarea id="textarea-description-charge" class="txt-form-edit-product" name="description" cols="30" rows="5"></textarea><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="descriptionErrors"></small>
+                     <textarea id="textarea-description-charge" class="txt-form-edit-product" name="description" cols="30" rows="5"><%= locals.old && old.description %></textarea><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <% if (locals.errors && errors.description) { %>
+                        <small class="small-form-charge validator-error" id="descriptionErrors"><%= errors.description.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="descriptionErrors"></small>
+                    <% } %>                     
                   </div>
                   
                   <div class="div-category-charge inputs-create">
@@ -30,7 +38,11 @@
                               </option>
                         <% }) %>
                      </select><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="categoryErrors"></small>
+                     <% if (locals.errors && errors.category) { %>
+                        <small class="small-form-charge validator-error" id="categoryErrors"><%= errors.category.msg %></small>
+                     <% }else{ %>
+                        <small class="small-form-charge" id="categoryErrors"></small>
+                     <% } %>                     
                   </div>
                   <div class="div-collection-charge inputs-create">
                      <label class="lbl-form-create-product" for="collection">Colección:</label>
@@ -42,48 +54,84 @@
                               </option>
                         <% }) %>
                      </select><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="collectionErrors"></small>
+                     <% if (locals.errors && errors.collection) { %>
+                        <small class="small-form-charge validator-error" id="collectionErrors"><%= errors.collection.msg %></small>
+                     <% }else{ %>
+                        <small class="small-form-charge" id="collectionErrors"></small>
+                     <% } %>
                   </div>
                   <div class="div-stock-charge inputs-create">
                      <label class="lbl-form-create-product" for="stock">Stock:</label>
-                     <input id="input-stock-charge" class="input-form-create-product" type="number" name="stock"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="stockErrors"></small>
+                     <input id="input-stock-charge" class="input-form-create-product" type="number" name="stock" value="<%= locals.old && old.stock %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <% if (locals.errors && errors.stock) { %>
+                        <small class="small-form-charge validator-error" id="stockErrors"><%= errors.stock.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="stockErrors"></small>
+                    <% } %>                     
                   </div>
                   <div class="div-pairing-charge large">
                      <label class="lbl-form-create-product" for="pairing">Maridaje:</label>
-                     <textarea id="textarea-pairing-charge" class="txt-form-edit-product" name="pairing" cols="30" rows="5"></textarea><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="pairingErrors"></small>
+                     <textarea id="textarea-pairing-charge" class="txt-form-edit-product" name="pairing" cols="30" rows="5"><%= locals.old && old.pairing %></textarea><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <% if (locals.errors && errors.pairing) { %>
+                        <small class="small-form-charge validator-error" id="pairingErrors"><%= errors.pairing.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="pairingErrors"></small>
+                    <% } %>                     
                   </div>
                   <div class="div-alcoholContent-charge inputs-create">
                      <label class="lbl-form-create-product" for="alcoholContent">Graduacion Alcoholica:</label>
-                     <input id="input-alcoholContent-charge" class="input-form-create-product" type="text" name="alcoholContent"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="alcoholContentErrors"></small>
+                     <input id="input-alcoholContent-charge" class="input-form-create-product" type="text" name="alcoholContent" value="<%= locals.old && old.alcoholContent %>"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     <% if (locals.errors && errors.alcoholContent) { %>
+                        <small class="small-form-charge validator-error" id="alcoholContentErrors"><%= errors.alcoholContent.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="alcoholContentErrors"></small>
+                    <% } %>
                   </div>
                   <div class="div-totalAcidity-charge inputs-create">
                      <label class="lbl-form-create-product" for="totalAcidity">Acidez:</label>
                      <input id="input-totalAcidity-charge" class="input-form-create-product" type="text" name="totalAcidity"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="totalAcidityErrors"></small>
+                     <% if (locals.errors && errors.totalAcidity) { %>
+                        <small class="small-form-charge validator-error" id="totalAcidityErrors"><%= errors.totalAcidity.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="totalAcidityErrors"></small>
+                    <% } %>
                   </div>
                   <div class="div-residualSugar-charge inputs-create">
                      <label class="lbl-form-create-product" for="residualSugar">Azucar Residual:</label>
                      <input id="input-residualSugar-charge" class="input-form-create-product" type="text" name="residualSugar"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="residualSugarErrors"></small>
+                     <% if (locals.errors && errors.residualSugar) { %>
+                        <small class="small-form-charge validator-error" id="residualSugarErrors"><%= errors.residualSugar.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="residualSugarErrors"></small>
+                    <% } %>
                   </div>
                   <div class="div-serviceTemperature-charge inputs-create">
                      <label class="lbl-form-create-product" for="service_temperature">Temperatura recomendada:</label>
                      <input id="input-service_temperature-charge" class="input-form-create-product" type="text" name="service_temperature"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="service_temperatureErrors"></small>
+                     <% if (locals.errors && errors.service_temperature) { %>
+                        <small class="small-form-charge validator-error" id="service_temperatureErrors"><%= errors.service_temperature.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="service_temperatureErrors"></small>
+                    <% } %>
                      <small class="small-form-charge" id="service_temperatureExample">Ejemplo: Entre 15ÂºC y 18ÂºC.</small>
                   </div>
                   <div class="div-price-charge inputs-create">
                      <label class="lbl-form-create-product" for="price">price:</label>
                      <input id="input-price-charge" class="input-form-create-product" type="number" name="price"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="priceErrors"></small>
+                     <% if (locals.errors && errors.price) { %>
+                        <small class="small-form-charge validator-error" id="priceErrors"><%= errors.price.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="priceErrors"></small>
+                    <% } %>
                   </div>
                   <div class="div-discount-charge inputs-create">
                      <label class="lbl-form-create-product" for="discount">Descuento:</label>
                      <input id="input-discount-charge" class="input-form-create-product" type="number" name="discount"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
-                     <small class="small-form-charge" id="discountErrors"></small>
+                     <% if (locals.errors && errors.discount) { %>
+                        <small class="small-form-charge validator-error" id="discountErrors"><%= errors.discount.msg %></small>
+                    <% }else{ %>
+                        <small class="small-form-charge" id="discountErrors"></small>
+                    <% } %>
                   </div>
 
                   <label class="lbl-form-create-product">Variedad:</label>
@@ -95,15 +143,18 @@
                         <input id="input-variety-charge" class="input-form-create-product checkbox-form-create-product" type="checkbox"
                            name="variety" value="<%= element.id %>">
                         <% }) %>                        
-                        <small class="small-form-charge" id="varietyErrors"></small><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>  
+                        <small class="small-form-charge" id="varietyErrors"></small><i class="fa fa-info-circle"></i><i class="fa fa-check-circle"></i>  
                   </div>
 
                   <div class="div-image-charge input-file-form-edit-product">
-                     <!-- <div class="img-container" id="img-preview">
+                     <div class="img-container" id="img-preview">
                         
-                     </div> -->
-                     <p class="p-file-img">Nueva Imagen</p>
-                     <input id="input-image-charge" class="input-file-img" type="file" name="image"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     </div>
+                     <div>
+                        <p class="p-file-img">Nueva Imagen</p>
+                        <input id="input-image-charge" class="input-file-img" type="file" name="image"><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                     </div>
+                     
                      <small class="small-form-charge" id="imageErrors"></small>
                   </div>        
                   <span id="submitErrors" style="color: red;"></span>          

@@ -3,7 +3,10 @@
 <%- include("../partials/headAdmin") %>    
 <body>
     <!--headerAdmin-->
-    <%- include("../partials/headerAdmin") %>              
+    <%- include("../partials/headerAdmin") %>
+    <div class="search-admin1">
+      <input class="input-search-admin1" type="text" placeholder="Buscar Producto...">
+    </div>              
     <main class="main-admin-products">
       <div class="new-product">
         <h1>Listado de Productos</h1>      
@@ -27,7 +30,7 @@
             <% wines.forEach(wine => { %>
               <tr class="products">
                   <td class="id"><%- wine.id%></td>
-                  <td class="nombre"><%- wine.name%></td>
+                  <td class="nombre row"><%- wine.name%></td>
                   <td class="categoria"><%- wine.category.name %></td>
                   <td class="stock"><%- wine.stock%></td>
                   <td class="precio">$<%- wine.price%></td>
@@ -45,6 +48,6 @@
         </tbody>
       </table>
     </main>       
-  
+  <script src="/javascripts/adminTableProducts.js" defer></script>
 </body>
 </html>

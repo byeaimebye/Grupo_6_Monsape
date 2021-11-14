@@ -20,9 +20,10 @@
 
 .input-form-create-product{
     border-radius: 7px;
-    font-weight: bolder;
+    font-weight: 700;
     height: 25px;
     padding: 4px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .div-varieties-form-create-product {
@@ -37,23 +38,18 @@
 .lbl-checkbox-form-product-create {
     margin-left: 5px;
 }
-.img-container {
-    width: 100%;
-    height: 200px;
-    border: thin solid gray ;
-    border-radius: 10px;
-    text-align: center;
-}
 
 main.main-admin-create form .variety input{
     margin-right: 10px;
   
 }
-main.main-admin-create .inputs-create option.option{
-font-weight: 999;
+main.main-admin-create .inputs-create option{
+font-weight: 700;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
 }
 main.main-admin-create  select{
-    font-weight: 999;
+    font-weight: 700;
 }
 
 main.main-admin-create .inputs-create{
@@ -70,12 +66,13 @@ main.main-admin-create  .large{
 
 .txt-form-edit-product {
     border-radius: 5px;
-    font-weight: 999;
+    font-weight: 700;
     margin: 10px auto 0 auto;
     outline: none;
     padding: 10px;
     resize: none;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .div-category-charge{
     margin-top: 10px;
@@ -103,20 +100,22 @@ main.main-admin-create .temperatura-create input{
 
 .input-file-form-edit-product {
     align-items: center;
-    border: solid 1px white;
+    border: none;
     border-radius: 8px;
-    background-color: rgb(255, 255, 255, 0.6);
+    background-color: none;
     display: flex;
-    justify-content: center;
-    height: 40px;
-    margin: 15px auto;
+    flex-direction: column;
+    justify-content: center;    
+    margin: 30px auto;
     position: relative;
     width: 250px;
+    height: 200px;
 }
 
 .p-file-img {
-    color: black;
+    color: white;
     font-weight: 900;
+    text-align: center;
 }
 
 .input-file-img {
@@ -130,10 +129,22 @@ main.main-admin-create .temperatura-create input{
     opacity: 0;
     width: 100%;
 }
-.small-form-charge{
-    /* display: none; */
-    left: 8px;
-    /* position: absolute; */
+
+.img-container {
+    width: 100%;
+    height: 200px;
+    border: thin solid gray ;
+    background-color: rgba(235, 230, 230, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imageErrors{
+    color: darkred;
+    margin-top: 15px;
 }
 
 /*Media Queries*/
@@ -168,27 +179,7 @@ main.main-admin-create .temperatura-create input{
     }
     main.main-admin-create button:hover{
         background-color: rgb(182, 35, 35);
-    }
-        
-    .input-file-form-edit-product {
-        align-items: center;
-        border: solid 1px white;
-        border-radius: 8px;
-        background-color: rgb(255, 255, 255, 0.6);
-        display: flex;
-        justify-content: center;
-        height: 40px;
-        margin: 15px auto;
-        position: relative;
-        width: 250px;
-    }
-    
-    .p-file-img {
-        color: black;
-        font-weight: bolder;
-        font-size: 16px;
-    }
-    
+    }   
     
 }
 @media(min-width: 1024px){
@@ -231,25 +222,7 @@ main.main-admin-create .temperatura-create input{
     main.main-admin-create button:hover{
         background-color: rgb(182, 35, 35);
     }
-        
-    .input-file-form-edit-product {
-        align-items: center;
-        border: solid 1px white;
-        border-radius: 8px;
-        background-color: rgb(255, 255, 255, 0.6);
-        display: flex;
-        justify-content: center;
-        height: 40px;
-        margin: 15px auto;
-        position: relative;
-        width: 250px;
-    }
     
-    .p-file-img {
-        color: black;
-        font-weight: bolder;
-        font-size: 16px;
-    }
     
     
 }

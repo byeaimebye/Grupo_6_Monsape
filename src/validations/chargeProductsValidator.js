@@ -103,8 +103,9 @@ let validations = [
         .withMessage("El campo NO debe contener más de 9 caracteres.")
         .custom(value => {
             let regExPrice = /^[0-9]{1,6}([,][0-9]{1,2})?$/;
+            let regExNum = /^[0-9]{1,8}$/;
             
-            return regExPrice.test(value);
+            return (!regExPrice.test(value) || regExNum.test(value));
 
         })
         .withMessage("Tipo de dato inválido"), 

@@ -19,6 +19,7 @@ window.addEventListener("load", () => {
         _discount = document.querySelector("#input-discount-charge"),
         _variety = document.querySelectorAll("#input-variety-charge"),
         _image = document.querySelector("#input-image-charge"),
+        _imagePreview = document.querySelector('#img-preview'),
     //errors
         _allErrors = document.querySelectorAll(".small-form-charge"),
         _nameErrors = document.querySelector("#nameErrors"),
@@ -44,8 +45,24 @@ window.addEventListener("load", () => {
         regExNum = /^[0-9]{1,8}$/;
 
         /*iconos check y info*/
-        document.querySelector(".fa-check-circle").style.top = "34px";
-        document.querySelector(".fa-info-circle").style.top = "34px";
+
+        let checkCircles = document.getElementsByClassName("fa-check-circle");
+        for (let i = 0; i < (checkCircles.length); i++) {
+            checkCircles[i].style.top = "35px";            
+            checkCircles[2].style.right = "20px";            
+            checkCircles[3].style.right = "20px";            
+            checkCircles[12].style.top = "-27px";            
+            checkCircles[12].style.right = "460px";            
+        }
+        let infoCircles = document.getElementsByClassName("fa-info-circle");
+        for (let i = 0; i < (infoCircles.length); i++) {
+            infoCircles[i].style.top = "35px";            
+            infoCircles[2].style.right = "20px";            
+            infoCircles[3].style.right = "20px";            
+            infoCircles[12].style.top = "151px";            
+            infoCircles[12].style.right = "104px";            
+        }
+              
         /*Ejemplo de temperatura recomendada*/
         _serviceTemperatureExample.style.color = "blue";  
         
@@ -218,9 +235,9 @@ window.addEventListener("load", () => {
                 _stock.classList.remove("warning");
                 _stock.classList.remove("valid");
                 _stock.classList.add("error");
-                document.querySelector(".div-stock-profile .fa-check-circle").style.display = "none";
-                document.querySelector(".div-stock-profile .fa-info-circle").style.display = "block";
-                document.querySelector(".div-stock-profile .fa-info-circle").style.color = "darkred";
+                document.querySelector(".div-stock-charge .fa-check-circle").style.display = "none";
+                document.querySelector(".div-stock-charge .fa-info-circle").style.display = "block";
+                document.querySelector(".div-stock-charge .fa-info-circle").style.color = "darkred";
                 break;  
             default:
                 _stockErrors.style.display = "none";
@@ -302,9 +319,9 @@ window.addEventListener("load", () => {
                 _alcoholContent.classList.remove("warning");
                 _alcoholContent.classList.remove("valid");
                 _alcoholContent.classList.add("error");
-                document.querySelector(".div-al_alcoholContent-profile .fa-check-circle").style.display = "none";
-                document.querySelector(".div-al_alcoholContent-profile .fa-info-circle").style.display = "block";
-                document.querySelector(".div-al_alcoholContent-profile .fa-info-circle").style.color = "darkred";
+                document.querySelector(".div-alcoholContent-charge .fa-check-circle").style.display = "none";
+                document.querySelector(".div-alcoholContent-charge .fa-info-circle").style.display = "block";
+                document.querySelector(".div-alcoholContent-charge .fa-info-circle").style.color = "darkred";
                 break; 
             case $value.length>5:
                 _alcoholContent.placeholder = "";
@@ -315,9 +332,9 @@ window.addEventListener("load", () => {
                 _alcoholContent.classList.remove("error");
                 _alcoholContent.classList.remove("valid");
                 _alcoholContent.classList.add("warning");
-                document.querySelector(".div-al_alcoholContent-charge .fa-check-circle").style.display = "none";
-                document.querySelector(".div-al_alcoholContent-charge .fa-info-circle").style.display = "block";
-                document.querySelector(".div-al_alcoholContent-charge .fa-info-circle").style.color = "orangered";
+                document.querySelector(".div-alcoholContent-charge .fa-check-circle").style.display = "none";
+                document.querySelector(".div-alcoholContent-charge .fa-info-circle").style.display = "block";
+                document.querySelector(".div-alcoholContent-charge .fa-info-circle").style.color = "orangered";
                 break;   
             default:
                 _alcoholContentErrors.style.display = "none";
@@ -412,9 +429,9 @@ window.addEventListener("load", () => {
                 _residualSugar.classList.remove("warning");
                 _residualSugar.classList.remove("valid");
                 _residualSugar.classList.add("error");
-                document.querySelector(".div-re_residualSugar-charge .fa-check-circle").style.display = "none";
-                document.querySelector(".div-re_residualSugar-charge .fa-info-circle").style.display = "block";
-                document.querySelector(".div-re_residualSugar-charge .fa-info-circle").style.color = "darkred";
+                document.querySelector(".div-residualSugar-charge .fa-check-circle").style.display = "none";
+                document.querySelector(".div-residualSugar-charge .fa-info-circle").style.display = "block";
+                document.querySelector(".div-residualSugar-charge .fa-info-circle").style.color = "darkred";
                 break;
             case $value.length>5:
                 _residualSugar.placeholder = "";
@@ -487,32 +504,32 @@ window.addEventListener("load", () => {
                 document.querySelector(".div-price-charge .fa-info-circle").style.display = "block";
                 document.querySelector(".div-price-charge .fa-info-circle").style.color = "orangered";
                 break;
-            case !regExPrice.test($value):
-                _price.placeholder = "";
-                _priceErrors.style.display = "block";
-                _priceErrors.style.color = "darkred";
-                _priceErrors.innerHTML = "";
-                _priceErrors.innerHTML = "Debés ingresar un valor numérico o decimal.";
-                _price.classList.remove("warning");
-                _price.classList.remove("valid");
-                _price.classList.add("error");
-                document.querySelector(".div-re_price-charge .fa-check-circle").style.display = "none";
-                document.querySelector(".div-re_price-charge .fa-info-circle").style.display = "block";
-                document.querySelector(".div-re_price-charge .fa-info-circle").style.color = "darkred";
-                break;
-            case $value.length>9:
-                _price.placeholder = "";
-                _priceErrors.style.display = "block";
-                _priceErrors.style.color = "orangered";
-                _priceErrors.innerHTML = "";
-                _priceErrors.innerHTML = "El campo precio NO debe superar los 9 caracteres.";
-                _price.classList.remove("error");
-                _price.classList.remove("valid");
-                _price.classList.add("warning");
-                document.querySelector(".div-price-charge .fa-check-circle").style.display = "none";
-                document.querySelector(".div-price-charge .fa-info-circle").style.display = "block";
-                document.querySelector(".div-price-charge .fa-info-circle").style.color = "orangered";
-                break;  
+                case $value.length>9:
+                    _price.placeholder = "";
+                    _priceErrors.style.display = "block";
+                    _priceErrors.style.color = "orangered";
+                    _priceErrors.innerHTML = "";
+                    _priceErrors.innerHTML = "El campo precio NO debe superar los 9 caracteres.";
+                    _price.classList.remove("error");
+                    _price.classList.remove("valid");
+                    _price.classList.add("warning");
+                    document.querySelector(".div-price-charge .fa-check-circle").style.display = "none";
+                    document.querySelector(".div-price-charge .fa-info-circle").style.display = "block";
+                    document.querySelector(".div-price-charge .fa-info-circle").style.color = "orangered";
+                    break;  
+                case regExPrice.test($value) && !regExNum.test($value):
+                    _price.placeholder = "";
+                    _priceErrors.style.display = "block";
+                    _priceErrors.style.color = "darkred";
+                    _priceErrors.innerHTML = "";
+                    _priceErrors.innerHTML = "Debés ingresar un valor numérico o decimal.";
+                    _price.classList.remove("warning");
+                    _price.classList.remove("valid");
+                    _price.classList.add("error");
+                    document.querySelector(".div-price-charge .fa-check-circle").style.display = "none";
+                    document.querySelector(".div-price-charge .fa-info-circle").style.display = "block";
+                    document.querySelector(".div-price-charge .fa-info-circle").style.color = "darkred";
+                    break;
             default:
                 _priceErrors.style.display = "none";
                 _price.classList.remove("warning");
@@ -551,9 +568,9 @@ window.addEventListener("load", () => {
                 _discount.classList.remove("warning");
                 _discount.classList.remove("valid");
                 _discount.classList.add("error");
-                document.querySelector(".div-re_discount-charge .fa-check-circle").style.display = "none";
-                document.querySelector(".div-re_discount-charge .fa-info-circle").style.display = "block";
-                document.querySelector(".div-re_discount-charge .fa-info-circle").style.color = "darkred";
+                document.querySelector(".div-discount-charge .fa-check-circle").style.display = "none";
+                document.querySelector(".div-discount-charge .fa-info-circle").style.display = "block";
+                document.querySelector(".div-discount-charge .fa-info-circle").style.color = "darkred";
                 break;
             case $value.length>3:
                 _discount.placeholder = "";
@@ -567,7 +584,20 @@ window.addEventListener("load", () => {
                 document.querySelector(".div-discount-charge .fa-check-circle").style.display = "none";
                 document.querySelector(".div-discount-charge .fa-info-circle").style.display = "block";
                 document.querySelector(".div-discount-charge .fa-info-circle").style.color = "orangered";
-                break;  
+                break;
+            case $value>100:
+                _discount.placeholder = "";
+                _discountErrors.style.display = "block";
+                _discountErrors.style.color = "orangered";
+                _discountErrors.innerHTML = "";
+                _discountErrors.innerHTML = "El campo Descuento NO debe ser superior a 100.";
+                _discount.classList.remove("error");
+                _discount.classList.remove("valid");
+                _discount.classList.add("warning");
+                document.querySelector(".div-discount-charge .fa-check-circle").style.display = "none";
+                document.querySelector(".div-discount-charge .fa-info-circle").style.display = "block";
+                document.querySelector(".div-discount-charge .fa-info-circle").style.color = "orangered";
+                break;      
             default:
                 _discountErrors.style.display = "none";
                 _discount.classList.remove("warning");
@@ -582,6 +612,20 @@ window.addEventListener("load", () => {
 
     /*Validacion para VARIETY*/
     let contador = 0;
+    for(let i=0; i<_variety.length; i++){
+        if(_variety[i].checked){
+            contador++;
+        }
+        if(contador>0){
+            _varietyErrors.style.display = "none";
+            _variety[i].classList.remove("warning");
+            _variety[i].classList.remove("error");
+            _variety[i].classList.add("valid");
+            document.querySelector(".div-variety-charge .fa-check-circle").style.display = "block";
+            document.querySelector(".div-variety-charge .fa-check-circle").style.color = "green";
+            document.querySelector(".div-variety-charge .fa-info-circle").style.display = "none";
+        }    
+    }
     
     for(let i=0; i<_variety.length; i++){
         _variety[i].addEventListener("click", () => {
@@ -595,7 +639,7 @@ window.addEventListener("load", () => {
                 document.querySelector(".div-variety-charge .fa-check-circle").style.color = "green";
                 document.querySelector(".div-variety-charge .fa-info-circle").style.display = "none";
             }else{
-                contador--;
+                contador--;               
             }
             if(contador == 0){                
                 _varietyErrors.style.display = "block";
@@ -609,15 +653,40 @@ window.addEventListener("load", () => {
                 document.querySelector(".div-variety-charge .fa-info-circle").style.display = "block";
                 document.querySelector(".div-variety-charge .fa-info-circle").style.color = "orangered";
             }
-        })
-    } 
+        })         
+    }    
+
+    _image.addEventListener('change', 
+    function fileValidation(){
+        let filePath = _image.value, //Capturo el valor del input
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            _imageErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            _image.value = '';
+            _imagePreview.innerHTML = '';
+            return false;
+        }else{
+            // Image preview
+            console.log(_image.files);
+            if(_image.files && _image.files[0]){
+                let reader = new FileReader();
+                reader.onload = function(e){
+                    _imagePreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                };
+                reader.readAsDataURL(_image.files[0]);
+                _imageErrors.innerHTML = '';
+                _image.classList.remove('is-invalid')
+            }
+        }
+    })
     
     _form.addEventListener('submit',function(event){
         let error = false;
         event.preventDefault()        
         let elementosForm = this.elements
         
-        for (let index = 0; index < elementosForm.length-2; index++) {
+        for (let index = 0; index < elementosForm.length-23; index++) {
+            //console.log(elementosForm[index].value);
             if(elementosForm[index].value == ""){
                 elementosForm[index].classList.add('warning');
                 submitErrors.innerHTML = "Los campos señalados son obligatorios";
@@ -634,7 +703,7 @@ window.addEventListener("load", () => {
         }
 
         if(!error){
-            console.log('Todo bien');
+            alert('Se realizó la carga con éxito');
             _form.submit()
         }
 
