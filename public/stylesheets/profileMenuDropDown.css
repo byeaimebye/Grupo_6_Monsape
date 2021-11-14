@@ -1,5 +1,10 @@
-@media(min-width: 1000px){
+.drop-down-menu-container-profile {
+    display: none;
+}
+
+@media(min-width: 768px){
     .drop-down-menu-container-profile{
+        display: block;
         background-color: rgba(0, 0, 0, 0.8);
         color: white;
         height: 0;

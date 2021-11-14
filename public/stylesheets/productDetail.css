@@ -20,7 +20,6 @@ body {
     "agregar agregar agregar agregar" 
     "ver-mas ver-mas ver-mas ver-mas" 
     "confirmar confirmar confirmar confirmar";
-    
     margin: 20px;
     padding: 10px 20px 5px;
     text-align: center;
@@ -160,6 +159,47 @@ body {
     margin-top: 14px;
 }
 
+.modal-container-product-detail {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.modal-product-detail {
+    align-items: center;
+    background-color: gainsboro;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 400px;/* 
+    position: absolute; */
+}
+
+.btns-container-modal-product-detail {
+    display: flex;
+    height: 15px;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.btn-modal-product-detail {
+    background-color: var(--color-rojoVino);
+    border-radius: 3px;
+    color: white;
+    height: 30px;
+    width: 40px;
+}
+
 @media(min-width: 768px){
     .main-prueba {
         display: grid;
@@ -268,6 +308,6 @@ body {
     }
 
     .btn-prev-next {
-        top: 500px;
+        top: 250px;
     }
 }
