@@ -2,6 +2,9 @@ body.home1{
 
     background-color: black;
 }
+.filter-products-search{
+    display: none;
+}
  .body-tienda{
     margin-top: 0;
 } 
@@ -397,6 +400,7 @@ section.carousel-container1{
         grid-template-columns: 0.5fr 0.5fr 0.5fr;        
     }
 }
+
 
 /*.............TABLET 768px...............*/
 
