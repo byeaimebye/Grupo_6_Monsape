@@ -1,17 +1,12 @@
 /*search*/
 .search-admin1{
-    width: 300px;
-    height: 60px;
-    margin: 10px auto;
+   margin: 0 auto;
 }
 .input-search-admin1{
-    width: 280px;
-    height: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 4px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 10px;
+    margin: 0 auto;
+    height: 30px;
+    width: 370px;
+    border-radius: 55px;
 }
 .filter-products-admin1{
     display: none;
@@ -44,6 +39,9 @@ div.btn-add-product{
     border: 2px solid var(--color-rojoVino);
     border-radius: 5px;
     padding: 10px;
+    width: 100%;
+    background-color: black;
+    text-align: center;
 }
 div.btn-add-product:hover{
     background-color: var(--color-rojoVino);

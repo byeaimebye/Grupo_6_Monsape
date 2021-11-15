@@ -4,7 +4,7 @@ h1.titulo-carru{
     color: white;
     margin-top:10px;
 }
-.-item p{
+.carrusel-item p{
     position: relative;
     bottom: 303px;
     /* align-items: center; */
@@ -25,7 +25,7 @@ h1.titulo-carru{
   .carrusel-items {
     user-select: none;
     display: flex;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;  
     overflow-y: hidden;
     padding: 30px 0px;
   }

@@ -30,3 +30,4 @@ let _dropDownContainer = document.querySelector(".drop-down-menu-container-profi
 _profileDropDown.addEventListener("click",()=>{
     _dropDownContainer.classList.toggle("profile-drop-down-event");
 })
+
