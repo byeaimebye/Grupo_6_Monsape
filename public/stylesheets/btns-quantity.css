@@ -1,13 +1,15 @@
 
 /* .main-productCart .section-productCart article */ .cant {
     background-color: rgb(194, 194, 194);
-    border: solid 1px var(--color-rojoVino);
+    /* border: solid 1px var(--color-rojoVino); */
+    border: transparent;
     border-radius: 15px;
+    box-shadow: 0 0 5px 0 var(--color-rojoVino);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;/* 
     grid-area: cant; */
     height: 25px;
-    width: 110px;
+    width: 109px;
 
 }
 

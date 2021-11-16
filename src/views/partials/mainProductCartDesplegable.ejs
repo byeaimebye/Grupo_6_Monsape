@@ -14,27 +14,41 @@
             <p>SUBTOTAL</p>
         </div>
         <!-- Articulos -->
-        <% for(let i=0; i < 4; i++){ %>
-            <article class="art-cart-drop-down">
-                <div class="wine-x-drop-down"><img src="/img/carrito1.jpg" alt=""></div>
-                <div class="detail-drop-down">
-                    <p id="nombre-drop-down">Nombre del vino</p>
-                    <p id="precio-drop-down">$2.500</p>
-                    <div class="cant-drop-down">
-                        <input type="button" name="menos" class="menos-drop-down buttons-drop-down"
-                            value="-">
-                        <input type="text" name="cantidad" class="cantidad-drop-down"
-                            value="0">
-                        <input type="button" name="mas" class="mas-drop-down buttons-drop-down" value="+">
+        <div id="articles">
+        </div>
+        <template id="template-carrito">
+            <article class="art-cart">
+                <th scope="row">id</th>
+                <div class="wine-x"><img class="wine-image" src="" alt=""></div>
+                <div class="detail">
+                    <p id="nombre">Titulo</p>
+                    <p id="precio">Precio</p>
+                    <div class="cant" >
+                        <input type="button" name="menos" id="" class="menos"
+                        value="-">
+                        <input type="text" name="cantidad" id="" class="cantidad"
+                        value="">
+                        <input type="button" name="mas" id="" class="mas" value="+">
                     </div>
-
+                    
                 </div>
-                <div class="subtotal-drop-down">
+                <div class="subtotal">
                     <p>$2.500</p>
-                    <img class="tachito-drop-down" src="/img/tachito.png" alt="carrito">
+                    <img id="" class="tachito" src="/img/tachito.png" alt="carrito">
                 </div>
             </article>
-            <% } %>
+        </template>
+
+        <template id="template-footer">
+            <th scope="row" colspan="2">Total productos</th>
+            <td>10</td>
+            <td>
+                <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                    vaciar todo
+                </button>
+            </td>
+            <td class="font-weight-bold">$ <span>5000</span></td>
+        </template>
                 <!-- Subtotal (sin envío) -->
                 <div class="sub-sin-envio-drop-down">
                     <p>Subtotal:</p>
@@ -63,5 +77,9 @@
                     <input type="button" name="mas" id="mas-drop-down" value="Ver más productos">
                     <input type="submit" name="compra" id="compra-drop-down" value="REALIZAR COMPRA">
                 </div>
-    </section>
-</main>
+            </section>
+        </main>
+
+    </div>
+</label>
+        

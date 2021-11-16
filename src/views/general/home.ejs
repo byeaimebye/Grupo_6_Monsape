@@ -2,44 +2,44 @@
 <html class="html-home" lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONSAPE</title>
-    <script src="https://kit.fontawesome.com/7968cc1663.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rosarivo&display=swap"
-        rel="stylesheet">
-        <!-- Fuente rosarivo -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
-     <!-- Link styles -->
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-<!-- Script de js carrusel y modal -->
-<script src="/javascripts/detail.js" defer></script>
-<script src="/javascripts/carruselH.js" defer></script>
-<script src="/javascripts/carousel.js" defer></script>
- <!---Logo monsape-->
- <link rel="shortcut icon" href="/img/logomon.svg">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONSAPE</title>
+  <script src="https://kit.fontawesome.com/7968cc1663.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rosarivo&display=swap" rel="stylesheet">
+  <!-- Fuente rosarivo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rosarivo&display=swap" rel="stylesheet">
+  <!-- Link styles -->
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <!-- Script de js carrusel y modal -->
+  <script src="/javascripts/detail.js" defer></script>
+  <script src="/javascripts/carruselH.js" defer></script>
+  <script src="/javascripts/carousel.js" defer></script>
+  <!---Logo monsape-->
+  <link rel="shortcut icon" href="/img/logomon.svg">
 
 </head>
+
 <body class="home" id="homeBody">
-  <%- include("../partials/index") %> 
+  <%- include("../partials/index") %>
     <header class="home">
-    <div class="modal-burger">
+      <div class="modal-burger">
         <button onclick="openModal()">
-            <div class="burger">
-                <img src="/img/Vector.svg" alt="">
-            </div>
+          <div class="burger">
+            <img src="/img/Vector.svg" alt="">
+          </div>
         </button>
-    </div>
-    <div class="modal" id="modalAdd">
+      </div>
+      <div class="modal" id="modalAdd">
         <div class="modal-conteiner">
-            <div class="close-modal" onclick="closeModal()">X</div>
-            <div class="ases">
+          <div class="close-modal" onclick="closeModal()">X</div>
+          <div class="ases">
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
             <a href="/">INICIO</a>
             <a href="/products/tienda">PRODUCTOS</a>
@@ -52,59 +52,59 @@
             <a href="/users/register">REGISTRATE</a>
             <% } %> 
           </div>
-            <!-- <button onclick="closeModal()">Cancelar</button> -->
+          <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>
-    </div>
-    <!-- FIN VENTANA MODAL MOBILE -->
-    <div class="logo-home">
-        <h1>MONSAPE</h1>
-    </div>
-    <div class="carrito-home">
-       <a href="/products/cart"><img src="/img/carrito-de-compras (1) 1.svg" alt=""></a>
-    </div>
-</header>
-    <main class="home">
-    
-            <!-- CAROUSEL -->
-        <section class="carousel-container">
-            <div class="cabecera">
-      <div class="logo-home1">
-        <img src="/img/logomon.svg" alt="">
-        <p>Soñamos el tiempo y lo encontramos. <br> Tenemos historia y tradición, pero sobre todo, futuro. </p>
       </div>
-    </div>
-          <div class="slides fade">
-              <img src="/img/carryhome1.png" alt="">
-          </div>
-          
-          <div class="slides fade">
-            <img src="/img/carryhome2.png" alt="">
-          </div>
-          
-          <div class="slides fade">
-            <img src="/img/carryhome3.png" alt="">
-          </div>
-          
-          <div class="slides fade">
-            <img src="/img/carryhome4.png" alt="">
-          </div>
-          <div class="slides fade">
-            <img src="/img/carryhome5.png" alt="">
-          </div>
+      <!-- FIN VENTANA MODAL MOBILE -->
+      <div class="logo-home">
+        <h1>MONSAPE</h1>
+      </div>
+      <div class="carrito-home">
+        <a href="/products/cart"><img src="/img/carrito-de-compras (1) 1.svg" alt=""></a>
+      </div>
+    </header>
+    <main class="home">
 
-          <!--  Next and previous buttons -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a> 
-          <!-- The dots/circles -->
-      <div class="dots">
+      <!-- CAROUSEL -->
+      <section class="carousel-container">
+        <div class="cabecera">
+          <div class="logo-home1">
+            <img src="/img/logomon.svg" alt="">
+            <p>Soñamos el tiempo y lo encontramos. <br> Tenemos historia y tradición, pero sobre todo, futuro. </p>
+          </div>
+        </div>
+        <div class="slides fade">
+          <img src="/img/carryhome1.png" alt="">
+        </div>
+
+        <div class="slides fade">
+          <img src="/img/carryhome2.png" alt="">
+        </div>
+
+        <div class="slides fade">
+          <img src="/img/carryhome3.png" alt="">
+        </div>
+
+        <div class="slides fade">
+          <img src="/img/carryhome4.png" alt="">
+        </div>
+        <div class="slides fade">
+          <img src="/img/carryhome5.png" alt="">
+        </div>
+
+        <!--  Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <!-- The dots/circles -->
+        <div class="dots">
           <span class="dot" onclick="currentSlide(1)"></span>
           <span class="dot" onclick="currentSlide(2)"></span>
           <span class="dot" onclick="currentSlide(3)"></span>
           <span class="dot" onclick="currentSlide(4)"></span>
-      </div> 
+        </div>
       </section>
       <!-- END CAROUSEL -->
-        
+
       </div>
         <!------------------ CAROUSEL -------------------->
         <h1 class="titulo-carru"> OFERTAS DEL MES</h1>
@@ -141,7 +141,7 @@
           <h3>TODOS SON BIENBVENIDOS EN NUESTRA MESA</h3>
           <button>Mas información</button>
         </div>
-        </div>
+      </div>
     </main>
     <script src="/javascripts/age.js"></script>
 </body>

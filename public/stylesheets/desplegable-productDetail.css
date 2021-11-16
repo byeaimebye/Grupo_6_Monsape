@@ -8,7 +8,7 @@
     background-color: var(--color-rojoVino);
     bottom: 20vh;
     color: white;
-    display: flex;
+    display: none;
     font-size: 40px;
     height: 30px;
     justify-content: center;

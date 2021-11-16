@@ -120,7 +120,9 @@ section.products{
     padding: 6px;
     width: 280px;
     margin-bottom: 25px;
+    transition: all 1s;
 }
+
 /*imagen del producto*/
 .products .product-container a{
     width: 96%;
@@ -201,7 +203,7 @@ section.products{
 .products .product-container .agregar-producto-al-carrito{
     background-color: var(--color-rojoVino);
     border-radius: 1.5rem; 
-    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);   
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.7);   
     color: white;
     cursor: pointer;
     font-weight: bold;
