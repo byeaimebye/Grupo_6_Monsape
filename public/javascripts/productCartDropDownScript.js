@@ -13,17 +13,17 @@ const fragment2 = document.createDocumentFragment()
 //let url = `http://localhost:3080/api/products`;
 let carrito2 = {};
 
-document.addEventListener("DOMContentLoaded", e => {
+/* document.addEventListener("DOMContentLoaded", e => { */
    /* fetchData(); */
    if(localStorage.getItem("carrito")){
     carrito2 = JSON.parse(localStorage.getItem("carrito"));
-    pintarCarrito()
+    //pintarCarrito()
     }
 
     if(window.location.href === "http://localhost:3080/products/tienda"){
         _verMas.style.display = "none";
     }
-});
+/* }); */
 
 /* _products.addEventListener("click", e =>{
     addCarrito(e);
@@ -91,6 +91,7 @@ _items.addEventListener("click", e => {
 } */
 
 const pintarCarrito = () => {
+    console.log("alo alo")
     _items.innerHTML = "";
     Object.values(carrito2).forEach(producto => {
         //_templateCarrito.querySelector("th").textContent = producto.id;
@@ -179,4 +180,5 @@ const quitProduct = e => {
     e.stopPropagation()
 }
 
+pintarCarrito();
 });
