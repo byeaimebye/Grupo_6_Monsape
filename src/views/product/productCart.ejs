@@ -19,14 +19,53 @@
                                 <p>SUBTOTAL</p>
                             </div>
                             <!-- Articulos -->
-                            <div id="articles">
+                            <div id="itemsCart">
                             </div>
+                            <template id="template-carrito">
+                                <article class="art-cart">
+                                    <!-- <th scope="row">id</th> -->
+                                    <div class="wine-x"><img class="wine-image" src="" alt=""></div>
+                                    <div class="detail detail-p">
+                                        <p id="nombre">Titulo</p>
+                                        <p id="precio">Precio</p>
+                                        <div class="cant" >
+                                            <input type="button" name="menos" class="menos"
+                                            value="-">
+                                            <input type="text" name="cantidad" class="cantidad"
+                                            value="">
+                                            <input type="button" name="mas" class="mas" value="+">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="subtotal" id="footer">
+                                        <p>$2.500</p>
+                                        <img id="" class="tachito" src="/img/tachito.png" alt="carrito">
+                                    </div>
+                                </article>
+                            </template>
+                            
+                    
+                            <!-- <template id="template-footer">
+                                <th scope="row" colspan="2">Total productos</th>
+                                <td>10</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                                        vaciar todo
+                                    </button>
+                                </td>
+                                <td class="font-weight-bold">$ <span>5000</span></td>
+                            </template> -->
+                                    <!-- Subtotal (sin envío) -->
+                                    <div class="sub-sin-envio">
+                                        <p>Subtotal:</p>
+                                        <p class="subtotal-product">$0</p>
+                                    </div>
 
                             <!-- Subtotal (sin envío) -->
-                            <div class="sub-sin-envio">
+                            <!-- <div class="sub-sin-envio">
                                 <p id="subtotal-p">Subtotal:</p>
                                 <p id="subtotal-value">$0</p>
-                            </div>
+                            </div> -->
                             <!-- Métodos de envío -->
                             <!-- <form action="" method="GET">
                             <div class="met-envio">
