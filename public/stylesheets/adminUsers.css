@@ -98,7 +98,7 @@ a.btn-edit{
 /*********************************************************************************************************/
 
 /*Media Querie*/
-@media(min-width: 400px){
+@media(min-width: 430px){
 
 main.main-admin-users{
     font-size: 12px;
