@@ -1,6 +1,7 @@
 window.addEventListener("load", ()=>{
-    let inputSearchTienda= document.querySelector(".searchTienda");
-    let productSearchTienda = document.querySelectorAll(".product-container");
+    let inputSearchTienda = document.querySelector(".searchTienda");
+    
+    let productsSearchTienda = document.querySelectorAll(".product-container");
         
         inputSearchTienda.addEventListener("keyup", (e)=>{
             if(e.target.value == inputSearchTienda.value){
@@ -8,15 +9,14 @@ window.addEventListener("load", ()=>{
                     e.target.value="";
                 }
 
-                productSearchTienda.forEach(element=>{
-                    
-                    if(element.textContent.toLowerCase().includes(e.target.value.toLowerCase())){
+               productsSearchTienda.forEach(element=>{
+                    if(element.textContent.toLowerCase().includes(e.target.value)){
                         element.classList.remove("filter-products-search");                                
                     }else{
-                        console.log(element)
                             element.classList.add("filter-products-search")
                     }
                 })
             }                   
         });
+  
 })
