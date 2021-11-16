@@ -94,6 +94,9 @@ module.exports = {
                     })
                 }
                 res.locals.user = req.session.user;
+                if(req.session.user.rol === "ROL_ADMIN"){
+                    res.redirect("/admin/usersTable");
+                }
                 res.redirect("/")
             }).catch(error => {
                 res.send(error)

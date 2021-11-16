@@ -14,9 +14,9 @@ window.addEventListener("load", () => {
     //let url = `http://localhost:3080/api/products`;
     let _carritoProductCartScript = {};
     
-    /* if(window.location.href === "http://localhost:3080/products/cart"){
+    if(window.location.href === "http://localhost:3080/products/cart"){
         _cartDropDownProductCartScript.style.display = "none";
-    } */
+    }
 
     /* document.addEventListener("DOMContentLoaded", e => { */
        /* fetchData(); */

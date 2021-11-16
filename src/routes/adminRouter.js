@@ -17,7 +17,8 @@ let {admin,
     registerProcess,
     profile,
     editProfile,
-    destroy
+    destroy,
+    asignAdmin
  } = require("../controllers/adminController");
     let adminSession = require('../middlewares/adminSession');
     let chargeProductsValidator = require('../validations/chargeProductsValidator');
@@ -42,7 +43,8 @@ router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValida
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 /*delete elimina usuarios el admin */
-router.get('/userProfileAdmin/:id', /*adminSession,*/ userToDelete)
+router.get('/userProfileAdmin/:id', /* adminSession, */ userToDelete)
+router.patch('/userProfileAdmin/:id', /* adminSession, */ asignAdmin);
 router.delete('/userProfileAdmin/:id', userDelete)
 //-------------------Rutas de Admin Users-------------------------
 router.get('/usersTable', /*adminSession,*/ usersTable);
