@@ -131,14 +131,20 @@ body {
     font-weight: bolder;
 }
 
+.winesExplorer{
+    display: flex;
+    justify-content: space-around;
+}
+
 .btn-prev-next {
     background-color: transparent;
     border-radius: 2px;
-    color: black;
-    height: 65px;
+    color: white;
+  /*   height: 65px;
     width: 45px;
-    position: fixed;
-    top: 230px;
+   
+    top: 230px; */
+    padding: 25px;
     transition: all 0.8s;
 }
 
@@ -156,7 +162,7 @@ body {
 
 .p-prev-next {
     font-size: 28px;
-    margin-top: 14px;
+   
 }
 
 .modal-container-product-detail {

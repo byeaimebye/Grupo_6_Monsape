@@ -106,42 +106,39 @@
       <!-- END CAROUSEL -->
 
       </div>
-      <!------------------ CAROUSEL -------------------->
-      <h1 class="titulo-carru"> OFERTAS DEL MES</h1>
-      <div class="carrusel">
-
-        <div class="carrusel-items">
-
-          <% wines.forEach(wine=> { %>
-            <div class="carrusel-item">
-              <a href="/products/detail/<%- wine.id %>"><img src="/img/<%= wine.image %> " alt="" /></a>
-              <p>
-                <%- wine.discount %> % Descuento
-              </p>
-              <h3>
-                <%- wine.name %>
-                  </h1>
+        <!------------------ CAROUSEL -------------------->
+        <h1 class="titulo-carru"> OFERTAS DEL MES</h1>
+        <div class="carrusel">
+            
+            <div class="carrusel-items">
+              
+              <% wines.forEach(wine => { %>
+                <div class="carrusel-item">
+                  <a href="/products/detail/<%- wine.id %>"><img src="/img/<%= wine.image %> " alt="" /></a>
+                  <p class="discount-c"><%= wine.discount %> % Descuento</p>
+                  <h3><%= wine.name %></h1>
+                </div>
+              <% }) %>
             </div>
-            <% }) %>
-        </div>
-      </div>
-      <!-- CARRUSEL ENDS -->
-      <div class="linkeables-tablet">
-        <div class="bx1">
-          <a href="/products/tienda"><img src="/img/Frame 10.png" alt=""></a>
+          </div>
+          <!-- CARRUSEL ENDS -->
+        <div class="linkeables-tablet">
+            <div class="bx1">
+            
+            <a href="/products/tienda"><img src="/img/Frame 10.png" alt=""></a>
         </div>
         <div class="bx2">
-          <a href="/general/aboutUs"><img src="/img/Frame 7.png" alt=""></a>
+            <a href="/aboutUs"><img src="/img/Frame 7.png" alt=""></a>
         </div>
         <div class="bx3">
-          <a href="/general/tienda"><img src="/img/Frame 9.png" alt=""></a>
+           <a href="/products/tienda"><img src="/img/Frame 9.png" alt=""></a> 
         </div>
-      </div>
-
-      <div class="vacaciones">
-        <video src="/img/vacaciones.mp4" muted autoplay loop></video>
-        <div class="txt">
-          <h3>VACACIONÁ EN MONSAPE</h3>
+        </div>
+  
+        <div class="vacaciones">
+          <video src="/img/video1.mp4" muted autoplay loop></video>
+          <div class="txt">
+          <h3>TODOS SON BIENBVENIDOS EN NUESTRA MESA</h3>
           <button>Mas información</button>
         </div>
       </div>

@@ -9,11 +9,14 @@
 
 header.header-admin{
     margin-top: -180px;
-    background-image: url(/img/header-desktop.png);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
 }
 header.header-admin .logoAdmin{
     text-align: center;
@@ -43,7 +46,7 @@ header.header-admin .containerLog .ruteables ul  li{
     margin-bottom: 5px;
     list-style: none;
     width: 300px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 20px;
     padding: 5px;
 }
@@ -61,6 +64,7 @@ header.header-admin .containerLog .ruteables ul  li a{
     width: 80%;
     height: 25px;
     text-align: center;
+    
 }
 
 /* QueryTablet */
