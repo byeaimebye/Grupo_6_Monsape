@@ -7,8 +7,7 @@ let {
     processLogin,
     logout,
     profile,
-    editProfile,
-    prueba
+    editProfile
     }  = require("../controllers/usersController");
     let registerValidator = require('../validations/registerValidator');
     let loginValidator = require('../validations/loginValidator');

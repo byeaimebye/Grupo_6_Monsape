@@ -383,6 +383,20 @@ module.exports = {
         })
 
     },
+    asignAdmin : (req, res)=> {
+
+        db.User.update({
+                rol: "ROL_ADMIN"
+            }, {
+                where: { id: +req.params.id }
+            })
+            .then(() => {
+                res.redirect("" + req.params.id);
+            })
+            .catch(err => res.send(err));
+
+        
+    },
     userToDelete: (req, res) => {
         db.User.findByPk(req.params.id)
             .then((user) => {

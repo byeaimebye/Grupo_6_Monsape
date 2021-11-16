@@ -33,7 +33,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         productoCart = e;
         console.log(productoCart);
         switch (true) {
-            case e.target.id == _productsTiendaScript.querySelector(".agregar-producto-al-carrito").id:
+            case e.target.className == _productsTiendaScript.querySelector(".agregar-producto-al-carrito").className:
                 document.querySelector(".modal-product-detail").style.height = "200px";
                 document.querySelector(".modal-product-detail").style.paddingTop = "0";
                 document.querySelector(".h4-modal-product-detail").style.fontSize = "";
@@ -44,22 +44,6 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
                 console.log("ok")
                 document.querySelector(".modal-container-product-detail").style.display = "flex";
                 break;
-            /* case e.target.className == _modalConteinerTiendaScript.className:
-                e.target.style.display = "none";
-                break;
-            case detectarYes:
-                console.log(e.target);
-                addCarrito(e);
-    
-                document.querySelector(".h4-modal-product-detail").innerText = "¡Producto agregado exitosamente!";
-                document.querySelector("#yes").style.display = "none";
-                document.querySelector("#no").innerText = "ok";
-                break;
-            case e.target.id == document.querySelector("#no").id:
-                console.log(e.target);
-                document.querySelector(".modal-container-product-detail").style.display = "none";
-                break; */
-    
             default:
                 break;
         }

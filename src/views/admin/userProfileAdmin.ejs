@@ -6,7 +6,7 @@
     <body class="body-profile">
         <main class="main-profile">
 
-            <form action="/admin/userProfileAdmin/<%=user.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+            <form id="<%=user.id%>" class="form-user-profile-admin" action="/admin/userProfileAdmin/<%=user.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
                 <h1 id="h1-profile">MI PERFIL</h1>
                 <div class="avatar-profile">
                     <img src="/img/<%= user.avatar?user.avatar:" users/default-avatar.jpg"%>" alt="avatar">
@@ -16,7 +16,7 @@
                 <label id="lbl-fullname-profile" class="lbl-form-profile" for="fullname">Nombre y apellido</label>
                 <div class="div-fullname-profile div-form-profile">
                     <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
-                        value="<%= user.fullname?user.fullname:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        value="<%= user.rol?user.rol:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                         <small class="small-form-profile" id="nameErrors"></small>
                 </div>
 
@@ -75,12 +75,25 @@
                     <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                     <small class="small-form-profile" id="addressErrors"></small>
                 </div>
-                
-                <!-- <button id="editAdmin" class="btn-form-profile" type="button" name="btn-profile">Editar</button> -->
                 <button class="btn-form-profile" type="submit" name="btn-profile">ELIMINAR USUARIO</button>
-                <!-- <button id="cancelAdm" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button> -->
             </form>
+            <form action="/admin/userProfileAdmin/<%=user.id%>?_method=PATCH" method="POST">
+                <!-- <button id="editAdmin" class="btn-form-profile" type="button" name="btn-profile">Editar</button> -->
+                <button class="btn-form-profile" type="submit" name="btn-profile" id="btn-asign-admin">ASIGNAR ADMINISTRADOR</button>
+                <!-- <button id="cancelAdm" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button> -->
+
+            </form>
+            <div class="modal-container-product-detail">
+                <div class="modal-product-detail">
+                    <h3 class="h4-modal-product-detail">¿Agregar producto al carrito?</h3>
+                    <div class="btns-container-modal-product-detail">
+                        <button class="btn-modal-product-detail btn-buy" type="submit" id="yes">Si</button>
+                        <button class="btn-modal-product-detail" type="button" id="no">No</button>
+                    </div>
+                </div>
+            </div>
         </main>
+        <script src="/javascripts/userProfileAdminScript.js" defer></script>
     </body>
     <%- include("../partials/footer") %>
 </body>
