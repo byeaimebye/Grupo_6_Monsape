@@ -1,7 +1,9 @@
 .results{
     margin-top: 7rem;
 }
-
+.filter-products-search{
+    display: none;
+}
 /* resultados de búsqueda */
 .search-results{
     align-items: center;

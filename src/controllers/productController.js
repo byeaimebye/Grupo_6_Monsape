@@ -81,63 +81,55 @@ module.exports = {
     search: (req, res) => {
 
         db.Wine.findAll({
-            include: [{association: "collection"},{association: "variety"}, {association: "category"}]
-        })
+            include: [
+                {association: "category"},
+                {association: "collection"},
+                {association: "variety"}
+              ]
+        }
+        )
         .then(wines => {
-            /* Recorro el array de resultados obtenidos por la promesa y voy validando si la petición coincide con algun dato,
-            ya sea de las categorías, colecciones, variedades y/o el nombre de los vinos. Sabiendo que hay vinos que tienen mas
-            de una variedad, valido que dicho atributo tenga contenido (length != 0) y, en caso de que así fuera, recorro las
-            variedades en busca de coincidencias con el requerimento. Si el proceso encuentra coincidencias, guarda el elemento
-            correspondiente en la variable 'result', y después, al renderizar la vista de resultados, se envían los datos que
-            se hayan guardado en la variable. Si la búsqueda no arrojara resultados, se debería tener en cuenta algún mensaje
-            que lo indique. */
-            let result = [];
 
-          /*   wines.forEach(element => {
-                if(element&&element.category.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
-                    result.push(element)
-                }else if(element&&element.collection.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
-                    result.push(element)
-                }else if(element&&element.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
-                    result.push(element)
-                }else if(element.variety.length != 0){
-                    element.variety.forEach(variedad => {
-                        if(variedad&&variedad.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
-                            result.push(variedad)
+           let result = [];
+           
+           wines.filter(element => {
+               
+            switch(true){
+                case element.name.toLowerCase().includes(req.query.keywords.toLowerCase()):
+                    result.push(element);
+                    
+                case element.category.name.toLowerCase().includes(req.query.keywords.toLowerCase()):
+                    result.push(element);
+                case element.collection.name.toLowerCase().includes(req.query.keywords.toLowerCase()):
+                    result.push(element);
+                case Array.isArray(element.variety):
+                    element.variety.filter(variety => {
+                        if(variety.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
+                            result.push(element);
                         }
                     })
+                default:
+                    break;
+
+            }
+            })
+
+            const resultados = result.reduce((acc,item)=>{
+                if(!acc.includes(item)){
+                    acc.push(item);
                 }
-            }) */
+                return acc;
+              },[])
+
+            //res.send(resultados)
+
             res.render('product/result', {
                 title: "resultados",
-                wines: result, 
+                wines: resultados, 
                 search: req.query.keywords,
                 session: req.session,
             }) 
-            
-        }).catch(err=>res.send(err))
-
-		/* let result = []
-		vinos.forEach(vino => {
-			if(vino.nombre.toLowerCase().includes(req.query.keywords.toLowerCase())){
-				result.push(vino) 
-			}else if(vino.variedad.toLowerCase().includes(req.query.keywords.toLowerCase())){
-				result.push(vino) 
-			}else if(vino.coleccion.toLowerCase().includes(req.query.keywords.toLowerCase())){
-				result.push(vino) 
-			}else if(vino.categoria.toLowerCase().includes(req.query.keywords.toLowerCase())){
-				result.push(vino) 
-			}else if(result.length === 0){
-                result.push(vinos);
-            }
-		});
-	
-	 	res.render('product/result', {
-			title: "resultados",
-            result, 
-			search: req.query.keywords,
-            session: req.session,
-		})  */
+        })
         
 	}
 }

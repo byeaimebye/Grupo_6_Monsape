@@ -33,7 +33,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         productoCart = e;
         console.log(productoCart);
         switch (true) {
-            case e.target.id == _productsTiendaScript.querySelector(".agregar-producto-al-carrito").id:
+            case e.target.className == _productsTiendaScript.querySelector(".agregar-producto-al-carrito").className:
                 document.querySelector(".modal-product-detail").style.height = "200px";
                 document.querySelector(".modal-product-detail").style.paddingTop = "0";
                 document.querySelector(".h4-modal-product-detail").style.fontSize = "";
@@ -44,22 +44,6 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
                 console.log("ok")
                 document.querySelector(".modal-container-product-detail").style.display = "flex";
                 break;
-            /* case e.target.className == _modalConteinerTiendaScript.className:
-                e.target.style.display = "none";
-                break;
-            case detectarYes:
-                console.log(e.target);
-                addCarrito(e);
-    
-                document.querySelector(".h4-modal-product-detail").innerText = "¡Producto agregado exitosamente!";
-                document.querySelector("#yes").style.display = "none";
-                document.querySelector("#no").innerText = "ok";
-                break;
-            case e.target.id == document.querySelector("#no").id:
-                console.log(e.target);
-                document.querySelector(".modal-container-product-detail").style.display = "none";
-                break; */
-    
             default:
                 break;
         }
@@ -108,13 +92,16 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
     })
     
     //Realizando solicitud a la API...
+    /* let data = "" */
     const fetchData = async () => {
         try {
             const res = await fetch(urlTiendaScript)
             const response = await res.json();
             const data = await response.data;
+          
             //console.log(data)
             pintarCards(data);
+            searchFromTienda(data)
         } catch (error) {
             console.log(error);
         }
@@ -252,4 +239,31 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         _inputCarritoDropDown.checked = false;
         e.stopPropagation()
     }
+ 
+    const searchFromTienda = data =>{
+        console.log(data)
+        let inputSearchTienda = document.querySelector(".searchTienda");
+    
+        let productsSearchTienda = Array.from(document.querySelectorAll(".product-container"));
+        console.log(productsSearchTienda)    
+    
+            inputSearchTienda.addEventListener("keyup", (e)=>{
+                if(e.target.value == inputSearchTienda.value){
+                    if(e.key === "Escape"){
+                        e.target.value="";
+                    }
+    
+                   productsSearchTienda.forEach(element=>{
+                       console.log(element)
+                        if(element.textContent.toLowerCase().includes(e.target.value)){
+                            element.style.display = "flex";                                
+                        }else{
+                            element.style.display = "none";  
+                        }
+                    })
+                }                   
+            });
+        
+    }
+   
 }
