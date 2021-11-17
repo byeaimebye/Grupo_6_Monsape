@@ -38,7 +38,7 @@ header.home{
     background-color: rgba(0, 0,0, 0.5);
     padding: 10px;
     top: 0;
-    z-index: 9999;
+    z-index: 995;
 }
 .modal-burger button{
     background-color: transparent;

@@ -93,7 +93,7 @@ module.exports = {
             que lo indique. */
             let result = [];
 
-            wines.forEach(element => {
+          /*   wines.forEach(element => {
                 if(element&&element.category.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
                     result.push(element)
                 }else if(element&&element.collection.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
@@ -107,7 +107,7 @@ module.exports = {
                         }
                     })
                 }
-            })
+            }) */
             res.render('product/result', {
                 title: "resultados",
                 wines: result, 

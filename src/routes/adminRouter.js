@@ -42,7 +42,7 @@ router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValida
 /*delete eliminar productos*/
 router.delete('/delete/:id', productDelete)
 /*delete elimina usuarios el admin */
-router.get('/userProfileAdmin/:id', adminSession, userToDelete)
+router.get('/userProfileAdmin/:id',/*  adminSession, */ userToDelete)
 router.delete('/userProfileAdmin/:id', userDelete)
 //-------------------Rutas de Admin Users-------------------------
 router.get('/usersTable', /*adminSession,*/ usersTable);
