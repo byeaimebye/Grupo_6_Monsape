@@ -11,7 +11,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
     const _inputCarritoDropDown = document.querySelector(".cart-data-drop-down");
     const _labelCarritoDropDown = document.querySelector(".cart-data-label-drop-down img");
     
-    console.log(_templateCardTiendaScript);
+    //console.log(_templateCardTiendaScript);
     
     let urlTiendaScript = `http://localhost:3080/api/products`;
     let carritoTiendaScript = {};
@@ -108,7 +108,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
     }
     
     const pintarCards = data => {
-        console.log(data)
+        //........console.log(data)
         data.forEach(producto => {
             _templateCardTiendaScript.querySelector("a").href = "/products/detail/" + producto.id;
             _templateCardTiendaScript.querySelector("h4").textContent = producto.name;
@@ -240,29 +240,107 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         e.stopPropagation()
     }
  
-    const searchFromTienda = data =>{
-        console.log(data)
-        let inputSearchTienda = document.querySelector(".searchTienda");
-    
+    const searchFromTienda = data =>{        
+        let inputSearchTienda = document.querySelector(".searchTienda");    
         let productsSearchTienda = Array.from(document.querySelectorAll(".product-container"));
-        console.log(productsSearchTienda)    
-    
-            inputSearchTienda.addEventListener("keyup", (e)=>{
-                if(e.target.value == inputSearchTienda.value){
-                    if(e.key === "Escape"){
-                        e.target.value="";
+        let filterCategory = document.querySelector(".filterCategory");
+        let optionFilterCategory = document.getElementsByClassName("optionFilterCategory")
+        
+
+        /*creo arrays vacios para todos los nombre, precios, descuentos, categorias y colecciones de todos los vinos*/
+        let resultSearch= [];
+        let nombreProducto = [];
+        let categoryProducto = [];        
+        let collectionProducto = [];
+        let priceProducto = [];
+        let discountProducto = [];
+        let varietyProducto = [];
+        let varietiesSearch = [];
+        //let discountOrder = [];
+        //let lowestOrderedPrice = [];
+        //let highestOrderedPrice = [];
+
+        /* con .push() capturo en arrays vacios todos los nombre, precios, descuentos, categorias y colecciones de todos los vinos */
+        data.forEach(element => {
+            nombreProducto.push(element.name);
+            categoryProducto.push(element.category.name);
+            collectionProducto.push(element.collection.name);
+            priceProducto.push("$" + Math.trunc(element.price));
+            //lowestOrderedPrice.push(Math.trunc(element.price));
+            //highestOrderedPrice.push(Math.trunc(element.price));
+            discountProducto.push(Math.trunc(element.discount) + "%");
+            //discountOrder.push(Math.trunc(element.discount));
+            varietyProducto.push(element.variety);           
+        })
+        for (let index = 0; index < productsSearchTienda.length; index++){
+            let arreglo = [];            
+            varietyProducto[index].forEach((elemento, indice) => {
+                arreglo.push(elemento.name.concat())
+            }) 
+            varietiesSearch.push(arreglo.join());
+                 
+        }
+             
+        
+        /*itero el array creado donde estarán todos los arrays  dentro. y agrego los array creados mas arriba*/
+        for(let i=0; i<productsSearchTienda.length; i++){
+            resultSearch[i] = [nombreProducto[i],categoryProducto[i],collectionProducto[i],priceProducto[i],discountProducto[i],varietiesSearch[i]]
+            
+        }
+
+        
+        // let descuentoOrdenado = discountOrder.sort((a,b)=>a-b).reverse()
+        // let precioOrdenadoMenor = lowestOrderedPrice.sort((a,b)=>a-b)
+        // let precioOrdenadoMayor = highestOrderedPrice.sort((a,b)=>a-b).reverse()
+        
+        // console.log(precioOrdenadoMenor);
+        // console.log(precioOrdenadoMayor);
+        
+        // console.log(descuentoOrdenado);
+
+        // for (let i = 0;  i < optionFilterCategory.length;  i++) {
+        //     console.log(optionFilterCategory[i].value); 
+        // }
+        
+
+        filterCategory.addEventListener("click", (e)=>{
+            //console.log(filterCategory.value);
+            resultSearch.forEach((element, index)=>{
+                // if(filterCategory.value==="Todos"){
+                //     productsSearchTienda[index].style.display = "flex";
+                // }
+                if(element[1] === filterCategory.value){
+                   productsSearchTienda[index].style.display = "flex";                                
+                }else{
+                    if(filterCategory.value ==="Todos"){
+                        productsSearchTienda[index].style.display = "flex";
+                    }else{
+                        productsSearchTienda[index].style.display = "none";
                     }
+                }                    
+            })
+            
+        })
+        
+
+        
+                   
     
-                   productsSearchTienda.forEach(element=>{
-                       console.log(element)
-                        if(element.textContent.toLowerCase().includes(e.target.value)){
-                            element.style.display = "flex";                                
-                        }else{
-                            element.style.display = "none";  
-                        }
-                    })
-                }                   
-            });
+        inputSearchTienda.addEventListener("keyup", (e)=>{
+            if(e.target.value == inputSearchTienda.value){
+                if(e.key === "Escape"){
+                    e.target.value="";
+                }
+
+                resultSearch.forEach((element, index)=>{
+                    if(element.join().toLowerCase().includes(e.target.value.toLowerCase())){
+                       productsSearchTienda[index].style.display = "flex";                                
+                    }else{
+                        productsSearchTienda[index].style.display = "none";  
+                    }                    
+                })
+            }                   
+        });
         
     }
    
