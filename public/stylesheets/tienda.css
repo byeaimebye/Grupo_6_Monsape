@@ -2,9 +2,13 @@ body.home1{
 
     background-color: black;
 }
-.filter-products-search{
+/* .nombre-producto{
     display: none;
-}
+} */
+/* .filter-products-search{
+    
+    background-color: red;
+} */
  .body-tienda{
     margin-top: 0;
 } 
@@ -111,6 +115,7 @@ section.products{
 }
 /*producto y su descripcion (article)*/
 .products .product-container{
+   
     background-color: var(--color-grisBotones);
     border-radius: 4px;
     display: flex;

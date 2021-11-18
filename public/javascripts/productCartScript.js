@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     /* const _products2 = document.querySelector(".products");
      */const _itemsProductCartScript = document.getElementById("itemsCart");
     const _verMasProductCartScript = document.getElementById("mas-drop-down");
-    const _footer = document.querySelector(".subtotal-product");/* 
+    const _footerProductCartScript = document.querySelector(".subtotal-product-cart");/* 
     const _templateCard = document.getElementById("template-card").content; */
     const _templateCarritoProductCartScript = document.getElementById("template-carrito").content;
     //const _inputDropDown = document.querySelector(".cart-data-drop-down");
@@ -114,32 +114,33 @@ window.addEventListener("load", () => {
         })
         _itemsProductCartScript.appendChild(_fragmentProductCartScript);
     
-        pintarFooter();
-    
+        
         localStorage.setItem("carrito", JSON.stringify(_carritoProductCartScript));
+        pintarFooter();
     }
     
     const pintarFooter = () => {
-        _footer.innerHTML = "$0";
+        _footerProductCartScript.innerHTML = "";
         if(Object.keys(_carritoProductCartScript).length === 0){
+            console.log("hola pintarFooter")
             _itemsProductCartScript.innerHTML = `
             <div class="container-not-found">
                 <h3 class="msg-cart-not-found">Tu carrito está vacío</h3>
             </div>`
-            _footer.innerHTML = `$0`;
+            _footerProductCartScript.innerHTML = `$0`;
             return 
         }
         
         const nCantidad = Object.values(_carritoProductCartScript).reduce((acc, {cantidad})=> acc + cantidad, 0);
         const nPrecio = Object.values(_carritoProductCartScript).reduce((acc, {cantidad, precio})=> acc + cantidad * +precio.substring(1), 0)
-        
-        _footer.textContent = "$"+nPrecio;
+        console.log(_footerProductCartScript);
+        _footerProductCartScript.innerText = "$"+nPrecio;
         //_templateFooter.getElementById("precio").textContent = nPrecio;
     
         //const clone = _templateFooter.cloneNode(true);
         //_fragmentProductCartScript.appendChild(clone);
     
-        //_footer.appendChild(_fragmentProductCartScript);
+        //_footerProductCartScript.appendChild(_fragmentProductCartScript);
     
         /* const btnVaciar = document.getElementById("vaciar-carrito")
     

@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
 
-if(!(window.location.href === "http://localhost:3080/products/tienda") && !(window.location.href === "http://localhost:3080/products/cart") && !(window.location.href.includes("http://localhost:3080/products/detail"))){
+if(!(window.location.href === "http://localhost:3080/products/tienda") && !(window.location.href === "http://localhost:3080/products/cart") && !(window.location.href.includes("http://localhost:3080/products/detail")) && !(window.location.href.includes("http://localhost:3080/products/search"))){
     console.log("productCartDropDownScript activado")
 /* const _products2 = document.querySelector(".products");
  */const _items = document.getElementById("items");

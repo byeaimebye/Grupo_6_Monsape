@@ -92,13 +92,16 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
     })
     
     //Realizando solicitud a la API...
+    /* let data = "" */
     const fetchData = async () => {
         try {
             const res = await fetch(urlTiendaScript)
             const response = await res.json();
             const data = await response.data;
+          
             //console.log(data)
             pintarCards(data);
+            searchFromTienda(data)
         } catch (error) {
             console.log(error);
         }
@@ -236,4 +239,31 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         _inputCarritoDropDown.checked = false;
         e.stopPropagation()
     }
+ 
+    const searchFromTienda = data =>{
+        console.log(data)
+        let inputSearchTienda = document.querySelector(".searchTienda");
+    
+        let productsSearchTienda = Array.from(document.querySelectorAll(".product-container"));
+        console.log(productsSearchTienda)    
+    
+            inputSearchTienda.addEventListener("keyup", (e)=>{
+                if(e.target.value == inputSearchTienda.value){
+                    if(e.key === "Escape"){
+                        e.target.value="";
+                    }
+    
+                   productsSearchTienda.forEach(element=>{
+                       console.log(element)
+                        if(element.textContent.toLowerCase().includes(e.target.value)){
+                            element.style.display = "flex";                                
+                        }else{
+                            element.style.display = "none";  
+                        }
+                    })
+                }                   
+            });
+        
+    }
+   
 }

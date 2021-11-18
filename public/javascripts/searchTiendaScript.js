@@ -1,11 +1,12 @@
-import {fetchData} from "./"
+
+
 
 window.addEventListener("load", ()=>{
     let inputSearchTienda = document.querySelector(".searchTienda");
     
-    let productsSearchTienda = document.querySelectorAll(".product-container");
-    //console.log(productsSearchTienda[0].parentElement)
-        
+    let productsSearchTienda = Array.from(document.querySelectorAll(".product-container"));
+    console.log(productsSearchTienda)    
+
         inputSearchTienda.addEventListener("keyup", (e)=>{
             if(e.target.value == inputSearchTienda.value){
                 if(e.key === "Escape"){
@@ -13,14 +14,13 @@ window.addEventListener("load", ()=>{
                 }
 
                productsSearchTienda.forEach(element=>{
-                   console.log(element.querySelector(".title-p"))
+                   console.log(element)
                     if(element.textContent.toLowerCase().includes(e.target.value)){
-                        element.classList.remove("filter-products-search");                                
+                        element.style.display = "flex";                                
                     }else{
-                            element.classList.add("filter-products-search")
+                        element.style.display = "none";  
                     }
                 })
             }                   
         });
-  
 })
