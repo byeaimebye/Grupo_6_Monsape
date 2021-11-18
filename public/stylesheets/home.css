@@ -11,6 +11,10 @@ header.home .modal .modal-container{
     display: flex;
     flex-direction: column;
 }
+.rosarivoT{
+    font-family: 'Rosarivo', serif;
+    font-weight: 100;
+}
 .modal#modalAdd .ases{
     display: flex;
     text-align: center;

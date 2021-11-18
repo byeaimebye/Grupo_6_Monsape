@@ -8,7 +8,7 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+  
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
     z-index: 999;
@@ -18,11 +18,12 @@
   .modal-content-age {
       font-size: 12px;
     position: relative;
-    background-color: #fefefe;
+    background-image: url("/img/backgroundage.png");
+    background-size: contain;
+  
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
-    width: 80%;
+    width: fit-content;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -43,27 +44,107 @@
 
   
   .modal-header {
+    padding: 15px;
+   width: 315px;
       align-items: center;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    padding: 50px;
-    background-image: url("/img/Background.png");
+  
+   /*   */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
   }
    input#año{
-       border-radius: 55px;
-       padding: 5px;
-       margin-top: 18px;
+    width: 106px;
+    text-align: center;
+    margin: 5px auto;
+    padding: 10px;
+    background-color: rgba(196,196,196,0.2);
+  appearance: none;
    }
    img#logoAge{
-       width: 110px;
+     margin-bottom: 5px;
+       width: 50px;
    }
    button#buttonAge{
-       border-radius: 45px;
-       padding: 10px;
-       margin-top: 20px;
+    background-color: rgba(196,196,196,0.2);
+    padding: 5px;
+    color: white;
+    margin-bottom: 10px;
+    width: 83px;
+    border: 1px solid whitesmoke;
    }
- 
+ h2.text-age{
+font-family: 'Rosarivo', serif;
+font-weight: 100;
+font-size: 28px;
+ }
   
+ p.welcomeTextI{
+   font-weight: 888;
+   margin-bottom: 3px;
+   font-size: 15px;
+ }
+ 
+ .year{
+   border: 1px solid white;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+   margin-top: 20px;
+ }
+.termsAge{
+  font-weight: 100;
+  font-size: 11px;
+}
+.hrAge{
+  background-color: white;
+  border: 1px solid white;
+  width: 135px;
+
+  margin: 11px auto;
+}
+
+
+@media (min-width: 768px){
+.modal-header{
+  width: 545px;
+}
+h2.text-age{
+font-size:38px ;
+}
+ img#logoAge{
+   width: 75px;
+ }
+ p.welcomeTextI{
+   font-size: 20px;
+   margin-bottom: 8px;
+   width: 272px;
+ }
+ hr.hrAge{
+   margin: 19px auto;
+ }
+ .year{
+   padding: 7px;
+   width: 222px;
+   margin: 20px auto 20px;
+ }
+ button#buttonAge{
+   padding: 12px;
+ }
+.termsAge{
+  width: 405px;
+  font-size: 15px;
+}
+.modal-content-age{
+  background-size: cover;
+}
+p.adn{
+  font-size: 13px;
+}
+}
