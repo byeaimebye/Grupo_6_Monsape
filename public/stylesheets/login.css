@@ -7,13 +7,13 @@ a{
     text-decoration: none;
 }
 
-h2{
+h2.login-title-partial{
     margin-top: 2rem;
     margin-bottom: 1rem;
     text-align: center;
     text-transform: uppercase;
 }
-hr{
+hr.login{
     background-color: black;
     height: 2px;
     margin-bottom: 3rem;
