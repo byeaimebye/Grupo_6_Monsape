@@ -4,46 +4,34 @@
 
     <body class="body-product-detail">
         <%- include("../partials/header") %>
-            <main class="main-prueba" id="articles">
-                <a href="/products/detail/<%= detail.id - 1 %>">
-                    <div class="btn-prev-next btn-prev">
-                        <p class="p-prev-next">
-                            <%= "<" %>
-                        </p>
-                    </div>
-                </a>
-                <a href="/products/detail/<%= detail.id + 1 %>">
-                    <div class="btn-prev-next btn-next">
-                        <p class="p-prev-next">
-                            <%= ">" %>
-                        </p>
-                    </div>
-                </a>
+        <main class="main-prueba" id="articles">
+                <div class="btns-prev-next-container">
+                    <a href="/products/detail/<%= detail.id - 1 %>">
+                        <div class="btn-prev-next btn-prev">
+                            <p class="p-prev-next"><%= "<" %></p>
+                        </div>
+                    </a>
+                    <a href="/products/detail/<%= detail.id + 1 %>">
+                        <div class="btn-prev-next btn-next">
+                            <p class="p-prev-next"><%= ">" %></p>
+                        </div>
+                    </a>
+        
+                </div>
                 <div class="img-prueba border-prueba">
                     <img class="item-image" src="/img/<%= detail.image %>" alt="img-prueba">
                 </div>
-                <h3 name="collection" class="collection border-prueba">
-                    <%= detail.collection.name %>
-                </h3>
-                <h2 name="name" class="title-p border-prueba">
-                    <%= detail.name %>
-                </h2>
-                <h4 name="variety" class="variedad border-prueba">
-                    <%= varieties %>
-                </h4>
-                <p name="price" class="price border-prueba">$<%= detail.price %>
-                </p>
+                <h3 name="collection" class="collection border-prueba"><%= detail.collection.name %></h3>
+                <h2 name="name" class="title-p border-prueba"><%= detail.name %></h2>
+                <h4 name="variety" class="variedad border-prueba"><%= varieties %></h4>
+                <p name="price" class="price border-prueba">$<%= detail.price %></p>
                 <div class="cant">
-                    <input type="button" name="menos" id="menos" class="menos less-product-detail" value="-">
+                    <input type="button" name="menos" id="menos" class="menos less-product-detail" value="-" data-id="<%= id %>">
                     <input type="text" name="cantidad" id="cantidad" class="cantidad quantity-product-detail" value="1">
-                    <input type="button" name="mas" id="mas" class="mas more-product-detail" value="+">
+                    <input type="button" name="mas" id="mas" class="mas more-product-detail" value="+" data-id="<%= id %>">
                 </div>
-                <p name="description" class="description border-prueba">
-                    <%= detail.description %>
-                </p>
-                <p name="pairing" class="maridaje"><b>Maridaje: </b>
-                    <%= detail.pairing %>
-                </p>
+                <p name="description" class="description border-prueba"><%= detail.description %></p>
+                <p name="pairing" class="maridaje"><b>Maridaje: </b><%= detail.pairing %></p>
                 <button type="submit" class="btn-button agregar border-prueba addToCart btn-buy"
                     id="<%= id %>">Agregar</button>
                 <button type="button" class="btn-button ver-mas border-prueba">Ver mas</button>
@@ -60,6 +48,7 @@
                         </div>
                     </div>
             </main>
+            
             <%- include("../partials/monsape-ofrece") %>
                 <%- include("../partials/footer") %>
                     <script src="/javascripts/productDetailScript.js" defer></script>

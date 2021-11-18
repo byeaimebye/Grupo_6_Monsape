@@ -1,28 +1,44 @@
 window.addEventListener("load", e => {
-    let _more = document.querySelector(".ver-mas"),
+        let _more = document.querySelector(".ver-mas"),
         _confirmar = document.querySelector(".confirmar"),
         _moreDetails = document.querySelector("#more-details"),
         _agregar = document.querySelector(".agregar"),
         _no = document.querySelector("#no"),
+        _items = document.getElementById("items"),
         _title = document.querySelector(".title-p"),
         _quantity = document.querySelector(".quantity-product-detail"),
         _main = document.querySelector(".main-prueba"),
         _img = document.querySelector(".item-image"),
         _itemsCarritoDropDownProductDetailScript = document.getElementById("items"),
         _footerProductDetail = document.querySelector(".subtotal-product"),
+        _inputProductDetail = document.querySelector(".cart-data-drop-down"),
+        _menosQuantity = document.querySelector(".less-product-detail"),
+        _masQuantity = document.querySelector(".more-product-detail"),
         _price = document.querySelector(".price");
     const _templateCartProductDetail = document.querySelector("#template-carrito").content;
     const _fragmentProductDetail = document.createDocumentFragment();
 
     let contProductDetailScript = 0;
     let productoCartProductDetailScript = {};
-    let carritoProductDetail = JSON.parse(localStorage.getItem("carrito"));
+    let carritoProductDetail = {};
+    
+    if(localStorage.getItem("carrito")){
+        carritoProductDetail = JSON.parse(localStorage.getItem("carrito"));
+        console.log(carritoProductDetail)
+        
+    }
 
     console.log(_quantity);
 
+    _items.addEventListener("click", e => {
+        btnAccion(e);
+        quitProduct(e);
+    })
+
     document.addEventListener("click", e => {
+        btnAccionProductDetail(e);
         productoCartProductDetailScript = e;
-        
+        console.log(e.target.classList);
         switch (true) {
             case e.target.className == _confirmar.className:
                 window.location.href = "http://localhost:3080/products/tienda";
@@ -85,16 +101,17 @@ window.addEventListener("load", e => {
     }
 
     const setCarrito = objeto => {
+        //carritoProductDetail = JSON.parse(localStorage.getItem("carrito"));
         const producto = {
             id: _agregar.id,
             title: _title.textContent,
             precio: document.querySelector(".price").textContent,
             imagen: document.querySelector(".item-image").src,
-            cantidad: +(document.querySelector(".cantidad").value)
+            cantidad: +_quantity.value
         }
 
         if (carritoProductDetail.hasOwnProperty(producto.id)) {
-            producto.cantidad = carritoProductDetail[producto.id].cantidad + 1;
+            producto.cantidad = producto.cantidad + carritoProductDetail[producto.id].cantidad;
         }
 
         carritoProductDetail[producto.id] = { ...producto };
@@ -154,21 +171,101 @@ window.addEventListener("load", e => {
     }
 
     let productoProductDetailScript = Object.values(carritoProductDetail).find(element => element.id === _agregar.id);
-    const pintarCantidad = () => {
-        _quantity.setAttribute("value", productoProductDetailScript.cantidad);
-        console.log(productoProductDetailScript.cantidad)
+    const pintarCantidad = (producto) => {
+        _quantity.setAttribute("value", producto.cantidad);
+        console.log(producto.cantidad)
     }
 
     if(productoProductDetailScript){
-        pintarCantidad();
+        pintarCantidad(productoProductDetailScript);
     }
 
-    document.getElementById("mas").addEventListener("click", e =>{
-        _quantity.value= +_quantity.value + 1;
+    /* document.getElementById("mas").addEventListener("click", e =>{
+        +_quantity.value++;
+        console.log(_quantity.value)
     })
     document.getElementById("menos").addEventListener("click", e =>{
         if(+_quantity.value > 1){
-            _quantity.value = +_quantity.value - 1;
+            +_quantity.value--;
+            console.log(_quantity.value)
         }
-    })
+    }) */
+
+    const btnAccionProductDetail = (e) => {
+        //Aumentar
+        //carrito2 = JSON.parse(localStorage.getItem("carrito"));
+        console.log(e.target)
+        if(e.target.classList.contains("more-product-detail")){
+            
+            console.log("mas")
+            const producto = carritoProductDetail[e.target.dataset.id];
+            producto.cantidad = producto.cantidad + 1;
+            console.log(producto);
+            carritoProductDetail[e.target.dataset.id] = {...producto}
+            console.log(carritoProductDetail[e.target.dataset.id])
+            pintarCarrito()
+            pintarFooter()
+            pintarCantidad(producto)
+            /* _inputProductDetail.checked = false; */
+        }
+        //Disminuir
+        if(e.target.classList.contains("less-product-detail")){
+            console.log("menos")
+            const producto = carritoProductDetail[e.target.dataset.id];
+            console.log(producto)
+            producto.cantidad = carritoProductDetail[e.target.dataset.id].cantidad - 1;
+            if(producto.cantidad === 0){
+                delete carritoProductDetail[e.target.dataset.id];
+            }
+            pintarCarrito()
+            pintarFooter()
+            pintarCantidad(producto)
+            /* _inputProductDetail.checked = false; */
+        }
+        e.stopPropagation()
+    }
+
+    const btnAccion = (e) => {
+        //Aumentar
+        //carrito2 = JSON.parse(localStorage.getItem("carrito"));
+        console.log(e.target)
+        if(e.target.classList.contains("mas")){
+            
+            console.log("mas")
+            const producto = carritoProductDetail[e.target.dataset.id];
+            producto.cantidad = carritoProductDetail[e.target.dataset.id].cantidad + 1;
+            carritoProductDetail[e.target.dataset.id] = {...producto}
+            console.log(carritoProductDetail[e.target.dataset.id])
+            pintarCarrito()
+            pintarFooter()
+            pintarCantidad(producto)
+            _inputProductDetail.checked = false;
+        }
+        //Disminuir
+        if(e.target.classList.contains("menos")){
+            console.log("menos")
+            const producto = carritoProductDetail[e.target.dataset.id];
+            producto.cantidad = carritoProductDetail[e.target.dataset.id].cantidad - 1;
+            if(producto.cantidad === 0){
+                delete carritoProductDetail[e.target.dataset.id];
+            }
+            pintarCarrito()
+            pintarFooter()
+            pintarCantidad(producto)
+            _inputProductDetail.checked = false;
+        }
+        e.stopPropagation()
+    }
+    
+    const quitProduct = e => {
+        if(e.target.className === "tachito"){
+            delete carritoProductDetail[e.target.dataset.id];
+        }
+        pintarCarrito()
+        pintarFooter()
+        _inputProductDetail.checked = false;
+        e.stopPropagation()
+    }
+
+    pintarCarrito();
 })

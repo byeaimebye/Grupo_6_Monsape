@@ -76,28 +76,24 @@
                     <small class="small-form-profile" id="addressErrors"></small>
                 </div>
                 <button class="btn-form-profile" type="submit" name="btn-profile">ELIMINAR USUARIO</button>
-<<<<<<< HEAD
-                <button class="btn-form-profile" type="submit" name="btn-profile">ASIGNAR ADMINISTRADOR</button>
-=======
             </form>
-            <form action="/admin/userProfileAdmin/<%=user.id%>?_method=PATCH" method="POST">
+            <button class="btn-form-profile" type="submit" name="btn-profile" id="btn-asign-admin">ASIGNAR ADMINISTRADOR</button>
+            <!-- <form action="/admin/userProfileAdmin/<% user.id %>?_method=PATCH" method="POST"> -->
                 <!-- <button id="editAdmin" class="btn-form-profile" type="button" name="btn-profile">Editar</button> -->
-                <button class="btn-form-profile" type="submit" name="btn-profile" id="btn-asign-admin">ASIGNAR ADMINISTRADOR</button>
->>>>>>> c3bf7c2796941fe5cc5d83d5223d13fd8e315285
                 <!-- <button id="cancelAdm" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button> -->
 
-            </form>
-            <div class="modal-container-product-detail">
-                <div class="modal-product-detail">
-                    <h3 class="h4-modal-product-detail">¿Agregar producto al carrito?</h3>
-                    <div class="btns-container-modal-product-detail">
-                        <button class="btn-modal-product-detail btn-buy" type="submit" id="yes">Si</button>
-                        <button class="btn-modal-product-detail" type="button" id="no">No</button>
+            <!-- </form> -->
+            <div class="modal-container-user-profile-admin">
+                <div class="modal-user-profile-admin">
+                    <h3 class="h4-modal-user-profile-admin">¿Asignar Rol Administrador a este usuario?</h3>
+                    <div class="btns-container-modal-user-profile-admin">
+                        <button class="btn-modal-user-profile-admin btn-buy" type="submit" id="yes">Si</button>
+                        <button class="btn-modal-user-profile-admin" type="button" id="no">No</button>
                     </div>
                 </div>
             </div>
         </main>
-        <script src="/javascripts/userProfileAdminScript.js" defer></script>
+        <script src="/javascripts/userProfileAdmin.js" defer></script>
     </body>
     <%- include("../partials/footer") %>
 </body>

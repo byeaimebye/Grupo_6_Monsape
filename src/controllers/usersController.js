@@ -133,7 +133,7 @@ module.exports = {
         if (req.cookies.cookieMonsape) {
             res.cookie('cookieMonsape', '', { maxAge: -1 })
         }
-        res.redirect('/')
+        res.redirect('/users/login')
     },
     profile: (req, res) => {
         db.User.findByPk(req.session.user.id)
@@ -232,5 +232,19 @@ module.exports = {
 
         })
         writeUsersJSON(users); */
+    },
+    deleteCount: (req, res)=> {
+        res.render("/general/deleteCount");
+    },
+    destroyUser: (req, res)=>{
+        db.User.destroy({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(()=>{
+            res.redirect("/users/login");
+        })
+        .catch(err => {res.send(err)});
     }
 };

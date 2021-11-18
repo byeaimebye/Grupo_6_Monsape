@@ -44,7 +44,7 @@ router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValida
 router.delete('/delete/:id', productDelete)
 /*delete elimina usuarios el admin */
 router.get('/userProfileAdmin/:id', /* adminSession, */ userToDelete)
-router.patch('/userProfileAdmin/:id', /* adminSession, */ asignAdmin);
+//router.patch('/userProfileAdmin/:id', /* adminSession, */ asignAdmin);
 router.delete('/userProfileAdmin/:id', userDelete)
 //-------------------Rutas de Admin Users-------------------------
 router.get('/usersTable', /*adminSession,*/ usersTable);
