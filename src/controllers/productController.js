@@ -97,7 +97,6 @@ module.exports = {
             switch(true){
                 case element.name.toLowerCase().includes(req.query.keywords.toLowerCase()):
                     result.push(element);
-                    
                 case element.category.name.toLowerCase().includes(req.query.keywords.toLowerCase()):
                     result.push(element);
                 case element.collection.name.toLowerCase().includes(req.query.keywords.toLowerCase()):

@@ -12,9 +12,9 @@ body {
     "img-prueba img-prueba img-prueba img-prueba"
     "collection collection collection collection"
     "title-p title-p title-p title-p"
-    "variedad variedad variedad variedad"
-    "price price price price"
-    "cant cant cant cant"
+    "btn-prev variedad variedad btn-next"
+    "btn-prev price price btn-next"
+    "btn-prev cant cant btn-next"
     "description description description description"
     "maridaje maridaje maridaje maridaje"
     "agregar agregar agregar agregar" 
@@ -131,38 +131,45 @@ body {
     font-weight: bolder;
 }
 
-.winesExplorer{
+.btns-prev-next-container{
     display: flex;
     justify-content: space-around;
 }
 
 .btn-prev-next {
-    background-color: transparent;
-    border-radius: 2px;
+    align-items: center;
+    background-color: var(--color-rojoVino);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.7);  
+    display: flex;
     color: white;
-  /*   height: 65px;
-    width: 45px;
-   
-    top: 230px; */
+    height: 15px;
+    width: 15px;
+   justify-content: center;
+    top: 615px;
     padding: 25px;
+    position: absolute;
+    text-align: center;
     transition: all 0.8s;
 }
 
 .btn-prev-next:hover{/* 
     background-color: rgba(86, 7, 12, 0.6); */
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
+    color: var(--color-rojoVino);
 }
 
 .btn-prev {
-    left: 10px;
+    grid-area: btn-prev;
+    left: 6px;
 }
 .btn-next {
-    right: 10px;
+    grid-area: btn-next;
+    right: 6px;
 }
 
 .p-prev-next {
     font-size: 28px;
-   
 }
 
 .modal-container-product-detail {
@@ -210,7 +217,7 @@ body {
     .main-prueba {
         display: grid;
         grid-template-columns:0.2fr 0.5fr 0.5fr 0.5fr;
-        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.4fr 0.5fr 0.3fr 0.5fr 0.2fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.4fr 0.5fr 0.3fr 0.5fr 0.2fr 0.2fr;
         grid-template-areas:
         "img-prueba img-prueba collection collection"
         "img-prueba img-prueba title-p title-p"
@@ -219,7 +226,8 @@ body {
         "img-prueba img-prueba description description"
         "img-prueba img-prueba maridaje maridaje"
         "img-prueba img-prueba agregar ver-mas"
-        "confirmar confirmar confirmar confirmar";
+        "confirmar confirmar confirmar confirmar"
+        "btn-prev btn-prev btn-next btn-next";
         padding: 20px 20px 5px;
         text-align: center;
     
@@ -256,9 +264,21 @@ body {
     }
 
     .confirmar {
+        margin-bottom: 75px;
         width: 600px;
     }
 
+    .btn-prev-next {
+        top: 725px;
+    }
+
+    .btn-prev {
+        left: 180px;
+    }
+
+    .btn-next {
+        right: 180px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -309,11 +329,19 @@ body {
 
     .confirmar {
         font-size: 18px;
-        height: 30px;/* 
-        margin-top: 30px; */
+        height: 30px;
+        margin-bottom: 0;
     }
 
     .btn-prev-next {
-        top: 250px;
+        top: 415px;
+    }
+
+    .btn-prev {
+        left: 5px;
+    }
+
+    .btn-next {
+        right: 3px;
     }
 }

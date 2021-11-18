@@ -97,6 +97,7 @@ window.addEventListener("load", () => {
     
     const pintarCarrito = () => {
         console.log("alo alo")
+        //_carritoProductCartScript = JSON.parse(localStorage.getItem("carrito"));
         _itemsProductCartScript.innerHTML = "";
         Object.values(_carritoProductCartScript).forEach(producto => {
             //_templateCarritoProductCartScript.querySelector("th").textContent = producto.id;
@@ -177,6 +178,7 @@ window.addEventListener("load", () => {
     
     const quitProduct = e => {
         if(e.target.className === "tachito"){
+            console.log("hola");
             delete _carritoProductCartScript[e.target.dataset.id];
         }
         pintarCarrito()
@@ -186,5 +188,5 @@ window.addEventListener("load", () => {
     }
     
     pintarCarrito();
-    });
+});
     
