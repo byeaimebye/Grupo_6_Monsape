@@ -97,7 +97,7 @@ module.exports = {
                 if(req.session.user.rol === "ROL_ADMIN"){
                     res.redirect("/admin/usersTable");
                 }
-                res.redirect("/")
+                res.redirect("/products/tienda")
             }).catch(error => {
                 res.send(error)
             });
