@@ -84,12 +84,12 @@
  main.about .history-logo img{
      width: 100%;
  }
- hr {
+ /* hr {
     color: white;
     height: 1px;
     margin-bottom: 3rem;
     width: 80%;
-}
+} */
 section.history-images{
     display: grid;
   
