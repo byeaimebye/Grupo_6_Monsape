@@ -274,7 +274,7 @@
     position: fixed;
     top: 0;
     transition: 1.5s opacity,
-                50s z-index;
+                5s z-index;
     width: 0;
     z-index: 0;
 }
@@ -286,7 +286,7 @@
     overflow: auto;
     opacity: 0;
     transition: width 0.5s,
-                opacity 5.5s,
+                opacity 1.5s,
                 left 1s;
     position: relative;
     top: 0;

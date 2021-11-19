@@ -199,27 +199,36 @@ window.addEventListener("load", e => {
             
             console.log("mas")
             const producto = carritoProductDetail[e.target.dataset.id];
-            producto.cantidad = producto.cantidad + 1;
-            console.log(producto);
-            carritoProductDetail[e.target.dataset.id] = {...producto}
-            console.log(carritoProductDetail[e.target.dataset.id])
-            pintarCarrito()
-            pintarFooter()
-            pintarCantidad(producto)
+            if(producto){
+                producto.cantidad = producto.cantidad + 1;
+                console.log(producto);
+                carritoProductDetail[e.target.dataset.id] = {...producto}
+                console.log(carritoProductDetail[e.target.dataset.id])
+                pintarCarrito()
+                pintarFooter()
+                pintarCantidad(producto)
+            } else {
+                _quantity.value++;
+            }
             /* _inputProductDetail.checked = false; */
         }
         //Disminuir
         if(e.target.classList.contains("less-product-detail")){
             console.log("menos")
             const producto = carritoProductDetail[e.target.dataset.id];
-            console.log(producto)
-            producto.cantidad = carritoProductDetail[e.target.dataset.id].cantidad - 1;
-            if(producto.cantidad === 0){
-                delete carritoProductDetail[e.target.dataset.id];
+            if(producto){
+                console.log(producto)
+                producto.cantidad = carritoProductDetail[e.target.dataset.id].cantidad - 1;
+                if(producto.cantidad === 0){
+                    delete carritoProductDetail[e.target.dataset.id];
+                }
+                pintarCarrito()
+                pintarFooter()
+                pintarCantidad(producto)
+
+            }else {
+                _quantity.value>1?_quantity.value--:"";
             }
-            pintarCarrito()
-            pintarFooter()
-            pintarCantidad(producto)
             /* _inputProductDetail.checked = false; */
         }
         e.stopPropagation()
