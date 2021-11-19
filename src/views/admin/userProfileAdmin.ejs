@@ -2,7 +2,7 @@
 <html lang="es">
 <%- include("../partials/head") %> 
 <body>
-    <%- include("../partials/header") %>
+    <%- include("../partials/headerAdmin") %>
     <body class="body-profile">
         <main class="main-profile">
 
@@ -11,12 +11,12 @@
                 <div class="avatar-profile">
                     <img src="/img/<%= user.avatar?user.avatar:" users/default-avatar.jpg"%>" alt="avatar">
                     <input class="input-avatar-profile" type="file" name="avatar" disabled>
-                </div>
-
+                </div>                
+                
                 <label id="lbl-fullname-profile" class="lbl-form-profile" for="fullname">Nombre y apellido</label>
                 <div class="div-fullname-profile div-form-profile">
                     <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
-                        value="<%= user.rol?user.rol:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        value="<%= user.fullname?user.fullname:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                         <small class="small-form-profile" id="nameErrors"></small>
                 </div>
 
@@ -76,14 +76,16 @@
                     <small class="small-form-profile" id="addressErrors"></small>
                 </div>
                 <button class="btn-form-profile" type="submit" name="btn-profile">ELIMINAR USUARIO</button>
-<<<<<<< HEAD
-                <button class="btn-form-profile" type="submit" name="btn-profile">ASIGNAR ADMINISTRADOR</button>
-=======
             </form>
-            <form action="/admin/userProfileAdmin/<%=user.id%>?_method=PATCH" method="POST">
+            <form class="asignarAdmin" action="/admin/userProfileAdmin/<%=user.id%>?_method=PATCH" method="POST">
                 <!-- <button id="editAdmin" class="btn-form-profile" type="button" name="btn-profile">Editar</button> -->
                 <button class="btn-form-profile" type="submit" name="btn-profile" id="btn-asign-admin">ASIGNAR ADMINISTRADOR</button>
->>>>>>> c3bf7c2796941fe5cc5d83d5223d13fd8e315285
+                <label id="lbl-fullname-profile" class="lbl-form-profile" for="fullname">Rol</label>
+                <div class="div-fullname-profile div-form-profile">
+                    <input id="input-fullname-profile" class="input-form-profile" type="text" placeholder="Nombre y apellido" name="fullname"
+                        value="<%= user.rol?user.rol:""%>" disabled><i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
+                        <small class="small-form-profile" id="nameErrors"></small>
+                </div>
                 <!-- <button id="cancelAdm" class="btn-form-profile" type="reset" name="btn-profile">Cancelar</button> -->
 
             </form>

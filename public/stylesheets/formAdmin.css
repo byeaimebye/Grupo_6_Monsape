@@ -117,7 +117,12 @@ main.main-admin-create .temperatura-create input{
     font-weight: 900;
     text-align: center;
 }
-
+.fa-file-image{
+    position: absolute;
+    top: 48px;
+    right: 106px;
+    font-size: 60px;
+}
 .input-file-img {
     border-radius: 8px;
     position: absolute;

@@ -20,6 +20,7 @@ window.addEventListener("load", () => {
         _variety = document.querySelectorAll("#input-variety-charge"),
         _image = document.querySelector("#input-image-charge"),
         _imagePreview = document.querySelector('#img-preview'),
+        _imageAdd = document.querySelector('.fa-file-image'),
     //errors
         _allErrors = document.querySelectorAll(".small-form-charge"),
         _nameErrors = document.querySelector("#nameErrors"),
@@ -676,6 +677,7 @@ window.addEventListener("load", () => {
                 reader.readAsDataURL(_image.files[0]);
                 _imageErrors.innerHTML = '';
                 _image.classList.remove('is-invalid')
+                _imageAdd.classList.remove('fa-file-image')
             }
         }
     })
