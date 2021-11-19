@@ -13,8 +13,8 @@ function currentSlide (number) {
 
 function showSlides (number) {
     let i;
-    let slides = document.getElementsByClassName("slides"); //captura todos los elementos del DOM que tengan la clase "slides"
-    let dots = document.getElementsByClassName("dot");//captura todos los elementos del DOM que tengan la clase "dot"
+    let slides = document.querySelectorAll(".slides"); //captura todos los elementos del DOM que tengan la clase "slides"
+    let dots = document.querySelectorAll(".dot");//captura todos los elementos del DOM que tengan la clase "dot"
     /* Si el numero recibido por parámetro es mayor a
      la cantidad de elementos que contienen la clase slides, 
      setea la variable slides a 1. Por lo tanto la imagen que se muestra 

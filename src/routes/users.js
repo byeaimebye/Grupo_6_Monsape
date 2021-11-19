@@ -7,7 +7,9 @@ let {
     processLogin,
     logout,
     profile,
-    editProfile
+    editProfile,
+    deleteCount,
+    destroyUser
     }  = require("../controllers/usersController");
     let registerValidator = require('../validations/registerValidator');
     let loginValidator = require('../validations/loginValidator');
@@ -27,6 +29,9 @@ router.post('/register', /* upload.single("image"), */ registerValidator, regist
 /* Get Profile */
 router.get("/profile/", userSession, profile);
 router.put("/profile", upload.single("avatar"), profileValidator, editProfile);
+
+router.get("/deleteCount", userSession, deleteCount);
+router.delete("/deleteCount", destroyUser);
 
 module.exports = router;
 

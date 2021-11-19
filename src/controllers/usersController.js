@@ -97,7 +97,7 @@ module.exports = {
                 if(req.session.user.rol === "ROL_ADMIN"){
                     res.redirect("/admin/usersTable");
                 }
-                res.redirect("/")
+                res.redirect("/products/tienda")
             }).catch(error => {
                 res.send(error)
             });
@@ -133,7 +133,7 @@ module.exports = {
         if (req.cookies.cookieMonsape) {
             res.cookie('cookieMonsape', '', { maxAge: -1 })
         }
-        res.redirect('/')
+        res.redirect('/users/login')
     },
     profile: (req, res) => {
         db.User.findByPk(req.session.user.id)
@@ -232,5 +232,19 @@ module.exports = {
 
         })
         writeUsersJSON(users); */
+    },
+    deleteCount: (req, res)=> {
+        res.render("/general/deleteCount");
+    },
+    destroyUser: (req, res)=>{
+        db.User.destroy({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(()=>{
+            res.redirect("/users/login");
+        })
+        .catch(err => {res.send(err)});
     }
 };

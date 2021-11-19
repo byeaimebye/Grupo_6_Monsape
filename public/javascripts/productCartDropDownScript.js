@@ -1,5 +1,7 @@
 window.addEventListener("load", () => {
 
+if(!(window.location.href === "http://localhost:3080/products/tienda") && !(window.location.href === "http://localhost:3080/products/cart") && !(window.location.href.includes("http://localhost:3080/products/detail")) && !(window.location.href.includes("http://localhost:3080/products/search"))){
+    console.log("productCartDropDownScript activado")
 /* const _products2 = document.querySelector(".products");
  */const _items = document.getElementById("items");
 const _verMas = document.getElementById("mas-drop-down");
@@ -92,6 +94,7 @@ _items.addEventListener("click", e => {
 
 const pintarCarrito = () => {
     console.log("alo alo")
+    //carrito2 = JSON.parse(localStorage.getItem("carrito"));
     _items.innerHTML = "";
     Object.values(carrito2).forEach(producto => {
         //_templateCarrito.querySelector("th").textContent = producto.id;
@@ -145,6 +148,7 @@ const pintarFooter = () => {
 
 const btnAccion = (e) => {
     //Aumentar
+    carrito2 = JSON.parse(localStorage.getItem("carrito"));
     if(e.target.classList.contains("mas")){
         console.log("mas")
         const producto = carrito2[e.target.dataset.id];
@@ -181,4 +185,7 @@ const quitProduct = e => {
 }
 
 pintarCarrito();
+} else {
+    console.log("productCartDropDownScript desactivado")
+}
 });

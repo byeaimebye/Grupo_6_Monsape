@@ -83,7 +83,7 @@
                         <span class="descuento">$<%= Math.round((100*wine.price)/(100-wine.discount)) %> </span>
                         <span class="precio">$<%= wine.price %> </span>
                     </div>
-                    <button class="agregar-producto-al-carrito">Agregar</button>
+                    <button class="agregar-producto-al-carrito" data-id="<%= wine.id %>">Agregar</button>
                 </article>
             <% }) %>            
         </section>
@@ -153,7 +153,17 @@
         <span class="dot1" onclick="currentSlides1(3)"></span>        
     </div>
          
+    <div class="modal-container-product-detail">
+        <div class="modal-product-detail">
+            <h3 class="h4-modal-product-detail">¿Agregar producto al carrito?</h3>
+            <div class="btns-container-modal-product-detail">
+                <button class="btn-modal-product-detail btn-buy" type="submit" id="yes">Si</button>
+                <button class="btn-modal-product-detail" type="button" id="no">No</button>
+            </div>
+        </div>
+    </div>
     <!--FOOTER-->
     <%- include("../partials/footer") %>
+    <script src="/javascripts/resultScript.js" defer></script>
 </body>
 </html>

@@ -46,7 +46,8 @@
             <a href="#">COMO COMPRAR</a>
             <a href="/aboutUs">QUIENES SOMOS</a>
             <% if(session.user){ %> 
-                <a href="/users/login">CARRITO DE COMPRAS</a>
+              <a href="/products/cart">CARRITO DE COMPRAS</a>
+              <a href="/users/logout">CERRAR SESION</a>
                 <% }else{ %> 
             <a href="/users/login">INICIAR SESION</a>
             <a href="/users/register">REGISTRATE</a>
