@@ -19,7 +19,7 @@
 }
 
 .container-more-details {
-    background-color: red;
+    background-color: rgba(0,0,0,0.5);
     left: 0;
     height: 0;
     position: fixed;
