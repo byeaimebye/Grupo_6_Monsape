@@ -52,11 +52,11 @@
              </div>
             <% }else{ %> 
                 <div class="loginH">
-                    <button id="ing" onclick="openModal2()"><img src="/img/banners/login.svg" alt=""> <br>
+                    <button id="ing"><img src="/img/banners/login.svg" alt=""> <br>
                         <p>Ingresá</p>
                     </button>
                     <div class="modal2" id="modalAdd2">
-                        <form action="/users/login" method="POST">
+                        <!-- <form action="/users/login" method="POST">
 
                             <div class="modal-container2">
                                 <div class="close-modal2" onclick="closeModal2()">X</div>
@@ -68,8 +68,8 @@
                                 <p class="login-modal-text">¿Aún no tienes cuenta? <a id="anclaRoja" href="/users/register">REGISTRATE</a> </p>
                                 <button type="submit">INICIAR SESION</button>
                             </div>
-                        </form>
-                        <%- /* include("../partials/partialLogin") */ %> 
+                        </form> -->
+                        <%-  include("../partials/partialLogin") %> 
                     </div>
                 </div>
                 <% } %> 
