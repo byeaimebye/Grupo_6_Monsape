@@ -38,7 +38,6 @@ window.addEventListener("load", e => {
     document.addEventListener("click", e => {
         btnAccionProductDetail(e);
         productoCartProductDetailScript = e;
-        console.log(e.target.classList);
         switch (true) {
             case e.target.className == _confirmar.className:
                 window.location.href = "http://localhost:3080/products/tienda";
@@ -63,7 +62,6 @@ window.addEventListener("load", e => {
             case e.target.id == document.querySelector("#yes").id:
                 console.log(e.target);
                 addCarrito(productoCartProductDetailScript);
-
                 document.querySelector(".h4-modal-product-detail").innerText = "¡Producto agregado exitosamente!";
                 document.querySelector("#yes").style.display = "none";
                 document.querySelector("#no").innerText = "ok";
@@ -111,11 +109,12 @@ window.addEventListener("load", e => {
         }
 
         if (carritoProductDetail.hasOwnProperty(producto.id)) {
-            producto.cantidad = producto.cantidad + carritoProductDetail[producto.id].cantidad;
+            producto.cantidad = (producto.cantidad - carritoProductDetail[producto.id].cantidad) + carritoProductDetail[producto.id].cantidad;
         }
 
         carritoProductDetail[producto.id] = { ...producto };
         pintarCarrito();
+        //pintarCantidad(producto)
     }
 
     const pintarCarrito = () => {
@@ -206,10 +205,10 @@ window.addEventListener("load", e => {
                 console.log(carritoProductDetail[e.target.dataset.id])
                 pintarCarrito()
                 pintarFooter()
-                pintarCantidad(producto)
             } else {
                 _quantity.value++;
             }
+            pintarCantidad(producto)
             /* _inputProductDetail.checked = false; */
         }
         //Disminuir
@@ -224,11 +223,11 @@ window.addEventListener("load", e => {
                 }
                 pintarCarrito()
                 pintarFooter()
-                pintarCantidad(producto)
-
+                
             }else {
                 _quantity.value>1?_quantity.value--:"";
             }
+            pintarCantidad(producto)
             /* _inputProductDetail.checked = false; */
         }
         e.stopPropagation()
