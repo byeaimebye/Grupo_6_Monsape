@@ -2,9 +2,19 @@
 form{
     font-weight: bolder;
 }
+loginRedirect a{
+    color:maroon;
+}
 a{
     color: darkblue;
     text-decoration: none;
+}
+.loginLabel{
+    display: flex;
+    margin-left: 0;
+    justify-content: left;
+    width: 100%;
+    margin-left: 27%;
 }
 
 h2.login-title-partial{
@@ -102,8 +112,9 @@ label {
 
 label.text-forms{
     width: 100%;
-    margin-left: 24%;
+     margin-left: 24%; 
 }
+
 
 
 /*check*/

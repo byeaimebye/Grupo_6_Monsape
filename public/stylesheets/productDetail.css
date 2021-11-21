@@ -187,7 +187,9 @@ body {
 
 .modal-product-detail {
     align-items: center;
-    background-color: gainsboro;
+    background-image: url(/img/modalbackground.png);
+    background-position: center;
+    background-size: cover;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -196,7 +198,21 @@ body {
     text-align: center;
     width: 400px;/* 
     position: absolute; */
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
 
 .btns-container-modal-product-detail {
     display: flex;
