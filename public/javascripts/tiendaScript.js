@@ -10,6 +10,8 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
     const _templateCarritoDropDown = document.getElementById("template-carrito").content;
     const _inputCarritoDropDown = document.querySelector(".cart-data-drop-down");
     const _labelCarritoDropDown = document.querySelector(".cart-data-label-drop-down img");
+
+    let orderWines = document.querySelector(".orderWines");
     
     //console.log(_templateCardTiendaScript);
     
@@ -31,7 +33,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
     let productoCart = {};
     _productsTiendaScript.addEventListener("click", e =>{
         productoCart = e;
-        console.log(productoCart);
+        //console.log(productoCart);
         switch (true) {
             case e.target.className == _productsTiendaScript.querySelector(".agregar-producto-al-carrito").className:
                 document.querySelector(".modal-product-detail").style.height = "200px";
@@ -100,7 +102,9 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             const data = await response.data;
           
             //console.log(data)
-            pintarCards(data);
+            if(orderWines.value === "defecto"){
+                pintarCards(data);
+            }
             searchFromTienda(data)
         } catch (error) {
             console.log(error);
@@ -112,11 +116,11 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         data.forEach(producto => {
             _templateCardTiendaScript.querySelector("a").href = "/products/detail/" + producto.id;
             _templateCardTiendaScript.querySelector("h4").textContent = producto.name;
-            _templateCardTiendaScript.querySelector(".precio").textContent = "$" + producto.price;
+            _templateCardTiendaScript.querySelector(".precio").textContent = "$" + Math.round(((100-producto.discount)*producto.price)/100);
             _templateCardTiendaScript.querySelector(".imagen-producto").setAttribute("src", "/img/"+producto.image);
             _templateCardTiendaScript.querySelector(".agregar-producto-al-carrito").dataset.id = producto.id;
             _templateCardTiendaScript.querySelector(".descuento-porcentaje p").textContent = Math.trunc(producto.discount) + "% OFF";
-            _templateCardTiendaScript.querySelector(".descuento").textContent = "$" + Math.round((100*producto.price)/(100-producto.discount));
+            _templateCardTiendaScript.querySelector(".descuento").textContent = "$" + Math.round(producto.price);
     
             const clone = _templateCardTiendaScript.cloneNode(true);
             _fragmentTiendaScript.appendChild(clone);
@@ -239,13 +243,23 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         _inputCarritoDropDown.checked = false;
         e.stopPropagation()
     }
+
+
  
     const searchFromTienda = data =>{        
         let inputSearchTienda = document.querySelector(".searchTienda");    
         let productsSearchTienda = Array.from(document.querySelectorAll(".product-container"));
+        //let productsOrder = [];
+        // productsSearchTienda.forEach((a, index)=>{
+        //     productsOrder.push([a, index])
+        // })
+        // productsSearchTienda.forEach(a=>{
+        //     productsOrder.push(a)
+        // })
         let filterCategory = document.querySelector(".filterCategory");
-        let optionFilterCategory = document.getElementsByClassName("optionFilterCategory")
-        
+        let filterCollection = document.querySelector(".filterCollection");
+        let filterVariety = document.querySelector(".filterVariety");
+               
 
         /*creo arrays vacios para todos los nombre, precios, descuentos, categorias y colecciones de todos los vinos*/
         let resultSearch= [];
@@ -255,10 +269,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         let priceProducto = [];
         let discountProducto = [];
         let varietyProducto = [];
-        let varietiesSearch = [];
-        //let discountOrder = [];
-        //let lowestOrderedPrice = [];
-        //let highestOrderedPrice = [];
+        let varietiesSearch = [];        
 
         /* con .push() capturo en arrays vacios todos los nombre, precios, descuentos, categorias y colecciones de todos los vinos */
         data.forEach(element => {
@@ -266,10 +277,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             categoryProducto.push(element.category.name);
             collectionProducto.push(element.collection.name);
             priceProducto.push("$" + Math.trunc(element.price));
-            //lowestOrderedPrice.push(Math.trunc(element.price));
-            //highestOrderedPrice.push(Math.trunc(element.price));
             discountProducto.push(Math.trunc(element.discount) + "%");
-            //discountOrder.push(Math.trunc(element.discount));
             varietyProducto.push(element.variety);           
         })
         for (let index = 0; index < productsSearchTienda.length; index++){
@@ -277,38 +285,54 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             varietyProducto[index].forEach((elemento, indice) => {
                 arreglo.push(elemento.name.concat())
             }) 
-            varietiesSearch.push(arreglo.join());
-                 
-        }
-             
+            varietiesSearch.push(arreglo.join());                 
+        }             
         
         /*itero el array creado donde estarán todos los arrays  dentro. y agrego los array creados mas arriba*/
         for(let i=0; i<productsSearchTienda.length; i++){
             resultSearch[i] = [nombreProducto[i],categoryProducto[i],collectionProducto[i],priceProducto[i],discountProducto[i],varietiesSearch[i]]
-            
         }
-
         
-        // let descuentoOrdenado = discountOrder.sort((a,b)=>a-b).reverse()
-        // let precioOrdenadoMenor = lowestOrderedPrice.sort((a,b)=>a-b)
-        // let precioOrdenadoMayor = highestOrderedPrice.sort((a,b)=>a-b).reverse()
+        let dataOrder = [];
+        data.forEach(date=>{
+            dataOrder.push(date)
+        })
+        console.log(productsSearchTienda);
         
-        // console.log(precioOrdenadoMenor);
-        // console.log(precioOrdenadoMayor);
         
-        // console.log(descuentoOrdenado);
-
-        // for (let i = 0;  i < optionFilterCategory.length;  i++) {
-        //     console.log(optionFilterCategory[i].value); 
-        // }
+        orderWines.addEventListener("click", (e)=>{
+            if(orderWines.value==="mayor-descuento"){
+                dataOrder.sort((a,b)=>a.discount-b.discount).reverse()
+                _productsTiendaScript.innerHTML= "";
+                pintarCards(dataOrder)
+            }
+            if(orderWines.value==="precio-menor"){
+                dataOrder.sort((a,b)=>a.price-b.price)
+                _productsTiendaScript.innerHTML= "";
+                pintarCards(dataOrder)
+            }
+            if(orderWines.value==="precio-mayor"){
+                dataOrder.sort((a,b)=>a.price-b.price).reverse()
+                _productsTiendaScript.innerHTML= "";
+                pintarCards(dataOrder)
+            } 
+            if(orderWines.value === "defecto"){
+                _productsTiendaScript.innerHTML= "";
+                pintarCards(data)
+            } 
+            e.stopPropagation();                                
+        })
+        
         
 
         filterCategory.addEventListener("click", (e)=>{
-            //console.log(filterCategory.value);
+            filterCollection.value = "Todos"
+            filterVariety.value = "Todos"
+            orderWines.value = "defecto"
+            //location.reload();
+            // _productsTiendaScript.innerHTML= "";
+            // pintarCards(data)          
             resultSearch.forEach((element, index)=>{
-                // if(filterCategory.value==="Todos"){
-                //     productsSearchTienda[index].style.display = "flex";
-                // }
                 if(element[1] === filterCategory.value){
                    productsSearchTienda[index].style.display = "flex";                                
                 }else{
@@ -321,17 +345,54 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             })
             
         })
-        
-
-        
-                   
+        filterCollection.addEventListener("click", (e)=>{
+            filterCategory.value = "Todos"
+            filterVariety.value = "Todos"
+            orderWines.value = "defecto"
+            // _productsTiendaScript.innerHTML= "";
+            // pintarCards(data)
+            resultSearch.forEach((element, index)=>{
+                if(element[2] === filterCollection.value){
+                   productsSearchTienda[index].style.display = "flex";                                
+                }else{
+                    if(filterCollection.value ==="Todos"){
+                        productsSearchTienda[index].style.display = "flex";
+                    }else{
+                        productsSearchTienda[index].style.display = "none";
+                    }
+                }                    
+            })            
+        })
+        filterVariety.addEventListener("click", (e)=>{
+            filterCollection.value = "Todos"
+            filterCategory.value = "Todos"
+            orderWines.value = "defecto"
+            // _productsTiendaScript.innerHTML= "";
+            // pintarCards(data)
+            resultSearch.forEach((element, index)=>{
+                if(element[5].includes(filterVariety.value)){
+                   productsSearchTienda[index].style.display = "flex";                                
+                }else{
+                    if(filterVariety.value ==="Todos"){
+                        productsSearchTienda[index].style.display = "flex";
+                    }else{
+                        productsSearchTienda[index].style.display = "none";
+                    }
+                }                    
+            })            
+        })                  
     
         inputSearchTienda.addEventListener("keyup", (e)=>{
+            filterCollection.value = "Todos"
+            filterVariety.value = "Todos"
+            filterCategory.value = "Todos"
+            orderWines.value = "defecto"
+            // _productsTiendaScript.innerHTML= "";
+            // pintarCards(data)
             if(e.target.value == inputSearchTienda.value){
                 if(e.key === "Escape"){
                     e.target.value="";
                 }
-
                 resultSearch.forEach((element, index)=>{
                     if(element.join().toLowerCase().includes(e.target.value.toLowerCase())){
                        productsSearchTienda[index].style.display = "flex";                                
