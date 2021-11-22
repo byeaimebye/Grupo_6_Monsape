@@ -48,28 +48,41 @@
     <!--Filtro de productos-->
     <div class="filtros">
         <div class="filtro-de-productos">
-            <span>Ordenar por: </span>
-            <select>        
-                <option value="" selected></option>
+            <select class="orderWines">        
+                <option value="defecto" selected>Ordenar por:</option>
                 <option value="mayor-descuento">Mayor descuento</option>
                 <option value="precio-menor">Precio: Menor a Mayor</option>
                 <option value="precio-mayor">Precio: Mayor a Menor</option>
-                <option value="a-z">A - Z</option>
-                <option value="z-a">Z - A</option>
-            </select>            
-        </div>
-        <div class="filtro-de-productos">
-            <span>Categorías: </span>
-            <select class="filterCategory">
-                <option value="Todos" selected>Todas</option>                
-                <option class="optionFilterCategory" value="Tinto">Tintos</option>
-                <option class="optionFilterCategory" value="Blanco">Blancos</option>
-                <option class="optionFilterCategory" value="Rosado">Rosados</option>
-                <option class="optionFilterCategory" value="Espumante">Espumantes</option>                
             </select>
+        </div>        
+        <div class="filtro-de-productos"> 
+            <select class="filterCategory">
+                <option selected value="Todos">Categoría</option>
+                <% category.forEach(category=> { %>
+                      <option value="<%= category.name %>">
+                         <%= category.name %>
+                      </option>
+                <% }) %>
+            </select>           
+            <select selected class="filterCollection">
+                <option value="Todos">Colección</option>
+                <% collection.forEach(collection=> { %>
+                      <option value="<%= collection.name %>">
+                         <%= collection.name %>
+                      </option>
+                <% }) %>
+             </select>
+            <select selected class="filterVariety">
+                <option value="Todos">Variedad</option>
+                <% variety.forEach(variety=> { %>
+                      <option value="<%= variety.name %>">
+                         <%= variety.name %>
+                      </option>
+                <% }) %>
+             </select>
         </div>
   
-          <input class="searchTienda" type="text" placeholder="¿Que estas buscando?" name="" id="">
+        <input class="searchTienda" type="text" placeholder="¿Que estas buscando?" name="" id="">
 
     </div>    
     <!--MAIN-->

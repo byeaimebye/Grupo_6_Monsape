@@ -116,7 +116,7 @@
               <% wines.forEach(wine => { %>
                 <div class="carrusel-item">
                   <a href="/products/detail/<%- wine.id %>"><img src="/img/<%= wine.image %> " alt="" /></a>
-                  <p class="discount-c"><%= wine.discount %> % Descuento</p>
+                  <p class="discount-c"><%= Math.round(wine.discount) %> % Descuento</p>
                   <h3><%= wine.name %></h1>
                 </div>
               <% }) %>

@@ -6,28 +6,28 @@ const fetch = require("node-fetch")
 module.exports = {
     /* Lista todos los productos disponibles. */
     tienda : (req, res) =>{
-
-        db.Wine.findAll({
+        let collectionPromise = db.Collection.findAll()
+        let categoryPromise = db.Category.findAll()
+        let varietyPromise = db.Variety.findAll()
+        let winePromise = db.Wine.findAll({
             include: [
                {association: "category"},
                {association: "collection"},
                {association: "variety"}
            ] 
        })
-       .then(wines =>{
-           res.render("product/tienda", {
-            title: "Tienda",
-            wines: wines,
-            session: req.session,
-        })
-       }).catch(error =>{
-           res.send(error)
-       }) 
-       /*  res.render("product/tienda", {
-            title: "Tienda",
-            vinos: vinos,
-            session: req.session,
-        }) */
+       
+        Promise.all([collectionPromise, categoryPromise, varietyPromise, winePromise])
+            .then(([collectionPromise, categoryPromise, varietyPromise, winePromise]) => {
+                res.render('product/tienda', {
+                    title: "Tienda",
+                    collection: collectionPromise,
+                    category: categoryPromise,
+                    variety: varietyPromise,
+                    wines: winePromise,
+                    session: req.session,
+                })
+            }).catch((error) => res.send(error))       
     },
     /* Trae todos los detalles del producto solicitado. */
     productDetail: /* async */ (req, res) => {
