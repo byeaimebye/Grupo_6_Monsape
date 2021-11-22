@@ -400,7 +400,7 @@ module.exports = {
     userToDelete: (req, res) => {
         db.User.findByPk(req.params.id)
             .then((user) => {
-
+                
                 res.render("admin/userProfileAdmin", {
                     title: "Edicion de usuario",
                     user,

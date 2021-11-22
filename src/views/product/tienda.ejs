@@ -49,8 +49,8 @@
     <div class="filtros">
         <div class="filtro-de-productos">
             <span>Ordenar por: </span>
-            <select>        
-                <option value="" selected></option>
+            <select class="select-store">        
+                <option value="" selected>Ordenar por</option>
                 <option value="mayor-descuento">Mayor descuento</option>
                 <option value="precio-menor">Precio: Menor a Mayor</option>
                 <option value="precio-mayor">Precio: Mayor a Menor</option>
@@ -60,8 +60,8 @@
         </div>
         <div class="filtro-de-productos">
             <span>Categorías: </span>
-            <select class="filterCategory">
-                <option value="Todos" selected>Todas</option>                
+            <select class="filterCategory select-store">
+                <option value="Todos" selected>Categorias</option>                
                 <option class="optionFilterCategory" value="Tinto">Tintos</option>
                 <option class="optionFilterCategory" value="Blanco">Blancos</option>
                 <option class="optionFilterCategory" value="Rosado">Rosados</option>
@@ -69,7 +69,10 @@
             </select>
         </div>
   
-          <input class="searchTienda" type="text" placeholder="¿Que estas buscando?" name="" id="">
+        <div class="input-search-container-tienda">
+            <input class="searchTienda" type="text" placeholder="¿Que estas buscando?" name="" id="">
+            <i class="fas fa-search"></i>
+        </div>
 
     </div>    
     <!--MAIN-->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/headerAdmin") %>
+            <main class="main-user-profile-admin-custom" id="<%= user.id %>">
+                <h1 class="h1-user-profile-admin-custom">DETALLE DE USUARIO</h1>
+                <!-- <form action="" method="post"> -->
+                    <div class="avatar-profile avatar-user-profile-admin-custom">
+                        <img src="/img/<%= user.avatar?user.avatar:" users/default-avatar.jpg"%>" alt="avatar">
+                        <input class="input-avatar-profile" type="file" name="avatar" disabled>
+                    </div>
+                    <div class="section-container-user-profile-admin-custom">
+                        <section class="section-admin-profile-custom section-1-admin-profile-custom">
+                            <label for="" class="lbl-user-profile-admin-custom">Nombre y apellido:</label>
+                            <p name="fullname" class="p-user-profile-admin-custom"><%= user.fullname?user.fullname:"-"%></p>
+                            <label for="" class="lbl-user-profile-admin-custom">Email:</label>
+                            <p name="email" class="p-user-profile-admin-custom"><%=user.email?user.email:"-"%></p>
+                            <label for="" class="lbl-user-profile-admin-custom">Documento:</label>
+                            <p name="dni" class="p-user-profile-admin-custom"><%=user.dni?user.dni:"-"%></p>
+                            <label for="" class="lbl-user-profile-admin-custom">Código Postal:</label>
+                            <p name="cp" class="p-user-profile-admin-custom"><%=user.cp?user.cp:"-"%></p>
+                        </section>
+                        <section class="section-admin-profile-custom section-2-admin-profile-custom">
+                            <label for="" class="lbl-user-profile-admin-custom">Teléfono:</label>
+                            <p name="tel" class="p-user-profile-admin-custom"><%=user.tel?user.tel:"-"%></p>
+                            <label for="" class="lbl-user-profile-admin-custom">Fecha de nacimiento:</label>
+                            <p name="date" class="p-user-profile-admin-custom"><%=user.date?user.date:"-"%></p>
+                            <label for="" class="lbl-user-profile-admin-custom">Domicilio:</label>
+                            <p name="address" class="p-user-profile-admin-custom"><%=user.address?user.address:"-"%></p>
+                            <div class="rol-container-user-profile-admin">
+                                <label for="" class="lbl-user-profile-admin-custom">Rol:</label>
+                                <select class="select-user-profile-admin" name="rol-select" id="" disabled>
+                                    <% if (user.rol.includes("USER")) { %>
+                                        <option class="opt-user-profile-admin" value="ROL_USER" selected>ROL_USER</option>
+                                        <option class="opt-user-profile-admin" value="ROL_ADMIN">ROL_ADMIN</option>
+                                    <% }else{ %>
+                                        <option class="opt-user-profile-admin" value="ROL_USER">ROL_USER</option>
+                                        <option class="opt-user-profile-admin" value="ROL_ADMIN" selected>ROL_ADMIN</option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <button class="btn-user-profile-admin-custom btn-destroy-upac" type="submit" name="btn-profile">Eliminar</button>
+                    <button class="btn-user-profile-admin-custom btn-edit-upac" type="button" name="btn-profile">Editar Rol</button>
+                    <button class="btn-user-profile-admin-custom btn-confirm-upac" type="button" name="btn-profile" disabled>Confirmar</button>
+                <!-- </form> -->
+                <div class="modal-container-user-profile-admin-custom">
+                    <div class="modal-user-profile-admin-custom">
+                        <h3 class="h4-modal-user-profile-admin-custom">¿Asignar Rol Administrador a este usuario?</h3>
+                        <div class="btns-container-modal-user-profile-admin-custom">
+                            <button class="btn-modal-user-profile-admin-custom btn-buy" type="submit" id="yesCustom">Si</button>
+                            <button class="btn-modal-user-profile-admin-custom" type="button" id="noCustom">No</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include("../partials/footer") %>
+            <script src="/javascripts/userProfileAdminCustomScript.js" defer></script>
+    </body>
+</html>

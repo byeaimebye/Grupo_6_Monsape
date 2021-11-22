@@ -56,24 +56,64 @@ body.home1{
 /*filtro de productos*/
 /*Ordenar por: */
 div.filtros{
+    align-items: center;
     display: flex;
-    flex-direction: row;
-    justify-content: start;
-    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 120px;
+    margin: 0 auto 20px;
+    width: 84%;
 }
 .filtro-de-productos{
-    margin: 0 20px 10px 30px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    width: 100%;
+    /* margin: 0 20px 10px 30px; */
 }
 .filtro-de-productos span{
+    /* display: none; */
     font-weight: bolder;
     color: #ffffff;
 }
-.filtro-de-productos select{
-    font-weight: bolder;
+
+.select-store{
+    border: none;
     background-color: var(--color-grisBotones);
-    height: 32px;
+    border-radius: 8px;
+    font-weight: bolder;
+    height: 30px;
+    width: 170px;
 }
 
+.input-search-container-tienda{
+    border: solid white;
+    border-radius: 10px;
+    height: 30px;
+    position: relative;
+    width: 300px;
+}
+
+.searchTienda{
+    background-color: transparent;
+    color: white;
+    border-radius: 7px;
+    height: 100%;
+    padding-left: 5px;
+    width: 100%;
+}
+
+::placeholder {
+    color: white;
+}
+
+.fa-search{
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+}
 
 /* Filtrar por categoria */
 /* .filtros ul,
@@ -305,14 +345,30 @@ section.carousel-container1{
    
     /*filtro de productos*/
     /*Ordenar por: */
-    
-    .filtro-de-productos{
-        margin: 0 20px 10px 50px;
+
+    div.filtros{
+        flex-direction: row;
+        width: 100%;
     }
-    .filtro-de-productos select{
+
+    .filtro-de-productos{
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        text-align: left;
+        width: 25%;
+        margin-bottom: 22px;
+    }
+
+    .filtro-de-productos span{
+        text-align: left;
+        font-weight: bolder;
+        color: #ffffff;
+    }
+    /* .filtro-de-productos select{
         height: 34px;
         width: 180px;
-    }
+    } */
     .filtro-de-productos select option{
         text-align: center;
     }
@@ -532,6 +588,10 @@ section.carousel-container1{
     .tarjetas-credito .tarjetas{
         grid-template-columns: 0.5fr 0.5fr 0.5fr;        
     }
+    
+    .input-search-container-tienda{
+        margin-top: 10px;
+    }
 }
 
 /*.............DESKTOP 1200px en adelante...............*/
@@ -560,4 +620,5 @@ section.carousel-container1{
         max-width: 260px;        
         width: 230px;
     }
+
 }   
