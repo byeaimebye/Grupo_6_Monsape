@@ -41,11 +41,13 @@ router.get('/editProduct/:id',  edit);
 router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValidator,productEdit);
 
 /*delete eliminar productos*/
-router.delete('/delete/:id', productDelete)
+router.delete('/delete/:id', productDelete);
 /*delete elimina usuarios el admin */
-router.get('/userProfileAdmin/:id', /* adminSession, */ userToDelete)
-//router.patch('/userProfileAdmin/:id', /* adminSession, */ asignAdmin);
-router.delete('/userProfileAdmin/:id', userDelete)
+router.get('/userProfileAdmin/:id', /* adminSession, */ userToDelete);
+
+router.patch('/userProfileAdmin/:id', /* adminSession, */ asignAdmin);
+
+router.delete('/userProfileAdmin/:id', userDelete);
 //-------------------Rutas de Admin Users-------------------------
 router.get('/usersTable', /*adminSession,*/ usersTable);
 /* 
