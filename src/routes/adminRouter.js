@@ -29,9 +29,9 @@ let {admin,
 
 
 /*GET - Admin products */
-router.get('/products', /* adminSession, */ products);
+router.get('/products', adminSession, products);
 /*GET - Formulario de producto */
-router.get('/cargaDeProducto',/* adminSession, */ charge);
+router.get('/cargaDeProducto',adminSession, charge);
 
 /* POST- Crear producto */
 router.post('/cargaDeProducto', uploadFiles.single('image'), chargeProductsValidator, productCreate); 
@@ -41,13 +41,15 @@ router.get('/editProduct/:id',  edit);
 router.put('/editProduct/:id', uploadFiles.single('image'), chargeProductsValidator,productEdit);
 
 /*delete eliminar productos*/
-router.delete('/delete/:id', productDelete)
+router.delete('/delete/:id', productDelete);
 /*delete elimina usuarios el admin */
-router.get('/userProfileAdmin/:id', /* adminSession, */ userToDelete)
-router.patch('/userProfileAdmin/:id', /* adminSession, */ asignAdmin);
-router.delete('/userProfileAdmin/:id', userDelete)
+router.get('/userProfileAdmin/:id', adminSession, userToDelete);
+
+router.patch('/userProfileAdmin/:id', adminSession, asignAdmin);
+
+router.delete('/userProfileAdmin/:id', userDelete);
 //-------------------Rutas de Admin Users-------------------------
-router.get('/usersTable', /*adminSession,*/ usersTable);
+router.get('/usersTable', adminSession, usersTable);
 /* 
 router.get("/probado-check/:id", edit); */
 //Login, register y profile admin
