@@ -162,7 +162,7 @@ header.prueba {
    margin-bottom: 120px;
  
 }
-header.prueba a{
+header.prueba a#headerAs{
     color: white;
 }
 header.prueba .logoCenter{

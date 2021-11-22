@@ -11,28 +11,28 @@
         <div class="modal-conteiner">
             <div class="close-modal" onclick="closeModal()">X</div>
             <!-- <div class="logo-interno"><img src="./img/logomon.svg" alt=""></div> -->
-            <a href="/">INICIO</a>
-            <a href="/products/tienda">PRODUCTOS</a>
-            <a href="#">COMO COMPRAR</a>
-            <a href="/aboutUs">QUIENES SOMOS</a>
+            <a id="headerAs" href="/">INICIO</a>
+            <a id="headerAs" href="/products/tienda">PRODUCTOS</a>
+            <a id="headerAs" href="#">COMO COMPRAR</a>
+            <a id="headerAs" href="/aboutUs">QUIENES SOMOS</a>
             <% if(session.user){ %> 
-                <a href="/products/cart">CARRITO DE COMPRAS</a>
-                <a href="/users/logout">CERRAR SESION</a>
+                <a id="headerAs" href="/products/cart">CARRITO DE COMPRAS</a>
+                <a id="headerAs" href="/users/logout">CERRAR SESION</a>
                 <% }else{ %> 
-            <a href="/users/login">INICIAR SESION</a>
-            <a href="/users/register">REGISTRATE</a>
+            <a id="headerAs" href="/users/login">INICIAR SESION</a>
+            <a id="headerAs" href="/users/register">REGISTRATE</a>
             <% } %> 
             <!-- <button onclick="closeModal()">Cancelar</button> -->
         </div>
     </div>
     <!-- FIN VENTANA MODAL MOBILE -->
     <div class="linksFirst">
-        <a href="/aboutUs">NOSOTROS</a>
+        <a id="headerAs" href="/aboutUs">NOSOTROS</a>
         <!-- <a href="#">PRODUCTOS</a> -->
         <%- include("menuDesplegableProducts")%>
-        <a href="/products/tienda">TIENDA</a>
+        <a id="headerAs" href="/products/tienda">TIENDA</a>
     </div>
-    <a href="/">
+    <a id="headerAs" href="/">
         <div class="logoCenter">
             <img src="/img/logomon.svg" alt="">
             <h1>MONSAPE</h1>
@@ -52,11 +52,11 @@
              </div>
             <% }else{ %> 
                 <div class="loginH">
-                    <button id="ing" onclick="openModal2()"><img src="/img/banners/login.svg" alt=""> <br>
+                    <button id="ing"><img src="/img/banners/login.svg" alt=""> <br>
                         <p>Ingresá</p>
                     </button>
                     <div class="modal2" id="modalAdd2">
-                        <form action="/users/login" method="POST">
+                        <!-- <form action="/users/login" method="POST">
 
                             <div class="modal-container2">
                                 <div class="close-modal2" onclick="closeModal2()">X</div>
@@ -68,8 +68,8 @@
                                 <p class="login-modal-text">¿Aún no tienes cuenta? <a id="anclaRoja" href="/users/register">REGISTRATE</a> </p>
                                 <button type="submit">INICIAR SESION</button>
                             </div>
-                        </form>
-                        <%- /* include("../partials/partialLogin") */ %> 
+                        </form> -->
+                        <%-  include("../partials/partialLogin") %> 
                     </div>
                 </div>
                 <% } %> 

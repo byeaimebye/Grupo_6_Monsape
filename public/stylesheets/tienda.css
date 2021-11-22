@@ -185,6 +185,7 @@ section.products{
     text-align: center;
     margin-bottom: 8px;
     height: 40px;
+    overflow: hidden;
 }
 
 /*descuento y precio*/
