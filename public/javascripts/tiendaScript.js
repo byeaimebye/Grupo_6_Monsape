@@ -102,9 +102,9 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             const data = await response.data;
           
             //console.log(data)
-            if(orderWines.value === "defecto"){
+            /* if(orderWines.value === "defecto"){ */
                 pintarCards(data);
-            }
+            /* } */
             searchFromTienda(data)
         } catch (error) {
             console.log(error);

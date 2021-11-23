@@ -47,16 +47,20 @@
     </div>    
     <!--Filtro de productos-->
     <div class="filtros">
-        <div class="filtro-de-productos">
-            <select class="orderWines">        
+        <div class="input-search-container-tienda">
+            <input class="searchTienda" type="text" placeholder="¿Que estas buscando?" name="" id="">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <div class="filtro-de-productos"> 
+            <!-- <select class="orderWines select-store">        
                 <option value="defecto" selected>Ordenar por:</option>
                 <option value="mayor-descuento">Mayor descuento</option>
                 <option value="precio-menor">Precio: Menor a Mayor</option>
                 <option value="precio-mayor">Precio: Mayor a Menor</option>
-            </select>
-        </div>        
-        <div class="filtro-de-productos"> 
-            <select class="filterCategory">
+            </select> -->
+            
+            <select class="filterCategory select-store">
                 <option selected value="Todos">Categoría</option>
                 <% category.forEach(category=> { %>
                       <option value="<%= category.name %>">
@@ -64,7 +68,7 @@
                       </option>
                 <% }) %>
             </select>           
-            <select selected class="filterCollection">
+            <select selected class="filterCollection select-store">
                 <option value="Todos">Colección</option>
                 <% collection.forEach(collection=> { %>
                       <option value="<%= collection.name %>">
@@ -72,7 +76,7 @@
                       </option>
                 <% }) %>
              </select>
-            <select selected class="filterVariety">
+            <select selected class="filterVariety select-store">
                 <option value="Todos">Variedad</option>
                 <% variety.forEach(variety=> { %>
                       <option value="<%= variety.name %>">
@@ -82,11 +86,6 @@
              </select>
         </div>
   
-        <div class="input-search-container-tienda">
-            <input class="searchTienda" type="text" placeholder="¿Que estas buscando?" name="" id="">
-            <i class="fas fa-search"></i>
-        </div>
-
     </div>    
     <!--MAIN-->
     <main class="main-tienda">   
