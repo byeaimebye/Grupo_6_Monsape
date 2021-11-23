@@ -15,7 +15,9 @@
             <a id="headerAs" href="/products/tienda">PRODUCTOS</a>
             <a id="headerAs" href="#">COMO COMPRAR</a>
             <a id="headerAs" href="/aboutUs">QUIENES SOMOS</a>
-            <% if(session.user){ %> 
+            <% if(session.user && session.user.rol == "ROL_ADMIN" ){ %> 
+                <a id="headerAs" href="/users/logout">ADMINISTRADOR</a>
+            <% } else if(session.user){ %> 
                 <a id="headerAs" href="/products/cart">CARRITO DE COMPRAS</a>
                 <a id="headerAs" href="/users/logout">CERRAR SESION</a>
                 <% }else{ %> 
