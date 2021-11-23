@@ -102,9 +102,8 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             const data = await response.data;
           
             //console.log(data)
-            if(orderWines.value === "defecto"){
-                pintarCards(data);
-            }
+            
+            pintarCards(data);            
             searchFromTienda(data)
         } catch (error) {
             console.log(error);
@@ -293,42 +292,42 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             resultSearch[i] = [nombreProducto[i],categoryProducto[i],collectionProducto[i],priceProducto[i],discountProducto[i],varietiesSearch[i]]
         }
         
-        let dataOrder = [];
-        data.forEach(date=>{
-            dataOrder.push(date)
-        })
-        console.log(productsSearchTienda);
+        // let dataOrder = [];
+        // data.forEach(date=>{
+        //     dataOrder.push(date)
+        // })
+        // console.log(productsSearchTienda);
         
         
-        orderWines.addEventListener("click", (e)=>{
-            if(orderWines.value==="mayor-descuento"){
-                dataOrder.sort((a,b)=>a.discount-b.discount).reverse()
-                _productsTiendaScript.innerHTML= "";
-                pintarCards(dataOrder)
-            }
-            if(orderWines.value==="precio-menor"){
-                dataOrder.sort((a,b)=>a.price-b.price)
-                _productsTiendaScript.innerHTML= "";
-                pintarCards(dataOrder)
-            }
-            if(orderWines.value==="precio-mayor"){
-                dataOrder.sort((a,b)=>a.price-b.price).reverse()
-                _productsTiendaScript.innerHTML= "";
-                pintarCards(dataOrder)
-            } 
-            if(orderWines.value === "defecto"){
-                _productsTiendaScript.innerHTML= "";
-                pintarCards(data)
-            } 
-            e.stopPropagation();                                
-        })
+        // orderWines.addEventListener("click", (e)=>{
+        //     if(orderWines.value==="mayor-descuento"){
+        //         dataOrder.sort((a,b)=>a.discount-b.discount).reverse()
+        //         _productsTiendaScript.innerHTML= "";
+        //         pintarCards(dataOrder)
+        //     }
+        //     if(orderWines.value==="precio-menor"){
+        //         dataOrder.sort((a,b)=>a.price-b.price)
+        //         _productsTiendaScript.innerHTML= "";
+        //         pintarCards(dataOrder)
+        //     }
+        //     if(orderWines.value==="precio-mayor"){
+        //         dataOrder.sort((a,b)=>a.price-b.price).reverse()
+        //         _productsTiendaScript.innerHTML= "";
+        //         pintarCards(dataOrder)
+        //     } 
+        //     if(orderWines.value === "defecto"){
+        //         _productsTiendaScript.innerHTML= "";
+        //         pintarCards(data)
+        //     } 
+        //     e.stopPropagation();                                
+        // })
         
         
 
         filterCategory.addEventListener("click", (e)=>{
             filterCollection.value = "Todos"
             filterVariety.value = "Todos"
-            orderWines.value = "defecto"
+            //orderWines.value = "defecto"
             //location.reload();
             // _productsTiendaScript.innerHTML= "";
             // pintarCards(data)          
@@ -348,7 +347,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         filterCollection.addEventListener("click", (e)=>{
             filterCategory.value = "Todos"
             filterVariety.value = "Todos"
-            orderWines.value = "defecto"
+            //orderWines.value = "defecto"
             // _productsTiendaScript.innerHTML= "";
             // pintarCards(data)
             resultSearch.forEach((element, index)=>{
@@ -366,7 +365,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
         filterVariety.addEventListener("click", (e)=>{
             filterCollection.value = "Todos"
             filterCategory.value = "Todos"
-            orderWines.value = "defecto"
+            //orderWines.value = "defecto"
             // _productsTiendaScript.innerHTML= "";
             // pintarCards(data)
             resultSearch.forEach((element, index)=>{
@@ -386,7 +385,7 @@ if(window.location.href === "http://localhost:3080/products/tienda"){
             filterCollection.value = "Todos"
             filterVariety.value = "Todos"
             filterCategory.value = "Todos"
-            orderWines.value = "defecto"
+            //orderWines.value = "defecto"
             // _productsTiendaScript.innerHTML= "";
             // pintarCards(data)
             if(e.target.value == inputSearchTienda.value){
