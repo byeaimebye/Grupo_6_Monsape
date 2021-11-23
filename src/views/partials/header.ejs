@@ -16,7 +16,8 @@
             <a id="headerAs" href="#">COMO COMPRAR</a>
             <a id="headerAs" href="/aboutUs">QUIENES SOMOS</a>
             <% if(session.user && session.user.rol == "ROL_ADMIN" ){ %> 
-                <a id="headerAs" href="/users/logout">ADMINISTRADOR</a>
+                <a id="headerAs" href="/admin/products">ADMINISTRAR</a>
+                <a id="headerAs" href="/users/logout">CERRAR SESION</a>
             <% } else if(session.user){ %> 
                 <a id="headerAs" href="/products/cart">CARRITO DE COMPRAS</a>
                 <a id="headerAs" href="/users/logout">CERRAR SESION</a>
@@ -29,11 +30,17 @@
     </div>
     <!-- FIN VENTANA MODAL MOBILE -->
     <div class="linksFirst">
+        <% if(session.user && session.user.rol == "ROL_ADMIN" ){ %> 
+            <a id="headerAs" href="/admin/products">PRODUCTOS</a>
+            <a id="headerAs" href="/admin/usersTable">USUARIOS</a>
+         <% } else{  %>
         <a id="headerAs" href="/aboutUs">NOSOTROS</a>
         <!-- <a href="#">PRODUCTOS</a> -->
         <%- include("menuDesplegableProducts")%>
+        <% }  %>
         <a id="headerAs" href="/products/tienda">TIENDA</a>
     </div>
+    
     <a id="headerAs" href="/">
         <div class="logoCenter">
             <img src="/img/logomon.svg" alt="">
@@ -41,8 +48,9 @@
         </div>
     </a>
     <div class="linksLast">
-       
-         <% if(session.user){  %>
+        <% if(session.user && session.user.rol == "ROL_ADMIN" ){ %> 
+            <a href="/admin/products"><img class="perfil" src="/img/userAdmin.png" alt="" width="25px"></a>
+         <% } else if(session.user){  %>
            <!--  <div class="loginH">
                <a href="/users/logout"><img class="logout" src="/img/banners/logout.png" alt=""> <br> <p>CERRAR SESION</p> </a> 
             </div>  -->
@@ -75,7 +83,9 @@
                     </div>
                 </div>
                 <% } %> 
+
             <%- include("mainProductCartDesplegable") %>
+         
     </div>
     <script src="/javascripts/header.js"></script>
 </header>
