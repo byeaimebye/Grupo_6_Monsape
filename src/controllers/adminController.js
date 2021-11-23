@@ -14,7 +14,8 @@ module.exports = {
         }).then((wines) => {
             res.render("admin/adminProducts", {
                 title: "vista admin Products",
-                wines: wines
+                wines: wines,
+                session: req.session,
             });
         }).catch((error) => res.send(error))
     },
@@ -378,7 +379,8 @@ module.exports = {
         db.User.findAll().then((users) => {
             res.render("admin/adminUsers", {
                 users,
-                title: "Tabla de Usuarios Registrados"
+                title: "Tabla de Usuarios Registrados",
+                session: req.session
             })
         })
 

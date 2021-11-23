@@ -21,6 +21,9 @@
                         <small id="error-email-register" class="text-danger"></small>
                         <% if(locals.errors && errors.email) { %>
                             <small class="text-danger"><%= errors.email.msg %> </small>
+                       
+                        <% }else{ %>
+                            <small class="text-danger" id="nameErrors"></small>
                         <% } %>
                     </div>
                     <label class="text-forms" for="fullname">Nombre y apellido:</label>
@@ -31,7 +34,9 @@
                         <small id="error-fullname-register" class="text-danger"></small>
                         <% if (locals.errors && errors.fullname) { %>
                             <small class="text-danger"><%= errors.fullname.msg %> </small>
-                        <% } %>
+                            <% }else{ %>
+                                <small class="text-danger" id="nameErrors"></small>
+                            <% } %>
                     
                     </div>
                     <label class="text-forms" for="password">Contraseña:</label>
@@ -42,7 +47,9 @@
                         <small id="error-password-register" class="text-danger"></small>
                         <% if (locals.errors && errors.password) { %>
                             <small class="text-danger"><%= errors.password.msg %> </small>
-                        <% } %>
+                            <% }else{ %>
+                                <small class="text-danger" id="nameErrors"></small>
+                            <% } %>
                     </div>
                     <label class="text-forms" for="password2">Repetir contraseña:</label>
                     <div class="input-container div-password2-register">
@@ -51,7 +58,9 @@
                         <small id="error-password2-register" class="text-danger"></small>
                         <% if (locals.errors && errors.password2) { %>
                             <small class="text-danger"><%= errors.password2.msg %> </small>
-                        <% } %>
+                            <% }else{ %>
+                                <small class="text-danger" id="cpErrors"></small>
+                            <% } %>
                     </div>                    
                     <div class="check">
                         <label for="terms"> Aceptar <a href="">términos y condiciones</a> </label>
@@ -61,7 +70,9 @@
                         <% if (locals.errors && errors.terms) { %>
                             <br>
                             <small class="text-danger"><%= errors.terms.msg %> </small>
-                        <% } %>
+                            <% }else{ %>
+                                <small class="text-danger" id="cpErrors"></small>
+                            <% } %>
                     </div>
                     <div class="button-container"><!-- 
                         <span class="error-message">Credenciales inválidas</span> -->
